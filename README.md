@@ -1,2 +1,123 @@
-# Ops_prototype-dashboards
-Interview-ready Streamlit prototype for regional AI data operations dashboards
+# Scale Regional Ops Command Center
+
+## Module A: Regional Operations Health Dashboard
+
+This repository contains an interview-ready Streamlit prototype for a regional AI data operations leader.
+
+The goal is to create a single operating view that surfaces SLA, backlog, CSAT, quality, rework, and escalation risk before customer impact lands.
+
+## Interview Positioning
+
+> In my first 60 days, I would want a single regional operating view that surfaces SLA, backlog, CSAT, quality, and escalation risk before customer impact lands. I built this prototype to show the operating system I would bring to the role.
+
+## MVP Scope
+
+This repo currently focuses only on Module A:
+
+- Regional Operations Health Dashboard
+
+Future modules, intentionally not built yet:
+
+- Module B: Escalation Pattern Recurrence Detector
+- Module C: Distributed Workforce Quality Scorer
+
+## Dashboard Questions
+
+The dashboard is designed to answer:
+
+1. Which work types are healthy or unhealthy this week?
+2. Where are SLA, backlog, CSAT, quality, or escalation metrics degrading?
+3. Which anomalies require leadership attention?
+4. What weekly operating briefing should go to leadership?
+5. What action should frontline managers take?
+
+## Project Structure
+
+```text
+.
+├── app.py
+├── requirements.txt
+├── README.md
+├── data/
+│   └── .gitkeep
+├── docs/
+│   └── PHASE_1_DATA_MODEL.md
+└── src/
+    ├── __init__.py
+    ├── generate_data.py
+    ├── metrics.py
+    ├── rules.py
+    ├── briefing.py
+    └── charts.py
+```
+
+## Phase Plan
+
+### Phase 1: Data model and synthetic data generation plan
+
+Define the operating model, data tables, metrics, thresholds, synthetic scenarios, and project scaffold.
+
+### Phase 2: Generate synthetic data
+
+Create realistic synthetic CSV data across work items, teams, contributors, SLA events, quality events, escalations, and CSAT.
+
+### Phase 3: Metric calculations
+
+Build reusable metric functions for SLA, backlog, CSAT, quality, rework, first-contact-resolution proxy, and escalation rate.
+
+### Phase 4: Streamlit UI
+
+Build the executive dashboard, health heatmap, work type drilldown, and team drilldown.
+
+### Phase 5: Anomaly detection
+
+Add deterministic anomaly rules for SLA drops, CSAT dips, backlog spikes, escalation spikes, quality declines, and rework increases.
+
+### Phase 6: Weekly ops briefing
+
+Generate a structured weekly leadership briefing using deterministic templates.
+
+### Phase 7: Interview demo script
+
+Add a walkthrough script that explains the prototype in a Scale AI Operations / Regional Lead interview context.
+
+## Data Tables
+
+The MVP will use seven synthetic CSV files:
+
+1. `work_items.csv`
+2. `teams.csv`
+3. `contributors.csv`
+4. `sla_events.csv`
+5. `quality_events.csv`
+6. `escalation_events.csv`
+7. `csat_events.csv`
+
+No real Scale AI data is used.
+
+## How to Run Locally
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the app:
+
+```bash
+streamlit run app.py
+```
+
+## Current Status
+
+Phase 1 scaffold is initialized.
+
+Next step: implement Phase 2 synthetic data generation in `src/generate_data.py`.
