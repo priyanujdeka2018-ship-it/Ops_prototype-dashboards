@@ -10,7 +10,7 @@ from src.metrics import (
     group_metrics_by_team,
     group_metrics_by_work_type,
 )
-from src.rules import classify_metric
+from src.rules import classify_metric, detect_anomalies
 from src.charts import health_heatmap, bar_chart, line_chart, stacked_bar_chart
 
 
@@ -258,6 +258,38 @@ def main() -> None:
         for col in pct_cols:
             display_metrics[col] = display_metrics[col].map(lambda x: f"{x * 100:.1f}%")
         st.dataframe(display_metrics, use_container_width=True)
+
+
+    st.markdown("## Anomaly Detection Panel")
+
+    anomalies = detect_anomalies(
+        work_items=work_items,
+        quality_events=quality_events,
+        escalation_events=escalation_events,
+        csat_events=csat_events,
+    )
+
+    if anomalies.empty:
+        st.success("No rule-based anomalies detected for the selected scope.")
+    else:
+        high_count = int((anomalies["severity"] == "High").sum())
+        medium_count = int((anomalies["severity"] == "Medium").sum())
+
+        a1, a2, a3 = st.columns(3)
+        a1.metric("High Severity Anomalies", high_count)
+        a2.metric("Medium Severity Anomalies", medium_count)
+        a3.metric("Total Anomalies", len(anomalies))
+
+        st.dataframe(anomalies, use_container_width=True)
+
+        st.markdown("### Leadership Attention Required")
+        for _, anomaly in anomalies.head(5).iterrows():
+            st.warning(
+                f"**{anomaly['severity']} | {anomaly['work_type']} | "
+                f"{anomaly['anomaly_type']}** — {anomaly['description']}\n\n"
+                f"Recommended action: {anomaly['recommended_action']}"
+            )
+
 
     st.markdown("## Work Type Drilldown")
 
