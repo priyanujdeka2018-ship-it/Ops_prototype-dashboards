@@ -12,6 +12,7 @@ from src.metrics import (
 )
 from src.rules import classify_metric, detect_anomalies
 from src.charts import health_heatmap, bar_chart, line_chart, stacked_bar_chart
+from src.briefing import generate_weekly_ops_briefing
 
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
@@ -289,6 +290,33 @@ def main() -> None:
                 f"{anomaly['anomaly_type']}** — {anomaly['description']}\n\n"
                 f"Recommended action: {anomaly['recommended_action']}"
             )
+
+
+
+    st.markdown("## Weekly Ops Briefing Generator")
+
+    st.markdown(
+        "Generate a deterministic leadership briefing from the current KPI view, "
+        "work type health, and anomaly detection output."
+    )
+
+    if st.button("Generate Weekly Ops Briefing"):
+        briefing = generate_weekly_ops_briefing(
+            kpis=kpis,
+            work_type_metrics=work_type_metrics,
+            anomalies=anomalies,
+            region=selected_region,
+            work_type_filter=selected_filter_work_type,
+        )
+
+        st.markdown(briefing)
+
+        st.download_button(
+            label="Download Briefing as Markdown",
+            data=briefing,
+            file_name="weekly_ops_briefing.md",
+            mime="text/markdown",
+        )
 
 
     st.markdown("## Work Type Drilldown")
