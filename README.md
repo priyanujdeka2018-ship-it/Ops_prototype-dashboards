@@ -2,9 +2,32 @@
 
 ## Module A: Regional Operations Health Dashboard
 
-This repository contains an interview-ready Streamlit prototype for a regional AI data operations leader.
+**Current status: Module A MVP complete.**
 
-The goal is to create a single operating view that surfaces SLA, backlog, CSAT, quality, rework, and escalation risk before customer impact lands.
+This repository contains an interview-ready Streamlit prototype for a Scale AI Operations / Regional Lead style role.
+
+The dashboard gives a regional operations leader one operating view across:
+
+- SLA adherence
+- CSAT
+- Backlog
+- Aged backlog over 72 hours
+- Escalation rate
+- Quality score
+- Rework rate
+- First-contact-resolution proxy
+
+The MVP includes:
+
+- Executive KPI tiles
+- Regional health heatmap
+- Work type drilldown
+- Team drilldown
+- Rule-based anomaly detection
+- Weekly ops briefing generator
+- Synthetic data only
+- Interview demo script
+- Final MVP checklist
 
 ## Interview Positioning
 
@@ -121,3 +144,11 @@ streamlit run app.py
 Phase 1 scaffold is initialized.
 
 Next step: implement Phase 2 synthetic data generation in `src/generate_data.py`.
+
+## Run and Validate
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+python -m py_compile app.py src/*.py
