@@ -262,3 +262,17 @@ The main v2 files are:
 Interview line:
 
 I built Module B in two layers. First, I used deterministic pattern keys for explainability. Then I added semantic clustering with TF-IDF so the system can detect recurring escalation patterns even when teams describe the same operating breakdown differently.
+
+## Live Demo
+
+Deployed app:
+
+PASTE_RENDER_URL_HERE
+
+Demo path:
+
+1. Open the main app.
+2. Review Module A executive KPIs and health heatmap.
+3. Scroll to Module B v1 recurrence detector.
+4. Open sidebar page: 2 Module B v2 Semantic Clusters.
+5. Review semantic cluster summary, structural fix card, and weekly retro queue.
