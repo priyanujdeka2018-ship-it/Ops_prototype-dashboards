@@ -83,7 +83,7 @@ Core Module B sentence:
 
 - [ ] Expand `data/escalation_events.csv` to 150–300 synthetic records
 - [ ] Export `data/escalation_pattern_summary.csv`
-- [ ] Add semantic similarity using TF-IDF or sentence embeddings
+- [x] Add semantic similarity using TF-IDF; future upgrade can use sentence embeddings
 - [ ] Add Module C: Distributed Workforce Quality Scorer
 - [ ] Add SQLite or DuckDB
 - [ ] Add authentication if deployed
