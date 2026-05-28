@@ -2,13 +2,18 @@
 
 ## Prototype
 
-**Module A: Regional Operations Health Dashboard**
+**Module A: Regional Operations Health Dashboard**  
+**Module B: Escalation Pattern Recurrence Detector**
 
-This prototype is designed for a Scale AI Operations / Regional Lead style role. It shows how I would create a single operating view for distributed AI data operations across SLA, backlog, CSAT, quality, rework, and escalation risk.
+This prototype is designed for a Scale AI Operations / Regional Lead style role. It shows how I would create a single operating view for distributed AI data operations across SLA, backlog, CSAT, quality, rework, escalation risk, and recurring escalation patterns.
 
 ## Opening Talk Track
 
 “In my first 60 days, I would want a single regional operating view that surfaces SLA, backlog, CSAT, quality, and escalation risk before customer impact lands. I built this prototype to show the operating system I would bring to the role.”
+
+Then add:
+
+“Module A tells me where regional health is degrading. Module B tells me whether escalations are isolated incidents or recurring operating-system failures. This helps leadership move from reactive escalation handling to pattern-based prevention.”
 
 ## Business Problem
 
@@ -22,7 +27,7 @@ A regional operations leader manages distributed AI data operations across work 
 
 Operational health is often spread across ticketing reports, spreadsheets, dashboards, and manager updates. By the time SLA, backlog, CSAT, quality, or escalation issues are visible, customer impact may already have occurred.
 
-This dashboard centralizes those signals into one weekly operating view.
+Module A centralizes those signals into one weekly operating view. Module B goes one level deeper: it checks whether escalations are one-off incidents or repeat patterns that require structural fixes.
 
 ## Demo Flow
 
@@ -95,7 +100,94 @@ Emphasize:
 
 “This is deterministic for now. Later, an LLM could improve the language, but the core logic and source metrics remain explainable.”
 
-### 5. Work Type Drilldown
+### 5. Module B: Escalation Pattern Recurrence Detector
+
+Move to the Module B section.
+
+Say:
+
+“After Module A shows me where health is degrading, Module B helps me decide whether the escalations are isolated fires or repeat failure modes. This is the difference between closing tickets and fixing the operating system.”
+
+Point out the pattern key selector:
+
+- Work type + root cause
+- Work type + team + root cause
+- Customer segment + work type + root cause
+- Team + severity + root cause
+
+Say:
+
+“I can tune the pattern definition depending on the leadership question. If I want a systemic view, I use work type plus root cause. If I want a frontline manager conversation, I narrow it to team plus root cause.”
+
+### 6. Recurring Escalation Pattern Summary
+
+Point out the summary cards.
+
+Say:
+
+“This gives me the number of escalation events in scope, recurring patterns, high-risk patterns, top affected work type, and top root cause. This is designed for a weekly ops retro.”
+
+Emphasize that Module B reuses the same `escalation_events.csv` as Module A, so it is not a disconnected demo.
+
+### 7. Pattern Risk Table
+
+Move to the Pattern Risk Table.
+
+Say:
+
+“The table scores patterns using deterministic recurrence logic. It looks at escalation count, severity, open escalations, customer-segment blast radius, acceleration, and slow resolution. I’m not just sorting by the loudest escalation.”
+
+Point out fields:
+
+- Pattern key
+- Escalation count
+- Severity mix
+- Unique teams impacted
+- Unique customer segments impacted
+- Open count
+- Average days to resolve
+- Recurrence status
+- Risk score
+- Risk level
+- Recommended action
+
+Say:
+
+“This lets me separate one-off customer issues from repeat operational breakdowns.”
+
+### 8. Pattern Drilldown
+
+Select a high-risk pattern.
+
+Say:
+
+“Here I can drill into the selected pattern: affected teams, customer segments, severity mix, open count, average days to resolve, recent escalation summaries, and the trend over time.”
+
+Use this example talk track:
+
+“If RLHF evaluation has SLA pressure and rising escalations, Module B can show whether the repeat driver is policy ambiguity, reviewer misalignment, customer requirement changes, tooling issues, or capacity shortfall.”
+
+### 9. Recommended Leadership Actions
+
+Move to the recommended actions panel.
+
+Say:
+
+“This is the action loop. A recurring pattern should not end with ‘ticket closed.’ It should create a structural fix: SOP clarification, calibration, routing change, staffing review, tooling fix, or customer instruction propagation.”
+
+### 10. Escalation Pattern Briefing Generator
+
+Click **Generate Escalation Pattern Briefing**.
+
+Say:
+
+“This creates the escalation-pattern section I would bring to the weekly ops retro. It gives an executive TL;DR, top recurring patterns, likely systemic causes, recommended leadership actions, risks if not addressed, and questions for frontline managers.”
+
+Emphasize:
+
+“No LLM is required. The summary is deterministic and explainable first. Later, an LLM could polish the narrative, but the operating logic is already useful.”
+
+### 11. Work Type Drilldown
 
 Select a work type, such as `rlhf_evaluation`, `code_review`, or `audio_evaluation`.
 
@@ -103,13 +195,11 @@ Say:
 
 “Once a work type is flagged, I can drill into trends: SLA movement, backlog age bands, quality movement, escalation trend, and team-level comparisons.”
 
-Use this to show how you would diagnose a problem.
+Use this to show how Module A and Module B connect:
 
-Example:
+“Module A identifies the unhealthy work type. Module B checks whether its escalations are recurring and what structural action is needed.”
 
-“For RLHF evaluation, I would check whether SLA pressure is linked to policy ambiguity, reviewer shortage, or queue handoff delay.”
-
-### 6. Team Drilldown
+### 12. Team Drilldown
 
 Select a team.
 
@@ -120,8 +210,9 @@ Say:
 Explain that this supports a weekly operating rhythm:
 
 - Identify issue
+- Check whether it is recurring
 - Assign owner
-- Define containment action
+- Define containment and prevention action
 - Review next week for movement
 
 ## What This Shows About My Operating Style
@@ -132,6 +223,7 @@ This prototype demonstrates that I think in terms of:
 - Operating cadence and accountability
 - Regional health across multiple work types
 - Structured escalation management
+- Repeat-pattern detection
 - Frontline manager enablement
 - Explainable decision support before introducing AI summarization
 - Building scalable operating systems, not one-off dashboards
@@ -140,25 +232,17 @@ This prototype demonstrates that I think in terms of:
 
 ### First 30 Days
 
-I would map existing workflows, data sources, escalation paths, SLA definitions, and quality review mechanisms.
+I would map existing workflows, data sources, escalation paths, SLA definitions, quality review mechanisms, and escalation root-cause categories.
 
 ### First 60 Days
 
-I would build a single regional operating view similar to this prototype, starting with deterministic metrics and simple anomaly rules.
+I would build a single regional operating view similar to Module A, starting with deterministic metrics and simple anomaly rules.
 
 ### First 90 Days
 
-I would use the dashboard to run weekly operating reviews, identify recurring escalation patterns, and build manager-level action loops.
+I would use the dashboard and recurrence detector to run weekly operating reviews, identify recurring escalation patterns, and build manager-level action loops.
 
 ## Future Modules
-
-This prototype intentionally focuses only on Module A.
-
-Future modules:
-
-### Module B: Escalation Pattern Recurrence Detector
-
-Would detect repeat escalation patterns by customer segment, work type, root cause, team, and severity.
 
 ### Module C: Distributed Workforce Quality Scorer
 
@@ -166,4 +250,4 @@ Would score contributor and team quality risk using gold-task pass rate, reviewe
 
 ## Closing Talk Track
 
-“This prototype is not meant to be a production system. It is a working MVP of how I would think about the regional operating system: one view of health, early anomaly detection, manager action loops, and a weekly briefing that keeps leadership ahead of customer impact.”
+“This prototype is not meant to be a production system. It is a working MVP of how I would think about the regional operating system: one view of health, early anomaly detection, recurring escalation detection, manager action loops, and weekly briefings that keep leadership ahead of customer impact.”
