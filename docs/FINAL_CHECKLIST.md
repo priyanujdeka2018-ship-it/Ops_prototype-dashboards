@@ -12,7 +12,7 @@
 - [x] Phase 6: Weekly ops briefing generator
 - [x] Phase 7: README cleanup and interview demo script
 
-### Module B: Escalation Pattern Recurrence Detector
+### Module B v1: Escalation Pattern Recurrence Detector
 
 - [x] Phase B1: Escalation pattern data model
 - [x] Phase B2: Pattern detection logic in `src/escalation_patterns.py`
@@ -20,12 +20,31 @@
 - [x] Phase B4: Streamlit UI integration in `app.py`
 - [x] Phase B5: README, handoff, checklist, and demo-script updates
 
+### Module B v2: Semantic Escalation Clustering and Structural Fix Cards
+
+- [x] Confirm `src/escalation_semantic_clusters.py` exists
+- [x] Confirm `src/fix_cards.py` exists
+- [x] Confirm `pages/2_Module_B_v2_Semantic_Clusters.py` exists
+- [x] Confirm `scikit-learn` is in `requirements.txt`
+- [x] Confirm semantic cluster summary renders
+- [x] Confirm cluster drilldown renders
+- [x] Confirm structural fix card renders
+- [x] Confirm weekly retro queue renders
+
+### Module C: Distributed Workforce Quality Scorer
+
+- [x] Phase C1: Workforce quality data model in `src/workforce_quality.py`
+- [x] Phase C2: Contributor and team risk scoring
+- [x] Phase C3: Quality coaching card generator in `src/quality_briefing.py`
+- [x] Phase C4: Streamlit sidebar page in `pages/3_Module_C_Workforce_Quality_Scorer.py`
+- [x] Phase C5: README, checklist, handoff, and demo-script updates
+
 ## Demo Readiness
 
 Before the interview demo, run:
 
 ```bash
-python -m py_compile app.py src/*.py
+python -m py_compile app.py src/*.py pages/*.py
 python -m streamlit run app.py
 ```
 
@@ -38,7 +57,7 @@ Confirm these Module A sections render:
 - [ ] Work Type Drilldown
 - [ ] Team Drilldown
 
-Confirm these Module B sections render:
+Confirm these Module B v1 sections render:
 
 - [ ] Recurring Escalation Pattern Summary
 - [ ] Top Repeat Root Causes
@@ -46,6 +65,28 @@ Confirm these Module B sections render:
 - [ ] Pattern Drilldown
 - [ ] Recommended Leadership Actions
 - [ ] Escalation Pattern Briefing Generator
+
+Confirm these Module B v2 sections render:
+
+- [ ] Sidebar page: 2 Module B v2 Semantic Clusters
+- [ ] Semantic Cluster Summary
+- [ ] Cluster Charts
+- [ ] Cluster Drilldown
+- [ ] Structural Fix Card
+- [ ] Weekly Retro Queue
+
+Confirm these Module C sections render:
+
+- [ ] Sidebar page: 3 Module C Workforce Quality Scorer
+- [ ] Executive Workforce Quality Summary
+- [ ] Contributor Quality Risk Table
+- [ ] Team Quality Risk Table
+- [ ] Quality Drift View
+- [ ] Contributor Drilldown
+- [ ] Team Drilldown
+- [ ] Weekly Coaching and Calibration Queue
+- [ ] Quality Coaching Card Generator
+- [ ] Module C Weekly Briefing
 
 ## Demo Talk Track
 
@@ -57,6 +98,10 @@ Core Module B sentence:
 
 > “Module A tells me where regional health is degrading. Module B tells me whether escalations are isolated incidents or recurring operating-system failures. This helps leadership move from reactive escalation handling to pattern-based prevention.”
 
+Core Module C sentence:
+
+> “I do not want to use quality data as a punitive scoreboard. I want to use it as an operating signal. Module C identifies where quality risk is emerging across teams, cohorts, and work types, then turns that signal into coaching and calibration actions.”
+
 ## What To Emphasize
 
 - [ ] Synthetic data only; no real Scale AI data
@@ -66,8 +111,11 @@ Core Module B sentence:
 - [ ] Weekly leadership briefing
 - [ ] Recurring escalation pattern detection
 - [ ] Pattern-risk scoring based on recurrence, severity, open count, customer blast radius, acceleration, and slow resolution
-- [ ] Action loop from escalation pattern to structural fix
-- [ ] Future extensibility for Module C
+- [ ] Semantic clustering catches repeated issues with different wording
+- [ ] Structural fix cards convert recurring escalations into leadership decisions
+- [ ] Workforce quality risk is for coaching, calibration, training, staffing, and SOP action
+- [ ] Weekly Coaching and Calibration Queue is not a punitive leaderboard
+- [ ] Quality coaching cards define owner, metric, decision, and follow-up date
 
 ## Module B Validation Checklist
 
@@ -79,35 +127,29 @@ Core Module B sentence:
 - [ ] Pattern drilldown shows recent escalation summaries
 - [ ] Escalation pattern briefing downloads as markdown
 
+## Module C Validation Checklist
+
+- [ ] `src/workforce_quality.py` imports successfully
+- [ ] `src/quality_briefing.py` imports successfully
+- [ ] `build_contributor_quality_features()` returns contributor risk rows
+- [ ] `build_team_quality_features()` returns team risk rows
+- [ ] `build_work_type_quality_features()` returns work-type risk rows
+- [ ] `get_weekly_quality_review_queue()` returns coaching and calibration queue rows
+- [ ] Contributor filters work for work type, team, skill level, location type, and risk level
+- [ ] Contributor drilldown shows quality evidence and task-complexity mix
+- [ ] Team drilldown shows quality trend, top risk drivers, and recent quality events
+- [ ] Coaching card generator renders cards for contributor and team subjects
+- [ ] Module C weekly briefing downloads as markdown
+
 ## Future Enhancements
 
 - [ ] Expand `data/escalation_events.csv` to 150–300 synthetic records
 - [ ] Export `data/escalation_pattern_summary.csv`
 - [x] Add semantic similarity using TF-IDF; future upgrade can use sentence embeddings
-- [ ] Add Module C: Distributed Workforce Quality Scorer
+- [x] Add Module C: Distributed Workforce Quality Scorer
+- [ ] Export `data/workforce_quality_summary.csv`
+- [ ] Export `data/contributor_quality_risk.csv`
 - [ ] Add SQLite or DuckDB
 - [ ] Add authentication if deployed
 - [ ] Add automated weekly report export
 - [ ] Add LLM-powered narrative generation after deterministic baseline is trusted
-
-## Module B v2 Final Checklist
-
-Before demo:
-
-- Confirm src/escalation_semantic_clusters.py exists.
-- Confirm src/fix_cards.py exists.
-- Confirm pages/2_Module_B_v2_Semantic_Clusters.py exists.
-- Confirm scikit-learn is in requirements.txt.
-- Run python -m py_compile app.py src/*.py pages/*.py.
-- Run streamlit run app.py.
-- Open the sidebar page 2 Module B v2 Semantic Clusters.
-- Confirm Semantic Cluster Summary renders.
-- Confirm Cluster Drilldown renders.
-- Confirm Structural Fix Card renders.
-- Confirm Weekly Retro Queue renders.
-
-Demo emphasis:
-
-- Deterministic pattern-key mode remains available for explainability.
-- Semantic clustering catches repeated issues with different wording.
-- Structural fix cards convert recurring escalations into leadership decisions.
