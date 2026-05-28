@@ -56,23 +56,19 @@ The dashboard is designed to answer:
 
 ## Project Structure
 
-```text
-.
-├── app.py
-├── requirements.txt
-├── README.md
-├── data/
-│   └── .gitkeep
-├── docs/
-│   └── PHASE_1_DATA_MODEL.md
-└── src/
-    ├── __init__.py
-    ├── generate_data.py
-    ├── metrics.py
-    ├── rules.py
-    ├── briefing.py
-    └── charts.py
-```
+Key files and folders:
+
+- `app.py` — Streamlit dashboard entry point
+- `requirements.txt` — Python dependencies
+- `.streamlit/config.toml` — Streamlit local config
+- `data/` — synthetic CSV data files
+- `src/generate_data.py` — synthetic data generator
+- `src/metrics.py` — KPI and metric calculations
+- `src/rules.py` — health thresholds and anomaly rules
+- `src/briefing.py` — deterministic weekly briefing generator
+- `src/charts.py` — Plotly chart helpers
+- `docs/FINAL_CHECKLIST.md` — final MVP checklist
+- `docs/INTERVIEW_DEMO_SCRIPT.md` — interview walkthrough script
 
 ## Phase Plan
 
@@ -139,11 +135,6 @@ Run the app:
 streamlit run app.py
 ```
 
-## Current Status
-
-Phase 1 scaffold is initialized.
-
-Next step: implement Phase 2 synthetic data generation in `src/generate_data.py`.
 
 ## Run and Validate
 
