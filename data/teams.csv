@@ -1,0 +1,16 @@
+team_id,region,city,manager_name,work_type,active_contributors,shift_type
+TEAM_APAC_IMAGE_01,APAC,Bangalore,Ananya Rao,image_annotation,38,day
+TEAM_APAC_IMAGE_02,APAC,Pune,Vikram Menon,image_annotation,41,night
+TEAM_APAC_IMAGE_03,APAC,Hyderabad,Priya Sharma,image_annotation,25,day
+TEAM_APAC_IMAGE_04,APAC,Chennai,Rahul Iyer,image_annotation,39,hybrid
+TEAM_APAC_RLHF_01,APAC,Mumbai,Neha Kapoor,rlhf_evaluation,20,weekend
+TEAM_APAC_RLHF_02,APAC,Bangalore,Arjun Mehta,rlhf_evaluation,19,day
+TEAM_APAC_RLHF_03,APAC,Hyderabad,Meera Nair,rlhf_evaluation,24,hybrid
+TEAM_APAC_CODE_01,APAC,Bangalore,Kabir Sinha,code_review,37,hybrid
+TEAM_APAC_CODE_02,APAC,Chennai,Ritika Bose,code_review,24,hybrid
+TEAM_APAC_CODE_03,APAC,Hyderabad,Sanjay Das,code_review,31,weekend
+TEAM_APAC_AUDIO_01,APAC,Pune,Isha Verma,audio_evaluation,36,day
+TEAM_APAC_AUDIO_02,APAC,Hyderabad,Karan Khanna,audio_evaluation,42,weekend
+TEAM_APAC_AUDIO_03,APAC,Pune,Aditi Pillai,audio_evaluation,28,night
+TEAM_APAC_EXPERT_01,APAC,Pune,Rohan Gupta,expert_review,22,day
+TEAM_APAC_EXPERT_02,APAC,Bangalore,Sneha Reddy,expert_review,16,follow_the_sun
