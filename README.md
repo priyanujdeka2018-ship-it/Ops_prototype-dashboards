@@ -233,3 +233,32 @@ Recommended next enhancements:
 - Add authentication if deployed
 - Add automated weekly report export
 - Add LLM-powered narrative generation after deterministic baseline is trusted
+
+## Module B v2: Semantic Escalation Clustering and Structural Fix Cards
+
+Module B v2 extends the deterministic recurrence detector with semantic clustering.
+
+It uses:
+
+- TF-IDF vectorization
+- Cosine similarity
+- Semantic cluster summaries
+- Recurrence status classification
+- Structural fix cards
+- Weekly retro queue
+
+This helps detect repeat escalation themes even when different teams describe the same operating breakdown using different wording.
+
+The v2 Streamlit page is:
+
+- pages/2_Module_B_v2_Semantic_Clusters.py
+
+The main v2 files are:
+
+- src/escalation_semantic_clusters.py
+- src/fix_cards.py
+- docs/MODULE_B_V2_DEMO_SCRIPT.md
+
+Interview line:
+
+I built Module B in two layers. First, I used deterministic pattern keys for explainability. Then I added semantic clustering with TF-IDF so the system can detect recurring escalation patterns even when teams describe the same operating breakdown differently.

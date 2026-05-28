@@ -251,3 +251,30 @@ Would score contributor and team quality risk using gold-task pass rate, reviewe
 ## Closing Talk Track
 
 “This prototype is not meant to be a production system. It is a working MVP of how I would think about the regional operating system: one view of health, early anomaly detection, recurring escalation detection, manager action loops, and weekly briefings that keep leadership ahead of customer impact.”
+
+## Module B v2 Demo Add-On: Semantic Clustering and Fix Cards
+
+After showing Module B v1, open the Streamlit sidebar page:
+
+2 Module B v2 Semantic Clusters
+
+Say:
+
+"Module B v1 uses deterministic pattern keys for explainability. Module B v2 adds semantic clustering with TF-IDF and cosine similarity so I can detect recurring escalation themes even when the wording differs."
+
+Demo these sections:
+
+1. Filters and clustering settings
+2. Semantic Cluster Summary
+3. Cluster Charts
+4. Cluster Drilldown
+5. Structural Fix Card
+6. Weekly Retro Queue
+
+Talk track:
+
+"This is how I move from reactive escalation handling to pattern-based prevention. I can identify a recurring cluster, inspect the source escalations, understand the blast radius, and generate a structural fix card with the owner, metric, decision needed, and follow-up date."
+
+Closing line:
+
+"I do not treat escalations as isolated fires. I built a recurrence detector that groups similar escalation patterns and turns them into weekly structural-fix decisions."

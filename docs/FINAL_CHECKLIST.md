@@ -89,3 +89,25 @@ Core Module B sentence:
 - [ ] Add authentication if deployed
 - [ ] Add automated weekly report export
 - [ ] Add LLM-powered narrative generation after deterministic baseline is trusted
+
+## Module B v2 Final Checklist
+
+Before demo:
+
+- Confirm src/escalation_semantic_clusters.py exists.
+- Confirm src/fix_cards.py exists.
+- Confirm pages/2_Module_B_v2_Semantic_Clusters.py exists.
+- Confirm scikit-learn is in requirements.txt.
+- Run python -m py_compile app.py src/*.py pages/*.py.
+- Run streamlit run app.py.
+- Open the sidebar page 2 Module B v2 Semantic Clusters.
+- Confirm Semantic Cluster Summary renders.
+- Confirm Cluster Drilldown renders.
+- Confirm Structural Fix Card renders.
+- Confirm Weekly Retro Queue renders.
+
+Demo emphasis:
+
+- Deterministic pattern-key mode remains available for explainability.
+- Semantic clustering catches repeated issues with different wording.
+- Structural fix cards convert recurring escalations into leadership decisions.
