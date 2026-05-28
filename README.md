@@ -140,6 +140,26 @@ streamlit run app.py
 
 Install dependencies:
 
-```bash
-pip install -r requirements.txt
-python -m py_compile app.py src/*.py
+    pip install -r requirements.txt
+
+Validate Python syntax:
+
+    python -m py_compile app.py src/*.py
+
+Run the Streamlit app:
+
+    python -m streamlit run app.py
+
+## Demo Materials
+
+- Final checklist: `docs/FINAL_CHECKLIST.md`
+- Interview demo script: `docs/INTERVIEW_DEMO_SCRIPT.md`
+
+## Future Extensions
+
+This repo currently implements only Module A.
+
+Next recommended modules:
+
+- Module B: Escalation Pattern Recurrence Detector
+- Module C: Distributed Workforce Quality Scorer
