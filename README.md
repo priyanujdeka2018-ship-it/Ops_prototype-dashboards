@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Module A MVP complete. Module B MVP added. Module B v2 semantic clustering added. Module C workforce quality scorer added.**
+**Module A MVP complete. Module B MVP added. Module B v2 semantic clustering added. Module C workforce quality scorer added. Module D capacity, staffing, and SLA forecasting added.**
 
 This repository contains an interview-ready Streamlit prototype for a Scale AI Operations / Regional Lead style role.
 
@@ -12,18 +12,23 @@ The command center now includes:
 2. **Module B v1: Escalation Pattern Recurrence Detector**
 3. **Module B v2: Semantic Escalation Clustering and Structural Fix Cards**
 4. **Module C: Distributed Workforce Quality Scorer**
+5. **Module D: Capacity, Staffing, and SLA Forecasting**
 
 ## Interview Positioning
 
-> In my first 60 days, I would want a single regional operating view that surfaces SLA, backlog, CSAT, quality, and escalation risk before customer impact lands. I built this prototype to show the operating system I would bring to the role.
+> In my first 60 days, I would want a single regional operating view that surfaces SLA, backlog, CSAT, quality, escalation risk, workforce quality risk, and capacity risk before customer impact lands. I built this prototype to show the operating system I would bring to the role.
 
 Module B extends that story:
 
 > Module A tells me where regional health is degrading. Module B tells me whether escalations are isolated incidents or recurring operating-system failures. This helps leadership move from reactive escalation handling to pattern-based prevention.
 
-Module C completes the next layer:
+Module C completes the quality layer:
 
 > I do not want to use quality data as a punitive scoreboard. I want to use it as an operating signal. Module C identifies where quality risk is emerging across teams, cohorts, and work types, then turns that signal into coaching and calibration actions.
+
+Module D completes the capacity layer:
+
+> I do not want staffing decisions to be reactive after SLA misses happen. Module D turns backlog, inflow, throughput, complexity, and contributor availability into an early-warning view so managers can rebalance work, cross-train, or add coverage before customer impact lands.
 
 ## Module A: Regional Operations Health Dashboard
 
@@ -148,6 +153,49 @@ Important operating principle:
 
 > Module C is not a punitive individual-ranking tool. It is a coaching, calibration, staffing, and quality-system risk detector.
 
+## Module D: Capacity, Staffing, and SLA Forecasting
+
+Module D extends the command center into capacity planning and next-week SLA protection. It helps a regional operations leader determine whether the region has enough trained capacity by work type, team, skill level, task complexity, backlog, and demand pattern.
+
+Module D answers:
+
+1. Which work types are at risk of capacity shortfall next week?
+2. Which teams are over-utilized or under-utilized?
+3. Where is SLA risk likely to emerge based on backlog, inflow, throughput, staffing, and task complexity?
+4. Do we have enough skilled contributors for high-complexity or expert work?
+5. Which staffing, cross-training, shift, or routing actions should managers take?
+6. How do capacity risks connect to Module A health degradation, Module B recurring escalations, and Module C quality drift?
+7. What should go into the weekly staffing and capacity review?
+
+Module D includes:
+
+- Work-type-level capacity feature builder
+- Team-level capacity feature builder
+- Skill/complexity capacity feature builder
+- Deterministic capacity risk scoring
+- Deterministic SLA forecast status classification
+- Quality and escalation risk overlays
+- Weekly Staffing and Capacity Review Queue
+- Capacity Action Card Generator
+- Deterministic Module D weekly staffing and capacity briefing
+
+The Module D Streamlit page is:
+
+```text
+pages/4_Module_D_Capacity_SLA_Forecasting.py
+```
+
+The main Module D files are:
+
+- `src/capacity_forecast.py`
+- `src/capacity_briefing.py`
+- `docs/MODULE_D_HANDOFF.md`
+- `docs/MODULE_D_DEMO_SCRIPT.md`
+
+Important operating principle:
+
+> Module D is a capacity-planning, workload-balancing, SLA-protection, and quality-preservation system. It is not a productivity surveillance tool.
+
 ## Dashboard Questions
 
 The dashboard is designed to answer:
@@ -158,36 +206,42 @@ The dashboard is designed to answer:
 4. Which escalation patterns are recurring?
 5. Which repeat escalation themes should go into the weekly ops retro?
 6. Which teams, cohorts, or contributors are driving quality risk?
-7. What coaching, calibration, training, staffing, or SOP action should happen next?
-8. What weekly operating briefing should go to leadership?
+7. Which work types or teams face capacity shortfall or SLA risk next week?
+8. What coaching, calibration, training, staffing, routing, or SOP action should happen next?
+9. What weekly operating briefing should go to leadership?
 
 ## Project Structure
 
 Key files and folders:
 
-- `app.py` — Streamlit dashboard entry point for Module A and Module B v1
-- `pages/2_Module_B_v2_Semantic_Clusters.py` — Module B v2 sidebar page
-- `pages/3_Module_C_Workforce_Quality_Scorer.py` — Module C sidebar page
-- `requirements.txt` — Python dependencies
-- `.streamlit/config.toml` — Streamlit local config
-- `data/` — synthetic CSV data files
-- `src/generate_data.py` — synthetic data generator
-- `src/metrics.py` — KPI and metric calculations
-- `src/rules.py` — health thresholds and anomaly rules
-- `src/briefing.py` — deterministic weekly Module A briefing generator
-- `src/escalation_patterns.py` — Module B recurrence scoring and pattern detection
-- `src/escalation_briefing.py` — Module B deterministic briefing generator
-- `src/escalation_semantic_clusters.py` — Module B v2 semantic clustering
-- `src/fix_cards.py` — Module B v2 structural fix cards
-- `src/workforce_quality.py` — Module C workforce quality risk scoring
-- `src/quality_briefing.py` — Module C coaching cards and quality briefing
-- `src/charts.py` — Plotly chart helpers
-- `docs/MODULE_B_HANDOFF.md` — Module B design and handoff notes
-- `docs/MODULE_B_V2_DEMO_SCRIPT.md` — Module B v2 demo script
-- `docs/MODULE_C_HANDOFF.md` — Module C design and handoff notes
-- `docs/MODULE_C_DEMO_SCRIPT.md` — Module C demo script
-- `docs/FINAL_CHECKLIST.md` — final MVP checklist
-- `docs/INTERVIEW_DEMO_SCRIPT.md` — interview walkthrough script
+- `app.py` - Streamlit dashboard entry point for Module A and Module B v1
+- `pages/2_Module_B_v2_Semantic_Clusters.py` - Module B v2 sidebar page
+- `pages/3_Module_C_Workforce_Quality_Scorer.py` - Module C sidebar page
+- `pages/4_Module_D_Capacity_SLA_Forecasting.py` - Module D sidebar page
+- `requirements.txt` - Python dependencies
+- `.streamlit/config.toml` - Streamlit local config
+- `data/` - synthetic CSV data files
+- `src/generate_data.py` - synthetic data generator
+- `src/metrics.py` - KPI and metric calculations
+- `src/rules.py` - health thresholds and anomaly rules
+- `src/briefing.py` - deterministic weekly Module A briefing generator
+- `src/escalation_patterns.py` - Module B recurrence scoring and pattern detection
+- `src/escalation_briefing.py` - Module B deterministic briefing generator
+- `src/escalation_semantic_clusters.py` - Module B v2 semantic clustering
+- `src/fix_cards.py` - Module B v2 structural fix cards
+- `src/workforce_quality.py` - Module C workforce quality risk scoring
+- `src/quality_briefing.py` - Module C coaching cards and quality briefing
+- `src/capacity_forecast.py` - Module D capacity, staffing, and SLA forecasting
+- `src/capacity_briefing.py` - Module D capacity action cards and weekly briefing
+- `src/charts.py` - Plotly chart helpers
+- `docs/MODULE_B_HANDOFF.md` - Module B design and handoff notes
+- `docs/MODULE_B_V2_DEMO_SCRIPT.md` - Module B v2 demo script
+- `docs/MODULE_C_HANDOFF.md` - Module C design and handoff notes
+- `docs/MODULE_C_DEMO_SCRIPT.md` - Module C demo script
+- `docs/MODULE_D_HANDOFF.md` - Module D design and handoff notes
+- `docs/MODULE_D_DEMO_SCRIPT.md` - Module D demo script
+- `docs/FINAL_CHECKLIST.md` - final MVP checklist
+- `docs/INTERVIEW_DEMO_SCRIPT.md` - interview walkthrough script
 
 ## Data Tables
 
@@ -258,6 +312,49 @@ Core fields:
 - `root_cause_category`
 - `status`
 - `days_to_resolve`
+
+## Module D Input Contract
+
+Module D uses:
+
+```text
+data/contributors.csv
+data/quality_events.csv
+data/work_items.csv
+data/teams.csv
+data/escalation_events.csv
+data/sla_events.csv
+```
+
+Core fields:
+
+- `contributor_id`
+- `team_id`
+- `work_item_id`
+- `work_type`
+- `region`
+- `date_created`
+- `date_completed`
+- `status`
+- `sla_due_at`
+- `completed_at`
+- `sla_met`
+- `rework_required`
+- `task_complexity`
+- `tenure_days`
+- `skill_level`
+- `location_type`
+- `active_status`
+- `customer_segment`
+- `severity`
+- `root_cause_category`
+- `days_to_resolve`
+- `quality_score`
+- `gold_task_pass`
+- `reviewer_override`
+- `peer_agreement_score`
+
+If `work_items.csv` is missing or partial, Module D degrades gracefully by using available SLA, quality, contributor, and team data.
 
 ## Module B Pattern Keys
 
@@ -332,6 +429,44 @@ Risk levels:
 - `Low quality risk`
 - `Insufficient sample`
 
+## Module D Risk Scoring
+
+Work-type capacity risk score is deterministic:
+
+```text
+capacity_risk_score = backlog_pressure_penalty
+                    + aged_backlog_penalty
+                    + throughput_gap_penalty
+                    + sla_miss_penalty
+                    + utilization_penalty
+                    + high_complexity_capacity_penalty
+                    + rework_capacity_drag_penalty
+                    + escalation_overlay_penalty
+                    + quality_overlay_penalty
+```
+
+Team capacity risk score adds:
+
+```text
+low_tenure_high_complexity_penalty
+junior_high_complexity_mismatch_penalty
+```
+
+Risk levels:
+
+- `High capacity risk`
+- `Medium capacity risk`
+- `Low capacity risk`
+- `Insufficient data`
+
+SLA forecast statuses:
+
+- `SLA likely stable`
+- `SLA watchlist`
+- `SLA at risk`
+- `SLA recovery needed`
+- `Insufficient data`
+
 ## How to Run Locally
 
 Create and activate a virtual environment:
@@ -373,6 +508,8 @@ python -m streamlit run app.py
 - Module B v2 demo script: `docs/MODULE_B_V2_DEMO_SCRIPT.md`
 - Module C handoff: `docs/MODULE_C_HANDOFF.md`
 - Module C demo script: `docs/MODULE_C_DEMO_SCRIPT.md`
+- Module D handoff: `docs/MODULE_D_HANDOFF.md`
+- Module D demo script: `docs/MODULE_D_DEMO_SCRIPT.md`
 - Final checklist: `docs/FINAL_CHECKLIST.md`
 - Interview demo script: `docs/INTERVIEW_DEMO_SCRIPT.md`
 
@@ -391,15 +528,20 @@ Demo path:
 5. Review semantic cluster summary, structural fix card, and weekly retro queue.
 6. Open sidebar page: 3 Module C Workforce Quality Scorer.
 7. Review contributor/team quality risk, drilldowns, weekly coaching queue, and coaching card generator.
+8. Open sidebar page: 4 Module D Capacity SLA Forecasting.
+9. Review capacity risk, SLA forecast, team/work-type drilldowns, weekly staffing queue, and capacity action cards.
 
 ## Future Extensions
 
 Recommended next enhancements:
 
-- Expand `data/escalation_events.csv` to 150–300 synthetic records for richer recurrence scenarios
+- Expand `data/escalation_events.csv` to 150-300 synthetic records for richer recurrence scenarios
 - Export `data/escalation_pattern_summary.csv`
 - Export `data/workforce_quality_summary.csv`
 - Export `data/contributor_quality_risk.csv`
+- Export `data/capacity_forecast_summary.csv`
+- Export `data/team_capacity_risk.csv`
+- Export `data/work_type_capacity_risk.csv`
 - Add SQLite or DuckDB
 - Add authentication if deployed
 - Add automated weekly report export

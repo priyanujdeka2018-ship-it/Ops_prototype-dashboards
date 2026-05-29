@@ -5,17 +5,18 @@
 **Module A: Regional Operations Health Dashboard**  
 **Module B v1: Escalation Pattern Recurrence Detector**  
 **Module B v2: Semantic Escalation Clustering and Structural Fix Cards**  
-**Module C: Distributed Workforce Quality Scorer**
+**Module C: Distributed Workforce Quality Scorer**  
+**Module D: Capacity, Staffing, and SLA Forecasting**
 
-This prototype is designed for a Scale AI Operations / Regional Lead style role. It shows how I would create a single operating view for distributed AI data operations across SLA, backlog, CSAT, quality, rework, escalation risk, recurring escalation patterns, and workforce quality risk.
+This prototype is designed for a Scale AI Operations / Regional Lead style role. It shows how I would create a single operating view for distributed AI data operations across SLA, backlog, CSAT, quality, rework, escalation risk, recurring escalation patterns, workforce quality risk, and capacity/SLA forecast risk.
 
 ## Opening Talk Track
 
-“In my first 60 days, I would want a single regional operating view that surfaces SLA, backlog, CSAT, quality, and escalation risk before customer impact lands. I built this prototype to show the operating system I would bring to the role.”
+“In my first 60 days, I would want a single regional operating view that surfaces SLA, backlog, CSAT, quality, escalation risk, workforce quality risk, and capacity risk before customer impact lands. I built this prototype to show the operating system I would bring to the role.”
 
 Then add:
 
-“Module A tells me where regional health is degrading. Module B tells me whether escalations are isolated incidents or recurring operating-system failures. Module C tells me whether distributed workforce quality risk is emerging and what coaching, calibration, training, or staffing action should happen next.”
+“Module A tells me where regional health is degrading. Module B tells me whether escalations are isolated incidents or recurring operating-system failures. Module C tells me whether distributed workforce quality risk is emerging and what coaching, calibration, training, or staffing action should happen next. Module D tells me whether we have enough trained capacity to protect SLA and quality next week.”
 
 ## Business Problem
 
@@ -27,9 +28,9 @@ A regional operations leader manages distributed AI data operations across work 
 - Audio evaluation
 - Expert review
 
-Operational health is often spread across ticketing reports, spreadsheets, dashboards, and manager updates. By the time SLA, backlog, CSAT, quality, or escalation issues are visible, customer impact may already have occurred.
+Operational health is often spread across ticketing reports, spreadsheets, dashboards, and manager updates. By the time SLA, backlog, CSAT, quality, escalation, or staffing issues are visible, customer impact may already have occurred.
 
-Module A centralizes those signals into one weekly operating view. Module B checks whether escalations are one-off incidents or repeat patterns requiring structural fixes. Module C checks whether quality risk is emerging across contributors, teams, cohorts, work types, and operating conditions.
+Module A centralizes the health signals into one weekly operating view. Module B checks whether escalations are one-off incidents or repeat patterns requiring structural fixes. Module C checks whether quality risk is emerging across contributors, teams, cohorts, work types, and operating conditions. Module D checks whether backlog, inflow, throughput, utilization, staffing, skill mix, and task complexity are likely to create SLA risk next week.
 
 ## Demo Flow
 
@@ -137,7 +138,7 @@ Move to the Pattern Risk Table.
 
 Say:
 
-“The table scores patterns using deterministic recurrence logic. It looks at escalation count, severity, open escalations, customer-segment blast radius, acceleration, and slow resolution. I’m not just sorting by the loudest escalation.”
+“The table scores patterns using deterministic recurrence logic. It looks at escalation count, severity, open escalations, customer-segment blast radius, acceleration, and slow resolution. I am not just sorting by the loudest escalation.”
 
 Point out fields:
 
@@ -347,17 +348,163 @@ Say:
 
 “This is the quality section I would bring into a weekly operating review. It is deterministic and explainable first. Later, an LLM could polish the narrative, but the operating logic remains transparent.”
 
+### 21. Module D: Capacity, Staffing, and SLA Forecasting
+
+Open the Streamlit sidebar page:
+
+```text
+4 Module D Capacity SLA Forecasting
+```
+
+Say:
+
+“Module D extends the command center into capacity planning and next-week SLA protection. I do not want staffing decisions to be reactive after SLA misses happen. I want an early-warning view that shows whether backlog, inflow, throughput, utilization, skill mix, or task complexity will create customer impact.”
+
+Emphasize:
+
+“This is not a productivity surveillance tool. It is for capacity planning, workload balancing, SLA protection, and quality preservation.”
+
+### 22. Module D Executive Capacity and SLA Forecast Summary
+
+Point out the KPI tiles:
+
+- Total open backlog
+- Aged backlog over 72h
+- High-risk work types
+- High-risk teams
+- Average utilization rate
+- Average SLA adherence 7d
+- Projected SLA at-risk work types
+- Largest capacity gap
+- Top overloaded team
+- Recommended next staffing action
+
+Say:
+
+“This gives me the weekly staffing picture. It tells me where demand, backlog, utilization, and SLA risk are moving before customer impact lands.”
+
+### 23. Work-Type Capacity Risk Table
+
+Show the table.
+
+Call out:
+
+- Open backlog
+- Aged backlog over 72h
+- New items 7d
+- Completed items 7d
+- Inflow vs throughput gap
+- Estimated days to clear backlog
+- SLA adherence 7d
+- Rework rate
+- Active contributors
+- Capacity units
+- Required capacity units
+- Capacity gap
+- Utilization rate
+- Forecasted SLA risk
+- Capacity risk score
+- Recommended capacity action
+
+Say:
+
+“This answers whether the issue is demand growth, throughput shortage, backlog age, utilization pressure, complexity mix, or quality and rework drag.”
+
+### 24. Team Capacity Risk Table
+
+Show the table.
+
+Call out:
+
+- Manager name
+- Active and available contributors
+- Team backlog
+- Aged backlog
+- Inflow and throughput
+- Complexity mix
+- Low-tenure share
+- Quality risk overlay
+- Escalation risk overlay
+- Recommended manager action
+
+Say:
+
+“At the team level, I can see whether a manager needs more coverage, cross-training, routing support, or a quality/workflow intervention.”
+
+### 25. Capacity Forecast View
+
+Show the charts:
+
+- Capacity risk by work type
+- Capacity gap by team
+- Utilization by team
+- Open backlog by work type
+- Aged backlog by team
+- SLA adherence trend for selected work type
+- Inflow vs throughput trend for selected work type
+- High-complexity backlog by team
+
+Say:
+
+“The chart view lets me separate the failure mode. If inflow is rising and throughput is flat, I need staffing or routing. If rework is high, adding volume may make the issue worse. If high-complexity backlog is concentrated in one team, I need senior reviewer coverage or cross-training.”
+
+### 26. Work-Type and Team Drilldowns
+
+Select a work type such as `audio_evaluation`, `rlhf_evaluation`, or `code_review`.
+
+Say:
+
+“Here I can inspect open backlog, aged backlog, recent inflow, recent throughput, throughput gap, SLA trend, rework drag, complexity mix, active contributors, capacity gap, top risk drivers, and the recommended capacity action.”
+
+Then select a team.
+
+Say:
+
+“This is the manager conversation. I can see utilization, capacity gap, backlog, complexity mix, low-tenure share, quality risk overlay, escalation risk overlay, and recommended action.”
+
+### 27. Weekly Staffing and Capacity Review Queue
+
+Show the queue.
+
+Say:
+
+“This queue combines capacity risk score, capacity gap, aged backlog, throughput gap, SLA miss rate, utilization, complexity, quality risk, escalation risk, and team blast radius.”
+
+Emphasize:
+
+“This is not a worker productivity leaderboard. It is a management decision queue for staffing, routing, cross-training, backlog burn-down, and SLA recovery.”
+
+### 28. Capacity Action Card Generator
+
+Generate a card for a high-risk team or work type.
+
+Say:
+
+“This turns the signal into an action card: risk level, capacity signal summary, evidence, likely driver, recommended staffing or routing action, owner, metric to monitor, decision needed, and follow-up date.”
+
+Example explanation:
+
+“If backlog is growing faster than throughput, the action may be short-term staffing or work rerouting. If rework is high, the action is quality and workflow review before adding volume. If recurring escalations are active, a structural fix owner is required before scaling volume.”
+
+### 29. Module D Weekly Staffing and Capacity Briefing
+
+Show the generated briefing.
+
+Say:
+
+“This is the staffing and capacity section I would bring into the weekly operating review. It is deterministic and explainable first. Later, an LLM could polish the narrative, but the operating logic remains transparent.”
+
 ## Work Type Drilldown Connection
 
 Select a work type, such as `rlhf_evaluation`, `code_review`, or `audio_evaluation`.
 
 Say:
 
-“Once a work type is flagged, I can drill into trends: SLA movement, backlog age bands, quality movement, escalation trend, team-level comparisons, and workforce quality risk.”
+“Once a work type is flagged, I can drill into trends: SLA movement, backlog age bands, quality movement, escalation trend, workforce quality risk, and capacity risk.”
 
-Use this to show how Modules A, B, and C connect:
+Use this to show how Modules A, B, C, and D connect:
 
-“Module A identifies the unhealthy work type. Module B checks whether its escalations are recurring and what structural action is needed. Module C checks whether the issue is concentrated in a team, new contributor cohort, reviewer calibration drift, or high-complexity task mix.”
+“Module A identifies the unhealthy work type. Module B checks whether its escalations are recurring and what structural action is needed. Module C checks whether the issue is concentrated in a team, new contributor cohort, reviewer calibration drift, or high-complexity task mix. Module D checks whether capacity, staffing, throughput, or skill mix can protect SLA next week.”
 
 ## Team Drilldown Connection
 
@@ -365,13 +512,14 @@ Select a team.
 
 Say:
 
-“At the team level, I can see team KPIs, contributor count, top delay reasons, recent escalations, and workforce quality risk. This is what I would use with frontline managers to move from diagnosis to action.”
+“At the team level, I can see team KPIs, contributor count, top delay reasons, recent escalations, workforce quality risk, capacity gap, utilization, low-tenure share, and recommended manager action. This is what I would use with frontline managers to move from diagnosis to action.”
 
 Explain that this supports a weekly operating rhythm:
 
 - Identify issue
 - Check whether it is recurring
 - Check whether quality risk is emerging
+- Check whether capacity and skill mix can protect SLA
 - Assign owner
 - Define containment and prevention action
 - Review next week for movement
@@ -386,6 +534,7 @@ This prototype demonstrates that I think in terms of:
 - Structured escalation management
 - Repeat-pattern detection
 - Workforce quality coaching and calibration
+- Capacity planning and SLA protection
 - Frontline manager enablement
 - Explainable decision support before introducing AI summarization
 - Building scalable operating systems, not one-off dashboards
@@ -394,20 +543,20 @@ This prototype demonstrates that I think in terms of:
 
 ### First 30 Days
 
-I would map existing workflows, data sources, escalation paths, SLA definitions, quality review mechanisms, contributor cohorts, reviewer calibration mechanisms, and escalation root-cause categories.
+I would map existing workflows, data sources, escalation paths, SLA definitions, quality review mechanisms, contributor cohorts, reviewer calibration mechanisms, escalation root-cause categories, staffing models, shift coverage, skill distribution, and backlog age definitions.
 
 ### First 60 Days
 
-I would build a single regional operating view similar to Module A, starting with deterministic metrics and simple anomaly rules, then layer in escalation recurrence and workforce quality signals.
+I would build a single regional operating view similar to Module A, starting with deterministic metrics and simple anomaly rules, then layer in escalation recurrence, workforce quality signals, and capacity/SLA forecast signals.
 
 ### First 90 Days
 
-I would use the dashboard, recurrence detector, and quality scorer to run weekly operating reviews, identify recurring escalation patterns, identify emerging workforce quality risk, and build manager-level action loops.
+I would use the dashboard, recurrence detector, quality scorer, and capacity forecaster to run weekly operating reviews, identify recurring escalation patterns, identify emerging workforce quality risk, detect staffing or skill-mix gaps before SLA misses, and build manager-level action loops.
 
 ## Closing Talk Track
 
-“This prototype is not meant to be a production system. It is a working MVP of how I would think about the regional operating system: one view of health, early anomaly detection, recurring escalation detection, workforce quality risk detection, manager action loops, and weekly briefings that keep leadership ahead of customer impact.”
+“This prototype is not meant to be a production system. It is a working MVP of how I would think about the regional operating system: one view of health, early anomaly detection, recurring escalation detection, workforce quality risk detection, capacity and SLA forecasting, manager action loops, and weekly briefings that keep leadership ahead of customer impact.”
 
 Final line:
 
-“Module A shows where the operation is unhealthy. Module B shows whether escalations are recurring system failures. Module C shows whether distributed workforce quality risk is emerging and what coaching, calibration, or staffing action should happen next.”
+“Module A shows where the operation is unhealthy. Module B shows whether escalations are recurring system failures. Module C shows whether distributed workforce quality risk is emerging. Module D shows whether capacity, staffing, throughput, and skill mix are sufficient to protect SLA and quality before customer impact.”
