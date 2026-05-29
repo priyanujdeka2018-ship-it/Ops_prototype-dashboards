@@ -1,5 +1,5 @@
 """
-Module D: Capacity, Staffing, and SLA Forecasting.
+Capacity SLA: Capacity, Staffing, and SLA Forecasting.
 
 This module builds deterministic work-type, team, and skill/complexity capacity
 features from the synthetic command-center data. It is intended for capacity

@@ -300,7 +300,7 @@ def render_operating_principle() -> None:
 
 
 def render_section_header(number: int, title: str, caption: str | None = None) -> None:
-    render_scale_section_header(f"Module D · Section {number}", title, caption)
+    render_scale_section_header(f"Capacity SLA · Section {number}", title, caption)
 
 
 def render_empty_state(message: str) -> None:
@@ -464,8 +464,8 @@ def render_overview_tab(work_types: pd.DataFrame, teams: pd.DataFrame, queue: pd
     render_operating_principle()
     st.markdown(
         "**Command center flow:** Operations Health shows where the operation is unhealthy. Escalation Recurrence shows recurring "
-        "operating-system failures. Module B v2 groups similar escalation themes. Module C checks quality drift. "
-        "Module D tests whether staffing, throughput, utilization, and skill mix can protect SLA next week."
+        "operating-system failures. Module B v2 groups similar escalation themes. Quality Risk checks quality drift. "
+        "Capacity SLA tests whether staffing, throughput, utilization, and skill mix can protect SLA next week."
     )
 
 
@@ -744,7 +744,7 @@ def main() -> None:
     review_queue = outputs["queue"]
 
     if capacity_data.empty and work_type_summary.empty and team_summary.empty:
-        st.error("No capacity, SLA, quality, or team data is available for Module D.")
+        st.error("No capacity, SLA, quality, or team data is available for Capacity SLA.")
         return
 
     with st.expander("Filters", expanded=True):

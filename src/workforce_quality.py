@@ -1,5 +1,5 @@
 """
-Module C: Distributed Workforce Quality Scorer.
+Quality Risk: Distributed Workforce Quality Scorer.
 
 This module builds deterministic contributor-, team-, and work-type-level
 quality risk features from the synthetic command-center data. It is intended

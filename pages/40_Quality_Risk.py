@@ -200,7 +200,7 @@ def filter_queue(queue: pd.DataFrame, selected_work_type: str, selected_team: st
 def main() -> None:
     st.title("Quality Risk")
     st.markdown(
-        "Module C extends the command center from regional health and escalation recurrence "
+        "Quality Risk extends the command center from regional health and escalation recurrence "
         "into distributed workforce quality risk. It is designed for coaching, calibration, "
         "training, staffing, and quality-system action — not punitive individual ranking."
     )
@@ -225,10 +225,10 @@ def main() -> None:
     review_queue = outputs["queue"]
 
     if contributor_summary.empty and team_summary.empty:
-        st.error("No quality data is available for Module C.")
+        st.error("No quality data is available for Quality Risk.")
         return
 
-    with st.expander("Module C filters", expanded=True):
+    with st.expander("Quality Risk filters", expanded=True):
         c1, c2, c3, c4, c5 = st.columns(5)
         with c1:
             selected_work_type = optional_filter(contributor_summary, "work_type", "Work type", "module_c_work_type")
@@ -531,7 +531,7 @@ def main() -> None:
             mime="text/markdown",
         )
 
-    st.markdown("## Module C Weekly Briefing")
+    st.markdown("## Quality Risk Weekly Briefing")
     briefing = generate_quality_review_briefing(
         filtered_contributors,
         filtered_teams,
@@ -540,7 +540,7 @@ def main() -> None:
     )
     st.markdown(briefing)
     st.download_button(
-        label="Download Module C Weekly Briefing",
+        label="Download Quality Risk Weekly Briefing",
         data=briefing,
         file_name="module_c_weekly_quality_briefing.md",
         mime="text/markdown",

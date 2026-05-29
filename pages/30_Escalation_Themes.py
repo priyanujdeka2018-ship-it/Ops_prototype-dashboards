@@ -81,23 +81,23 @@ def main() -> None:
                 escalations, "work_type", "Work type", "v2_work_type"
             )
             selected_team = optional_filter(
-                escalations, "team_id", "Team", "v2_team"
+                escalations, "team_id", "Team", "team"
             )
 
         with c2:
             selected_customer = optional_filter(
-                escalations, "customer_segment", "Customer segment", "v2_customer"
+                escalations, "customer_segment", "Customer segment", "customer"
             )
             selected_severity = optional_filter(
-                escalations, "severity", "Severity", "v2_severity"
+                escalations, "severity", "Severity", "severity"
             )
 
         with c3:
             selected_root_cause = optional_filter(
-                escalations, "root_cause_category", "Root cause", "v2_root_cause"
+                escalations, "root_cause_category", "Root cause", "root cause"
             )
             selected_status = optional_filter(
-                escalations, "status", "Status", "v2_status"
+                escalations, "status", "Status", "status"
             )
 
         s1, s2 = st.columns(2)
