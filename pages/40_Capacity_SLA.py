@@ -26,7 +26,7 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
 st.set_page_config(
-    page_title="Module D - Capacity SLA Forecasting",
+    page_title="Capacity & SLA",
     page_icon="📈",
     layout="wide",
 )
@@ -208,9 +208,9 @@ def filter_queue(queue: pd.DataFrame, selected_work_type: str, selected_team: st
 
 
 def main() -> None:
-    st.title("Module D: Capacity, Staffing, and SLA Forecasting")
+    st.title("Capacity & SLA")
     st.markdown(
-        "Module D extends the command center from health, escalation recurrence, and workforce quality "
+        "Capacity & SLA extends the command center from health, escalation recurrence, and workforce quality "
         "into capacity and SLA forecasting. It is designed for capacity planning, workload balancing, "
         "SLA protection, and quality preservation - not productivity surveillance."
     )
@@ -227,7 +227,7 @@ def main() -> None:
         st.error("No capacity, SLA, quality, or team data is available for Module D.")
         return
 
-    with st.expander("Module D filters", expanded=True):
+    with st.expander("Capacity filters", expanded=True):
         c1, c2, c3, c4, c5, c6 = st.columns(6)
         with c1:
             selected_work_type = optional_filter(work_type_summary, "work_type", "Work type", "module_d_work_type")
@@ -505,7 +505,7 @@ def main() -> None:
     )
     st.markdown(briefing)
     st.download_button(
-        label="Download Module D Weekly Capacity Briefing",
+        label="Download Weekly Capacity Briefing",
         data=briefing,
         file_name="module_d_weekly_capacity_briefing.md",
         mime="text/markdown",
@@ -513,9 +513,9 @@ def main() -> None:
 
     st.markdown("---")
     st.markdown(
-        "**Integration story:** Module A shows where the operation is unhealthy. Module B shows whether "
-        "escalations are recurring system failures. Module C shows whether workforce quality risk is emerging. "
-        "Module D shows whether capacity, staffing, throughput, and skill mix are sufficient to protect SLA and quality before customer impact."
+        "**Integration story:** Operations Health shows where the operation is unhealthy. Escalation Recurrence shows whether "
+        "escalations are recurring system failures. Quality Risk shows whether workforce quality risk is emerging. "
+        "Capacity & SLA shows whether capacity, staffing, throughput, and skill mix are sufficient to protect SLA and quality before customer impact."
     )
 
 

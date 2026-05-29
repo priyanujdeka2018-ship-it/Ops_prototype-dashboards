@@ -25,7 +25,7 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
 st.set_page_config(
-    page_title="Module C - Workforce Quality Scorer",
+    page_title="Quality Risk",
     page_icon="🎯",
     layout="wide",
 )
@@ -198,7 +198,7 @@ def filter_queue(queue: pd.DataFrame, selected_work_type: str, selected_team: st
 
 
 def main() -> None:
-    st.title("Module C: Distributed Workforce Quality Scorer")
+    st.title("Quality Risk")
     st.markdown(
         "Module C extends the command center from regional health and escalation recurrence "
         "into distributed workforce quality risk. It is designed for coaching, calibration, "
@@ -537,8 +537,8 @@ def main() -> None:
 
     st.markdown("---")
     st.markdown(
-        "**Integration story:** Module A shows where the operation is unhealthy. Module B shows "
-        "whether escalations are recurring system failures. Module C shows whether distributed "
+        "**Integration story:** Operations Health shows where the operation is unhealthy. Module B shows "
+        "whether escalations are recurring system failures. Quality Risk shows whether distributed "
         "workforce quality risk is emerging and what coaching, calibration, training, or staffing "
         "action should happen next."
     )

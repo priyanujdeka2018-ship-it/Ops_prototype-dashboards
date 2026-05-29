@@ -199,14 +199,14 @@ def render_module_b(
     selected_filter_work_type: str,
 ) -> None:
     st.markdown("---")
-    st.subheader("Module B: Escalation Pattern Recurrence Detector")
+    st.subheader("Escalation Recurrence")
     st.markdown(
         "Module A shows where regional health is degrading. Module B checks whether "
         "escalations are isolated incidents or repeat operating-system failures."
     )
 
     if escalation_events.empty:
-        st.info("No escalation events available for the selected Module A scope.")
+        st.info("No escalation events available for the selected health scope.")
         return
 
     pattern_grain_labels = {
@@ -267,7 +267,7 @@ def render_module_b(
         )
 
     if filtered_escalations.empty:
-        st.info("No escalation events match the Module B filters.")
+        st.info("No escalation events match the selected filters.")
         return
 
     pattern_summary = summarize_patterns(
@@ -478,8 +478,8 @@ def render_module_b(
             pattern_summary=pattern_summary,
             selected_scope={
                 "region": selected_region,
-                "Module A work type filter": selected_filter_work_type,
-                "Module B pattern grain": pattern_grain_labels[pattern_grain],
+                "health work type filter": selected_filter_work_type,
+                "escalation pattern grain": pattern_grain_labels[pattern_grain],
                 "work_type": selected_b_work_type,
                 "team_id": selected_b_team,
                 "customer_segment": selected_b_customer,
@@ -499,7 +499,7 @@ def render_module_b(
 
 def main() -> None:
     st.title("Scale Regional Ops Command Center")
-    st.subheader("Module A: Regional Operations Health Dashboard")
+    st.subheader("Operations Health")
 
     data = load_data()
 

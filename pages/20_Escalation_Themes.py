@@ -18,7 +18,7 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
 st.set_page_config(
-    page_title="Module B v2 - Semantic Escalation Clusters",
+    page_title="Escalation Themes",
     page_icon="🧭",
     layout="wide",
 )
@@ -50,11 +50,11 @@ def apply_filter(df: pd.DataFrame, column: str, selected: str) -> pd.DataFrame:
 
 
 def main() -> None:
-    st.title("Module B v2: Semantic Escalation Pattern Recurrence Detector")
+    st.title("Escalation Themes")
 
     st.markdown(
         """
-        This page extends Module B from deterministic pattern keys to semantic clustering.
+        This view extends deterministic escalation recurrence into semantic clustering.
         It uses TF-IDF and cosine similarity to group escalations that describe similar
         operating breakdowns even when the wording is different.
         """
