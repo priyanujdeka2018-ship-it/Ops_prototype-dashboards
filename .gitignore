@@ -237,3 +237,14 @@ backups/
 __pycache__/
 *.pyc
 .streamlit/
+
+# Local backup/debug artifacts
+backups/
+*.bak
+*.bak.*
+*.py.bak
+*.py.bak.*
+*.broken.*
+*.zip
+__pycache__/
+*.pyc
