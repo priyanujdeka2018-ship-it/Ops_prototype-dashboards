@@ -39,6 +39,14 @@
 - [x] Phase C4: Streamlit sidebar page in `pages/3_Module_C_Workforce_Quality_Scorer.py`
 - [x] Phase C5: README, checklist, handoff, and demo-script updates
 
+### Module D: Capacity, Staffing, and SLA Forecasting
+
+- [x] Phase D1: Capacity data model in `src/capacity_forecast.py`
+- [x] Phase D2: Work-type, team, and skill/complexity risk scoring
+- [x] Phase D3: Capacity action card generator in `src/capacity_briefing.py`
+- [x] Phase D4: Streamlit sidebar page in `pages/4_Module_D_Capacity_SLA_Forecasting.py`
+- [x] Phase D5: README, checklist, handoff, and demo-script updates
+
 ## Demo Readiness
 
 Before the interview demo, run:
@@ -88,6 +96,20 @@ Confirm these Module C sections render:
 - [ ] Quality Coaching Card Generator
 - [ ] Module C Weekly Briefing
 
+Confirm these Module D sections render:
+
+- [ ] Sidebar page: 4 Module D Capacity SLA Forecasting
+- [ ] Executive Capacity and SLA Forecast Summary
+- [ ] Work-Type Capacity Risk Table
+- [ ] Team Capacity Risk Table
+- [ ] Capacity Forecast View
+- [ ] Skill / Complexity Capacity Segment Table
+- [ ] Work-Type Drilldown
+- [ ] Team Drilldown
+- [ ] Weekly Staffing and Capacity Review Queue
+- [ ] Capacity Action Card Generator
+- [ ] Module D Weekly Staffing and Capacity Briefing
+
 ## Demo Talk Track
 
 Core Module A sentence:
@@ -101,6 +123,10 @@ Core Module B sentence:
 Core Module C sentence:
 
 > “I do not want to use quality data as a punitive scoreboard. I want to use it as an operating signal. Module C identifies where quality risk is emerging across teams, cohorts, and work types, then turns that signal into coaching and calibration actions.”
+
+Core Module D sentence:
+
+> “I do not want staffing decisions to be reactive after SLA misses happen. Module D turns backlog, inflow, throughput, complexity, and contributor availability into an early-warning view so managers can rebalance work, cross-train, or add coverage before customer impact lands.”
 
 ## What To Emphasize
 
@@ -116,6 +142,9 @@ Core Module C sentence:
 - [ ] Workforce quality risk is for coaching, calibration, training, staffing, and SOP action
 - [ ] Weekly Coaching and Calibration Queue is not a punitive leaderboard
 - [ ] Quality coaching cards define owner, metric, decision, and follow-up date
+- [ ] Capacity forecasting is for workload balancing, SLA protection, and quality preservation
+- [ ] Weekly Staffing and Capacity Review Queue is not a productivity leaderboard
+- [ ] Capacity action cards define staffing/routing action, owner, metric, decision, and follow-up date
 
 ## Module B Validation Checklist
 
@@ -141,14 +170,33 @@ Core Module C sentence:
 - [ ] Coaching card generator renders cards for contributor and team subjects
 - [ ] Module C weekly briefing downloads as markdown
 
+## Module D Validation Checklist
+
+- [ ] `src/capacity_forecast.py` imports successfully
+- [ ] `src/capacity_briefing.py` imports successfully
+- [ ] `prepare_capacity_data()` returns enriched capacity rows or degrades gracefully on partial data
+- [ ] `build_work_type_capacity_features()` returns work-type capacity risk rows
+- [ ] `build_team_capacity_features()` returns team capacity risk rows
+- [ ] `build_skill_complexity_capacity_features()` returns skill/complexity capacity rows
+- [ ] `get_weekly_capacity_review_queue()` returns staffing and capacity queue rows
+- [ ] Module D filters work for work type, team, region, skill level, complexity, and risk level
+- [ ] Work-type drilldown shows backlog, inflow, throughput, SLA, rework, complexity, capacity gap, and action
+- [ ] Team drilldown shows utilization, capacity gap, backlog, low-tenure share, quality overlay, escalation overlay, and action
+- [ ] Capacity action card generator renders cards for work-type and team subjects
+- [ ] Module D weekly briefing downloads as markdown
+
 ## Future Enhancements
 
-- [ ] Expand `data/escalation_events.csv` to 150–300 synthetic records
+- [ ] Expand `data/escalation_events.csv` to 150-300 synthetic records
 - [ ] Export `data/escalation_pattern_summary.csv`
 - [x] Add semantic similarity using TF-IDF; future upgrade can use sentence embeddings
 - [x] Add Module C: Distributed Workforce Quality Scorer
+- [x] Add Module D: Capacity, Staffing, and SLA Forecasting
 - [ ] Export `data/workforce_quality_summary.csv`
 - [ ] Export `data/contributor_quality_risk.csv`
+- [ ] Export `data/capacity_forecast_summary.csv`
+- [ ] Export `data/team_capacity_risk.csv`
+- [ ] Export `data/work_type_capacity_risk.csv`
 - [ ] Add SQLite or DuckDB
 - [ ] Add authentication if deployed
 - [ ] Add automated weekly report export
