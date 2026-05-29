@@ -5,6 +5,8 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+from src.ui_components import render_demo_caption, render_decision_strip, install_scale_theme, install_command_center_polish
+
 from src.charts import bar_chart, line_chart
 from src.quality_briefing import (
     format_quality_coaching_card_markdown,
@@ -21,14 +23,12 @@ from src.workforce_quality import (
 )
 
 
+install_scale_theme()
+install_command_center_polish()
+
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
-
-st.set_page_config(
-    page_title="Module C - Workforce Quality Scorer",
-    page_icon="🎯",
-    layout="wide",
-)
 
 
 @st.cache_data
@@ -198,7 +198,7 @@ def filter_queue(queue: pd.DataFrame, selected_work_type: str, selected_team: st
 
 
 def main() -> None:
-    st.title("Module C: Distributed Workforce Quality Scorer")
+    st.title("Quality Risk")
     st.markdown(
         "Module C extends the command center from regional health and escalation recurrence "
         "into distributed workforce quality risk. It is designed for coaching, calibration, "
@@ -206,6 +206,17 @@ def main() -> None:
     )
 
     data = load_quality_inputs()
+    render_demo_caption(
+        "This is calibration and coaching support, not a contributor leaderboard."
+    )
+
+    render_decision_strip(
+        signal="Quality drift, rework, override, and peer-agreement signals are checked before they create operational drag.",
+        driver="Team, work-type, and calibration patterns are prioritized ahead of individual contributor detail.",
+        decision="Decide where managers should coach, recalibrate reviewers, or inspect workflow quality gates.",
+        monitor="Gold-task fail rate, reviewer override rate, peer agreement, rework rate, and quality score.",
+    )
+
     outputs = build_module_c_outputs(data)
     quality = outputs["quality"]
     contributor_summary = outputs["contributors"]
@@ -537,8 +548,8 @@ def main() -> None:
 
     st.markdown("---")
     st.markdown(
-        "**Integration story:** Module A shows where the operation is unhealthy. Module B shows "
-        "whether escalations are recurring system failures. Module C shows whether distributed "
+        "**Integration story:** Operations Health shows where the operation is unhealthy. Escalation Recurrence shows "
+        "whether escalations are recurring system failures. Quality Risk shows whether distributed "
         "workforce quality risk is emerging and what coaching, calibration, training, or staffing "
         "action should happen next."
     )
