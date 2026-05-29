@@ -248,3 +248,21 @@ backups/
 *.zip
 __pycache__/
 *.pyc
+
+# Local backup/debug artifacts
+backups/
+*.bak
+*.bak.*
+*.py.bak
+*.py.bak.*
+*.broken.*
+*.zip
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# OS/editor junk
+.DS_Store
+.vscode/
