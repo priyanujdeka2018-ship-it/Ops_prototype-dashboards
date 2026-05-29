@@ -222,3 +222,9 @@ data/*.csv
 data/*.parquet
 *.sqlite
 *.sqlite3
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.DS_Store
+*.zip
+.venv/
