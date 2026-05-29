@@ -1,5 +1,5 @@
 """
-Deterministic briefing and coaching-card utilities for Module C.
+Deterministic briefing and coaching-card utilities for Quality Risk.
 """
 
 from __future__ import annotations
@@ -167,7 +167,7 @@ def generate_quality_review_briefing(
     work_type_quality_summary: pd.DataFrame,
     weekly_queue: pd.DataFrame,
 ) -> str:
-    """Generate a deterministic weekly Module C review briefing."""
+    """Generate a deterministic weekly Quality Risk review briefing."""
     contributors = contributor_quality_summary.copy()
     teams = team_quality_summary.copy()
     work_types = work_type_quality_summary.copy()
@@ -196,7 +196,7 @@ def generate_quality_review_briefing(
 
     return "\n".join(
         [
-            "# Module C Weekly Workforce Quality Briefing",
+            "# Quality Risk Weekly Workforce Quality Briefing",
             "",
             "## TL;DR",
             f"- Average contributor quality score: {avg_quality}",

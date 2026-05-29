@@ -5,6 +5,8 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+from src.ui_components import render_demo_caption, render_decision_strip, install_scale_theme, install_command_center_polish
+
 from src.charts import bar_chart, line_chart
 from src.quality_briefing import (
     format_quality_coaching_card_markdown,
@@ -21,14 +23,12 @@ from src.workforce_quality import (
 )
 
 
+install_scale_theme()
+install_command_center_polish()
+
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
-
-st.set_page_config(
-    page_title="Module C - Workforce Quality Scorer",
-    page_icon="🎯",
-    layout="wide",
-)
 
 
 @st.cache_data
@@ -198,14 +198,25 @@ def filter_queue(queue: pd.DataFrame, selected_work_type: str, selected_team: st
 
 
 def main() -> None:
-    st.title("Module C: Distributed Workforce Quality Scorer")
+    st.title("Quality Risk")
     st.markdown(
-        "Module C extends the command center from regional health and escalation recurrence "
+        "Quality Risk extends the command center from regional health and escalation recurrence "
         "into distributed workforce quality risk. It is designed for coaching, calibration, "
         "training, staffing, and quality-system action — not punitive individual ranking."
     )
 
     data = load_quality_inputs()
+    render_demo_caption(
+        "This is calibration and coaching support, not a contributor leaderboard."
+    )
+
+    render_decision_strip(
+        signal="Quality drift, rework, override, and peer-agreement signals are checked before they create operational drag.",
+        driver="Team, work-type, and calibration patterns are prioritized ahead of individual contributor detail.",
+        decision="Decide where managers should coach, recalibrate reviewers, or inspect workflow quality gates.",
+        monitor="Gold-task fail rate, reviewer override rate, peer agreement, rework rate, and quality score.",
+    )
+
     outputs = build_module_c_outputs(data)
     quality = outputs["quality"]
     contributor_summary = outputs["contributors"]
@@ -214,10 +225,10 @@ def main() -> None:
     review_queue = outputs["queue"]
 
     if contributor_summary.empty and team_summary.empty:
-        st.error("No quality data is available for Module C.")
+        st.error("No quality data is available for Quality Risk.")
         return
 
-    with st.expander("Module C filters", expanded=True):
+    with st.expander("Quality Risk filters", expanded=True):
         c1, c2, c3, c4, c5 = st.columns(5)
         with c1:
             selected_work_type = optional_filter(contributor_summary, "work_type", "Work type", "module_c_work_type")
@@ -520,7 +531,7 @@ def main() -> None:
             mime="text/markdown",
         )
 
-    st.markdown("## Module C Weekly Briefing")
+    st.markdown("## Quality Risk Weekly Briefing")
     briefing = generate_quality_review_briefing(
         filtered_contributors,
         filtered_teams,
@@ -529,7 +540,7 @@ def main() -> None:
     )
     st.markdown(briefing)
     st.download_button(
-        label="Download Module C Weekly Briefing",
+        label="Download Quality Risk Weekly Briefing",
         data=briefing,
         file_name="module_c_weekly_quality_briefing.md",
         mime="text/markdown",
@@ -537,8 +548,8 @@ def main() -> None:
 
     st.markdown("---")
     st.markdown(
-        "**Integration story:** Module A shows where the operation is unhealthy. Module B shows "
-        "whether escalations are recurring system failures. Module C shows whether distributed "
+        "**Integration story:** Operations Health shows where the operation is unhealthy. Escalation Recurrence shows "
+        "whether escalations are recurring system failures. Quality Risk shows whether distributed "
         "workforce quality risk is emerging and what coaching, calibration, training, or staffing "
         "action should happen next."
     )

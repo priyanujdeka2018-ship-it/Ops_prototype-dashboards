@@ -5,6 +5,8 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+from src.ui_components import install_scale_theme, install_command_center_polish, render_demo_caption, render_decision_strip
+
 from src.charts import bar_chart, line_chart
 from src.escalation_semantic_clusters import (
     cluster_escalations,
@@ -14,14 +16,12 @@ from src.escalation_semantic_clusters import (
 from src.fix_cards import generate_fix_card, format_fix_card_markdown
 
 
+install_scale_theme()
+install_command_center_polish()
+
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
-
-st.set_page_config(
-    page_title="Module B v2 - Semantic Escalation Clusters",
-    page_icon="🧭",
-    layout="wide",
-)
 
 
 @st.cache_data
@@ -50,14 +50,25 @@ def apply_filter(df: pd.DataFrame, column: str, selected: str) -> pd.DataFrame:
 
 
 def main() -> None:
-    st.title("Module B v2: Semantic Escalation Pattern Recurrence Detector")
+    st.title("Escalation Themes")
 
     st.markdown(
         """
-        This page extends Module B from deterministic pattern keys to semantic clustering.
+        This view extends deterministic escalation recurrence into semantic clustering.
         It uses TF-IDF and cosine similarity to group escalations that describe similar
         operating breakdowns even when the wording is different.
         """
+    )
+
+    render_demo_caption(
+        "This catches repeated escalation themes even when teams describe the same issue differently."
+    )
+
+    render_decision_strip(
+        signal="Semantically similar escalations are grouped into repeat operating themes.",
+        driver="TF-IDF and cosine similarity cluster similar escalation summaries without paid APIs.",
+        decision="Select the structural fix card that should be assigned to an owner this week.",
+        monitor="Cluster size, severity mix, affected teams, customer segments, and recurrence status.",
     )
 
     escalations = load_escalations()
@@ -70,23 +81,23 @@ def main() -> None:
                 escalations, "work_type", "Work type", "v2_work_type"
             )
             selected_team = optional_filter(
-                escalations, "team_id", "Team", "v2_team"
+                escalations, "team_id", "Team", "team"
             )
 
         with c2:
             selected_customer = optional_filter(
-                escalations, "customer_segment", "Customer segment", "v2_customer"
+                escalations, "customer_segment", "Customer segment", "customer"
             )
             selected_severity = optional_filter(
-                escalations, "severity", "Severity", "v2_severity"
+                escalations, "severity", "Severity", "severity"
             )
 
         with c3:
             selected_root_cause = optional_filter(
-                escalations, "root_cause_category", "Root cause", "v2_root_cause"
+                escalations, "root_cause_category", "Root cause", "root cause"
             )
             selected_status = optional_filter(
-                escalations, "status", "Status", "v2_status"
+                escalations, "status", "Status", "status"
             )
 
         s1, s2 = st.columns(2)

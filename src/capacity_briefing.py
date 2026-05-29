@@ -1,5 +1,5 @@
 """
-Deterministic briefing and capacity-action-card utilities for Module D.
+Deterministic briefing and capacity-action-card utilities for Capacity SLA.
 """
 
 from __future__ import annotations
@@ -198,7 +198,7 @@ def generate_capacity_review_briefing(
     skill_complexity_capacity_summary: pd.DataFrame,
     weekly_queue: pd.DataFrame,
 ) -> str:
-    """Generate a deterministic weekly Module D staffing and capacity briefing."""
+    """Generate a deterministic weekly Capacity SLA staffing and capacity briefing."""
     work_types = work_type_capacity_summary.copy()
     teams = team_capacity_summary.copy()
     skill_complexity = skill_complexity_capacity_summary.copy()
@@ -238,7 +238,7 @@ def generate_capacity_review_briefing(
 
     return "\n".join(
         [
-            "# Module D Weekly Staffing and Capacity Briefing",
+            "# Weekly Staffing and Capacity Briefing",
             "",
             "## TL;DR",
             f"- High-risk work types: {high_work_types}",

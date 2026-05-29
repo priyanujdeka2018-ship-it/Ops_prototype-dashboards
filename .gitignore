@@ -228,3 +228,23 @@ data/*.parquet
 .DS_Store
 *.zip
 .venv/
+
+# Local UI/debug artifacts
+backups/
+*.bak
+*.broken.*
+*.zip
+__pycache__/
+*.pyc
+.streamlit/
+
+# Local backup/debug artifacts
+backups/
+*.bak
+*.bak.*
+*.py.bak
+*.py.bak.*
+*.broken.*
+*.zip
+__pycache__/
+*.pyc
