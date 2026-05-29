@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from src.ui_components import install_scale_theme, install_command_center_polish
+from src.ui_components import install_scale_theme, install_command_center_polish, render_demo_caption, render_decision_strip
 
 from src.charts import bar_chart, line_chart
 from src.escalation_semantic_clusters import (
@@ -58,6 +58,17 @@ def main() -> None:
         It uses TF-IDF and cosine similarity to group escalations that describe similar
         operating breakdowns even when the wording is different.
         """
+    )
+
+    render_demo_caption(
+        "This catches repeated escalation themes even when teams describe the same issue differently."
+    )
+
+    render_decision_strip(
+        signal="Semantically similar escalations are grouped into repeat operating themes.",
+        driver="TF-IDF and cosine similarity cluster similar escalation summaries without paid APIs.",
+        decision="Select the structural fix card that should be assigned to an owner this week.",
+        monitor="Cluster size, severity mix, affected teams, customer segments, and recurrence status.",
     )
 
     escalations = load_escalations()

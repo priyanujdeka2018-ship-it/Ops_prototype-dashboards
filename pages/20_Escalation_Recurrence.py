@@ -26,6 +26,8 @@ from src.ui_components import (
     SCALE_WARN,
     install_scale_theme, install_command_center_polish,
     render_module_hero,
+    render_demo_caption,
+    render_decision_strip,
 )
 
 
@@ -515,6 +517,17 @@ def main() -> None:
             ("Root cause view", SCALE_ACCENT),
             ("Leadership actions", SCALE_GOOD),
         ],
+    )
+
+    render_demo_caption(
+        "This tells me whether we are closing tickets or fixing repeat operating-system failures."
+    )
+
+    render_decision_strip(
+        signal="Recurring and accelerating escalation patterns show where ticket closure is not solving the underlying issue.",
+        driver="Pattern keys combine work type, team, customer segment, severity, and root cause.",
+        decision="Assign ownership for the highest-risk repeat pattern before more volume flows through the same failure mode.",
+        monitor="Open recurrence count, severity mix, blast radius, days to resolve, and repeat root cause.",
     )
 
     data = load_data()
