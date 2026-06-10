@@ -141,6 +141,73 @@ MANAGER_NAMES = [
 
 CITIES = ["Bangalore", "Hyderabad", "Pune", "Gurgaon", "Mumbai", "Chennai"]
 
+# Deliberate repeat escalation patterns so Module B v1 recurrence scoring and
+# Module B v2 semantic clustering surface clear repeat clusters in the demo.
+# Each pattern spans multiple weeks with rising weekly volume; severity
+# escalates from sev4/sev3 early to sev2/sev1 in the most recent weeks.
+RECURRING_ESCALATION_PATTERNS = [
+    {
+        "work_type": "rlhf_evaluation",
+        "root_cause": "policy_ambiguity",
+        "weekly_counts": [2, 2, 3, 3, 4, 5, 6, 7],
+        "summaries": [
+            "RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.",
+            "Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.",
+            "Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.",
+            "Raters keep escalating borderline prompt policy questions; no canonical examples published.",
+            "Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.",
+        ],
+    },
+    {
+        "work_type": "code_review",
+        "root_cause": "quality_defect",
+        "weekly_counts": [2, 2, 2, 3, 4, 4, 5, 6],
+        "summaries": [
+            "Recurring quality defects in code review batch; gold tasks failing on edge cases.",
+            "Customer rejected code review deliverable after missed defects in error handling.",
+            "Defect leakage in the code review queue rising; rework loops repeating weekly.",
+            "Code review quality defect cluster: reviewers missing security-sensitive bugs.",
+            "Repeated quality defects found post-delivery in code review samples.",
+        ],
+    },
+    {
+        "work_type": "expert_review",
+        "root_cause": "customer_requirement_change",
+        "weekly_counts": [1, 2, 2, 3, 3, 4, 5, 5],
+        "summaries": [
+            "Expert review specs changed by customer mid-batch; rubric now out of date.",
+            "Customer requirement change invalidated expert review guidance for the active queue.",
+            "Expert reviewers working from stale requirements after a customer spec update.",
+            "Requirement churn from the customer forcing repeated expert review rework.",
+            "Another customer requirement change hit expert review; instructions not propagated.",
+        ],
+    },
+    {
+        "work_type": "audio_evaluation",
+        "root_cause": "capacity_shortfall",
+        "weekly_counts": [1, 1, 2, 2, 3, 4, 5, 6],
+        "summaries": [
+            "Audio evaluation backlog growing; not enough specialist reviewers on shift.",
+            "Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.",
+            "Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.",
+            "Specialist shortage for audio evaluation; aged backlog climbing week over week.",
+            "Audio evaluation throughput below inflow again due to capacity shortfall.",
+        ],
+    },
+    {
+        "work_type": "rlhf_evaluation",
+        "root_cause": "reviewer_misalignment",
+        "weekly_counts": [1, 1, 2, 2, 3, 3, 4, 4],
+        "summaries": [
+            "RLHF reviewer agreement dropping; calibration drift between rater cohorts.",
+            "Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.",
+            "Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.",
+            "RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.",
+            "Misaligned RLHF reviewers producing conflicting labels for identical prompt types.",
+        ],
+    },
+]
+
 
 def ensure_data_dir() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -438,18 +505,78 @@ def generate_quality_events(work_items: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _pattern_severity(progress: float) -> str:
+    """Severity escalates as a recurring pattern progresses week over week."""
+    if progress < 0.34:
+        return str(np.random.choice(["sev4", "sev3"], p=[0.55, 0.45]))
+    if progress < 0.67:
+        return str(np.random.choice(["sev3", "sev2"], p=[0.60, 0.40]))
+    return str(np.random.choice(["sev2", "sev1"], p=[0.60, 0.40]))
+
+
+def _pattern_escalation_rows(teams: pd.DataFrame, end_date: datetime) -> list[dict]:
+    rows = []
+
+    for pattern in RECURRING_ESCALATION_PATTERNS:
+        work_type = pattern["work_type"]
+        teams_for_type = teams[teams["work_type"] == work_type]["team_id"].tolist()
+        weekly_counts = pattern["weekly_counts"]
+        n_weeks = len(weekly_counts)
+
+        for week_idx, count in enumerate(weekly_counts):
+            week_start = end_date - timedelta(days=7 * (n_weeks - week_idx))
+            progress = week_idx / max(n_weeks - 1, 1)
+            is_recent_week = week_idx >= n_weeks - 2
+
+            for _ in range(count):
+                date = (week_start + timedelta(days=random.randint(0, 6))).date()
+                severity = _pattern_severity(progress)
+
+                if is_recent_week:
+                    status = np.random.choice(["open", "in_progress", "resolved"], p=[0.30, 0.30, 0.40])
+                else:
+                    status = np.random.choice(["open", "in_progress", "resolved"], p=[0.08, 0.12, 0.80])
+                days_to_resolve = None if status != "resolved" else int(np.random.gamma(2.2, 2.0) + 1)
+
+                rows.append(
+                    {
+                        "date": date,
+                        "work_type": work_type,
+                        "team_id": random.choice(teams_for_type),
+                        "severity": severity,
+                        "customer_segment": np.random.choice(
+                            CUSTOMER_SEGMENTS,
+                            p=[0.10, 0.24, 0.38, 0.28],
+                        ),
+                        "escalation_summary": random.choice(pattern["summaries"]),
+                        "root_cause_category": pattern["root_cause"],
+                        "status": status,
+                        "days_to_resolve": days_to_resolve,
+                    }
+                )
+
+    return rows
+
+
 def generate_escalation_events(
     teams: pd.DataFrame,
     work_items: pd.DataFrame,
-    n_events: int = 220,
+    n_events: int = 250,
 ) -> pd.DataFrame:
-    rows = []
-    end_date = datetime.now().replace(microsecond=0, second=0, minute=0)
+    # Anchor to the work-item timeline so escalations stay aligned with the
+    # other CSVs even when only escalation_events.csv is regenerated.
+    end_date = (
+        pd.to_datetime(work_items["date_created"])
+        .max()
+        .to_pydatetime()
+        .replace(microsecond=0, second=0, minute=0)
+    )
     start_date = end_date - timedelta(days=90)
 
-    work_item_counts = work_items.groupby(["work_type", "team_id"]).size().reset_index(name="count")
+    rows = _pattern_escalation_rows(teams, end_date)
+    n_background = max(0, n_events - len(rows))
 
-    for i in range(1, n_events + 1):
+    for i in range(1, n_background + 1):
         work_type = np.random.choice(
             WORK_TYPES,
             p=[0.18, 0.28, 0.20, 0.16, 0.18],
@@ -486,7 +613,6 @@ def generate_escalation_events(
 
         rows.append(
             {
-                "escalation_id": f"ESC_{i:06d}",
                 "date": date,
                 "work_type": work_type,
                 "team_id": team_id,
@@ -502,7 +628,9 @@ def generate_escalation_events(
             }
         )
 
-    return pd.DataFrame(rows)
+    events = pd.DataFrame(rows).sort_values("date").reset_index(drop=True)
+    events.insert(0, "escalation_id", [f"ESC_{i:06d}" for i in range(1, len(events) + 1)])
+    return events
 
 
 def generate_csat_events(
@@ -583,5 +711,19 @@ def main() -> None:
     print(f"Data directory: {DATA_DIR}")
 
 
+def regenerate_escalations_only() -> None:
+    """Rebuild escalation_events.csv from the existing teams and work items
+    without touching any other CSV."""
+    teams = pd.read_csv(DATA_DIR / "teams.csv")
+    work_items = pd.read_csv(DATA_DIR / "work_items.csv")
+    escalation_events = generate_escalation_events(teams, work_items)
+    save_csv(escalation_events, "escalation_events.csv")
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+
+    if "--escalations-only" in sys.argv:
+        regenerate_escalations_only()
+    else:
+        main()
