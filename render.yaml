@@ -1,4 +1,15 @@
 services:
+  # Aurora React front-end (primary operating view) — static, no build step.
+  # Data is pre-computed into frontend/data/data.json by
+  # `python -m src.build_frontend_data` and committed.
+  - type: web
+    name: scale-ops-aurora
+    env: static
+    plan: free
+    buildCommand: ""
+    staticPublishPath: frontend
+
+  # Streamlit working backend (Modules A–D, full drilldowns)
   - type: web
     name: scale-regional-ops-command-center
     env: python

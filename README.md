@@ -467,6 +467,34 @@ SLA forecast statuses:
 - `SLA recovery needed`
 - `Insufficient data`
 
+## Aurora React Front-End
+
+`frontend/` contains the Aurora operating view — a dark editorial React
+front-end (Modules A + B) wired to the same data and scoring logic as the
+Streamlit app. It is a static site: React and Babel load from a CDN, there is
+no build step, and all numbers come from `frontend/data/data.json`.
+
+Regenerate the data payload after any change to the CSVs in `data/`:
+
+```bash
+python -m src.build_frontend_data
+```
+
+The builder reuses `src/metrics.py` and `src/escalation_patterns.py`, so the
+KPIs, pattern risk scores, and recurrence statuses in the React view match the
+Streamlit pages exactly.
+
+Serve it locally:
+
+```bash
+python -m http.server 8000 -d frontend
+# open http://localhost:8000
+```
+
+On Render the front-end deploys as the `scale-ops-aurora` static site
+(see `render.yaml`); the Streamlit app remains the working backend with the
+full Module C/D drilldowns.
+
 ## How to Run Locally
 
 Create and activate a virtual environment:
