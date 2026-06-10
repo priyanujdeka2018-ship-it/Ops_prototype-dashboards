@@ -1,18 +1,12 @@
 services:
-  # Aurora React front-end (primary operating view) — static, no build step.
-  # Data is pre-computed into frontend/data/data.json by
+  # Primary URL serves the Aurora React front-end (static, no build step).
+  # frontend/data/data.json is pre-computed from the CSVs by
   # `python -m src.build_frontend_data` and committed.
-  - type: web
-    name: scale-ops-aurora
-    env: static
-    plan: free
-    buildCommand: ""
-    staticPublishPath: frontend
-
-  # Streamlit working backend (Modules A–D, full drilldowns)
+  # The Streamlit app (Modules A-D drilldowns) remains runnable locally:
+  #   streamlit run app.py
   - type: web
     name: scale-regional-ops-command-center
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true --server.enableCORS false --server.enableXsrfProtection false
+    buildCommand: ""
+    startCommand: python -m http.server $PORT -d frontend
