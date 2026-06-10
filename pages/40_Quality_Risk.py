@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 import streamlit as st
 
 from src.ui_components import render_demo_caption, render_decision_strip, install_scale_theme, install_command_center_polish
 
 from src.charts import bar_chart, line_chart
+from src.data_loader import load_tables
 from src.quality_briefing import (
     format_quality_coaching_card_markdown,
     generate_quality_coaching_card,
@@ -27,34 +26,6 @@ install_scale_theme()
 install_command_center_polish()
 
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-
-
-
-@st.cache_data
-def read_csv_safe(filename: str) -> pd.DataFrame:
-    path = DATA_DIR / filename
-    if not path.exists():
-        st.warning(f"Missing data file: {path}")
-        return pd.DataFrame()
-    try:
-        return pd.read_csv(path)
-    except pd.errors.EmptyDataError:
-        st.warning(f"Data file is empty: {path}")
-        return pd.DataFrame()
-
-
-@st.cache_data
-def load_quality_inputs() -> dict[str, pd.DataFrame]:
-    return {
-        "contributors": read_csv_safe("contributors.csv"),
-        "quality_events": read_csv_safe("quality_events.csv"),
-        "work_items": read_csv_safe("work_items.csv"),
-        "teams": read_csv_safe("teams.csv"),
-        "escalation_events": read_csv_safe("escalation_events.csv"),
-        "csat_events": read_csv_safe("csat_events.csv"),
-        "sla_events": read_csv_safe("sla_events.csv"),
-    }
 
 
 @st.cache_data
@@ -205,7 +176,15 @@ def main() -> None:
         "training, staffing, and quality-system action — not punitive individual ranking."
     )
 
-    data = load_quality_inputs()
+    data = load_tables(
+        "contributors",
+        "quality_events",
+        "work_items",
+        "teams",
+        "escalation_events",
+        "csat_events",
+        "sla_events",
+    )
     render_demo_caption(
         "This is calibration and coaching support, not a contributor leaderboard."
     )

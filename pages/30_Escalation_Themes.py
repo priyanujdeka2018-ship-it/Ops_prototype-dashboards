@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 import streamlit as st
 
 from src.ui_components import install_scale_theme, install_command_center_polish, render_demo_caption, render_decision_strip
 
 from src.charts import bar_chart, line_chart
+from src.data_loader import load_table
 from src.escalation_semantic_clusters import (
     cluster_escalations,
     get_cluster_events,
@@ -18,22 +17,6 @@ from src.fix_cards import generate_fix_card, format_fix_card_markdown
 
 install_scale_theme()
 install_command_center_polish()
-
-
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-
-
-
-@st.cache_data
-def load_escalations() -> pd.DataFrame:
-    path = DATA_DIR / "escalation_events.csv"
-    if not path.exists():
-        st.error(f"Missing file: {path}")
-        st.stop()
-
-    df = pd.read_csv(path)
-    df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    return df
 
 
 def optional_filter(df: pd.DataFrame, column: str, label: str, key: str) -> str:
@@ -71,7 +54,10 @@ def main() -> None:
         monitor="Cluster size, severity mix, affected teams, customer segments, and recurrence status.",
     )
 
-    escalations = load_escalations()
+    escalations = load_table("escalation_events")
+    if escalations.empty:
+        st.stop()
+    escalations["date"] = pd.to_datetime(escalations["date"], errors="coerce")
 
     with st.expander("Filters and clustering settings", expanded=True):
         c1, c2, c3 = st.columns(3)
