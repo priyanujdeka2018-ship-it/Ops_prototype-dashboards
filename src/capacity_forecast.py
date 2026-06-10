@@ -882,8 +882,10 @@ def build_work_type_capacity_features(
     for overlay in [q_overlay, e_overlay]:
         if not overlay.empty:
             features = features.merge(overlay, on=group_cols, how="left")
-    features["quality_risk_overlay"] = pd.to_numeric(features.get("quality_risk_overlay", 0), errors="coerce").fillna(0)
-    features["escalation_risk_overlay"] = pd.to_numeric(features.get("escalation_risk_overlay", 0), errors="coerce").fillna(0)
+    for column in ["quality_risk_overlay", "escalation_risk_overlay"]:
+        if column not in features.columns:
+            features[column] = 0.0
+        features[column] = pd.to_numeric(features[column], errors="coerce").fillna(0)
 
     risk_results = features.apply(score_work_type_capacity_risk, axis=1)
     features["capacity_risk_score"] = [result.score for result in risk_results]
@@ -949,8 +951,10 @@ def build_team_capacity_features(
     for overlay in [q_overlay, e_overlay]:
         if not overlay.empty:
             features = features.merge(overlay, on=group_cols, how="left")
-    features["quality_risk_overlay"] = pd.to_numeric(features.get("quality_risk_overlay", 0), errors="coerce").fillna(0)
-    features["escalation_risk_overlay"] = pd.to_numeric(features.get("escalation_risk_overlay", 0), errors="coerce").fillna(0)
+    for column in ["quality_risk_overlay", "escalation_risk_overlay"]:
+        if column not in features.columns:
+            features[column] = 0.0
+        features[column] = pd.to_numeric(features[column], errors="coerce").fillna(0)
 
     risk_results = features.apply(score_team_capacity_risk, axis=1)
     features["capacity_risk_score"] = [result.score for result in risk_results]
