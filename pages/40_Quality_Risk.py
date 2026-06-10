@@ -266,6 +266,12 @@ def main() -> None:
         filtered_contributors[available_columns(filtered_contributors, contributor_cols)],
         use_container_width=True,
     )
+    st.download_button(
+        label="Download Contributor Quality Risk (CSV)",
+        data=filtered_contributors[available_columns(filtered_contributors, contributor_cols)].to_csv(index=False),
+        file_name="contributor_quality_risk.csv",
+        mime="text/csv",
+    )
 
     st.markdown("## 3. Team Quality Risk Table")
     team_cols = [
@@ -285,6 +291,12 @@ def main() -> None:
     st.dataframe(
         filtered_teams[available_columns(filtered_teams, team_cols)],
         use_container_width=True,
+    )
+    st.download_button(
+        label="Download Team Quality Risk (CSV)",
+        data=filtered_teams[available_columns(filtered_teams, team_cols)].to_csv(index=False),
+        file_name="workforce_quality_summary.csv",
+        mime="text/csv",
     )
 
     st.markdown("## 4. Quality Drift View")
