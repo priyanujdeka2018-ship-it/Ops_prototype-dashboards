@@ -382,6 +382,12 @@ def render_module_b(
         "recommended_action",
     ]
     st.dataframe(pattern_summary[display_cols], use_container_width=True)
+    st.download_button(
+        label="Download Pattern Risk Summary (CSV)",
+        data=pattern_summary[display_cols].to_csv(index=False),
+        file_name="escalation_pattern_summary.csv",
+        mime="text/csv",
+    )
 
     st.markdown("### Pattern Drilldown")
     pattern_options = pattern_summary["pattern_key"].tolist()
