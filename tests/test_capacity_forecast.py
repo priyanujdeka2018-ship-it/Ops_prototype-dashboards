@@ -7,6 +7,7 @@ import pytest
 
 from src.capacity_forecast import (
     _risk_level,
+    build_team_capacity_features,
     build_work_type_capacity_features,
     classify_sla_forecast_status,
     prepare_capacity_data,
@@ -144,21 +145,26 @@ def test_growing_backlog_is_flagged():
     assert pd.isna(row["estimated_days_to_clear_backlog"])
 
 
-@pytest.mark.xfail(
-    reason=(
-        "Latent bug: build_work_type_capacity_features crashes when called "
-        "without quality_events/escalation_events because DataFrame.get "
-        "returns a scalar 0 for the missing overlay columns and .fillna is "
-        "then called on an int (capacity_forecast.py lines 885-886). The app "
-        "currently always passes both frames, so this path is never hit."
-    ),
-    raises=AttributeError,
-    strict=True,
-)
 def test_build_features_without_overlay_inputs():
+    """Regression: missing quality/escalation events used to crash because the
+    scalar default from DataFrame.get had .fillna called on it."""
     capacity_data = prepare_capacity_data(None, make_flat_work_items(), None)
     features = build_work_type_capacity_features(capacity_data)
     assert len(features) == 1
+    row = features.iloc[0]
+    assert row["quality_risk_overlay"] == 0.0
+    assert row["escalation_risk_overlay"] == 0.0
+    assert row["throughput_gap"] == pytest.approx(0.0)
+
+
+def test_build_team_features_without_overlay_inputs():
+    """Same regression as above for the team-grain feature builder."""
+    capacity_data = prepare_capacity_data(None, make_flat_work_items(), None)
+    features = build_team_capacity_features(capacity_data)
+    assert len(features) == 1
+    row = features.iloc[0]
+    assert row["quality_risk_overlay"] == 0.0
+    assert row["escalation_risk_overlay"] == 0.0
 
 
 def test_score_work_type_capacity_risk_empty_row():
