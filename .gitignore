@@ -248,3 +248,8 @@ backups/
 *.zip
 __pycache__/
 *.pyc
+
+# Node (frontend render-test tooling)
+node_modules/
+package.json
+package-lock.json
