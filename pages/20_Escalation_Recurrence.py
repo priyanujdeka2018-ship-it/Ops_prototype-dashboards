@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 import streamlit as st
 
@@ -13,6 +11,7 @@ from src.metrics import (
 from src.rules import classify_metric, detect_anomalies
 from src.charts import health_heatmap, bar_chart, line_chart, stacked_bar_chart
 from src.briefing import generate_weekly_ops_briefing
+from src.data_loader import load_tables
 from src.escalation_patterns import (
     get_pattern_events,
     get_top_patterns,
@@ -31,35 +30,9 @@ from src.ui_components import (
 )
 
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-
 install_scale_theme()
 install_command_center_polish()
 
-
-
-@st.cache_data
-def load_data() -> dict[str, pd.DataFrame]:
-    required_files = {
-        "work_items": "work_items.csv",
-        "teams": "teams.csv",
-        "contributors": "contributors.csv",
-        "sla_events": "sla_events.csv",
-        "quality_events": "quality_events.csv",
-        "escalation_events": "escalation_events.csv",
-        "csat_events": "csat_events.csv",
-    }
-
-    data = {}
-
-    for key, filename in required_files.items():
-        path = DATA_DIR / filename
-        if not path.exists():
-            st.error(f"Missing data file: {path}")
-            st.stop()
-        data[key] = pd.read_csv(path)
-
-    return data
 
 
 def format_pct(value: float) -> str:
@@ -530,7 +503,17 @@ def main() -> None:
         monitor="Open recurrence count, severity mix, blast radius, days to resolve, and repeat root cause.",
     )
 
-    data = load_data()
+    data = load_tables(
+        "work_items",
+        "teams",
+        "contributors",
+        "sla_events",
+        "quality_events",
+        "escalation_events",
+        "csat_events",
+    )
+    if any(df.empty for df in data.values()):
+        st.stop()
     work_items = data["work_items"]
     escalation_events = data["escalation_events"]
 

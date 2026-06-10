@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -20,6 +18,7 @@ from src.capacity_forecast import (
     prepare_capacity_data,
 )
 from src.charts import bar_chart, line_chart
+from src.data_loader import load_tables
 from src.ui_components import (
     SCALE_ACCENT,
     SCALE_BAD,
@@ -38,8 +37,6 @@ from src.ui_components import (
     render_section_header as render_scale_section_header,
 )
 
-
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 WORK_TYPE_COLUMNS = [
     "work_type",
@@ -133,32 +130,6 @@ QUEUE_COLUMNS = [
     "recommended_action",
 ]
 
-
-
-@st.cache_data
-def read_csv_safe(filename: str) -> pd.DataFrame:
-    path = DATA_DIR / filename
-    if not path.exists():
-        st.warning(f"Missing data file: {path}")
-        return pd.DataFrame()
-    try:
-        return pd.read_csv(path)
-    except pd.errors.EmptyDataError:
-        st.warning(f"Data file is empty: {path}")
-        return pd.DataFrame()
-
-
-@st.cache_data
-def load_capacity_inputs() -> dict[str, pd.DataFrame]:
-    return {
-        "contributors": read_csv_safe("contributors.csv"),
-        "quality_events": read_csv_safe("quality_events.csv"),
-        "work_items": read_csv_safe("work_items.csv"),
-        "teams": read_csv_safe("teams.csv"),
-        "escalation_events": read_csv_safe("escalation_events.csv"),
-        "csat_events": read_csv_safe("csat_events.csv"),
-        "sla_events": read_csv_safe("sla_events.csv"),
-    }
 
 
 @st.cache_data
@@ -735,7 +706,15 @@ def main() -> None:
         monitor="Capacity gap, utilization, SLA adherence, aged backlog, and high-complexity coverage.",
     )
 
-    data = load_capacity_inputs()
+    data = load_tables(
+        "contributors",
+        "quality_events",
+        "work_items",
+        "teams",
+        "escalation_events",
+        "csat_events",
+        "sla_events",
+    )
     outputs = build_module_d_outputs(data)
     capacity_data = outputs["capacity_data"]
     work_type_summary = outputs["work_types"]
