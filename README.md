@@ -491,9 +491,10 @@ python -m http.server 8000 -d frontend
 # open http://localhost:8000
 ```
 
-On Render the front-end deploys as the `scale-ops-aurora` static site
-(see `render.yaml`); the Streamlit app remains the working backend with the
-full Module C/D drilldowns.
+On Render the primary service serves this front-end
+(start command: `python -m http.server $PORT -d frontend`, see `render.yaml`).
+The Streamlit app remains the working backend with the full Module C/D
+drilldowns and is run locally with `streamlit run app.py`.
 
 ## How to Run Locally
 
