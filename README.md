@@ -502,6 +502,21 @@ Run the Streamlit app:
 python -m streamlit run app.py
 ```
 
+## Run Tests
+
+Install the dev dependencies and run the smoke test suite:
+
+```bash
+pip install -r requirements-dev.txt
+pytest -q
+```
+
+The tests cover metric calculations (`src/metrics.py`), health threshold
+boundaries (`src/rules.py`), workforce quality risk scoring
+(`src/workforce_quality.py`), and capacity forecasting
+(`src/capacity_forecast.py`). They use small hand-built DataFrames and do
+not import Streamlit.
+
 ## Demo Materials
 
 - Module B handoff: `docs/MODULE_B_HANDOFF.md`
