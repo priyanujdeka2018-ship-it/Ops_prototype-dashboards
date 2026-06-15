@@ -496,6 +496,28 @@ On Render the primary service serves this front-end
 The Streamlit app remains the working backend with the full Module C/D
 drilldowns and is run locally with `streamlit run app.py`.
 
+## Data Pipeline
+
+The pipeline regenerates the synthetic CSVs and rebuilds the Aurora JSON in
+one command, for one or all scenarios. Each scenario (`healthy`, `current`,
+`crisis`) scales the underlying SLA, quality, CSAT, rework, and escalation
+rates, so the dashboard visibly changes when you switch between them — useful
+for a live demo.
+
+```bash
+# Generate all scenarios (writes data-healthy/current/crisis.json + data.json)
+python -m src.pipeline --all-scenarios
+
+# Generate one scenario
+python -m src.pipeline --scenario crisis
+```
+
+The orchestrator runs `generate_data` then `build_frontend_data` per scenario,
+prints a manifest table (escalations, patterns, teams, generated-at per
+scenario), and validates every emitted JSON (required keys present, escalation
+and pattern counts non-zero). Each JSON carries pipeline metadata:
+`generated_at`, `scenario`, `pipeline_version`, and `row_counts`.
+
 ## How to Run Locally
 
 Create and activate a virtual environment:
