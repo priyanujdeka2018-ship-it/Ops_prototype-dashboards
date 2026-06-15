@@ -126,17 +126,25 @@ const fmt = {
   },
 };
 
-// React hook to load data.json once
-function useScaleData() {
+// React hook to load the scenario-specific payload, refetching when the
+// scenario changes. Falls back to data.json if the scenario file is absent
+// (single-scenario deploys), so older deploys keep working.
+function useScaleData(scenario = "current") {
   const [data, setData] = React.useState(null);
   const [err, setErr] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
   React.useEffect(() => {
-    fetch("data/data.json")
-      .then((r) => r.json())
-      .then((d) => setData(d))
-      .catch((e) => setErr(String(e)));
-  }, []);
-  return { data, err };
+    let cancelled = false;
+    setLoading(true);
+    setErr(null);
+    const primary = `data/data-${scenario}.json`;
+    fetch(primary)
+      .then((r) => (r.ok ? r.json() : fetch("data/data.json").then((f) => f.json())))
+      .then((d) => { if (!cancelled) { setData(d); setLoading(false); } })
+      .catch((e) => { if (!cancelled) { setErr(String(e)); setLoading(false); } });
+    return () => { cancelled = true; };
+  }, [scenario]);
+  return { data, err, loading, scenario };
 }
 
 // Sparkline: takes array of numbers, renders an inline SVG
