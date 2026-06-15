@@ -4,12 +4,14 @@ CSVs in data/, reusing the same metric and pattern-scoring logic that powers
 the Streamlit pages so both front-ends show identical numbers.
 
 Usage:
-    python -m src.build_frontend_data
+    python -m src.build_frontend_data [--scenario healthy|current|crisis]
 """
 
 from __future__ import annotations
 
 import json
+import shutil
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -30,8 +32,10 @@ from src.metrics import (
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
-OUTPUT_PATH = REPO_ROOT / "frontend" / "data" / "data.json"
+OUTPUT_DIR = REPO_ROOT / "frontend" / "data"
+OUTPUT_PATH = OUTPUT_DIR / "data.json"
 
+PIPELINE_VERSION = "1.0.0"
 OPEN_STATUSES = {"open", "in_progress"}
 TREND_WEEKS = 7
 
@@ -212,7 +216,7 @@ def build_work_type_rollup(teams, work_items, quality_events, escalation_events,
     return rows
 
 
-def build_payload() -> dict:
+def build_payload(scenario: str = "current") -> dict:
     teams = pd.read_csv(DATA_DIR / "teams.csv")
     contributors = pd.read_csv(DATA_DIR / "contributors.csv")
     work_items = pd.read_csv(DATA_DIR / "work_items.csv")
@@ -233,6 +237,18 @@ def build_payload() -> dict:
     ]
 
     payload = {
+        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "scenario": scenario,
+        "pipeline_version": PIPELINE_VERSION,
+        "row_counts": {
+            "work_items": int(len(work_items)),
+            "escalations": int(len(escalation_events)),
+            "teams": int(len(teams)),
+            "contributors": int(len(contributors)),
+            "quality_events": int(len(quality_events)),
+            "sla_events": int(len(pd.read_csv(DATA_DIR / "sla_events.csv"))),
+            "csat_events": int(len(csat_events)),
+        },
         "refDate": str(ref_date.date()),
         "weekStart": week_start.strftime("%b %-d"),
         "region": str(teams["region"].iloc[0]),
@@ -260,16 +276,35 @@ def build_payload() -> dict:
     return payload
 
 
-def main() -> None:
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    payload = build_payload()
-    OUTPUT_PATH.write_text(json.dumps(payload, indent=1))
+def _parse_scenario(argv: list[str]) -> str:
+    """Read --scenario VALUE (or --scenario=VALUE) from argv; default current."""
+    for i, arg in enumerate(argv):
+        if arg == "--scenario" and i + 1 < len(argv):
+            return argv[i + 1]
+        if arg.startswith("--scenario="):
+            return arg.split("=", 1)[1]
+    return "current"
+
+
+def main(scenario: str = "current") -> dict:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    payload = build_payload(scenario=scenario)
+
+    scenario_path = OUTPUT_DIR / f"data-{scenario}.json"
+    scenario_path.write_text(json.dumps(payload, indent=1))
+    # Keep data.json as a copy of the most recently built scenario so the
+    # default fetch("data/data.json") keeps working for single-scenario deploys.
+    shutil.copyfile(scenario_path, OUTPUT_PATH)
+
     print(
-        f"Wrote {OUTPUT_PATH.relative_to(REPO_ROOT)}: "
-        f"{payload['totals']['escalations']} escalations, "
+        f"Wrote {scenario_path.relative_to(REPO_ROOT)} (+ data.json): "
+        f"scenario={scenario}, {payload['totals']['escalations']} escalations, "
         f"{len(payload['patterns'])} patterns, {len(payload['teams'])} teams"
     )
+    return payload
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    main(scenario=_parse_scenario(sys.argv))
