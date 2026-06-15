@@ -660,7 +660,7 @@ function AboutModal({ AUR, onClose }) {
 
 // ─── Top-level ─────────────────────────────────────────────────────────────
 
-function AuroraDashboard({ data, scenario, region, accent = "#B79DFF", showAbout, setShowAbout }) {
+function AuroraDashboard({ data, scenario, setScenario, loading, region, accent = "#B79DFF", showAbout, setShowAbout }) {
   const [tab, setTab] = React.useState("overview");
   const [showBriefing, setShowBriefing] = React.useState(false);
   const [workType, setWorkType] = React.useState("expert_review");
@@ -669,7 +669,9 @@ function AuroraDashboard({ data, scenario, region, accent = "#B79DFF", showAbout
   const [riskFilter, setRiskFilter] = React.useState("all");
   const AUR = React.useMemo(() => buildAurTheme(accent), [accent]);
 
-  const d = applyScenario(data, scenario);
+  // The fetched payload is already the scenario's real pipeline data, so use
+  // it directly — no synthetic applyScenario() transform.
+  const d = data;
   if (!d) return <div style={{ padding: 40, color: AUR.textDim, fontFamily: aurSans }}>Loading…</div>;
   const k = d.kpis;
 
@@ -698,6 +700,11 @@ function AuroraDashboard({ data, scenario, region, accent = "#B79DFF", showAbout
               <AurChip AUR={AUR}>{region}</AurChip>
               <AurChip AUR={AUR}>Week of {d.weekStart} → {d.refDate}</AurChip>
             </div>
+            {d.generated_at && (
+              <div style={{ fontFamily: aurMono, fontSize: 10, color: AUR.textFaint, letterSpacing: 0.4, marginBottom: 12 }}>
+                Pipeline: {d.scenario} · {d.generated_at}
+              </div>
+            )}
             <h1 style={{ fontFamily: aurSerif, fontSize: 42, fontWeight: 400, letterSpacing: -1.4, margin: 0, lineHeight: 1.05, maxWidth: 880 }}>
               The operating system <em style={{ color: AUR.accent, fontStyle: "italic" }}>before</em> customer impact lands.
             </h1>
@@ -705,7 +712,29 @@ function AuroraDashboard({ data, scenario, region, accent = "#B79DFF", showAbout
               One regional view across SLA, backlog, CSAT, quality and escalation risk — with deterministic recurrence detection on every escalation.
             </p>
           </div>
-          <AurButton AUR={AUR} variant="primary" onClick={() => setShowBriefing(true)}>Generate weekly briefing →</AurButton>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontFamily: aurMono, fontSize: 10, color: AUR.textFaint, letterSpacing: 0.6, textTransform: "uppercase" }}>
+                Scenario{loading ? " · loading…" : ""}
+              </span>
+              <div style={{ display: "flex", gap: 4, padding: 4, background: AUR.surface, border: `1px solid ${AUR.border}`, borderRadius: 999 }}>
+                {[
+                  { id: "healthy", label: "Healthy" },
+                  { id: "current", label: "Current" },
+                  { id: "crisis", label: "Crisis" },
+                ].map((s) => (
+                  <button key={s.id} onClick={() => setScenario && setScenario(s.id)} style={{
+                    background: scenario === s.id ? AUR.accent : "transparent",
+                    color: scenario === s.id ? "#1a0033" : AUR.textDim,
+                    border: "none", borderRadius: 999, padding: "6px 14px",
+                    fontFamily: aurSans, fontSize: 12, fontWeight: 500, cursor: "pointer",
+                    transition: "all 180ms ease",
+                  }}>{s.label}</button>
+                ))}
+              </div>
+            </div>
+            <AurButton AUR={AUR} variant="primary" onClick={() => setShowBriefing(true)}>Generate weekly briefing →</AurButton>
+          </div>
         </header>
 
         {/* Tab nav */}
