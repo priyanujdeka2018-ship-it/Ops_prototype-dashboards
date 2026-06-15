@@ -82,6 +82,18 @@ WORK_TYPE_PROFILES = {
     },
 }
 
+# Scenario multipliers scale the base rates in WORK_TYPE_PROFILES inside
+# adjusted_profile(). "current" is the neutral baseline; "healthy" and "crisis"
+# shift SLA/quality/CSAT and the rework/escalation pressure up or down so a
+# live `--scenario` switch produces visibly different dashboard metrics.
+SCENARIO_MULTIPLIERS = {
+    "healthy": {"sla": 1.03, "quality": 1.05, "csat": 1.02, "rework": 0.6, "escalation": 0.5},
+    "current": {"sla": 1.0,  "quality": 1.0,  "csat": 1.0,  "rework": 1.0, "escalation": 1.0},
+    "crisis":  {"sla": 0.88, "quality": 0.90, "csat": 0.92, "rework": 1.8, "escalation": 2.2},
+}
+
+SCENARIOS = tuple(SCENARIO_MULTIPLIERS.keys())
+
 CUSTOMER_SEGMENTS = ["startup", "mid_market", "enterprise", "strategic"]
 PRIORITIES = ["low", "medium", "high", "urgent"]
 TASK_COMPLEXITIES = ["low", "medium", "high", "expert"]
@@ -294,7 +306,9 @@ def generate_contributors(teams: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def adjusted_profile(work_type: str, created_at: datetime, end_date: datetime) -> dict:
+def adjusted_profile(
+    work_type: str, created_at: datetime, end_date: datetime, scenario: str = "current"
+) -> dict:
     profile = WORK_TYPE_PROFILES[work_type].copy()
 
     # Scenario 2: RLHF stress in recent period.
@@ -318,6 +332,14 @@ def adjusted_profile(work_type: str, created_at: datetime, end_date: datetime) -
     if work_type == "expert_review":
         profile["base_sla"] -= 0.015
 
+    # Apply the global health/current/crisis scenario on top of the per-work-type
+    # adjustments above, clamping rates that feed probabilities into valid ranges.
+    mult = SCENARIO_MULTIPLIERS.get(scenario, SCENARIO_MULTIPLIERS["current"])
+    profile["base_sla"] = min(0.999, max(0.0, profile["base_sla"] * mult["sla"]))
+    profile["base_quality"] = profile["base_quality"] * mult["quality"]
+    profile["base_csat"] = profile["base_csat"] * mult["csat"]
+    profile["base_rework"] = min(1.0, max(0.0, profile["base_rework"] * mult["rework"]))
+
     return profile
 
 
@@ -325,6 +347,7 @@ def generate_work_items(
     teams: pd.DataFrame,
     contributors: pd.DataFrame,
     n_items: int = 14000,
+    scenario: str = "current",
 ) -> pd.DataFrame:
     end_date = datetime.now().replace(microsecond=0, second=0, minute=0)
     start_date = end_date - timedelta(days=90)
@@ -342,7 +365,7 @@ def generate_work_items(
         contributor_id = random.choice(contributor_lookup[team_id])
 
         created_at = random_datetime_between(start_date, end_date)
-        profile = adjusted_profile(work_type, created_at, end_date)
+        profile = adjusted_profile(work_type, created_at, end_date, scenario)
 
         priority = np.random.choice(PRIORITIES, p=[0.18, 0.50, 0.24, 0.08])
         complexity = np.random.choice(TASK_COMPLEXITIES, p=[0.30, 0.43, 0.20, 0.07])
@@ -460,7 +483,7 @@ def generate_sla_events(work_items: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def generate_quality_events(work_items: pd.DataFrame) -> pd.DataFrame:
+def generate_quality_events(work_items: pd.DataFrame, scenario: str = "current") -> pd.DataFrame:
     rows = []
     completed = work_items[work_items["status"] == "completed"].copy()
 
@@ -469,7 +492,7 @@ def generate_quality_events(work_items: pd.DataFrame) -> pd.DataFrame:
     for i, item in sampled.iterrows():
         created_at = pd.to_datetime(item["date_created"]).to_pydatetime()
         end_date = datetime.now()
-        profile = adjusted_profile(item["work_type"], created_at, end_date)
+        profile = adjusted_profile(item["work_type"], created_at, end_date, scenario)
 
         score = np.random.normal(profile["base_quality"], 5.0)
 
@@ -562,6 +585,7 @@ def generate_escalation_events(
     teams: pd.DataFrame,
     work_items: pd.DataFrame,
     n_events: int = 250,
+    scenario: str = "current",
 ) -> pd.DataFrame:
     # Anchor to the work-item timeline so escalations stay aligned with the
     # other CSVs even when only escalation_events.csv is regenerated.
@@ -573,8 +597,13 @@ def generate_escalation_events(
     )
     start_date = end_date - timedelta(days=90)
 
+    # Scale total escalation volume with the scenario; recurring patterns are
+    # always present so the detector has clusters to surface in every scenario.
+    mult = SCENARIO_MULTIPLIERS.get(scenario, SCENARIO_MULTIPLIERS["current"])
+    scaled_events = int(round(n_events * mult["escalation"]))
+
     rows = _pattern_escalation_rows(teams, end_date)
-    n_background = max(0, n_events - len(rows))
+    n_background = max(0, scaled_events - len(rows))
 
     for i in range(1, n_background + 1):
         work_type = np.random.choice(
@@ -636,6 +665,7 @@ def generate_escalation_events(
 def generate_csat_events(
     teams: pd.DataFrame,
     n_events: int = 650,
+    scenario: str = "current",
 ) -> pd.DataFrame:
     rows = []
     end_date = datetime.now().replace(microsecond=0, second=0, minute=0)
@@ -649,7 +679,7 @@ def generate_csat_events(
         team_id = random.choice(teams[teams["work_type"] == work_type]["team_id"].tolist())
         date = random_datetime_between(start_date, end_date).date()
 
-        profile = adjusted_profile(work_type, datetime.combine(date, datetime.min.time()), end_date)
+        profile = adjusted_profile(work_type, datetime.combine(date, datetime.min.time()), end_date, scenario)
 
         score = np.random.normal(profile["base_csat"], 0.22)
         score = round(float(np.clip(score, 2.8, 5.0)), 1)
@@ -686,18 +716,21 @@ def save_csv(df: pd.DataFrame, filename: str) -> None:
     print(f"Saved {filename}: {len(df):,} rows")
 
 
-def main() -> None:
+def main(scenario: str = "current") -> None:
+    if scenario not in SCENARIO_MULTIPLIERS:
+        raise ValueError(f"Unknown scenario '{scenario}'. Valid: {', '.join(SCENARIOS)}")
+
     ensure_data_dir()
 
-    print("Generating synthetic Scale Regional Ops data...")
+    print(f"Generating synthetic Scale Regional Ops data (scenario: {scenario})...")
 
     teams = generate_teams()
     contributors = generate_contributors(teams)
-    work_items = generate_work_items(teams, contributors)
+    work_items = generate_work_items(teams, contributors, scenario=scenario)
     sla_events = generate_sla_events(work_items)
-    quality_events = generate_quality_events(work_items)
-    escalation_events = generate_escalation_events(teams, work_items)
-    csat_events = generate_csat_events(teams)
+    quality_events = generate_quality_events(work_items, scenario=scenario)
+    escalation_events = generate_escalation_events(teams, work_items, scenario=scenario)
+    csat_events = generate_csat_events(teams, scenario=scenario)
 
     save_csv(teams, "teams.csv")
     save_csv(contributors, "contributors.csv")
@@ -711,19 +744,30 @@ def main() -> None:
     print(f"Data directory: {DATA_DIR}")
 
 
-def regenerate_escalations_only() -> None:
+def regenerate_escalations_only(scenario: str = "current") -> None:
     """Rebuild escalation_events.csv from the existing teams and work items
     without touching any other CSV."""
     teams = pd.read_csv(DATA_DIR / "teams.csv")
     work_items = pd.read_csv(DATA_DIR / "work_items.csv")
-    escalation_events = generate_escalation_events(teams, work_items)
+    escalation_events = generate_escalation_events(teams, work_items, scenario=scenario)
     save_csv(escalation_events, "escalation_events.csv")
+
+
+def _parse_scenario(argv: list[str]) -> str:
+    """Read --scenario VALUE (or --scenario=VALUE) from argv; default current."""
+    for i, arg in enumerate(argv):
+        if arg == "--scenario" and i + 1 < len(argv):
+            return argv[i + 1]
+        if arg.startswith("--scenario="):
+            return arg.split("=", 1)[1]
+    return "current"
 
 
 if __name__ == "__main__":
     import sys
 
+    selected_scenario = _parse_scenario(sys.argv)
     if "--escalations-only" in sys.argv:
-        regenerate_escalations_only()
+        regenerate_escalations_only(scenario=selected_scenario)
     else:
-        main()
+        main(scenario=selected_scenario)
