@@ -518,6 +518,15 @@ scenario), and validates every emitted JSON (required keys present, escalation
 and pattern counts non-zero). Each JSON carries pipeline metadata:
 `generated_at`, `scenario`, `pipeline_version`, and `row_counts`.
 
+## Production Architecture
+
+[docs/PRODUCTION_ARCHITECTURE.md](docs/PRODUCTION_ARCHITECTURE.md) describes how
+this prototype maps onto a production pipeline: source-system extract adapters
+feeding the same `src/` scoring engine on a schedule, emitting to a database or
+API for the Aurora and Streamlit surfaces. The key point is that the `src/`
+modules stay unchanged — only the data source, scheduling, storage, and auth
+layers change — and the 83-test suite locks that scoring contract.
+
 ## How to Run Locally
 
 Create and activate a virtual environment:
