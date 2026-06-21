@@ -11,7 +11,13 @@ const searchSchema = z.object({
   s: fallback(z.enum(["healthy", "current", "crisis"]), "current").default("current"),
   t: fallback(z.enum(["teal", "violet", "rose", "sky", "amber"]), "teal").default("teal"),
   d: fallback(z.enum(["compact", "cozy", "spacious"]), "cozy").default("cozy"),
-  // focus params — optional, used by progressive-disclosure modules
+  // focus params (Focus shape, brief §5) — optional, persist across sections
+  workType:      fallback(z.string().optional(), undefined as any).default(undefined as any),
+  teamId:        fallback(z.string().optional(), undefined as any).default(undefined as any),
+  contributorId: fallback(z.string().optional(), undefined as any).default(undefined as any),
+  patternId:     fallback(z.string().optional(), undefined as any).default(undefined as any),
+  clusterId:     fallback(z.string().optional(), undefined as any).default(undefined as any),
+  // legacy focus keys — removed as each section route migrates to the Focus shape
   wt:  fallback(z.string().optional(), undefined as any).default(undefined as any),
   tm:  fallback(z.string().optional(), undefined as any).default(undefined as any),
   pid: fallback(z.string().optional(), undefined as any).default(undefined as any),
