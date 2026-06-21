@@ -29,6 +29,16 @@ from src.metrics import (
     rework_rate,
     sla_adherence,
 )
+from src.workforce_quality import (
+    build_contributor_quality_features,
+    build_team_quality_features,
+    build_work_type_quality_features,
+)
+from src.capacity_forecast import (
+    build_team_capacity_features,
+    build_work_type_capacity_features,
+    prepare_capacity_data,
+)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
@@ -49,7 +59,19 @@ def _risk_level_short(label: str) -> str:
 
 
 def _round(value: float, digits: int = 1) -> float:
-    return round(float(value), digits)
+    number = float(value)
+    if number != number:  # NaN -> avoid emitting invalid JSON
+        return 0.0
+    return round(number, digits)
+
+
+def _numf(value: object, default: float = 0.0) -> float:
+    """NaN/None-safe float for sparse engine columns."""
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return default
+    return default if number != number else number
 
 
 def build_kpis(work_items, quality_events, escalation_events, csat_events, as_of) -> dict:
@@ -216,6 +238,271 @@ def build_work_type_rollup(teams, work_items, quality_events, escalation_events,
     return rows
 
 
+# ─── Module C/D emit: workforce + capacity + leadership (Phase 3 contract) ───
+# Python becomes the single source of truth for the C/D scores the frontend
+# used to fabricate client-side. Every field below comes from the tested
+# engines in workforce_quality.py / capacity_forecast.py.
+
+QUALITY_TARGET = 90.0
+
+WORK_TYPE_LABELS = {
+    "image_annotation": "Image annotation",
+    "rlhf_evaluation": "RLHF evaluation",
+    "code_review": "Code review",
+    "audio_evaluation": "Audio evaluation",
+    "expert_review": "Expert review",
+}
+ROOT_CAUSE_LABELS = {
+    "policy_ambiguity": "Policy ambiguity",
+    "reviewer_misalignment": "Reviewer misalignment",
+    "quality_defect": "Quality defect",
+    "tooling_issue": "Tooling issue",
+    "customer_requirement_change": "Customer requirement change",
+    "sla_miss": "SLA miss",
+    "workflow_handoff_gap": "Workflow handoff gap",
+    "capacity_shortfall": "Capacity shortfall",
+}
+
+
+def _wt_label(work_type: object) -> str:
+    return WORK_TYPE_LABELS.get(work_type, str(work_type).replace("_", " ").capitalize())
+
+
+def _rc_label(root_cause: object) -> str:
+    return ROOT_CAUSE_LABELS.get(root_cause, str(root_cause).replace("_", " ").capitalize())
+
+
+def _short_band(label: object) -> str:
+    """'High quality risk' / 'Low capacity risk' / 'Insufficient data' -> first word."""
+    text = str(label).strip()
+    return text.split()[0] if text else "Low"
+
+
+def _driver_list(value: object) -> list[str]:
+    if value is None:
+        return []
+    return [part.strip() for part in str(value).split(",") if part.strip()]
+
+
+def _is_at_risk(forecast: object) -> bool:
+    return "stable" not in str(forecast).lower()
+
+
+def _heads_short(row) -> int:
+    """Convert the engine's skill-weighted capacity-unit shortfall to equivalent heads."""
+    units = _numf(row["capacity_units"])
+    heads = _numf(row["active_contributors"])
+    required = _numf(row["required_capacity_units"])
+    if heads <= 0 or units <= 0:
+        return 0
+    units_per_head = units / heads
+    return int(round(max(0.0, required - units) / units_per_head)) if units_per_head > 0 else 0
+
+
+def _capacity_decision(row, head_gap: int) -> str:
+    work_type = _wt_label(row["work_type"])
+    if head_gap > 0:
+        head_word = "head" if head_gap == 1 else "heads"
+        return f"Approve +{head_gap} trained {head_word} (or surge coverage) for {work_type}?"
+    if _is_at_risk(row["forecasted_sla_risk"]):
+        return f"Approve load rebalance / intake throttle for {work_type}?"
+    return "Maintain current staffing."
+
+
+def build_workforce(teams, contributors, work_items, quality_events, escalation_events, kpis) -> dict:
+    """Module C scores, straight from workforce_quality.py — never recomputed in the UI."""
+    contrib = build_contributor_quality_features(contributors, quality_events, work_items, teams)
+    team_feat = build_team_quality_features(
+        contributors, quality_events, work_items, teams, contributor_quality_summary=contrib
+    )
+    wt_feat = build_work_type_quality_features(contrib, team_feat)
+
+    bands_by_wt: dict[str, set[str]] = {}
+    teams_out = []
+    for _, t in team_feat.iterrows():
+        band = _short_band(t["risk_level"])
+        bands_by_wt.setdefault(t["work_type"], set()).add(band)
+        teams_out.append(
+            {
+                "team_id": t["team_id"],
+                "name": t["manager_name"],
+                "work_type": t["work_type"],
+                "risk_score": _round(t["risk_score"]),
+                "risk_band": band,
+                "drivers": _driver_list(t["risk_drivers"]),
+                "action": str(t["recommended_manager_action"]),
+                "quality_gap": _round(max(0.0, QUALITY_TARGET - _numf(t["avg_quality_score"]))),
+            }
+        )
+    teams_out.sort(key=lambda r: r["risk_score"], reverse=True)
+
+    def _agg_band(work_type: str) -> str:
+        bands = bands_by_wt.get(work_type, set())
+        for band in ("High", "Medium", "Low", "Insufficient"):
+            if band in bands:
+                return band
+        return "Low"
+
+    by_work_type = [
+        {
+            "work_type": w["work_type"],
+            "riskLevel": _agg_band(w["work_type"]),
+            "avgQuality": _round(w["avg_quality_score"]),
+            "teamsAtRisk": int(w["high_risk_teams"]),
+        }
+        for _, w in wt_feat.iterrows()
+    ]
+
+    flagged = [c for _, c in contrib.iterrows() if _short_band(c["risk_level"]) in ("High", "Medium")]
+    flagged.sort(key=lambda c: _numf(c["risk_score"]), reverse=True)
+    contributors_out = [
+        {
+            "contributor_id": c["contributor_id"],
+            "team_id": c["team_id"],
+            "work_type": c["work_type"],
+            "risk_score": _round(c["risk_score"]),
+            "risk_band": _short_band(c["risk_level"]),
+            "drivers": _driver_list(c["risk_drivers"]),
+            "coaching": str(c["recommended_action"]),
+        }
+        for c in flagged
+    ]
+
+    return {
+        "region": {
+            "highRiskTeams": sum(1 for t in teams_out if t["risk_band"] == "High"),
+            "avgQuality": kpis["avg_quality"],
+        },
+        "byWorkType": by_work_type,
+        "teams": teams_out,
+        "contributors": contributors_out,
+    }
+
+
+def build_capacity(contributors, work_items, teams, sla_events, quality_events, escalation_events, kpis) -> dict:
+    """Module D capacity + SLA forecast, straight from capacity_forecast.py."""
+    cap_data = prepare_capacity_data(
+        contributors, work_items, teams, sla_events, quality_events, escalation_events
+    )
+    wt_feat = build_work_type_capacity_features(
+        cap_data, contributors=contributors, teams=teams,
+        quality_events=quality_events, escalation_events=escalation_events,
+    )
+    team_feat = build_team_capacity_features(
+        cap_data, contributors=contributors, teams=teams,
+        quality_events=quality_events, escalation_events=escalation_events,
+    )
+
+    by_work_type = []
+    at_risk = 0
+    for _, w in wt_feat.iterrows():
+        forecast = str(w["forecasted_sla_risk"])
+        if _is_at_risk(forecast):
+            at_risk += 1
+        head_gap = _heads_short(w)
+        by_work_type.append(
+            {
+                "work_type": w["work_type"],
+                "forecast": forecast,
+                "riskLevel": _short_band(w["capacity_risk_level"]),
+                "complexity": int(round(_numf(w["high_complexity_share"]) * 100)),
+                "action": str(w["recommended_capacity_action"]),
+                "headGap": head_gap,
+                "decision": _capacity_decision(w, head_gap),
+            }
+        )
+
+    teams_out = [
+        {
+            "team_id": t["team_id"],
+            "name": t["manager_name"],
+            "work_type": t["work_type"],
+            "utilization": int(round(_numf(t["utilization_rate"]) * 100)),
+            "load": int(_numf(t["open_backlog"])),
+            "action": str(t["recommended_manager_action"]),
+        }
+        for _, t in team_feat.iterrows()
+    ]
+
+    def _forecast_rank(forecast: str) -> int:
+        text = forecast.lower()
+        if "recovery" in text:
+            return 3
+        if "risk" in text:
+            return 2
+        if "watch" in text:
+            return 1
+        return 0
+
+    region_forecast = max(
+        (w["forecast"] for w in by_work_type), key=_forecast_rank, default="SLA likely stable"
+    )
+
+    return {
+        "region": {
+            "atRisk": at_risk,
+            "agedShare": int(round(kpis["aged_backlog_72h"] / max(1, kpis["backlog"]) * 100)),
+            "forecast": region_forecast,
+        },
+        "byWorkType": by_work_type,
+        "teams": teams_out,
+    }
+
+
+def _leadership_headline(scenario: str, payload: dict) -> str:
+    at_risk = payload["capacity"]["region"]["atRisk"]
+    high_q = payload["workforce"]["region"]["highRiskTeams"]
+    sla = payload["kpis"]["sla_adherence"]
+    return (
+        f"{scenario.capitalize()} scenario · SLA {sla}% · "
+        f"{at_risk} work type{'s' if at_risk != 1 else ''} with SLA at risk · "
+        f"{high_q} team{'s' if high_q != 1 else ''} flagged for quality."
+    )
+
+
+def build_leadership(payload: dict, scenario: str) -> dict:
+    """Top-ranked cross-module signals -> <=3 click-through alerts (mirrors Aurora's buildAlerts)."""
+    patterns = payload["patterns"]
+    alerts: list[dict] = []
+
+    top_pat = next((p for p in patterns if p["risk_level"] == "High"), patterns[0] if patterns else None)
+    if top_pat:
+        alerts.append(
+            {
+                "kind": "pattern",
+                "title": f"{_rc_label(top_pat['root_cause'])} in {_wt_label(top_pat['work_type'])} is {str(top_pat['recurrence_status']).lower()}",
+                "body": f"{top_pat['escalation_count']} escalations · {top_pat['open_count']} open · last-14d {top_pat['last_14d']} vs prior {top_pat['prior_14d']} · {top_pat['unique_teams']} teams.",
+                "target": {"section": "patterns", "focus": {"patternId": top_pat["pattern_id"]}},
+            }
+        )
+
+    top_cap = next((w for w in payload["capacity"]["byWorkType"] if _is_at_risk(w["forecast"])), None)
+    if top_cap:
+        gap_txt = f" · short {top_cap['headGap']} heads" if top_cap["headGap"] > 0 else ""
+        forecast_txt = top_cap["forecast"].replace("SLA ", "").lower()
+        alerts.append(
+            {
+                "kind": "capacity",
+                "title": f"{_wt_label(top_cap['work_type'])} SLA forecast: {forecast_txt}",
+                "body": f"{top_cap['action']}{gap_txt}.",
+                "target": {"section": "capacity", "focus": {"workType": top_cap["work_type"]}},
+            }
+        )
+
+    top_q = next((t for t in payload["workforce"]["teams"] if t["risk_band"] == "High"), None)
+    if top_q and len(alerts) < 3:
+        alerts.append(
+            {
+                "kind": "quality",
+                "title": f"Quality risk concentrating in {_wt_label(top_q['work_type'])} ({top_q['name']})",
+                "body": f"Risk score {top_q['risk_score']} · quality gap {top_q['quality_gap']}pt · {top_q['action']}.",
+                "target": {"section": "workforce", "focus": {"teamId": top_q["team_id"]}},
+            }
+        )
+
+    return {"headline": _leadership_headline(scenario, payload), "alerts": alerts[:3]}
+
+
 def build_payload(scenario: str = "current") -> dict:
     teams = pd.read_csv(DATA_DIR / "teams.csv")
     contributors = pd.read_csv(DATA_DIR / "contributors.csv")
@@ -223,6 +510,7 @@ def build_payload(scenario: str = "current") -> dict:
     quality_events = pd.read_csv(DATA_DIR / "quality_events.csv")
     escalation_events = pd.read_csv(DATA_DIR / "escalation_events.csv")
     csat_events = pd.read_csv(DATA_DIR / "csat_events.csv")
+    sla_events = pd.read_csv(DATA_DIR / "sla_events.csv")
 
     esc_dates = pd.to_datetime(escalation_events["date"])
     ref_date = esc_dates.max().normalize()
@@ -246,7 +534,7 @@ def build_payload(scenario: str = "current") -> dict:
             "teams": int(len(teams)),
             "contributors": int(len(contributors)),
             "quality_events": int(len(quality_events)),
-            "sla_events": int(len(pd.read_csv(DATA_DIR / "sla_events.csv"))),
+            "sla_events": int(len(sla_events)),
             "csat_events": int(len(csat_events)),
         },
         "refDate": str(ref_date.date()),
@@ -273,6 +561,13 @@ def build_payload(scenario: str = "current") -> dict:
         "workTypeRollup": build_work_type_rollup(teams, work_items, quality_events, escalation_events, csat_events),
         "escalations": json.loads(escalation_events.to_json(orient="records")),
     }
+    payload["workforce"] = build_workforce(
+        teams, contributors, work_items, quality_events, escalation_events, payload["kpis"]
+    )
+    payload["capacity"] = build_capacity(
+        contributors, work_items, teams, sla_events, quality_events, escalation_events, payload["kpis"]
+    )
+    payload["leadership"] = build_leadership(payload, scenario)
     return payload
 
 
