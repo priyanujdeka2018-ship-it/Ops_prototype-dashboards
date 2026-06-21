@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-21T11:37:42Z",
+ "generated_at": "2026-06-21T18:16:45Z",
  "scenario": "healthy",
  "pipeline_version": "1.0.0",
  "row_counts": {
@@ -26,38 +26,38 @@
  },
  "kpiTrends": {
   "sla": [
-   96.5,
-   96.2,
-   96.6,
    96.1,
-   95.7,
-   93.4,
-   92.8
+   96.2,
+   96.7,
+   96.2,
+   95.9,
+   93.3,
+   92.9
   ],
   "csat": [
-   4.41,
-   4.38,
-   4.44,
    4.4,
-   4.42,
-   4.37,
-   4.36
+   4.41,
+   4.45,
+   4.4,
+   4.43,
+   4.35,
+   4.37
   ],
   "backlog": [
-   712,
-   814,
-   894,
-   957,
+   707,
+   794,
+   881,
+   951,
    1078,
-   1211,
-   1335
+   1201,
+   1357
   ],
   "quality": [
    92.6,
-   92.6,
-   92.4,
+   92.5,
+   92.5,
    92.7,
-   91.8,
+   91.9,
    91.4,
    91.5
   ],
@@ -66,18 +66,18 @@
    9.0,
    14.0,
    16.0,
-   20.0,
+   21.0,
    22.0,
-   24.0
+   23.0
   ],
   "fcr": [
-   90.4,
-   91.3,
-   91.7,
-   91.7,
+   90.2,
    91.0,
-   85.5,
-   87.8
+   91.9,
+   91.8,
+   91.1,
+   85.4,
+   87.9
   ]
  },
  "totals": {
@@ -560,7 +560,7 @@
    "sev1_escalations": 2,
    "open_escalations": 2,
    "sla": 91.7,
-   "csat": 4.1,
+   "csat": 4.08,
    "quality": 92.0
   },
   {
@@ -575,7 +575,7 @@
    "sev1_escalations": 4,
    "open_escalations": 3,
    "sla": 91.9,
-   "csat": 4.27,
+   "csat": 4.28,
    "quality": 92.9
   },
   {
@@ -600,7 +600,7 @@
    "teams": 3,
    "contributors": 106,
    "sla": 92.6,
-   "csat": 4.14,
+   "csat": 4.12,
    "quality": 92.3,
    "escalations": 24,
    "open_escalations": 8,
@@ -2209,38 +2209,52 @@
  "workforce": {
   "region": {
    "highRiskTeams": 1,
-   "avgQuality": 92.3
+   "avgQuality": 92.3,
+   "teamCount": 15,
+   "reworkRate": 5.2,
+   "flaggedContributors": 47,
+   "highRiskContributors": 7
   },
   "byWorkType": [
    {
     "work_type": "code_review",
     "riskLevel": "High",
     "avgQuality": 89.1,
-    "teamsAtRisk": 1
+    "teamsAtRisk": 1,
+    "avgScore": 24.4,
+    "flagged": 36
    },
    {
     "work_type": "audio_evaluation",
     "riskLevel": "Low",
     "avgQuality": 92.3,
-    "teamsAtRisk": 0
+    "teamsAtRisk": 0,
+    "avgScore": 9.2,
+    "flagged": 8
    },
    {
     "work_type": "rlhf_evaluation",
     "riskLevel": "Low",
     "avgQuality": 91.2,
-    "teamsAtRisk": 0
+    "teamsAtRisk": 0,
+    "avgScore": 8.2,
+    "flagged": 2
    },
    {
     "work_type": "expert_review",
     "riskLevel": "Low",
     "avgQuality": 92.9,
-    "teamsAtRisk": 0
+    "teamsAtRisk": 0,
+    "avgScore": 5.6,
+    "flagged": 0
    },
    {
     "work_type": "image_annotation",
     "riskLevel": "Low",
     "avgQuality": 94.8,
-    "teamsAtRisk": 0
+    "teamsAtRisk": 0,
+    "avgScore": 3.8,
+    "flagged": 1
    }
   ],
   "teams": [
@@ -2256,7 +2270,15 @@
      "Team-wide drift"
     ],
     "action": "Team calibration huddle",
-    "quality_gap": 0.9
+    "quality_gap": 0.9,
+    "quality": 89.1,
+    "drift": -4.1,
+    "goldFail": 25.0,
+    "override": 5.0,
+    "peerAgree": 84.2,
+    "rework": 7.2,
+    "lowTenure": 3.4,
+    "contributors": 29
    },
    {
     "team_id": "TEAM_APAC_CODE_01",
@@ -2269,7 +2291,15 @@
      "High-risk contributor concentration"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 0.8
+    "quality_gap": 0.8,
+    "quality": 89.2,
+    "drift": -3.1,
+    "goldFail": 25.9,
+    "override": 5.2,
+    "peerAgree": 84.4,
+    "rework": 9.8,
+    "lowTenure": 3.2,
+    "contributors": 31
    },
    {
     "team_id": "TEAM_APAC_CODE_02",
@@ -2281,7 +2311,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 1.1
+    "quality_gap": 1.1,
+    "quality": 88.9,
+    "drift": -3.3,
+    "goldFail": 23.9,
+    "override": 5.6,
+    "peerAgree": 83.9,
+    "rework": 7.1,
+    "lowTenure": 0.0,
+    "contributors": 21
    },
    {
     "team_id": "TEAM_APAC_AUDIO_01",
@@ -2293,7 +2331,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 92.4,
+    "drift": 0.0,
+    "goldFail": 9.4,
+    "override": 7.7,
+    "peerAgree": 86.1,
+    "rework": 5.2,
+    "lowTenure": 6.5,
+    "contributors": 31
    },
    {
     "team_id": "TEAM_APAC_RLHF_03",
@@ -2305,7 +2351,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 91.0,
+    "drift": -0.0,
+    "goldFail": 15.4,
+    "override": 4.9,
+    "peerAgree": 85.7,
+    "rework": 7.8,
+    "lowTenure": 9.5,
+    "contributors": 21
    },
    {
     "team_id": "TEAM_APAC_AUDIO_02",
@@ -2317,7 +2371,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 92.5,
+    "drift": -0.2,
+    "goldFail": 10.2,
+    "override": 6.1,
+    "peerAgree": 86.1,
+    "rework": 3.8,
+    "lowTenure": 10.3,
+    "contributors": 39
    },
    {
     "team_id": "TEAM_APAC_AUDIO_03",
@@ -2329,7 +2391,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 92.0,
+    "drift": 1.5,
+    "goldFail": 10.6,
+    "override": 4.8,
+    "peerAgree": 86.5,
+    "rework": 6.1,
+    "lowTenure": 17.4,
+    "contributors": 23
    },
    {
     "team_id": "TEAM_APAC_RLHF_02",
@@ -2341,7 +2411,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 91.1,
+    "drift": -0.5,
+    "goldFail": 14.9,
+    "override": 4.3,
+    "peerAgree": 85.9,
+    "rework": 4.3,
+    "lowTenure": 12.5,
+    "contributors": 16
    },
    {
     "team_id": "TEAM_APAC_RLHF_01",
@@ -2353,7 +2431,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 91.4,
+    "drift": 0.5,
+    "goldFail": 13.4,
+    "override": 5.2,
+    "peerAgree": 85.7,
+    "rework": 3.9,
+    "lowTenure": 0.0,
+    "contributors": 18
    },
    {
     "team_id": "TEAM_APAC_EXPERT_02",
@@ -2365,7 +2451,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 92.7,
+    "drift": 0.0,
+    "goldFail": 7.9,
+    "override": 4.6,
+    "peerAgree": 86.4,
+    "rework": 6.3,
+    "lowTenure": 12.5,
+    "contributors": 16
    },
    {
     "team_id": "TEAM_APAC_IMAGE_04",
@@ -2377,7 +2471,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 95.0,
+    "drift": -0.2,
+    "goldFail": 4.3,
+    "override": 4.4,
+    "peerAgree": 85.6,
+    "rework": 3.3,
+    "lowTenure": 5.9,
+    "contributors": 34
    },
    {
     "team_id": "TEAM_APAC_EXPERT_01",
@@ -2389,7 +2491,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 92.9,
+    "drift": -0.5,
+    "goldFail": 6.2,
+    "override": 4.5,
+    "peerAgree": 85.9,
+    "rework": 5.1,
+    "lowTenure": 0.0,
+    "contributors": 19
    },
    {
     "team_id": "TEAM_APAC_IMAGE_03",
@@ -2401,7 +2511,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 94.6,
+    "drift": -0.3,
+    "goldFail": 4.4,
+    "override": 4.2,
+    "peerAgree": 85.8,
+    "rework": 4.5,
+    "lowTenure": 0.0,
+    "contributors": 23
    },
    {
     "team_id": "TEAM_APAC_IMAGE_01",
@@ -2413,7 +2531,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 94.7,
+    "drift": 0.9,
+    "goldFail": 4.4,
+    "override": 3.7,
+    "peerAgree": 85.4,
+    "rework": 3.7,
+    "lowTenure": 0.0,
+    "contributors": 31
    },
    {
     "team_id": "TEAM_APAC_IMAGE_02",
@@ -2425,7 +2551,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 95.0,
+    "drift": -0.3,
+    "goldFail": 3.9,
+    "override": 3.1,
+    "peerAgree": 85.4,
+    "rework": 3.4,
+    "lowTenure": 0.0,
+    "contributors": 33
    }
   ],
   "contributors": [
@@ -2442,7 +2576,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 641,
+    "lowTenure": false,
+    "quality": 83.8,
+    "goldPass": 38.5,
+    "override": 30.8,
+    "rework": 23.1,
+    "peer": 85.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00281",
@@ -2456,7 +2599,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 574,
+    "lowTenure": false,
+    "quality": 86.7,
+    "goldPass": 60.0,
+    "override": 30.0,
+    "rework": 20.0,
+    "peer": 83.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00285",
@@ -2469,7 +2621,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 385,
+    "lowTenure": false,
+    "quality": 87.0,
+    "goldPass": 55.6,
+    "override": 5.6,
+    "rework": 22.2,
+    "peer": 83.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00278",
@@ -2481,7 +2642,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 384,
+    "lowTenure": false,
+    "quality": 86.7,
+    "goldPass": 55.0,
+    "override": 0.0,
+    "rework": 10.0,
+    "peer": 82.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00245",
@@ -2494,7 +2664,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 267,
+    "lowTenure": false,
+    "quality": 88.6,
+    "goldPass": 57.9,
+    "override": 10.5,
+    "rework": 10.5,
+    "peer": 87.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00209",
@@ -2508,7 +2687,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 540,
+    "lowTenure": false,
+    "quality": 87.5,
+    "goldPass": 65.0,
+    "override": 10.0,
+    "rework": 20.0,
+    "peer": 85.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00219",
@@ -2520,7 +2708,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 233,
+    "lowTenure": false,
+    "quality": 87.5,
+    "goldPass": 64.7,
+    "override": 5.9,
+    "rework": 11.8,
+    "peer": 79.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00274",
@@ -2532,7 +2729,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 317,
+    "lowTenure": false,
+    "quality": 87.8,
+    "goldPass": 68.4,
+    "override": 5.3,
+    "rework": 10.5,
+    "peer": 84.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00216",
@@ -2546,7 +2752,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 185,
+    "lowTenure": false,
+    "quality": 90.3,
+    "goldPass": 68.8,
+    "override": 12.5,
+    "rework": 12.5,
+    "peer": 84.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00287",
@@ -2559,7 +2774,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 322,
+    "lowTenure": false,
+    "quality": 88.3,
+    "goldPass": 57.1,
+    "override": 7.1,
+    "rework": 14.3,
+    "peer": 83.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00260",
@@ -2572,7 +2796,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 205,
+    "lowTenure": false,
+    "quality": 88.2,
+    "goldPass": 61.5,
+    "override": 0.0,
+    "rework": 15.4,
+    "peer": 82.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00211",
@@ -2585,7 +2818,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 175,
+    "lowTenure": false,
+    "quality": 89.3,
+    "goldPass": 70.0,
+    "override": 10.0,
+    "rework": 10.0,
+    "peer": 88.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00296",
@@ -2598,7 +2840,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 296,
+    "lowTenure": false,
+    "quality": 89.4,
+    "goldPass": 81.8,
+    "override": 9.1,
+    "rework": 18.2,
+    "peer": 85.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00272",
@@ -2610,7 +2861,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 128,
+    "lowTenure": false,
+    "quality": 89.0,
+    "goldPass": 76.9,
+    "override": 7.7,
+    "rework": 7.7,
+    "peer": 79.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00301",
@@ -2624,7 +2884,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 62,
+    "lowTenure": true,
+    "quality": 92.3,
+    "goldPass": 72.7,
+    "override": 18.2,
+    "rework": 18.2,
+    "peer": 84.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00234",
@@ -2637,7 +2906,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 546,
+    "lowTenure": false,
+    "quality": 86.5,
+    "goldPass": 60.0,
+    "override": 20.0,
+    "rework": 0.0,
+    "peer": 84.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00302",
@@ -2652,7 +2930,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 123,
+    "lowTenure": false,
+    "quality": 90.0,
+    "goldPass": 83.3,
+    "override": 16.7,
+    "rework": 16.7,
+    "peer": 83.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00225",
@@ -2665,7 +2952,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 278,
+    "lowTenure": false,
+    "quality": 90.1,
+    "goldPass": 78.6,
+    "override": 7.1,
+    "rework": 14.3,
+    "peer": 81.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00246",
@@ -2677,7 +2973,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 171,
+    "lowTenure": false,
+    "quality": 87.4,
+    "goldPass": 58.8,
+    "override": 0.0,
+    "rework": 11.8,
+    "peer": 81.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00320",
@@ -2691,7 +2996,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Reviewer calibration + manager review"
+    "coaching": "Reviewer calibration + manager review",
+    "skill": "junior",
+    "tenure": 205,
+    "lowTenure": false,
+    "quality": 94.3,
+    "goldPass": 100.0,
+    "override": 14.3,
+    "rework": 14.3,
+    "peer": 85.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00220",
@@ -2704,7 +3018,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 281,
+    "lowTenure": false,
+    "quality": 87.5,
+    "goldPass": 62.5,
+    "override": 12.5,
+    "rework": 0.0,
+    "peer": 85.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00360",
@@ -2716,7 +3039,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Manager coaching check-in"
+    "coaching": "Manager coaching check-in",
+    "skill": "intermediate",
+    "tenure": 94,
+    "lowTenure": true,
+    "quality": 93.4,
+    "goldPass": 85.7,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 88.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00149",
@@ -2728,7 +3060,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 157,
+    "lowTenure": false,
+    "quality": 89.7,
+    "goldPass": 70.0,
+    "override": 3.3,
+    "rework": 6.7,
+    "peer": 84.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00282",
@@ -2741,7 +3082,16 @@
      "Recent quality drop",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 44,
+    "lowTenure": true,
+    "quality": 90.1,
+    "goldPass": 68.8,
+    "override": 0.0,
+    "rework": 6.2,
+    "peer": 84.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00253",
@@ -2753,7 +3103,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 191,
+    "lowTenure": false,
+    "quality": 88.6,
+    "goldPass": 75.0,
+    "override": 8.3,
+    "rework": 0.0,
+    "peer": 85.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00351",
@@ -2766,7 +3125,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Reviewer calibration + manager review"
+    "coaching": "Reviewer calibration + manager review",
+    "skill": "senior",
+    "tenure": 300,
+    "lowTenure": false,
+    "quality": 95.1,
+    "goldPass": 100.0,
+    "override": 25.0,
+    "rework": 0.0,
+    "peer": 90.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00235",
@@ -2779,7 +3147,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 368,
+    "lowTenure": false,
+    "quality": 88.8,
+    "goldPass": 70.6,
+    "override": 5.9,
+    "rework": 17.6,
+    "peer": 86.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00222",
@@ -2792,7 +3169,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 265,
+    "lowTenure": false,
+    "quality": 90.6,
+    "goldPass": 71.4,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 79.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00241",
@@ -2804,7 +3190,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 257,
+    "lowTenure": false,
+    "quality": 89.0,
+    "goldPass": 84.2,
+    "override": 5.3,
+    "rework": 5.3,
+    "peer": 86.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00269",
@@ -2817,7 +3212,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 424,
+    "lowTenure": false,
+    "quality": 88.6,
+    "goldPass": 71.4,
+    "override": 14.3,
+    "rework": 7.1,
+    "peer": 85.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00383",
@@ -2831,7 +3235,16 @@
      "High rework rate",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 85,
+    "lowTenure": true,
+    "quality": 91.6,
+    "goldPass": 81.8,
+    "override": 18.2,
+    "rework": 18.2,
+    "peer": 83.5,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00264",
@@ -2844,7 +3257,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 189,
+    "lowTenure": false,
+    "quality": 88.4,
+    "goldPass": 76.2,
+    "override": 4.8,
+    "rework": 14.3,
+    "peer": 82.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00259",
@@ -2856,7 +3278,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 350,
+    "lowTenure": false,
+    "quality": 90.0,
+    "goldPass": 78.9,
+    "override": 5.3,
+    "rework": 0.0,
+    "peer": 83.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00283",
@@ -2868,7 +3299,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 167,
+    "lowTenure": false,
+    "quality": 90.5,
+    "goldPass": 66.7,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 80.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00243",
@@ -2880,7 +3320,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 133,
+    "lowTenure": false,
+    "quality": 87.5,
+    "goldPass": 75.0,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 84.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00236",
@@ -2892,7 +3341,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 518,
+    "lowTenure": false,
+    "quality": 87.9,
+    "goldPass": 54.5,
+    "override": 0.0,
+    "rework": 27.3,
+    "peer": 83.7,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00299",
@@ -2905,7 +3363,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Reviewer calibration + manager review"
+    "coaching": "Reviewer calibration + manager review",
+    "skill": "expert",
+    "tenure": 592,
+    "lowTenure": false,
+    "quality": 94.6,
+    "goldPass": 100.0,
+    "override": 28.6,
+    "rework": 0.0,
+    "peer": 86.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00250",
@@ -2917,7 +3384,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 328,
+    "lowTenure": false,
+    "quality": 86.9,
+    "goldPass": 62.5,
+    "override": 0.0,
+    "rework": 31.2,
+    "peer": 83.0,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00256",
@@ -2929,7 +3405,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 252,
+    "lowTenure": false,
+    "quality": 87.1,
+    "goldPass": 58.8,
+    "override": 5.9,
+    "rework": 17.6,
+    "peer": 80.1,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00230",
@@ -2941,7 +3426,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 381,
+    "lowTenure": false,
+    "quality": 88.9,
+    "goldPass": 75.0,
+    "override": 8.3,
+    "rework": 8.3,
+    "peer": 84.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00208",
@@ -2953,7 +3447,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 185,
+    "lowTenure": false,
+    "quality": 86.3,
+    "goldPass": 61.5,
+    "override": 0.0,
+    "rework": 23.1,
+    "peer": 81.0,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00279",
@@ -2965,7 +3468,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 367,
+    "lowTenure": false,
+    "quality": 88.1,
+    "goldPass": 77.8,
+    "override": 0.0,
+    "rework": 11.1,
+    "peer": 86.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00290",
@@ -2977,7 +3489,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 136,
+    "lowTenure": false,
+    "quality": 90.2,
+    "goldPass": 83.3,
+    "override": 0.0,
+    "rework": 8.3,
+    "peer": 86.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00121",
@@ -2989,7 +3510,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 435,
+    "lowTenure": false,
+    "quality": 93.9,
+    "goldPass": 84.2,
+    "override": 5.3,
+    "rework": 5.3,
+    "peer": 86.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00280",
@@ -3001,7 +3531,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 145,
+    "lowTenure": false,
+    "quality": 88.6,
+    "goldPass": 77.8,
+    "override": 5.6,
+    "rework": 5.6,
+    "peer": 83.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00184",
@@ -3013,7 +3552,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 88,
+    "lowTenure": true,
+    "quality": 91.3,
+    "goldPass": 81.5,
+    "override": 3.7,
+    "rework": 11.1,
+    "peer": 86.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00325",
@@ -3026,15 +3574,27 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Reviewer calibration + manager review"
+    "coaching": "Reviewer calibration + manager review",
+    "skill": "junior",
+    "tenure": 248,
+    "lowTenure": false,
+    "quality": 91.9,
+    "goldPass": 85.7,
+    "override": 28.6,
+    "rework": 14.3,
+    "peer": 85.7,
+    "status": "Volatile"
    }
   ]
  },
  "capacity": {
   "region": {
-   "atRisk": 2,
+   "atRisk": 3,
    "agedShare": 93,
-   "forecast": "SLA at risk"
+   "forecast": "SLA at risk",
+   "backlog": 1272,
+   "totalHeadGap": 0,
+   "avgSla": 95.7
   },
   "byWorkType": [
    {
@@ -3044,7 +3604,45 @@
     "complexity": 74,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Approve load rebalance / intake throttle for Expert review?"
+    "decision": "Approve load rebalance / intake throttle for Expert review?",
+    "riskScore": 49.3,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "SLA miss rate rising",
+     "High-complexity work mix",
+     "Expert capacity demand"
+    ],
+    "utilization": 64,
+    "slaNow": 86.2,
+    "backlog": 101,
+    "backlogPressure": 1.7,
+    "inflow": 45,
+    "throughput": 58,
+    "contributors": 35
+   },
+   {
+    "work_type": "rlhf_evaluation",
+    "forecast": "SLA at risk",
+    "riskLevel": "Medium",
+    "complexity": 27,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "headGap": 0,
+    "decision": "Approve load rebalance / intake throttle for RLHF evaluation?",
+    "riskScore": 46.0,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "SLA miss rate rising",
+     "Utilization above safe threshold"
+    ],
+    "utilization": 92,
+    "slaNow": 84.0,
+    "backlog": 293,
+    "backlogPressure": 2.0,
+    "inflow": 135,
+    "throughput": 144,
+    "contributors": 55
    },
    {
     "work_type": "image_annotation",
@@ -3053,7 +3651,20 @@
     "complexity": 26,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Approve load rebalance / intake throttle for Image annotation?"
+    "decision": "Approve load rebalance / intake throttle for Image annotation?",
+    "riskScore": 42.5,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "Backlog growing faster than throughput"
+    ],
+    "utilization": 62,
+    "slaNow": 100.0,
+    "backlog": 451,
+    "backlogPressure": 2.5,
+    "inflow": 212,
+    "throughput": 184,
+    "contributors": 121
    },
    {
     "work_type": "audio_evaluation",
@@ -3062,16 +3673,20 @@
     "complexity": 27,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Maintain current staffing."
-   },
-   {
-    "work_type": "rlhf_evaluation",
-    "forecast": "SLA likely stable",
-    "riskLevel": "Medium",
-    "complexity": 27,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
-    "headGap": 0,
-    "decision": "Maintain current staffing."
+    "decision": "Maintain current staffing.",
+    "riskScore": 38.1,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "SLA miss rate rising"
+    ],
+    "utilization": 34,
+    "slaNow": 81.8,
+    "backlog": 216,
+    "backlogPressure": 2.8,
+    "inflow": 72,
+    "throughput": 77,
+    "contributors": 93
    },
    {
     "work_type": "code_review",
@@ -3080,49 +3695,131 @@
     "complexity": 27,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Maintain current staffing."
+    "decision": "Maintain current staffing.",
+    "riskScore": 31.0,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "High rework drag",
+     "Quality risk overlay"
+    ],
+    "utilization": 54,
+    "slaNow": 92.9,
+    "backlog": 211,
+    "backlogPressure": 1.7,
+    "inflow": 121,
+    "throughput": 127,
+    "contributors": 81
    }
   ],
   "teams": [
    {
-    "team_id": "TEAM_APAC_RLHF_02",
-    "name": "Arjun Mehta",
-    "work_type": "rlhf_evaluation",
-    "utilization": 105,
-    "load": 100,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
-   },
-   {
     "team_id": "TEAM_APAC_EXPERT_02",
     "name": "Sneha Reddy",
     "work_type": "expert_review",
-    "utilization": 66,
+    "utilization": 73,
     "load": 53,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 54.4,
+    "riskLevel": "Medium",
+    "sla": 85.7,
+    "backlog": 53,
+    "throughput": 28,
+    "contributors": 16,
+    "city": "Bangalore",
+    "shift": "follow_the_sun",
+    "openEsc": 1,
+    "lowTenureHighComplex": false
+   },
+   {
+    "team_id": "TEAM_APAC_RLHF_02",
+    "name": "Arjun Mehta",
+    "work_type": "rlhf_evaluation",
+    "utilization": 109,
+    "load": 100,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 50.4,
+    "riskLevel": "Medium",
+    "sla": 89.4,
+    "backlog": 100,
+    "throughput": 47,
+    "contributors": 16,
+    "city": "Bangalore",
+    "shift": "day",
+    "openEsc": 5,
+    "lowTenureHighComplex": false
+   },
+   {
+    "team_id": "TEAM_APAC_RLHF_01",
+    "name": "Neha Kapoor",
+    "work_type": "rlhf_evaluation",
+    "utilization": 95,
+    "load": 97,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 49.0,
+    "riskLevel": "Medium",
+    "sla": 84.8,
+    "backlog": 97,
+    "throughput": 46,
+    "contributors": 18,
+    "city": "Mumbai",
+    "shift": "weekend",
+    "openEsc": 4,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_EXPERT_01",
     "name": "Rohan Gupta",
     "work_type": "expert_review",
-    "utilization": 56,
+    "utilization": 57,
     "load": 48,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 48.9,
+    "riskLevel": "Medium",
+    "sla": 86.7,
+    "backlog": 48,
+    "throughput": 30,
+    "contributors": 19,
+    "city": "Pune",
+    "shift": "day",
+    "openEsc": 3,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_AUDIO_02",
     "name": "Karan Khanna",
     "work_type": "audio_evaluation",
-    "utilization": 19,
+    "utilization": 20,
     "load": 63,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 42.4,
+    "riskLevel": "Medium",
+    "sla": 71.4,
+    "backlog": 63,
+    "throughput": 21,
+    "contributors": 39,
+    "city": "Hyderabad",
+    "shift": "weekend",
+    "openEsc": 3,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_CODE_01",
     "name": "Kabir Sinha",
     "work_type": "code_review",
-    "utilization": 46,
+    "utilization": 47,
     "load": 74,
-    "action": "Run quality and workflow review before adding volume"
+    "action": "Run quality and workflow review before adding volume",
+    "riskScore": 41.6,
+    "riskLevel": "Medium",
+    "sla": 88.1,
+    "backlog": 74,
+    "throughput": 42,
+    "contributors": 31,
+    "city": "Bangalore",
+    "shift": "hybrid",
+    "openEsc": 4,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_AUDIO_03",
@@ -3130,84 +3827,166 @@
     "work_type": "audio_evaluation",
     "utilization": 42,
     "load": 62,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 39.2,
+    "riskLevel": "Medium",
+    "sla": 77.8,
+    "backlog": 62,
+    "throughput": 27,
+    "contributors": 23,
+    "city": "Pune",
+    "shift": "night",
+    "openEsc": 2,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_RLHF_03",
     "name": "Meera Nair",
     "work_type": "rlhf_evaluation",
-    "utilization": 75,
+    "utilization": 76,
     "load": 96,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
-   },
-   {
-    "team_id": "TEAM_APAC_RLHF_01",
-    "name": "Neha Kapoor",
-    "work_type": "rlhf_evaluation",
-    "utilization": 89,
-    "load": 97,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
-   },
-   {
-    "team_id": "TEAM_APAC_AUDIO_01",
-    "name": "Isha Verma",
-    "work_type": "audio_evaluation",
-    "utilization": 46,
-    "load": 91,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 38.5,
+    "riskLevel": "Medium",
+    "sla": 78.4,
+    "backlog": 96,
+    "throughput": 51,
+    "contributors": 21,
+    "city": "Hyderabad",
+    "shift": "hybrid",
+    "openEsc": 9,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_IMAGE_04",
     "name": "Rahul Iyer",
     "work_type": "image_annotation",
-    "utilization": 58,
+    "utilization": 59,
     "load": 129,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 34.1,
+    "riskLevel": "Medium",
+    "sla": 100.0,
+    "backlog": 129,
+    "throughput": 43,
+    "contributors": 34,
+    "city": "Chennai",
+    "shift": "hybrid",
+    "openEsc": 0,
+    "lowTenureHighComplex": false
+   },
+   {
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "name": "Isha Verma",
+    "work_type": "audio_evaluation",
+    "utilization": 47,
+    "load": 91,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 33.2,
+    "riskLevel": "Medium",
+    "sla": 93.1,
+    "backlog": 91,
+    "throughput": 29,
+    "contributors": 31,
+    "city": "Pune",
+    "shift": "day",
+    "openEsc": 3,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_CODE_02",
     "name": "Ritika Bose",
     "work_type": "code_review",
-    "utilization": 75,
+    "utilization": 78,
     "load": 74,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 32.0,
+    "riskLevel": "Medium",
+    "sla": 92.9,
+    "backlog": 74,
+    "throughput": 42,
+    "contributors": 21,
+    "city": "Chennai",
+    "shift": "hybrid",
+    "openEsc": 3,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_IMAGE_01",
     "name": "Ananya Rao",
     "work_type": "image_annotation",
-    "utilization": 63,
+    "utilization": 65,
     "load": 111,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
-   },
-   {
-    "team_id": "TEAM_APAC_IMAGE_02",
-    "name": "Vikram Menon",
-    "work_type": "image_annotation",
-    "utilization": 53,
-    "load": 108,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 31.1,
+    "riskLevel": "Medium",
+    "sla": 100.0,
+    "backlog": 111,
+    "throughput": 54,
+    "contributors": 31,
+    "city": "Bangalore",
+    "shift": "day",
+    "openEsc": 0,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_IMAGE_03",
     "name": "Priya Sharma",
     "work_type": "image_annotation",
-    "utilization": 70,
+    "utilization": 74,
     "load": 103,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 30.9,
+    "riskLevel": "Medium",
+    "sla": 100.0,
+    "backlog": 103,
+    "throughput": 40,
+    "contributors": 23,
+    "city": "Hyderabad",
+    "shift": "day",
+    "openEsc": 0,
+    "lowTenureHighComplex": false
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_02",
+    "name": "Vikram Menon",
+    "work_type": "image_annotation",
+    "utilization": 55,
+    "load": 108,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 29.9,
+    "riskLevel": "Low",
+    "sla": 100.0,
+    "backlog": 108,
+    "throughput": 47,
+    "contributors": 33,
+    "city": "Pune",
+    "shift": "night",
+    "openEsc": 0,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_CODE_03",
     "name": "Sanjay Das",
     "work_type": "code_review",
-    "utilization": 44,
+    "utilization": 46,
     "load": 63,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 26.2,
+    "riskLevel": "Low",
+    "sla": 97.7,
+    "backlog": 63,
+    "throughput": 43,
+    "contributors": 29,
+    "city": "Hyderabad",
+    "shift": "weekend",
+    "openEsc": 7,
+    "lowTenureHighComplex": false
    }
   ]
  },
  "leadership": {
-  "headline": "Healthy scenario \u00b7 SLA 95.7% \u00b7 2 work types with SLA at risk \u00b7 1 team flagged for quality.",
+  "headline": "Healthy scenario \u00b7 SLA 95.7% \u00b7 3 work types with SLA at risk \u00b7 1 team flagged for quality.",
   "alerts": [
    {
     "kind": "pattern",
