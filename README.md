@@ -467,38 +467,41 @@ SLA forecast statuses:
 - `SLA recovery needed`
 - `Insufficient data`
 
-## Aurora React Front-End
+## Command Center Front-End (`web/`)
 
-`frontend/` contains the Aurora operating view — a dark editorial React
-front-end (Modules A + B) wired to the same data and scoring logic as the
-Streamlit app. It is a static site: React and Babel load from a CDN, there is
-no build step, and all numbers come from `frontend/data/data.json`.
+`web/` contains the canonical front-end — a TanStack Start / React + TypeScript
+app (shadcn/ui), ported from the Lovable project, wired to the same data and
+scoring logic as the Streamlit app. It builds to a static SPA (Vite) and fetches
+all numbers client-side from `web/public/data/*.json`; every view *reads*
+precomputed scores and never recomputes them.
 
 Regenerate the data payload after any change to the CSVs in `data/`:
 
 ```bash
-python -m src.build_frontend_data
+python -m src.build_frontend_data        # writes web/public/data/data.json
 ```
 
 The builder reuses `src/metrics.py` and `src/escalation_patterns.py`, so the
 KPIs, pattern risk scores, and recurrence statuses in the React view match the
 Streamlit pages exactly.
 
-Serve it locally:
+Run it locally (dev server, or build + preview the static output):
 
 ```bash
-python -m http.server 8000 -d frontend
-# open http://localhost:8000
+cd web
+bun install
+bun run dev                       # http://localhost:8080  (live dev)
+# or verify the deployed artifact:  bun run build && bun run preview
 ```
 
-On Render the primary service serves this front-end
-(start command: `python -m http.server $PORT -d frontend`, see `render.yaml`).
-The Streamlit app remains the working backend with the full Module C/D
-drilldowns and is run locally with `streamlit run app.py`.
+On Render the primary service is a **static site** that builds `web/` and serves
+`web/dist/client` (SPA fallback to `index.html`); see `render.yaml`. The
+Streamlit app remains the analyst workbench with the full Module C/D drilldowns
+and is run locally with `streamlit run app.py`.
 
 ## Data Pipeline
 
-The pipeline regenerates the synthetic CSVs and rebuilds the Aurora JSON in
+The pipeline regenerates the synthetic CSVs and rebuilds the frontend JSON in
 one command, for one or all scenarios. Each scenario (`healthy`, `current`,
 `crisis`) scales the underlying SLA, quality, CSAT, rework, and escalation
 rates, so the dashboard visibly changes when you switch between them — useful
