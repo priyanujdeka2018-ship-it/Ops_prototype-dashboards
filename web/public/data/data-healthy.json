@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-15T15:21:58Z",
+ "generated_at": "2026-06-21T11:37:42Z",
  "scenario": "healthy",
  "pipeline_version": "1.0.0",
  "row_counts": {
@@ -11,12 +11,12 @@
   "sla_events": 12728,
   "csat_events": 650
  },
- "refDate": "2026-06-14",
- "weekStart": "Jun 8",
+ "refDate": "2026-06-20",
+ "weekStart": "Jun 15",
  "region": "APAC",
  "kpis": {
   "sla_adherence": 95.7,
-  "csat_7d": 4.36,
+  "csat_7d": 4.35,
   "backlog": 1272,
   "aged_backlog_72h": 1187,
   "escalation_rate_per_1000": 9.2,
@@ -27,57 +27,57 @@
  "kpiTrends": {
   "sla": [
    96.5,
-   96.8,
-   96.0,
-   96.4,
+   96.2,
+   96.6,
+   96.1,
+   95.7,
    93.4,
-   92.9,
-   83.4
+   92.8
   ],
   "csat": [
-   4.42,
-   4.43,
    4.41,
-   4.43,
-   4.36,
-   4.35,
-   4.6
+   4.38,
+   4.44,
+   4.4,
+   4.42,
+   4.37,
+   4.36
   ],
   "backlog": [
-   796,
-   867,
-   962,
-   1055,
-   1167,
-   1374,
-   1272
+   712,
+   814,
+   894,
+   957,
+   1078,
+   1211,
+   1335
   ],
   "quality": [
    92.6,
-   92.5,
    92.6,
-   92.0,
+   92.4,
+   92.7,
+   91.8,
    91.4,
-   91.4,
-   92.7
+   91.5
   ],
   "esc_rate": [
-   11.0,
-   12.0,
-   15.0,
-   19.0,
-   23.0,
-   26.0,
-   0.0
+   9.0,
+   9.0,
+   14.0,
+   16.0,
+   20.0,
+   22.0,
+   24.0
   ],
   "fcr": [
-   90.7,
-   92.3,
-   91.8,
-   91.1,
-   86.3,
-   87.0,
-   79.8
+   90.4,
+   91.3,
+   91.7,
+   91.7,
+   91.0,
+   85.5,
+   87.8
   ]
  },
  "totals": {
@@ -121,35 +121,39 @@
  "weeklyTrend": [
   {
    "week": "2026-04-20",
-   "count": 7
+   "count": 1
   },
   {
    "week": "2026-04-27",
-   "count": 8
+   "count": 6
   },
   {
    "week": "2026-05-04",
-   "count": 11
+   "count": 10
   },
   {
    "week": "2026-05-11",
-   "count": 13
+   "count": 9
   },
   {
    "week": "2026-05-18",
-   "count": 17
+   "count": 15
   },
   {
    "week": "2026-05-25",
-   "count": 20
+   "count": 18
   },
   {
    "week": "2026-06-01",
-   "count": 25
+   "count": 22
   },
   {
    "week": "2026-06-08",
-   "count": 28
+   "count": 24
+  },
+  {
+   "week": "2026-06-15",
+   "count": 24
   }
  ],
  "patterns": [
@@ -178,8 +182,8 @@
     "strategic"
    ],
    "avg_days_to_resolve": 5.5,
-   "first_seen": "2026-04-22",
-   "latest_seen": "2026-06-10",
+   "first_seen": "2026-04-28",
+   "latest_seen": "2026-06-16",
    "last_14d": 14,
    "prior_14d": 9,
    "last_30d": 23,
@@ -220,8 +224,8 @@
     "strategic"
    ],
    "avg_days_to_resolve": 3.9,
-   "first_seen": "2026-04-20",
-   "latest_seen": "2026-06-14",
+   "first_seen": "2026-04-26",
+   "latest_seen": "2026-06-20",
    "last_14d": 11,
    "prior_14d": 9,
    "last_30d": 21,
@@ -262,8 +266,8 @@
     "strategic"
    ],
    "avg_days_to_resolve": 5.1,
-   "first_seen": "2026-04-23",
-   "latest_seen": "2026-06-13",
+   "first_seen": "2026-04-29",
+   "latest_seen": "2026-06-19",
    "last_14d": 11,
    "prior_14d": 7,
    "last_30d": 20,
@@ -303,8 +307,8 @@
     "strategic"
    ],
    "avg_days_to_resolve": 5.1,
-   "first_seen": "2026-04-25",
-   "latest_seen": "2026-06-14",
+   "first_seen": "2026-05-01",
+   "latest_seen": "2026-06-20",
    "last_14d": 11,
    "prior_14d": 7,
    "last_30d": 19,
@@ -345,8 +349,8 @@
     "strategic"
    ],
    "avg_days_to_resolve": 3.8,
-   "first_seen": "2026-04-25",
-   "latest_seen": "2026-06-13",
+   "first_seen": "2026-05-01",
+   "latest_seen": "2026-06-19",
    "last_14d": 9,
    "prior_14d": 6,
    "last_30d": 16,
@@ -511,7 +515,7 @@
    "sev1_escalations": 3,
    "open_escalations": 7,
    "sla": 96.3,
-   "csat": 4.42,
+   "csat": 4.45,
    "quality": 89.1
   },
   {
@@ -556,7 +560,7 @@
    "sev1_escalations": 2,
    "open_escalations": 2,
    "sla": 91.7,
-   "csat": 4.08,
+   "csat": 4.1,
    "quality": 92.0
   },
   {
@@ -571,7 +575,7 @@
    "sev1_escalations": 4,
    "open_escalations": 3,
    "sla": 91.9,
-   "csat": 4.28,
+   "csat": 4.27,
    "quality": 92.9
   },
   {
@@ -596,7 +600,7 @@
    "teams": 3,
    "contributors": 106,
    "sla": 92.6,
-   "csat": 4.12,
+   "csat": 4.14,
    "quality": 92.3,
    "escalations": 24,
    "open_escalations": 8,
@@ -608,7 +612,7 @@
    "teams": 3,
    "contributors": 92,
    "sla": 95.3,
-   "csat": 4.44,
+   "csat": 4.45,
    "quality": 89.1,
    "escalations": 28,
    "open_escalations": 14,
@@ -655,7 +659,7 @@
  "escalations": [
   {
    "escalation_id": "ESC_000001",
-   "date": "2026-04-20",
+   "date": "2026-04-26",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_02",
    "severity": "sev4",
@@ -667,7 +671,7 @@
   },
   {
    "escalation_id": "ESC_000002",
-   "date": "2026-04-21",
+   "date": "2026-04-27",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev3",
@@ -679,7 +683,7 @@
   },
   {
    "escalation_id": "ESC_000003",
-   "date": "2026-04-22",
+   "date": "2026-04-28",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev4",
@@ -691,7 +695,7 @@
   },
   {
    "escalation_id": "ESC_000004",
-   "date": "2026-04-23",
+   "date": "2026-04-29",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev4",
@@ -703,7 +707,7 @@
   },
   {
    "escalation_id": "ESC_000005",
-   "date": "2026-04-24",
+   "date": "2026-04-30",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -715,7 +719,7 @@
   },
   {
    "escalation_id": "ESC_000006",
-   "date": "2026-04-25",
+   "date": "2026-05-01",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev4",
@@ -727,7 +731,7 @@
   },
   {
    "escalation_id": "ESC_000007",
-   "date": "2026-04-25",
+   "date": "2026-05-01",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev3",
@@ -739,7 +743,7 @@
   },
   {
    "escalation_id": "ESC_000008",
-   "date": "2026-04-28",
+   "date": "2026-05-04",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev3",
@@ -751,7 +755,7 @@
   },
   {
    "escalation_id": "ESC_000009",
-   "date": "2026-04-28",
+   "date": "2026-05-04",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev3",
@@ -763,7 +767,7 @@
   },
   {
    "escalation_id": "ESC_000010",
-   "date": "2026-04-28",
+   "date": "2026-05-04",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev4",
@@ -775,7 +779,7 @@
   },
   {
    "escalation_id": "ESC_000011",
-   "date": "2026-04-29",
+   "date": "2026-05-05",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev3",
@@ -787,7 +791,7 @@
   },
   {
    "escalation_id": "ESC_000012",
-   "date": "2026-04-30",
+   "date": "2026-05-06",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev3",
@@ -799,7 +803,7 @@
   },
   {
    "escalation_id": "ESC_000013",
-   "date": "2026-04-30",
+   "date": "2026-05-06",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_02",
    "severity": "sev3",
@@ -811,7 +815,7 @@
   },
   {
    "escalation_id": "ESC_000014",
-   "date": "2026-05-01",
+   "date": "2026-05-07",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev4",
@@ -823,7 +827,7 @@
   },
   {
    "escalation_id": "ESC_000015",
-   "date": "2026-05-01",
+   "date": "2026-05-07",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev4",
@@ -835,7 +839,7 @@
   },
   {
    "escalation_id": "ESC_000016",
-   "date": "2026-05-04",
+   "date": "2026-05-10",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev4",
@@ -847,7 +851,7 @@
   },
   {
    "escalation_id": "ESC_000017",
-   "date": "2026-05-04",
+   "date": "2026-05-10",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -859,7 +863,7 @@
   },
   {
    "escalation_id": "ESC_000018",
-   "date": "2026-05-06",
+   "date": "2026-05-12",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev4",
@@ -871,7 +875,7 @@
   },
   {
    "escalation_id": "ESC_000019",
-   "date": "2026-05-06",
+   "date": "2026-05-12",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -883,7 +887,7 @@
   },
   {
    "escalation_id": "ESC_000020",
-   "date": "2026-05-06",
+   "date": "2026-05-12",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev4",
@@ -895,7 +899,7 @@
   },
   {
    "escalation_id": "ESC_000021",
-   "date": "2026-05-07",
+   "date": "2026-05-13",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev3",
@@ -907,7 +911,7 @@
   },
   {
    "escalation_id": "ESC_000022",
-   "date": "2026-05-08",
+   "date": "2026-05-14",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev4",
@@ -919,7 +923,7 @@
   },
   {
    "escalation_id": "ESC_000023",
-   "date": "2026-05-08",
+   "date": "2026-05-14",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev4",
@@ -931,7 +935,7 @@
   },
   {
    "escalation_id": "ESC_000024",
-   "date": "2026-05-09",
+   "date": "2026-05-15",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev4",
@@ -943,7 +947,7 @@
   },
   {
    "escalation_id": "ESC_000025",
-   "date": "2026-05-10",
+   "date": "2026-05-16",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev3",
@@ -955,7 +959,7 @@
   },
   {
    "escalation_id": "ESC_000026",
-   "date": "2026-05-10",
+   "date": "2026-05-16",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -967,7 +971,7 @@
   },
   {
    "escalation_id": "ESC_000027",
-   "date": "2026-05-12",
+   "date": "2026-05-18",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev3",
@@ -979,7 +983,7 @@
   },
   {
    "escalation_id": "ESC_000028",
-   "date": "2026-05-12",
+   "date": "2026-05-18",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -991,7 +995,7 @@
   },
   {
    "escalation_id": "ESC_000029",
-   "date": "2026-05-13",
+   "date": "2026-05-19",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -1003,7 +1007,7 @@
   },
   {
    "escalation_id": "ESC_000030",
-   "date": "2026-05-13",
+   "date": "2026-05-19",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev3",
@@ -1015,7 +1019,7 @@
   },
   {
    "escalation_id": "ESC_000031",
-   "date": "2026-05-15",
+   "date": "2026-05-21",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_02",
    "severity": "sev2",
@@ -1027,7 +1031,7 @@
   },
   {
    "escalation_id": "ESC_000032",
-   "date": "2026-05-15",
+   "date": "2026-05-21",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev3",
@@ -1039,7 +1043,7 @@
   },
   {
    "escalation_id": "ESC_000033",
-   "date": "2026-05-16",
+   "date": "2026-05-22",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_02",
    "severity": "sev2",
@@ -1051,7 +1055,7 @@
   },
   {
    "escalation_id": "ESC_000034",
-   "date": "2026-05-16",
+   "date": "2026-05-22",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev2",
@@ -1063,7 +1067,7 @@
   },
   {
    "escalation_id": "ESC_000035",
-   "date": "2026-05-16",
+   "date": "2026-05-22",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -1075,7 +1079,7 @@
   },
   {
    "escalation_id": "ESC_000036",
-   "date": "2026-05-17",
+   "date": "2026-05-23",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -1087,7 +1091,7 @@
   },
   {
    "escalation_id": "ESC_000037",
-   "date": "2026-05-17",
+   "date": "2026-05-23",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev3",
@@ -1099,7 +1103,7 @@
   },
   {
    "escalation_id": "ESC_000038",
-   "date": "2026-05-17",
+   "date": "2026-05-23",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev3",
@@ -1111,7 +1115,7 @@
   },
   {
    "escalation_id": "ESC_000039",
-   "date": "2026-05-17",
+   "date": "2026-05-23",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev3",
@@ -1123,7 +1127,7 @@
   },
   {
    "escalation_id": "ESC_000040",
-   "date": "2026-05-18",
+   "date": "2026-05-24",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev3",
@@ -1135,7 +1139,7 @@
   },
   {
    "escalation_id": "ESC_000041",
-   "date": "2026-05-18",
+   "date": "2026-05-24",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev3",
@@ -1147,7 +1151,7 @@
   },
   {
    "escalation_id": "ESC_000042",
-   "date": "2026-05-19",
+   "date": "2026-05-25",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev3",
@@ -1159,7 +1163,7 @@
   },
   {
    "escalation_id": "ESC_000043",
-   "date": "2026-05-19",
+   "date": "2026-05-25",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev3",
@@ -1171,7 +1175,7 @@
   },
   {
    "escalation_id": "ESC_000044",
-   "date": "2026-05-20",
+   "date": "2026-05-26",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_02",
    "severity": "sev3",
@@ -1183,7 +1187,7 @@
   },
   {
    "escalation_id": "ESC_000045",
-   "date": "2026-05-20",
+   "date": "2026-05-26",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev2",
@@ -1195,7 +1199,7 @@
   },
   {
    "escalation_id": "ESC_000046",
-   "date": "2026-05-20",
+   "date": "2026-05-26",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev3",
@@ -1207,7 +1211,7 @@
   },
   {
    "escalation_id": "ESC_000047",
-   "date": "2026-05-21",
+   "date": "2026-05-27",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1219,7 +1223,7 @@
   },
   {
    "escalation_id": "ESC_000048",
-   "date": "2026-05-21",
+   "date": "2026-05-27",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev2",
@@ -1231,7 +1235,7 @@
   },
   {
    "escalation_id": "ESC_000049",
-   "date": "2026-05-21",
+   "date": "2026-05-27",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev2",
@@ -1243,7 +1247,7 @@
   },
   {
    "escalation_id": "ESC_000050",
-   "date": "2026-05-22",
+   "date": "2026-05-28",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev3",
@@ -1255,7 +1259,7 @@
   },
   {
    "escalation_id": "ESC_000051",
-   "date": "2026-05-22",
+   "date": "2026-05-28",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev3",
@@ -1267,7 +1271,7 @@
   },
   {
    "escalation_id": "ESC_000052",
-   "date": "2026-05-23",
+   "date": "2026-05-29",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev2",
@@ -1279,7 +1283,7 @@
   },
   {
    "escalation_id": "ESC_000053",
-   "date": "2026-05-23",
+   "date": "2026-05-29",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev2",
@@ -1291,7 +1295,7 @@
   },
   {
    "escalation_id": "ESC_000054",
-   "date": "2026-05-23",
+   "date": "2026-05-29",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev3",
@@ -1303,7 +1307,7 @@
   },
   {
    "escalation_id": "ESC_000055",
-   "date": "2026-05-24",
+   "date": "2026-05-30",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_02",
    "severity": "sev2",
@@ -1315,7 +1319,7 @@
   },
   {
    "escalation_id": "ESC_000056",
-   "date": "2026-05-24",
+   "date": "2026-05-30",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev2",
@@ -1327,7 +1331,7 @@
   },
   {
    "escalation_id": "ESC_000057",
-   "date": "2026-05-25",
+   "date": "2026-05-31",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev2",
@@ -1339,7 +1343,7 @@
   },
   {
    "escalation_id": "ESC_000058",
-   "date": "2026-05-25",
+   "date": "2026-05-31",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_02",
    "severity": "sev2",
@@ -1351,7 +1355,7 @@
   },
   {
    "escalation_id": "ESC_000059",
-   "date": "2026-05-25",
+   "date": "2026-05-31",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_02",
    "severity": "sev2",
@@ -1363,7 +1367,7 @@
   },
   {
    "escalation_id": "ESC_000060",
-   "date": "2026-05-27",
+   "date": "2026-06-02",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev2",
@@ -1375,7 +1379,7 @@
   },
   {
    "escalation_id": "ESC_000061",
-   "date": "2026-05-27",
+   "date": "2026-06-02",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev2",
@@ -1387,7 +1391,7 @@
   },
   {
    "escalation_id": "ESC_000062",
-   "date": "2026-05-27",
+   "date": "2026-06-02",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev1",
@@ -1399,7 +1403,7 @@
   },
   {
    "escalation_id": "ESC_000063",
-   "date": "2026-05-27",
+   "date": "2026-06-02",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev1",
@@ -1411,7 +1415,7 @@
   },
   {
    "escalation_id": "ESC_000064",
-   "date": "2026-05-28",
+   "date": "2026-06-03",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev2",
@@ -1423,7 +1427,7 @@
   },
   {
    "escalation_id": "ESC_000065",
-   "date": "2026-05-28",
+   "date": "2026-06-03",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev2",
@@ -1435,7 +1439,7 @@
   },
   {
    "escalation_id": "ESC_000066",
-   "date": "2026-05-28",
+   "date": "2026-06-03",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev2",
@@ -1447,7 +1451,7 @@
   },
   {
    "escalation_id": "ESC_000067",
-   "date": "2026-05-28",
+   "date": "2026-06-03",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev1",
@@ -1459,7 +1463,7 @@
   },
   {
    "escalation_id": "ESC_000068",
-   "date": "2026-05-28",
+   "date": "2026-06-03",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1471,7 +1475,7 @@
   },
   {
    "escalation_id": "ESC_000069",
-   "date": "2026-05-29",
+   "date": "2026-06-04",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev1",
@@ -1483,7 +1487,7 @@
   },
   {
    "escalation_id": "ESC_000070",
-   "date": "2026-05-29",
+   "date": "2026-06-04",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1495,7 +1499,7 @@
   },
   {
    "escalation_id": "ESC_000071",
-   "date": "2026-05-30",
+   "date": "2026-06-05",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev1",
@@ -1507,7 +1511,7 @@
   },
   {
    "escalation_id": "ESC_000072",
-   "date": "2026-05-30",
+   "date": "2026-06-05",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev1",
@@ -1519,7 +1523,7 @@
   },
   {
    "escalation_id": "ESC_000073",
-   "date": "2026-05-30",
+   "date": "2026-06-05",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_02",
    "severity": "sev2",
@@ -1531,7 +1535,7 @@
   },
   {
    "escalation_id": "ESC_000074",
-   "date": "2026-05-31",
+   "date": "2026-06-06",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev1",
@@ -1543,7 +1547,7 @@
   },
   {
    "escalation_id": "ESC_000075",
-   "date": "2026-05-31",
+   "date": "2026-06-06",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev2",
@@ -1555,7 +1559,7 @@
   },
   {
    "escalation_id": "ESC_000076",
-   "date": "2026-05-31",
+   "date": "2026-06-06",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1567,7 +1571,7 @@
   },
   {
    "escalation_id": "ESC_000077",
-   "date": "2026-06-01",
+   "date": "2026-06-07",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev1",
@@ -1579,7 +1583,7 @@
   },
   {
    "escalation_id": "ESC_000078",
-   "date": "2026-06-01",
+   "date": "2026-06-07",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev2",
@@ -1591,7 +1595,7 @@
   },
   {
    "escalation_id": "ESC_000079",
-   "date": "2026-06-01",
+   "date": "2026-06-07",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev1",
@@ -1603,7 +1607,7 @@
   },
   {
    "escalation_id": "ESC_000080",
-   "date": "2026-06-01",
+   "date": "2026-06-07",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1615,7 +1619,7 @@
   },
   {
    "escalation_id": "ESC_000081",
-   "date": "2026-06-01",
+   "date": "2026-06-07",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev2",
@@ -1627,7 +1631,7 @@
   },
   {
    "escalation_id": "ESC_000082",
-   "date": "2026-06-02",
+   "date": "2026-06-08",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_02",
    "severity": "sev2",
@@ -1639,7 +1643,7 @@
   },
   {
    "escalation_id": "ESC_000083",
-   "date": "2026-06-02",
+   "date": "2026-06-08",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev1",
@@ -1651,7 +1655,7 @@
   },
   {
    "escalation_id": "ESC_000084",
-   "date": "2026-06-03",
+   "date": "2026-06-09",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev2",
@@ -1663,7 +1667,7 @@
   },
   {
    "escalation_id": "ESC_000085",
-   "date": "2026-06-03",
+   "date": "2026-06-09",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev1",
@@ -1675,7 +1679,7 @@
   },
   {
    "escalation_id": "ESC_000086",
-   "date": "2026-06-03",
+   "date": "2026-06-09",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev1",
@@ -1687,7 +1691,7 @@
   },
   {
    "escalation_id": "ESC_000087",
-   "date": "2026-06-04",
+   "date": "2026-06-10",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1699,7 +1703,7 @@
   },
   {
    "escalation_id": "ESC_000088",
-   "date": "2026-06-04",
+   "date": "2026-06-10",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1711,7 +1715,7 @@
   },
   {
    "escalation_id": "ESC_000089",
-   "date": "2026-06-04",
+   "date": "2026-06-10",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev2",
@@ -1723,7 +1727,7 @@
   },
   {
    "escalation_id": "ESC_000090",
-   "date": "2026-06-05",
+   "date": "2026-06-11",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev1",
@@ -1735,7 +1739,7 @@
   },
   {
    "escalation_id": "ESC_000091",
-   "date": "2026-06-05",
+   "date": "2026-06-11",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev1",
@@ -1747,7 +1751,7 @@
   },
   {
    "escalation_id": "ESC_000092",
-   "date": "2026-06-05",
+   "date": "2026-06-11",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev1",
@@ -1759,7 +1763,7 @@
   },
   {
    "escalation_id": "ESC_000093",
-   "date": "2026-06-05",
+   "date": "2026-06-11",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev2",
@@ -1771,7 +1775,7 @@
   },
   {
    "escalation_id": "ESC_000094",
-   "date": "2026-06-05",
+   "date": "2026-06-11",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev2",
@@ -1783,7 +1787,7 @@
   },
   {
    "escalation_id": "ESC_000095",
-   "date": "2026-06-06",
+   "date": "2026-06-12",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev2",
@@ -1795,7 +1799,7 @@
   },
   {
    "escalation_id": "ESC_000096",
-   "date": "2026-06-06",
+   "date": "2026-06-12",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev2",
@@ -1807,7 +1811,7 @@
   },
   {
    "escalation_id": "ESC_000097",
-   "date": "2026-06-06",
+   "date": "2026-06-12",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev1",
@@ -1819,7 +1823,7 @@
   },
   {
    "escalation_id": "ESC_000098",
-   "date": "2026-06-06",
+   "date": "2026-06-12",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev2",
@@ -1831,7 +1835,7 @@
   },
   {
    "escalation_id": "ESC_000099",
-   "date": "2026-06-07",
+   "date": "2026-06-13",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev2",
@@ -1843,7 +1847,7 @@
   },
   {
    "escalation_id": "ESC_000100",
-   "date": "2026-06-07",
+   "date": "2026-06-13",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev2",
@@ -1855,7 +1859,7 @@
   },
   {
    "escalation_id": "ESC_000101",
-   "date": "2026-06-07",
+   "date": "2026-06-13",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev1",
@@ -1867,7 +1871,7 @@
   },
   {
    "escalation_id": "ESC_000102",
-   "date": "2026-06-08",
+   "date": "2026-06-14",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev1",
@@ -1879,7 +1883,7 @@
   },
   {
    "escalation_id": "ESC_000103",
-   "date": "2026-06-08",
+   "date": "2026-06-14",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1891,7 +1895,7 @@
   },
   {
    "escalation_id": "ESC_000104",
-   "date": "2026-06-08",
+   "date": "2026-06-14",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev1",
@@ -1903,7 +1907,7 @@
   },
   {
    "escalation_id": "ESC_000105",
-   "date": "2026-06-08",
+   "date": "2026-06-14",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev1",
@@ -1915,7 +1919,7 @@
   },
   {
    "escalation_id": "ESC_000106",
-   "date": "2026-06-09",
+   "date": "2026-06-15",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev1",
@@ -1927,7 +1931,7 @@
   },
   {
    "escalation_id": "ESC_000107",
-   "date": "2026-06-09",
+   "date": "2026-06-15",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev1",
@@ -1939,7 +1943,7 @@
   },
   {
    "escalation_id": "ESC_000108",
-   "date": "2026-06-09",
+   "date": "2026-06-15",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_02",
    "severity": "sev2",
@@ -1951,7 +1955,7 @@
   },
   {
    "escalation_id": "ESC_000109",
-   "date": "2026-06-09",
+   "date": "2026-06-15",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -1963,7 +1967,7 @@
   },
   {
    "escalation_id": "ESC_000110",
-   "date": "2026-06-09",
+   "date": "2026-06-15",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_02",
    "severity": "sev2",
@@ -1975,7 +1979,7 @@
   },
   {
    "escalation_id": "ESC_000111",
-   "date": "2026-06-09",
+   "date": "2026-06-15",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev2",
@@ -1987,7 +1991,7 @@
   },
   {
    "escalation_id": "ESC_000112",
-   "date": "2026-06-09",
+   "date": "2026-06-15",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev1",
@@ -1999,7 +2003,7 @@
   },
   {
    "escalation_id": "ESC_000113",
-   "date": "2026-06-10",
+   "date": "2026-06-16",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev2",
@@ -2011,7 +2015,7 @@
   },
   {
    "escalation_id": "ESC_000114",
-   "date": "2026-06-10",
+   "date": "2026-06-16",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev2",
@@ -2023,7 +2027,7 @@
   },
   {
    "escalation_id": "ESC_000115",
-   "date": "2026-06-10",
+   "date": "2026-06-16",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_03",
    "severity": "sev2",
@@ -2035,7 +2039,7 @@
   },
   {
    "escalation_id": "ESC_000116",
-   "date": "2026-06-10",
+   "date": "2026-06-16",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_01",
    "severity": "sev2",
@@ -2047,7 +2051,7 @@
   },
   {
    "escalation_id": "ESC_000117",
-   "date": "2026-06-10",
+   "date": "2026-06-16",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev2",
@@ -2059,7 +2063,7 @@
   },
   {
    "escalation_id": "ESC_000118",
-   "date": "2026-06-11",
+   "date": "2026-06-17",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev1",
@@ -2071,7 +2075,7 @@
   },
   {
    "escalation_id": "ESC_000119",
-   "date": "2026-06-11",
+   "date": "2026-06-17",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_01",
    "severity": "sev2",
@@ -2083,7 +2087,7 @@
   },
   {
    "escalation_id": "ESC_000120",
-   "date": "2026-06-11",
+   "date": "2026-06-17",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_02",
    "severity": "sev1",
@@ -2095,7 +2099,7 @@
   },
   {
    "escalation_id": "ESC_000121",
-   "date": "2026-06-12",
+   "date": "2026-06-18",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev1",
@@ -2107,7 +2111,7 @@
   },
   {
    "escalation_id": "ESC_000122",
-   "date": "2026-06-13",
+   "date": "2026-06-19",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev1",
@@ -2119,7 +2123,7 @@
   },
   {
    "escalation_id": "ESC_000123",
-   "date": "2026-06-13",
+   "date": "2026-06-19",
    "work_type": "audio_evaluation",
    "team_id": "TEAM_APAC_AUDIO_01",
    "severity": "sev2",
@@ -2131,7 +2135,7 @@
   },
   {
    "escalation_id": "ESC_000124",
-   "date": "2026-06-13",
+   "date": "2026-06-19",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_02",
    "severity": "sev2",
@@ -2143,7 +2147,7 @@
   },
   {
    "escalation_id": "ESC_000125",
-   "date": "2026-06-13",
+   "date": "2026-06-19",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_02",
    "severity": "sev2",
@@ -2155,7 +2159,7 @@
   },
   {
    "escalation_id": "ESC_000126",
-   "date": "2026-06-13",
+   "date": "2026-06-19",
    "work_type": "rlhf_evaluation",
    "team_id": "TEAM_APAC_RLHF_03",
    "severity": "sev1",
@@ -2167,7 +2171,7 @@
   },
   {
    "escalation_id": "ESC_000127",
-   "date": "2026-06-14",
+   "date": "2026-06-20",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev1",
@@ -2179,7 +2183,7 @@
   },
   {
    "escalation_id": "ESC_000128",
-   "date": "2026-06-14",
+   "date": "2026-06-20",
    "work_type": "code_review",
    "team_id": "TEAM_APAC_CODE_03",
    "severity": "sev2",
@@ -2191,7 +2195,7 @@
   },
   {
    "escalation_id": "ESC_000129",
-   "date": "2026-06-14",
+   "date": "2026-06-20",
    "work_type": "expert_review",
    "team_id": "TEAM_APAC_EXPERT_01",
    "severity": "sev2",
@@ -2201,5 +2205,1043 @@
    "status": "resolved",
    "days_to_resolve": 7.0
   }
- ]
+ ],
+ "workforce": {
+  "region": {
+   "highRiskTeams": 1,
+   "avgQuality": 92.3
+  },
+  "byWorkType": [
+   {
+    "work_type": "code_review",
+    "riskLevel": "High",
+    "avgQuality": 89.1,
+    "teamsAtRisk": 1
+   },
+   {
+    "work_type": "audio_evaluation",
+    "riskLevel": "Low",
+    "avgQuality": 92.3,
+    "teamsAtRisk": 0
+   },
+   {
+    "work_type": "rlhf_evaluation",
+    "riskLevel": "Low",
+    "avgQuality": 91.2,
+    "teamsAtRisk": 0
+   },
+   {
+    "work_type": "expert_review",
+    "riskLevel": "Low",
+    "avgQuality": 92.9,
+    "teamsAtRisk": 0
+   },
+   {
+    "work_type": "image_annotation",
+    "riskLevel": "Low",
+    "avgQuality": 94.8,
+    "teamsAtRisk": 0
+   }
+  ],
+  "teams": [
+   {
+    "team_id": "TEAM_APAC_CODE_03",
+    "name": "Sanjay Das",
+    "work_type": "code_review",
+    "risk_score": 39.8,
+    "risk_band": "High",
+    "drivers": [
+     "Team gold task fail rate",
+     "High-risk contributor concentration",
+     "Team-wide drift"
+    ],
+    "action": "Team calibration huddle",
+    "quality_gap": 0.9
+   },
+   {
+    "team_id": "TEAM_APAC_CODE_01",
+    "name": "Kabir Sinha",
+    "work_type": "code_review",
+    "risk_score": 30.7,
+    "risk_band": "Medium",
+    "drivers": [
+     "Team gold task fail rate",
+     "High-risk contributor concentration"
+    ],
+    "action": "Gold task review + targeted coaching plan",
+    "quality_gap": 0.8
+   },
+   {
+    "team_id": "TEAM_APAC_CODE_02",
+    "name": "Ritika Bose",
+    "work_type": "code_review",
+    "risk_score": 22.9,
+    "risk_band": "Medium",
+    "drivers": [
+     "Team gold task fail rate"
+    ],
+    "action": "Gold task review + targeted coaching plan",
+    "quality_gap": 1.1
+   },
+   {
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "name": "Isha Verma",
+    "work_type": "audio_evaluation",
+    "risk_score": 12.6,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_RLHF_03",
+    "name": "Meera Nair",
+    "work_type": "rlhf_evaluation",
+    "risk_score": 9.7,
+    "risk_band": "Low",
+    "drivers": [
+     "Team gold task fail rate"
+    ],
+    "action": "Gold task review + targeted coaching plan",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_AUDIO_02",
+    "name": "Karan Khanna",
+    "work_type": "audio_evaluation",
+    "risk_score": 8.7,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_AUDIO_03",
+    "name": "Aditi Pillai",
+    "work_type": "audio_evaluation",
+    "risk_score": 8.5,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_RLHF_02",
+    "name": "Arjun Mehta",
+    "work_type": "rlhf_evaluation",
+    "risk_score": 7.6,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_RLHF_01",
+    "name": "Neha Kapoor",
+    "work_type": "rlhf_evaluation",
+    "risk_score": 7.5,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_EXPERT_02",
+    "name": "Sneha Reddy",
+    "work_type": "expert_review",
+    "risk_score": 6.1,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_04",
+    "name": "Rahul Iyer",
+    "work_type": "image_annotation",
+    "risk_score": 4.9,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_EXPERT_01",
+    "name": "Rohan Gupta",
+    "work_type": "expert_review",
+    "risk_score": 4.3,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_03",
+    "name": "Priya Sharma",
+    "work_type": "image_annotation",
+    "risk_score": 3.5,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_01",
+    "name": "Ananya Rao",
+    "work_type": "image_annotation",
+    "risk_score": 3.2,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_02",
+    "name": "Vikram Menon",
+    "work_type": "image_annotation",
+    "risk_score": 2.8,
+    "risk_band": "Low",
+    "drivers": [
+     "Within expected range"
+    ],
+    "action": "Continue standard monitoring",
+    "quality_gap": 0.0
+   }
+  ],
+  "contributors": [
+   {
+    "contributor_id": "CONTR_00238",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 54.9,
+    "risk_band": "High",
+    "drivers": [
+     "Average quality below target",
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00281",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 40.2,
+    "risk_band": "High",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00285",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 39.4,
+    "risk_band": "High",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00278",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 37.9,
+    "risk_band": "High",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00245",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 37.5,
+    "risk_band": "High",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00209",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 37.1,
+    "risk_band": "High",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00219",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 37.1,
+    "risk_band": "High",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00274",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 34.0,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00216",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 33.6,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00287",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 33.6,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00260",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 33.5,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00211",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 31.2,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00296",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 31.0,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00272",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 30.9,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00301",
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "work_type": "audio_evaluation",
+    "risk_score": 30.7,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00234",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 30.5,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00302",
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "work_type": "audio_evaluation",
+    "risk_score": 30.4,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "High rework rate",
+     "Recent quality drop",
+     "Low sample size"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00225",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 30.0,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00246",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 28.5,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00320",
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "work_type": "audio_evaluation",
+    "risk_score": 27.5,
+    "risk_band": "Medium",
+    "drivers": [
+     "High reviewer override rate",
+     "High rework rate",
+     "Recent quality drop",
+     "Low sample size"
+    ],
+    "coaching": "Reviewer calibration + manager review"
+   },
+   {
+    "contributor_id": "CONTR_00220",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 26.9,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00360",
+    "team_id": "TEAM_APAC_AUDIO_02",
+    "work_type": "audio_evaluation",
+    "risk_score": 26.7,
+    "risk_band": "Medium",
+    "drivers": [
+     "Recent quality drop",
+     "Low sample size"
+    ],
+    "coaching": "Manager coaching check-in"
+   },
+   {
+    "contributor_id": "CONTR_00149",
+    "team_id": "TEAM_APAC_RLHF_01",
+    "work_type": "rlhf_evaluation",
+    "risk_score": 26.6,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00282",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 26.6,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop",
+     "Low tenure plus high complexity"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00253",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 25.2,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00351",
+    "team_id": "TEAM_APAC_AUDIO_02",
+    "work_type": "audio_evaluation",
+    "risk_score": 24.9,
+    "risk_band": "Medium",
+    "drivers": [
+     "High reviewer override rate",
+     "Recent quality drop",
+     "Low sample size"
+    ],
+    "coaching": "Reviewer calibration + manager review"
+   },
+   {
+    "contributor_id": "CONTR_00235",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 24.2,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00222",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 24.1,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop",
+     "Low sample size"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00241",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 23.9,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00269",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 23.8,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00383",
+    "team_id": "TEAM_APAC_AUDIO_03",
+    "work_type": "audio_evaluation",
+    "risk_score": 23.6,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High reviewer override rate",
+     "High rework rate",
+     "Low tenure plus high complexity"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00264",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 23.4,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00259",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 23.2,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00283",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 23.2,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00243",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 23.2,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00236",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 23.0,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00299",
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "work_type": "audio_evaluation",
+    "risk_score": 23.0,
+    "risk_band": "Medium",
+    "drivers": [
+     "High reviewer override rate",
+     "Recent quality drop",
+     "Low sample size"
+    ],
+    "coaching": "Reviewer calibration + manager review"
+   },
+   {
+    "contributor_id": "CONTR_00250",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 22.8,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00256",
+    "team_id": "TEAM_APAC_CODE_02",
+    "work_type": "code_review",
+    "risk_score": 22.6,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00230",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 22.3,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00208",
+    "team_id": "TEAM_APAC_CODE_01",
+    "work_type": "code_review",
+    "risk_score": 22.2,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "High rework rate"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00279",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 21.9,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00290",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 21.5,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00121",
+    "team_id": "TEAM_APAC_IMAGE_04",
+    "work_type": "image_annotation",
+    "risk_score": 20.6,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00280",
+    "team_id": "TEAM_APAC_CODE_03",
+    "work_type": "code_review",
+    "risk_score": 20.1,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00184",
+    "team_id": "TEAM_APAC_RLHF_03",
+    "work_type": "rlhf_evaluation",
+    "risk_score": 20.0,
+    "risk_band": "Medium",
+    "drivers": [
+     "Low gold task pass rate",
+     "Recent quality drop"
+    ],
+    "coaching": "Gold task review + targeted coaching"
+   },
+   {
+    "contributor_id": "CONTR_00325",
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "work_type": "audio_evaluation",
+    "risk_score": 20.0,
+    "risk_band": "Medium",
+    "drivers": [
+     "High reviewer override rate",
+     "High rework rate",
+     "Low sample size"
+    ],
+    "coaching": "Reviewer calibration + manager review"
+   }
+  ]
+ },
+ "capacity": {
+  "region": {
+   "atRisk": 2,
+   "agedShare": 93,
+   "forecast": "SLA at risk"
+  },
+  "byWorkType": [
+   {
+    "work_type": "expert_review",
+    "forecast": "SLA at risk",
+    "riskLevel": "Medium",
+    "complexity": 74,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "headGap": 0,
+    "decision": "Approve load rebalance / intake throttle for Expert review?"
+   },
+   {
+    "work_type": "image_annotation",
+    "forecast": "SLA at risk",
+    "riskLevel": "Medium",
+    "complexity": 26,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "headGap": 0,
+    "decision": "Approve load rebalance / intake throttle for Image annotation?"
+   },
+   {
+    "work_type": "audio_evaluation",
+    "forecast": "SLA likely stable",
+    "riskLevel": "Medium",
+    "complexity": 27,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "headGap": 0,
+    "decision": "Maintain current staffing."
+   },
+   {
+    "work_type": "rlhf_evaluation",
+    "forecast": "SLA likely stable",
+    "riskLevel": "Medium",
+    "complexity": 27,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "headGap": 0,
+    "decision": "Maintain current staffing."
+   },
+   {
+    "work_type": "code_review",
+    "forecast": "SLA likely stable",
+    "riskLevel": "Medium",
+    "complexity": 27,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "headGap": 0,
+    "decision": "Maintain current staffing."
+   }
+  ],
+  "teams": [
+   {
+    "team_id": "TEAM_APAC_RLHF_02",
+    "name": "Arjun Mehta",
+    "work_type": "rlhf_evaluation",
+    "utilization": 105,
+    "load": 100,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_EXPERT_02",
+    "name": "Sneha Reddy",
+    "work_type": "expert_review",
+    "utilization": 66,
+    "load": 53,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_EXPERT_01",
+    "name": "Rohan Gupta",
+    "work_type": "expert_review",
+    "utilization": 56,
+    "load": 48,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_AUDIO_02",
+    "name": "Karan Khanna",
+    "work_type": "audio_evaluation",
+    "utilization": 19,
+    "load": 63,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_CODE_01",
+    "name": "Kabir Sinha",
+    "work_type": "code_review",
+    "utilization": 46,
+    "load": 74,
+    "action": "Run quality and workflow review before adding volume"
+   },
+   {
+    "team_id": "TEAM_APAC_AUDIO_03",
+    "name": "Aditi Pillai",
+    "work_type": "audio_evaluation",
+    "utilization": 42,
+    "load": 62,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_RLHF_03",
+    "name": "Meera Nair",
+    "work_type": "rlhf_evaluation",
+    "utilization": 75,
+    "load": 96,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_RLHF_01",
+    "name": "Neha Kapoor",
+    "work_type": "rlhf_evaluation",
+    "utilization": 89,
+    "load": 97,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_AUDIO_01",
+    "name": "Isha Verma",
+    "work_type": "audio_evaluation",
+    "utilization": 46,
+    "load": 91,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_04",
+    "name": "Rahul Iyer",
+    "work_type": "image_annotation",
+    "utilization": 58,
+    "load": 129,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_CODE_02",
+    "name": "Ritika Bose",
+    "work_type": "code_review",
+    "utilization": 75,
+    "load": 74,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_01",
+    "name": "Ananya Rao",
+    "work_type": "image_annotation",
+    "utilization": 63,
+    "load": 111,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_02",
+    "name": "Vikram Menon",
+    "work_type": "image_annotation",
+    "utilization": 53,
+    "load": 108,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_IMAGE_03",
+    "name": "Priya Sharma",
+    "work_type": "image_annotation",
+    "utilization": 70,
+    "load": 103,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   },
+   {
+    "team_id": "TEAM_APAC_CODE_03",
+    "name": "Sanjay Das",
+    "work_type": "code_review",
+    "utilization": 44,
+    "load": 63,
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+   }
+  ]
+ },
+ "leadership": {
+  "headline": "Healthy scenario \u00b7 SLA 95.7% \u00b7 2 work types with SLA at risk \u00b7 1 team flagged for quality.",
+  "alerts": [
+   {
+    "kind": "pattern",
+    "title": "Policy ambiguity in RLHF evaluation is accelerating",
+    "body": "32 escalations \u00b7 11 open \u00b7 last-14d 14 vs prior 9 \u00b7 3 teams.",
+    "target": {
+     "section": "patterns",
+     "focus": {
+      "patternId": "PAT_98F7933D"
+     }
+    }
+   },
+   {
+    "kind": "capacity",
+    "title": "Expert review SLA forecast: at risk",
+    "body": "Run a backlog burn-down sprint with daily SLA recovery check.",
+    "target": {
+     "section": "capacity",
+     "focus": {
+      "workType": "expert_review"
+     }
+    }
+   },
+   {
+    "kind": "quality",
+    "title": "Quality risk concentrating in Code review (Sanjay Das)",
+    "body": "Risk score 39.8 \u00b7 quality gap 0.9pt \u00b7 Team calibration huddle.",
+    "target": {
+     "section": "workforce",
+     "focus": {
+      "teamId": "TEAM_APAC_CODE_03"
+     }
+    }
+   }
+  ]
+ }
 }

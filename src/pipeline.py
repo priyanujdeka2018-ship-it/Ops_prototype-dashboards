@@ -40,6 +40,9 @@ REQUIRED_KEYS = (
     "teams",
     "workTypeRollup",
     "escalations",
+    "workforce",
+    "capacity",
+    "leadership",
 )
 
 
