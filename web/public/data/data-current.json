@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-06-21T11:38:52Z",
+ "generated_at": "2026-06-21T18:17:11Z",
  "scenario": "current",
  "pipeline_version": "1.0.0",
  "row_counts": {
@@ -4392,38 +4392,52 @@
  "workforce": {
   "region": {
    "highRiskTeams": 6,
-   "avgQuality": 88.0
+   "avgQuality": 88.0,
+   "teamCount": 15,
+   "reworkRate": 8.0,
+   "flaggedContributors": 163,
+   "highRiskContributors": 45
   },
   "byWorkType": [
    {
     "work_type": "code_review",
     "riskLevel": "High",
     "avgQuality": 84.6,
-    "teamsAtRisk": 3
+    "teamsAtRisk": 3,
+    "avgScore": 41.0,
+    "flagged": 88
    },
    {
     "work_type": "audio_evaluation",
     "riskLevel": "High",
     "avgQuality": 87.8,
-    "teamsAtRisk": 2
+    "teamsAtRisk": 2,
+    "avgScore": 24.7,
+    "flagged": 43
    },
    {
     "work_type": "rlhf_evaluation",
     "riskLevel": "High",
     "avgQuality": 86.7,
-    "teamsAtRisk": 1
+    "teamsAtRisk": 1,
+    "avgScore": 23.7,
+    "flagged": 24
    },
    {
     "work_type": "expert_review",
     "riskLevel": "Low",
     "avgQuality": 88.6,
-    "teamsAtRisk": 0
+    "teamsAtRisk": 0,
+    "avgScore": 14.1,
+    "flagged": 4
    },
    {
     "work_type": "image_annotation",
     "riskLevel": "Low",
     "avgQuality": 90.8,
-    "teamsAtRisk": 0
+    "teamsAtRisk": 0,
+    "avgScore": 8.8,
+    "flagged": 4
    }
   ],
   "teams": [
@@ -4440,7 +4454,15 @@
      "Team-wide drift"
     ],
     "action": "Team calibration huddle",
-    "quality_gap": 5.6
+    "quality_gap": 5.6,
+    "quality": 84.4,
+    "drift": -4.3,
+    "goldFail": 47.4,
+    "override": 8.7,
+    "peerAgree": 84.2,
+    "rework": 10.3,
+    "lowTenure": 3.4,
+    "contributors": 29
    },
    {
     "team_id": "TEAM_APAC_CODE_02",
@@ -4455,7 +4477,15 @@
      "Team-wide drift"
     ],
     "action": "Team calibration huddle",
-    "quality_gap": 5.3
+    "quality_gap": 5.3,
+    "quality": 84.7,
+    "drift": -4.3,
+    "goldFail": 45.1,
+    "override": 8.1,
+    "peerAgree": 83.3,
+    "rework": 9.6,
+    "lowTenure": 0.0,
+    "contributors": 21
    },
    {
     "team_id": "TEAM_APAC_CODE_01",
@@ -4471,7 +4501,15 @@
      "High-risk contributor concentration"
     ],
     "action": "Reviewer calibration + manager review",
-    "quality_gap": 5.3
+    "quality_gap": 5.3,
+    "quality": 84.7,
+    "drift": -3.7,
+    "goldFail": 45.0,
+    "override": 10.3,
+    "peerAgree": 84.5,
+    "rework": 13.6,
+    "lowTenure": 3.2,
+    "contributors": 31
    },
    {
     "team_id": "TEAM_APAC_AUDIO_01",
@@ -4484,7 +4522,15 @@
      "High-risk contributor concentration"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 2.2
+    "quality_gap": 2.2,
+    "quality": 87.8,
+    "drift": 0.3,
+    "goldFail": 28.5,
+    "override": 7.7,
+    "peerAgree": 85.5,
+    "rework": 9.1,
+    "lowTenure": 6.5,
+    "contributors": 31
    },
    {
     "team_id": "TEAM_APAC_RLHF_03",
@@ -4497,7 +4543,15 @@
      "Team rework rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 3.6
+    "quality_gap": 3.6,
+    "quality": 86.4,
+    "drift": -0.0,
+    "goldFail": 34.9,
+    "override": 8.2,
+    "peerAgree": 85.7,
+    "rework": 12.2,
+    "lowTenure": 9.5,
+    "contributors": 21
    },
    {
     "team_id": "TEAM_APAC_AUDIO_02",
@@ -4510,7 +4564,15 @@
      "High-risk contributor concentration"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 2.2
+    "quality_gap": 2.2,
+    "quality": 87.8,
+    "drift": -0.3,
+    "goldFail": 25.9,
+    "override": 6.1,
+    "peerAgree": 86.9,
+    "rework": 6.7,
+    "lowTenure": 10.3,
+    "contributors": 39
    },
    {
     "team_id": "TEAM_APAC_RLHF_01",
@@ -4522,7 +4584,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 3.2
+    "quality_gap": 3.2,
+    "quality": 86.8,
+    "drift": 0.4,
+    "goldFail": 33.4,
+    "override": 6.9,
+    "peerAgree": 86.1,
+    "rework": 8.0,
+    "lowTenure": 0.0,
+    "contributors": 18
    },
    {
     "team_id": "TEAM_APAC_AUDIO_03",
@@ -4534,7 +4604,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 2.2
+    "quality_gap": 2.2,
+    "quality": 87.8,
+    "drift": -0.1,
+    "goldFail": 27.9,
+    "override": 5.9,
+    "peerAgree": 86.0,
+    "rework": 8.8,
+    "lowTenure": 17.4,
+    "contributors": 23
    },
    {
     "team_id": "TEAM_APAC_RLHF_02",
@@ -4546,7 +4624,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 3.1
+    "quality_gap": 3.1,
+    "quality": 86.9,
+    "drift": 0.0,
+    "goldFail": 30.4,
+    "override": 6.8,
+    "peerAgree": 86.3,
+    "rework": 7.8,
+    "lowTenure": 12.5,
+    "contributors": 16
    },
    {
     "team_id": "TEAM_APAC_EXPERT_02",
@@ -4558,7 +4644,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 1.7
+    "quality_gap": 1.7,
+    "quality": 88.3,
+    "drift": -0.3,
+    "goldFail": 25.4,
+    "override": 3.3,
+    "peerAgree": 85.4,
+    "rework": 9.2,
+    "lowTenure": 12.5,
+    "contributors": 16
    },
    {
     "team_id": "TEAM_APAC_EXPERT_01",
@@ -4570,7 +4664,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 1.1
+    "quality_gap": 1.1,
+    "quality": 88.9,
+    "drift": 0.7,
+    "goldFail": 22.3,
+    "override": 7.0,
+    "peerAgree": 85.8,
+    "rework": 5.6,
+    "lowTenure": 0.0,
+    "contributors": 19
    },
    {
     "team_id": "TEAM_APAC_IMAGE_04",
@@ -4582,7 +4684,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 90.9,
+    "drift": -0.3,
+    "goldFail": 14.6,
+    "override": 6.3,
+    "peerAgree": 86.3,
+    "rework": 5.9,
+    "lowTenure": 5.9,
+    "contributors": 34
    },
    {
     "team_id": "TEAM_APAC_IMAGE_02",
@@ -4594,7 +4704,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 90.8,
+    "drift": -0.0,
+    "goldFail": 15.9,
+    "override": 6.1,
+    "peerAgree": 85.7,
+    "rework": 6.3,
+    "lowTenure": 0.0,
+    "contributors": 33
    },
    {
     "team_id": "TEAM_APAC_IMAGE_03",
@@ -4606,7 +4724,15 @@
      "Within expected range"
     ],
     "action": "Continue standard monitoring",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 91.0,
+    "drift": -0.0,
+    "goldFail": 14.9,
+    "override": 4.7,
+    "peerAgree": 85.7,
+    "rework": 6.3,
+    "lowTenure": 0.0,
+    "contributors": 23
    },
    {
     "team_id": "TEAM_APAC_IMAGE_01",
@@ -4618,7 +4744,15 @@
      "Team gold task fail rate"
     ],
     "action": "Gold task review + targeted coaching plan",
-    "quality_gap": 0.0
+    "quality_gap": 0.0,
+    "quality": 90.7,
+    "drift": 0.5,
+    "goldFail": 16.0,
+    "override": 4.0,
+    "peerAgree": 86.0,
+    "rework": 5.3,
+    "lowTenure": 0.0,
+    "contributors": 31
    }
   ],
   "contributors": [
@@ -4635,7 +4769,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 385,
+    "lowTenure": false,
+    "quality": 80.4,
+    "goldPass": 33.3,
+    "override": 11.1,
+    "rework": 27.8,
+    "peer": 84.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00260",
@@ -4650,7 +4793,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 205,
+    "lowTenure": false,
+    "quality": 83.6,
+    "goldPass": 46.2,
+    "override": 15.4,
+    "rework": 15.4,
+    "peer": 85.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00208",
@@ -4665,7 +4817,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 185,
+    "lowTenure": false,
+    "quality": 82.0,
+    "goldPass": 46.2,
+    "override": 15.4,
+    "rework": 23.1,
+    "peer": 83.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00262",
@@ -4678,7 +4839,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 478,
+    "lowTenure": false,
+    "quality": 84.0,
+    "goldPass": 45.8,
+    "override": 8.3,
+    "rework": 8.3,
+    "peer": 84.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00283",
@@ -4692,7 +4862,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 167,
+    "lowTenure": false,
+    "quality": 84.3,
+    "goldPass": 53.3,
+    "override": 20.0,
+    "rework": 6.7,
+    "peer": 83.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00296",
@@ -4706,7 +4885,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 296,
+    "lowTenure": false,
+    "quality": 82.9,
+    "goldPass": 54.5,
+    "override": 0.0,
+    "rework": 27.3,
+    "peer": 87.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00290",
@@ -4721,7 +4909,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 136,
+    "lowTenure": false,
+    "quality": 84.4,
+    "goldPass": 50.0,
+    "override": 25.0,
+    "rework": 16.7,
+    "peer": 80.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00274",
@@ -4735,7 +4932,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 317,
+    "lowTenure": false,
+    "quality": 83.6,
+    "goldPass": 52.6,
+    "override": 5.3,
+    "rework": 15.8,
+    "peer": 83.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00230",
@@ -4749,7 +4955,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 381,
+    "lowTenure": false,
+    "quality": 84.8,
+    "goldPass": 33.3,
+    "override": 33.3,
+    "rework": 8.3,
+    "peer": 80.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00229",
@@ -4762,7 +4977,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 131,
+    "lowTenure": false,
+    "quality": 83.7,
+    "goldPass": 46.2,
+    "override": 7.7,
+    "rework": 7.7,
+    "peer": 81.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00287",
@@ -4776,7 +5000,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 322,
+    "lowTenure": false,
+    "quality": 83.0,
+    "goldPass": 50.0,
+    "override": 0.0,
+    "rework": 21.4,
+    "peer": 83.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00347",
@@ -4790,7 +5023,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 640,
+    "lowTenure": false,
+    "quality": 85.2,
+    "goldPass": 54.5,
+    "override": 9.1,
+    "rework": 18.2,
+    "peer": 87.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00291",
@@ -4804,7 +5046,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 351,
+    "lowTenure": false,
+    "quality": 83.2,
+    "goldPass": 45.8,
+    "override": 16.7,
+    "rework": 8.3,
+    "peer": 81.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00238",
@@ -4819,7 +5070,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 641,
+    "lowTenure": false,
+    "quality": 81.9,
+    "goldPass": 61.5,
+    "override": 23.1,
+    "rework": 23.1,
+    "peer": 85.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00239",
@@ -4833,7 +5093,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 195,
+    "lowTenure": false,
+    "quality": 84.9,
+    "goldPass": 53.3,
+    "override": 6.7,
+    "rework": 20.0,
+    "peer": 83.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00266",
@@ -4847,7 +5116,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 721,
+    "lowTenure": false,
+    "quality": 86.7,
+    "goldPass": 50.0,
+    "override": 10.0,
+    "rework": 15.0,
+    "peer": 82.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00326",
@@ -4861,7 +5139,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 306,
+    "lowTenure": false,
+    "quality": 81.9,
+    "goldPass": 25.0,
+    "override": 12.5,
+    "rework": 25.0,
+    "peer": 87.0,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00219",
@@ -4875,7 +5162,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 233,
+    "lowTenure": false,
+    "quality": 82.6,
+    "goldPass": 41.2,
+    "override": 5.9,
+    "rework": 17.6,
+    "peer": 82.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00280",
@@ -4888,7 +5184,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 145,
+    "lowTenure": false,
+    "quality": 83.3,
+    "goldPass": 55.6,
+    "override": 5.6,
+    "rework": 5.6,
+    "peer": 82.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00220",
@@ -4902,7 +5207,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 281,
+    "lowTenure": false,
+    "quality": 85.1,
+    "goldPass": 50.0,
+    "override": 12.5,
+    "rework": 0.0,
+    "peer": 84.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00278",
@@ -4916,7 +5230,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 384,
+    "lowTenure": false,
+    "quality": 84.7,
+    "goldPass": 45.0,
+    "override": 5.0,
+    "rework": 15.0,
+    "peer": 83.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00299",
@@ -4931,7 +5254,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 592,
+    "lowTenure": false,
+    "quality": 84.4,
+    "goldPass": 42.9,
+    "override": 28.6,
+    "rework": 14.3,
+    "peer": 80.4,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00247",
@@ -4944,7 +5276,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 515,
+    "lowTenure": false,
+    "quality": 84.5,
+    "goldPass": 39.3,
+    "override": 7.1,
+    "rework": 3.6,
+    "peer": 84.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00265",
@@ -4958,7 +5299,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 212,
+    "lowTenure": false,
+    "quality": 83.2,
+    "goldPass": 57.1,
+    "override": 0.0,
+    "rework": 14.3,
+    "peer": 84.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00250",
@@ -4972,7 +5322,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 328,
+    "lowTenure": false,
+    "quality": 84.2,
+    "goldPass": 50.0,
+    "override": 6.2,
+    "rework": 31.2,
+    "peer": 83.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00362",
@@ -4986,7 +5345,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 76,
+    "lowTenure": true,
+    "quality": 85.8,
+    "goldPass": 25.0,
+    "override": 0.0,
+    "rework": 12.5,
+    "peer": 87.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00225",
@@ -5000,7 +5368,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 278,
+    "lowTenure": false,
+    "quality": 85.9,
+    "goldPass": 64.3,
+    "override": 7.1,
+    "rework": 14.3,
+    "peer": 82.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00234",
@@ -5014,7 +5391,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 546,
+    "lowTenure": false,
+    "quality": 84.9,
+    "goldPass": 50.0,
+    "override": 30.0,
+    "rework": 10.0,
+    "peer": 84.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00279",
@@ -5028,7 +5414,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 367,
+    "lowTenure": false,
+    "quality": 83.6,
+    "goldPass": 38.9,
+    "override": 27.8,
+    "rework": 22.2,
+    "peer": 86.4,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00226",
@@ -5042,7 +5437,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 165,
+    "lowTenure": false,
+    "quality": 82.4,
+    "goldPass": 30.8,
+    "override": 15.4,
+    "rework": 15.4,
+    "peer": 86.8,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00218",
@@ -5055,7 +5459,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 343,
+    "lowTenure": false,
+    "quality": 86.3,
+    "goldPass": 54.5,
+    "override": 18.2,
+    "rework": 9.1,
+    "peer": 86.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00233",
@@ -5068,7 +5481,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 110,
+    "lowTenure": true,
+    "quality": 83.6,
+    "goldPass": 41.7,
+    "override": 8.3,
+    "rework": 8.3,
+    "peer": 83.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00289",
@@ -5081,7 +5503,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 174,
+    "lowTenure": false,
+    "quality": 84.5,
+    "goldPass": 36.8,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 84.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00272",
@@ -5095,7 +5526,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 128,
+    "lowTenure": false,
+    "quality": 83.2,
+    "goldPass": 61.5,
+    "override": 7.7,
+    "rework": 15.4,
+    "peer": 81.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00216",
@@ -5110,7 +5550,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 185,
+    "lowTenure": false,
+    "quality": 84.6,
+    "goldPass": 56.2,
+    "override": 12.5,
+    "rework": 12.5,
+    "peer": 88.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00343",
@@ -5124,7 +5573,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 416,
+    "lowTenure": false,
+    "quality": 88.9,
+    "goldPass": 60.0,
+    "override": 20.0,
+    "rework": 0.0,
+    "peer": 82.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00236",
@@ -5138,7 +5596,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 518,
+    "lowTenure": false,
+    "quality": 84.6,
+    "goldPass": 54.5,
+    "override": 9.1,
+    "rework": 27.3,
+    "peer": 82.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00264",
@@ -5152,7 +5619,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 189,
+    "lowTenure": false,
+    "quality": 84.3,
+    "goldPass": 47.6,
+    "override": 4.8,
+    "rework": 14.3,
+    "peer": 82.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00281",
@@ -5166,7 +5642,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 574,
+    "lowTenure": false,
+    "quality": 84.5,
+    "goldPass": 60.0,
+    "override": 0.0,
+    "rework": 20.0,
+    "peer": 84.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00269",
@@ -5178,7 +5663,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 424,
+    "lowTenure": false,
+    "quality": 86.4,
+    "goldPass": 50.0,
+    "override": 7.1,
+    "rework": 7.1,
+    "peer": 83.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00244",
@@ -5190,7 +5684,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 217,
+    "lowTenure": false,
+    "quality": 86.1,
+    "goldPass": 56.0,
+    "override": 4.0,
+    "rework": 4.0,
+    "peer": 85.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00235",
@@ -5204,7 +5707,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 368,
+    "lowTenure": false,
+    "quality": 84.5,
+    "goldPass": 58.8,
+    "override": 0.0,
+    "rework": 17.6,
+    "peer": 85.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00217",
@@ -5218,7 +5730,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 404,
+    "lowTenure": false,
+    "quality": 84.8,
+    "goldPass": 57.1,
+    "override": 14.3,
+    "rework": 7.1,
+    "peer": 87.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00276",
@@ -5231,7 +5752,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 443,
+    "lowTenure": false,
+    "quality": 84.3,
+    "goldPass": 47.1,
+    "override": 5.9,
+    "rework": 5.9,
+    "peer": 82.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00228",
@@ -5244,7 +5774,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 248,
+    "lowTenure": false,
+    "quality": 86.3,
+    "goldPass": 53.8,
+    "override": 0.0,
+    "rework": 15.4,
+    "peer": 84.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00302",
@@ -5259,7 +5798,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 123,
+    "lowTenure": false,
+    "quality": 86.5,
+    "goldPass": 83.3,
+    "override": 16.7,
+    "rework": 33.3,
+    "peer": 86.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00267",
@@ -5272,7 +5820,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 385,
+    "lowTenure": false,
+    "quality": 84.2,
+    "goldPass": 43.8,
+    "override": 37.5,
+    "rework": 0.0,
+    "peer": 80.1,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00413",
@@ -5286,7 +5843,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 344,
+    "lowTenure": false,
+    "quality": 85.9,
+    "goldPass": 80.0,
+    "override": 40.0,
+    "rework": 10.0,
+    "peer": 87.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00207",
@@ -5298,7 +5864,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 172,
+    "lowTenure": false,
+    "quality": 86.4,
+    "goldPass": 69.2,
+    "override": 0.0,
+    "rework": 7.7,
+    "peer": 82.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00294",
@@ -5310,7 +5885,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 475,
+    "lowTenure": false,
+    "quality": 86.0,
+    "goldPass": 63.3,
+    "override": 6.7,
+    "rework": 3.3,
+    "peer": 84.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00357",
@@ -5323,7 +5907,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 420,
+    "lowTenure": false,
+    "quality": 85.3,
+    "goldPass": 50.0,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 87.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00177",
@@ -5337,7 +5930,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 522,
+    "lowTenure": false,
+    "quality": 85.8,
+    "goldPass": 66.7,
+    "override": 8.3,
+    "rework": 13.9,
+    "peer": 85.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00383",
@@ -5350,7 +5952,16 @@
      "High rework rate",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 85,
+    "lowTenure": true,
+    "quality": 87.2,
+    "goldPass": 54.5,
+    "override": 9.1,
+    "rework": 18.2,
+    "peer": 87.0,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00358",
@@ -5363,7 +5974,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 508,
+    "lowTenure": false,
+    "quality": 86.3,
+    "goldPass": 66.7,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 92.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00227",
@@ -5375,7 +5995,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 577,
+    "lowTenure": false,
+    "quality": 82.8,
+    "goldPass": 20.0,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 86.7,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00256",
@@ -5389,7 +6018,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 252,
+    "lowTenure": false,
+    "quality": 84.1,
+    "goldPass": 47.1,
+    "override": 17.6,
+    "rework": 17.6,
+    "peer": 80.1,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00394",
@@ -5402,7 +6040,16 @@
      "Recent quality drop",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 85,
+    "lowTenure": true,
+    "quality": 89.3,
+    "goldPass": 69.2,
+    "override": 7.7,
+    "rework": 7.7,
+    "peer": 83.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00270",
@@ -5415,7 +6062,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 314,
+    "lowTenure": false,
+    "quality": 84.6,
+    "goldPass": 33.3,
+    "override": 14.3,
+    "rework": 9.5,
+    "peer": 87.2,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00241",
@@ -5428,7 +6084,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 257,
+    "lowTenure": false,
+    "quality": 83.6,
+    "goldPass": 36.8,
+    "override": 5.3,
+    "rework": 15.8,
+    "peer": 84.2,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00345",
@@ -5441,7 +6106,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 141,
+    "lowTenure": false,
+    "quality": 89.8,
+    "goldPass": 71.4,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 83.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00061",
@@ -5454,7 +6128,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 331,
+    "lowTenure": false,
+    "quality": 87.5,
+    "goldPass": 72.7,
+    "override": 36.4,
+    "rework": 9.1,
+    "peer": 83.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00258",
@@ -5466,7 +6149,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 323,
+    "lowTenure": false,
+    "quality": 83.2,
+    "goldPass": 33.3,
+    "override": 0.0,
+    "rework": 11.1,
+    "peer": 80.6,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00191",
@@ -5480,7 +6172,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 225,
+    "lowTenure": false,
+    "quality": 85.5,
+    "goldPass": 65.2,
+    "override": 0.0,
+    "rework": 21.7,
+    "peer": 87.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00261",
@@ -5493,7 +6194,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 106,
+    "lowTenure": true,
+    "quality": 84.4,
+    "goldPass": 61.5,
+    "override": 3.8,
+    "rework": 7.7,
+    "peer": 81.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00084",
@@ -5506,7 +6216,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 197,
+    "lowTenure": false,
+    "quality": 89.7,
+    "goldPass": 66.7,
+    "override": 4.8,
+    "rework": 28.6,
+    "peer": 82.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00312",
@@ -5520,7 +6239,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 126,
+    "lowTenure": false,
+    "quality": 85.5,
+    "goldPass": 41.7,
+    "override": 16.7,
+    "rework": 16.7,
+    "peer": 86.8,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00252",
@@ -5533,7 +6261,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 276,
+    "lowTenure": false,
+    "quality": 84.9,
+    "goldPass": 63.2,
+    "override": 5.3,
+    "rework": 5.3,
+    "peer": 84.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00242",
@@ -5546,7 +6283,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 118,
+    "lowTenure": true,
+    "quality": 86.0,
+    "goldPass": 63.6,
+    "override": 9.1,
+    "rework": 18.2,
+    "peer": 84.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00348",
@@ -5560,7 +6306,16 @@
      "High reviewer override rate",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 73,
+    "lowTenure": true,
+    "quality": 85.5,
+    "goldPass": 60.0,
+    "override": 20.0,
+    "rework": 0.0,
+    "peer": 86.6,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00214",
@@ -5574,7 +6329,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 161,
+    "lowTenure": false,
+    "quality": 84.3,
+    "goldPass": 46.2,
+    "override": 15.4,
+    "rework": 15.4,
+    "peer": 86.8,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00251",
@@ -5588,7 +6352,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 263,
+    "lowTenure": false,
+    "quality": 83.7,
+    "goldPass": 48.1,
+    "override": 11.1,
+    "rework": 18.5,
+    "peer": 83.3,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00255",
@@ -5601,7 +6374,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 459,
+    "lowTenure": false,
+    "quality": 85.6,
+    "goldPass": 58.8,
+    "override": 0.0,
+    "rework": 11.8,
+    "peer": 80.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00392",
@@ -5614,7 +6396,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 154,
+    "lowTenure": false,
+    "quality": 88.7,
+    "goldPass": 80.0,
+    "override": 10.0,
+    "rework": 10.0,
+    "peer": 90.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00282",
@@ -5627,7 +6418,16 @@
      "Low gold task pass rate",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 44,
+    "lowTenure": true,
+    "quality": 84.3,
+    "goldPass": 56.2,
+    "override": 0.0,
+    "rework": 6.2,
+    "peer": 83.9,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00243",
@@ -5640,7 +6440,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 133,
+    "lowTenure": false,
+    "quality": 82.8,
+    "goldPass": 50.0,
+    "override": 0.0,
+    "rework": 25.0,
+    "peer": 86.6,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00211",
@@ -5653,7 +6462,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 175,
+    "lowTenure": false,
+    "quality": 84.3,
+    "goldPass": 50.0,
+    "override": 20.0,
+    "rework": 10.0,
+    "peer": 85.1,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00231",
@@ -5666,7 +6484,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 654,
+    "lowTenure": false,
+    "quality": 89.5,
+    "goldPass": 72.7,
+    "override": 27.3,
+    "rework": 0.0,
+    "peer": 84.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00372",
@@ -5680,7 +6507,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 97,
+    "lowTenure": true,
+    "quality": 85.8,
+    "goldPass": 50.0,
+    "override": 0.0,
+    "rework": 16.7,
+    "peer": 88.7,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00361",
@@ -5694,7 +6530,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 123,
+    "lowTenure": false,
+    "quality": 86.9,
+    "goldPass": 57.1,
+    "override": 14.3,
+    "rework": 14.3,
+    "peer": 88.9,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00271",
@@ -5708,7 +6553,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 363,
+    "lowTenure": false,
+    "quality": 85.2,
+    "goldPass": 57.7,
+    "override": 11.5,
+    "rework": 0.0,
+    "peer": 83.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00224",
@@ -5722,7 +6576,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 302,
+    "lowTenure": false,
+    "quality": 85.4,
+    "goldPass": 76.9,
+    "override": 15.4,
+    "rework": 7.7,
+    "peer": 83.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00363",
@@ -5736,7 +6599,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 549,
+    "lowTenure": false,
+    "quality": 85.1,
+    "goldPass": 50.0,
+    "override": 10.0,
+    "rework": 20.0,
+    "peer": 87.7,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00162",
@@ -5748,7 +6620,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 156,
+    "lowTenure": false,
+    "quality": 86.8,
+    "goldPass": 62.1,
+    "override": 3.4,
+    "rework": 6.9,
+    "peer": 83.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00237",
@@ -5762,7 +6643,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 168,
+    "lowTenure": false,
+    "quality": 84.9,
+    "goldPass": 68.8,
+    "override": 12.5,
+    "rework": 6.2,
+    "peer": 86.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00339",
@@ -5777,7 +6667,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 284,
+    "lowTenure": false,
+    "quality": 83.7,
+    "goldPass": 71.4,
+    "override": 14.3,
+    "rework": 14.3,
+    "peer": 86.4,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00240",
@@ -5790,7 +6689,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 36,
+    "lowTenure": true,
+    "quality": 84.8,
+    "goldPass": 47.1,
+    "override": 5.9,
+    "rework": 17.6,
+    "peer": 84.8,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00206",
@@ -5804,7 +6712,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 375,
+    "lowTenure": false,
+    "quality": 85.8,
+    "goldPass": 50.0,
+    "override": 12.5,
+    "rework": 18.8,
+    "peer": 82.4,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00145",
@@ -5816,7 +6733,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 406,
+    "lowTenure": false,
+    "quality": 86.1,
+    "goldPass": 68.0,
+    "override": 4.0,
+    "rework": 8.0,
+    "peer": 86.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00197",
@@ -5830,7 +6756,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 500,
+    "lowTenure": false,
+    "quality": 84.9,
+    "goldPass": 54.5,
+    "override": 13.6,
+    "rework": 18.2,
+    "peer": 85.9,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00277",
@@ -5842,7 +6777,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 221,
+    "lowTenure": false,
+    "quality": 83.6,
+    "goldPass": 43.8,
+    "override": 6.2,
+    "rework": 6.2,
+    "peer": 86.3,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00380",
@@ -5855,7 +6799,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 153,
+    "lowTenure": false,
+    "quality": 88.0,
+    "goldPass": 66.7,
+    "override": 11.1,
+    "rework": 11.1,
+    "peer": 89.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00320",
@@ -5868,7 +6821,16 @@
      "Recent quality drop",
      "Low sample size"
     ],
-    "coaching": "Workflow coaching + task instruction review"
+    "coaching": "Workflow coaching + task instruction review",
+    "skill": "junior",
+    "tenure": 205,
+    "lowTenure": false,
+    "quality": 89.4,
+    "goldPass": 100.0,
+    "override": 0.0,
+    "rework": 14.3,
+    "peer": 88.7,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00209",
@@ -5882,7 +6844,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 540,
+    "lowTenure": false,
+    "quality": 84.7,
+    "goldPass": 60.0,
+    "override": 15.0,
+    "rework": 20.0,
+    "peer": 85.3,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00350",
@@ -5895,7 +6866,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 307,
+    "lowTenure": false,
+    "quality": 87.4,
+    "goldPass": 66.7,
+    "override": 11.1,
+    "rework": 11.1,
+    "peer": 87.3,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00273",
@@ -5907,7 +6887,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 281,
+    "lowTenure": false,
+    "quality": 83.9,
+    "goldPass": 50.0,
+    "override": 8.3,
+    "rework": 8.3,
+    "peer": 88.1,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00268",
@@ -5919,7 +6908,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 265,
+    "lowTenure": false,
+    "quality": 83.7,
+    "goldPass": 47.1,
+    "override": 5.9,
+    "rework": 5.9,
+    "peer": 83.5,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00353",
@@ -5933,7 +6931,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 342,
+    "lowTenure": false,
+    "quality": 85.4,
+    "goldPass": 71.4,
+    "override": 0.0,
+    "rework": 28.6,
+    "peer": 85.4,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00013",
@@ -5945,7 +6952,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 145,
+    "lowTenure": false,
+    "quality": 91.2,
+    "goldPass": 75.0,
+    "override": 6.2,
+    "rework": 0.0,
+    "peer": 84.6,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00144",
@@ -5958,7 +6974,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 474,
+    "lowTenure": false,
+    "quality": 85.6,
+    "goldPass": 50.0,
+    "override": 6.7,
+    "rework": 16.7,
+    "peer": 87.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00192",
@@ -5971,7 +6996,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 249,
+    "lowTenure": false,
+    "quality": 85.6,
+    "goldPass": 58.3,
+    "override": 8.3,
+    "rework": 25.0,
+    "peer": 86.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00284",
@@ -5984,7 +7018,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 800,
+    "lowTenure": false,
+    "quality": 84.0,
+    "goldPass": 55.6,
+    "override": 11.1,
+    "rework": 11.1,
+    "peer": 83.0,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00263",
@@ -5997,7 +7040,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 441,
+    "lowTenure": false,
+    "quality": 85.3,
+    "goldPass": 83.3,
+    "override": 5.6,
+    "rework": 5.6,
+    "peer": 81.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00293",
@@ -6010,7 +7062,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 267,
+    "lowTenure": false,
+    "quality": 83.7,
+    "goldPass": 52.9,
+    "override": 11.8,
+    "rework": 5.9,
+    "peer": 83.9,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00442",
@@ -6022,7 +7083,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Workflow coaching + task instruction review"
+    "coaching": "Workflow coaching + task instruction review",
+    "skill": "intermediate",
+    "tenure": 281,
+    "lowTenure": false,
+    "quality": 88.2,
+    "goldPass": 85.7,
+    "override": 7.1,
+    "rework": 28.6,
+    "peer": 86.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00212",
@@ -6036,7 +7106,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 203,
+    "lowTenure": false,
+    "quality": 85.4,
+    "goldPass": 66.7,
+    "override": 16.7,
+    "rework": 25.0,
+    "peer": 82.2,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00253",
@@ -6049,7 +7128,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 191,
+    "lowTenure": false,
+    "quality": 86.0,
+    "goldPass": 66.7,
+    "override": 8.3,
+    "rework": 4.2,
+    "peer": 82.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00332",
@@ -6061,7 +7149,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 134,
+    "lowTenure": false,
+    "quality": 89.2,
+    "goldPass": 75.0,
+    "override": 8.3,
+    "rework": 0.0,
+    "peer": 85.4,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00159",
@@ -6075,7 +7172,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 249,
+    "lowTenure": false,
+    "quality": 85.2,
+    "goldPass": 57.1,
+    "override": 10.7,
+    "rework": 17.9,
+    "peer": 87.5,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00375",
@@ -6088,7 +7194,16 @@
      "Low gold task pass rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 229,
+    "lowTenure": false,
+    "quality": 85.3,
+    "goldPass": 50.0,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 86.5,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00172",
@@ -6101,7 +7216,16 @@
      "High rework rate",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 78,
+    "lowTenure": true,
+    "quality": 87.1,
+    "goldPass": 72.2,
+    "override": 5.6,
+    "rework": 16.7,
+    "peer": 86.8,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00194",
@@ -6114,7 +7238,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 108,
+    "lowTenure": true,
+    "quality": 84.5,
+    "goldPass": 48.3,
+    "override": 10.3,
+    "rework": 3.4,
+    "peer": 86.4,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00305",
@@ -6127,7 +7260,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 733,
+    "lowTenure": false,
+    "quality": 88.1,
+    "goldPass": 66.7,
+    "override": 0.0,
+    "rework": 33.3,
+    "peer": 87.7,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00179",
@@ -6139,7 +7281,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 273,
+    "lowTenure": false,
+    "quality": 87.6,
+    "goldPass": 76.5,
+    "override": 2.9,
+    "rework": 5.9,
+    "peer": 84.8,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00254",
@@ -6151,7 +7302,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 579,
+    "lowTenure": false,
+    "quality": 84.0,
+    "goldPass": 53.8,
+    "override": 7.7,
+    "rework": 7.7,
+    "peer": 81.0,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00190",
@@ -6165,7 +7325,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 104,
+    "lowTenure": true,
+    "quality": 84.3,
+    "goldPass": 60.9,
+    "override": 13.0,
+    "rework": 13.0,
+    "peer": 85.9,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00178",
@@ -6177,7 +7346,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 107,
+    "lowTenure": true,
+    "quality": 86.8,
+    "goldPass": 66.7,
+    "override": 0.0,
+    "rework": 9.5,
+    "peer": 85.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00393",
@@ -6190,7 +7368,16 @@
      "High rework rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 216,
+    "lowTenure": false,
+    "quality": 88.1,
+    "goldPass": 80.0,
+    "override": 6.7,
+    "rework": 13.3,
+    "peer": 85.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00151",
@@ -6203,7 +7390,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 838,
+    "lowTenure": false,
+    "quality": 85.7,
+    "goldPass": 54.8,
+    "override": 6.5,
+    "rework": 16.1,
+    "peer": 85.6,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00199",
@@ -6215,7 +7411,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 270,
+    "lowTenure": false,
+    "quality": 86.4,
+    "goldPass": 60.0,
+    "override": 4.0,
+    "rework": 28.0,
+    "peer": 86.8,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00328",
@@ -6227,7 +7432,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Reviewer calibration + manager review"
+    "coaching": "Reviewer calibration + manager review",
+    "skill": "intermediate",
+    "tenure": 129,
+    "lowTenure": false,
+    "quality": 88.3,
+    "goldPass": 90.0,
+    "override": 20.0,
+    "rework": 0.0,
+    "peer": 82.0,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00288",
@@ -6239,7 +7453,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 436,
+    "lowTenure": false,
+    "quality": 84.6,
+    "goldPass": 50.0,
+    "override": 5.6,
+    "rework": 5.6,
+    "peer": 84.7,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00386",
@@ -6253,7 +7476,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 479,
+    "lowTenure": false,
+    "quality": 84.4,
+    "goldPass": 62.5,
+    "override": 12.5,
+    "rework": 12.5,
+    "peer": 83.9,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00323",
@@ -6266,7 +7498,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 305,
+    "lowTenure": false,
+    "quality": 85.7,
+    "goldPass": 53.3,
+    "override": 13.3,
+    "rework": 6.7,
+    "peer": 84.7,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00304",
@@ -6278,7 +7519,16 @@
      "Low gold task pass rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 335,
+    "lowTenure": false,
+    "quality": 86.7,
+    "goldPass": 50.0,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 86.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00201",
@@ -6291,7 +7541,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 195,
+    "lowTenure": false,
+    "quality": 86.0,
+    "goldPass": 53.3,
+    "override": 16.7,
+    "rework": 3.3,
+    "peer": 83.7,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00245",
@@ -6304,7 +7563,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 267,
+    "lowTenure": false,
+    "quality": 83.8,
+    "goldPass": 63.2,
+    "override": 0.0,
+    "rework": 21.1,
+    "peer": 84.6,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00292",
@@ -6317,7 +7585,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 179,
+    "lowTenure": false,
+    "quality": 85.5,
+    "goldPass": 57.1,
+    "override": 7.1,
+    "rework": 14.3,
+    "peer": 86.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00329",
@@ -6330,7 +7607,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 227,
+    "lowTenure": false,
+    "quality": 85.4,
+    "goldPass": 50.0,
+    "override": 0.0,
+    "rework": 12.5,
+    "peer": 85.6,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00223",
@@ -6343,7 +7629,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 243,
+    "lowTenure": false,
+    "quality": 83.3,
+    "goldPass": 61.5,
+    "override": 0.0,
+    "rework": 15.4,
+    "peer": 84.4,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00222",
@@ -6357,7 +7652,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 265,
+    "lowTenure": false,
+    "quality": 85.7,
+    "goldPass": 71.4,
+    "override": 0.0,
+    "rework": 14.3,
+    "peer": 79.1,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00248",
@@ -6369,7 +7673,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 289,
+    "lowTenure": false,
+    "quality": 85.4,
+    "goldPass": 52.4,
+    "override": 9.5,
+    "rework": 4.8,
+    "peer": 84.4,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00249",
@@ -6382,7 +7695,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 212,
+    "lowTenure": false,
+    "quality": 83.8,
+    "goldPass": 65.0,
+    "override": 15.0,
+    "rework": 5.0,
+    "peer": 81.5,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00385",
@@ -6394,7 +7716,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 81,
+    "lowTenure": true,
+    "quality": 86.6,
+    "goldPass": 55.6,
+    "override": 5.6,
+    "rework": 16.7,
+    "peer": 81.3,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00310",
@@ -6406,7 +7737,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 269,
+    "lowTenure": false,
+    "quality": 86.5,
+    "goldPass": 58.3,
+    "override": 8.3,
+    "rework": 16.7,
+    "peer": 88.2,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00297",
@@ -6419,7 +7759,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 156,
+    "lowTenure": false,
+    "quality": 85.7,
+    "goldPass": 62.5,
+    "override": 8.3,
+    "rework": 16.7,
+    "peer": 82.6,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00215",
@@ -6432,7 +7781,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 866,
+    "lowTenure": false,
+    "quality": 84.6,
+    "goldPass": 62.5,
+    "override": 0.0,
+    "rework": 18.8,
+    "peer": 84.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00391",
@@ -6444,7 +7802,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 171,
+    "lowTenure": false,
+    "quality": 89.5,
+    "goldPass": 80.0,
+    "override": 0.0,
+    "rework": 10.0,
+    "peer": 85.9,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00196",
@@ -6456,7 +7823,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 262,
+    "lowTenure": false,
+    "quality": 86.0,
+    "goldPass": 63.2,
+    "override": 7.9,
+    "rework": 18.4,
+    "peer": 86.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00129",
@@ -6468,7 +7844,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 179,
+    "lowTenure": false,
+    "quality": 92.7,
+    "goldPass": 77.8,
+    "override": 5.6,
+    "rework": 5.6,
+    "peer": 87.5,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00204",
@@ -6480,7 +7865,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 295,
+    "lowTenure": false,
+    "quality": 85.6,
+    "goldPass": 55.9,
+    "override": 2.9,
+    "rework": 11.8,
+    "peer": 85.5,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00149",
@@ -6494,7 +7888,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 157,
+    "lowTenure": false,
+    "quality": 85.7,
+    "goldPass": 63.3,
+    "override": 10.0,
+    "rework": 13.3,
+    "peer": 88.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00368",
@@ -6507,7 +7910,16 @@
      "Low gold task pass rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 197,
+    "lowTenure": false,
+    "quality": 86.0,
+    "goldPass": 60.0,
+    "override": 0.0,
+    "rework": 0.0,
+    "peer": 89.4,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00155",
@@ -6519,7 +7931,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 266,
+    "lowTenure": false,
+    "quality": 87.1,
+    "goldPass": 58.1,
+    "override": 9.7,
+    "rework": 12.9,
+    "peer": 86.6,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00301",
@@ -6531,7 +7952,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 62,
+    "lowTenure": true,
+    "quality": 86.7,
+    "goldPass": 63.6,
+    "override": 9.1,
+    "rework": 18.2,
+    "peer": 84.9,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00352",
@@ -6544,7 +7974,16 @@
      "High reviewer override rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 129,
+    "lowTenure": false,
+    "quality": 86.2,
+    "goldPass": 71.4,
+    "override": 14.3,
+    "rework": 0.0,
+    "peer": 87.4,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00165",
@@ -6556,7 +7995,16 @@
      "Low gold task pass rate",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 27,
+    "lowTenure": true,
+    "quality": 86.7,
+    "goldPass": 82.1,
+    "override": 7.1,
+    "rework": 7.1,
+    "peer": 88.0,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00399",
@@ -6568,7 +8016,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 210,
+    "lowTenure": false,
+    "quality": 88.0,
+    "goldPass": 53.3,
+    "override": 13.3,
+    "rework": 6.7,
+    "peer": 90.7,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00316",
@@ -6581,7 +8038,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 354,
+    "lowTenure": false,
+    "quality": 86.4,
+    "goldPass": 71.4,
+    "override": 0.0,
+    "rework": 14.3,
+    "peer": 87.0,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00257",
@@ -6594,7 +8060,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "expert",
+    "tenure": 173,
+    "lowTenure": false,
+    "quality": 85.8,
+    "goldPass": 56.0,
+    "override": 12.0,
+    "rework": 0.0,
+    "peer": 87.8,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00213",
@@ -6606,7 +8081,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 99,
+    "lowTenure": true,
+    "quality": 83.6,
+    "goldPass": 61.5,
+    "override": 0.0,
+    "rework": 7.7,
+    "peer": 86.7,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00311",
@@ -6618,7 +8102,16 @@
      "Low gold task pass rate",
      "High reviewer override rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 493,
+    "lowTenure": false,
+    "quality": 86.6,
+    "goldPass": 60.0,
+    "override": 10.0,
+    "rework": 10.0,
+    "peer": 86.8,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00246",
@@ -6630,7 +8123,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 171,
+    "lowTenure": false,
+    "quality": 83.8,
+    "goldPass": 64.7,
+    "override": 0.0,
+    "rework": 11.8,
+    "peer": 86.4,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00325",
@@ -6643,7 +8145,16 @@
      "High rework rate",
      "Low sample size"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 248,
+    "lowTenure": false,
+    "quality": 86.8,
+    "goldPass": 71.4,
+    "override": 0.0,
+    "rework": 14.3,
+    "peer": 83.3,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00295",
@@ -6656,7 +8167,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 214,
+    "lowTenure": false,
+    "quality": 85.8,
+    "goldPass": 62.5,
+    "override": 6.2,
+    "rework": 12.5,
+    "peer": 85.3,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00327",
@@ -6668,7 +8188,16 @@
      "Low gold task pass rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 173,
+    "lowTenure": false,
+    "quality": 88.5,
+    "goldPass": 75.0,
+    "override": 6.2,
+    "rework": 6.2,
+    "peer": 86.2,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00232",
@@ -6681,7 +8210,16 @@
      "High reviewer override rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 126,
+    "lowTenure": false,
+    "quality": 86.9,
+    "goldPass": 69.2,
+    "override": 15.4,
+    "rework": 15.4,
+    "peer": 81.4,
+    "status": "Volatile"
    },
    {
     "contributor_id": "CONTR_00429",
@@ -6693,7 +8231,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 589,
+    "lowTenure": false,
+    "quality": 87.2,
+    "goldPass": 61.1,
+    "override": 5.6,
+    "rework": 16.7,
+    "peer": 85.7,
+    "status": "Improving"
    },
    {
     "contributor_id": "CONTR_00286",
@@ -6705,7 +8252,16 @@
      "Average quality below target",
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 221,
+    "lowTenure": false,
+    "quality": 85.6,
+    "goldPass": 61.5,
+    "override": 7.7,
+    "rework": 7.7,
+    "peer": 85.2,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00359",
@@ -6718,7 +8274,16 @@
      "High reviewer override rate",
      "Recent quality drop"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 198,
+    "lowTenure": false,
+    "quality": 87.8,
+    "goldPass": 75.0,
+    "override": 12.5,
+    "rework": 0.0,
+    "peer": 90.1,
+    "status": "Declining"
    },
    {
     "contributor_id": "CONTR_00160",
@@ -6731,7 +8296,16 @@
      "Low gold task pass rate",
      "High rework rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 131,
+    "lowTenure": false,
+    "quality": 85.9,
+    "goldPass": 61.3,
+    "override": 3.2,
+    "rework": 12.9,
+    "peer": 83.9,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00187",
@@ -6742,7 +8316,16 @@
     "drivers": [
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "junior",
+    "tenure": 88,
+    "lowTenure": true,
+    "quality": 86.5,
+    "goldPass": 56.5,
+    "override": 4.3,
+    "rework": 8.7,
+    "peer": 86.1,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00439",
@@ -6754,7 +8337,16 @@
      "Low gold task pass rate",
      "Low tenure plus high complexity"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "senior",
+    "tenure": 69,
+    "lowTenure": true,
+    "quality": 89.1,
+    "goldPass": 77.3,
+    "override": 0.0,
+    "rework": 9.1,
+    "peer": 84.9,
+    "status": "Stable"
    },
    {
     "contributor_id": "CONTR_00259",
@@ -6765,7 +8357,16 @@
     "drivers": [
      "Low gold task pass rate"
     ],
-    "coaching": "Gold task review + targeted coaching"
+    "coaching": "Gold task review + targeted coaching",
+    "skill": "intermediate",
+    "tenure": 350,
+    "lowTenure": false,
+    "quality": 86.1,
+    "goldPass": 57.9,
+    "override": 5.3,
+    "rework": 5.3,
+    "peer": 84.1,
+    "status": "Stable"
    }
   ]
  },
@@ -6773,7 +8374,10 @@
   "region": {
    "atRisk": 4,
    "agedShare": 93,
-   "forecast": "SLA at risk"
+   "forecast": "SLA at risk",
+   "backlog": 1272,
+   "totalHeadGap": 0,
+   "avgSla": 92.9
   },
   "byWorkType": [
    {
@@ -6783,7 +8387,23 @@
     "complexity": 27,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Approve load rebalance / intake throttle for RLHF evaluation?"
+    "decision": "Approve load rebalance / intake throttle for RLHF evaluation?",
+    "riskScore": 58.8,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "SLA miss rate rising",
+     "Utilization above safe threshold",
+     "High rework drag",
+     "Quality risk overlay"
+    ],
+    "utilization": 95,
+    "slaNow": 79.6,
+    "backlog": 293,
+    "backlogPressure": 2.1,
+    "inflow": 129,
+    "throughput": 142,
+    "contributors": 55
    },
    {
     "work_type": "expert_review",
@@ -6792,7 +8412,23 @@
     "complexity": 74,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Approve load rebalance / intake throttle for Expert review?"
+    "decision": "Approve load rebalance / intake throttle for Expert review?",
+    "riskScore": 50.6,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "SLA miss rate rising",
+     "High-complexity work mix",
+     "Expert capacity demand",
+     "Quality risk overlay"
+    ],
+    "utilization": 63,
+    "slaNow": 85.7,
+    "backlog": 101,
+    "backlogPressure": 1.8,
+    "inflow": 43,
+    "throughput": 56,
+    "contributors": 35
    },
    {
     "work_type": "audio_evaluation",
@@ -6801,7 +8437,22 @@
     "complexity": 27,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Maintain current staffing."
+    "decision": "Maintain current staffing.",
+    "riskScore": 46.4,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "SLA miss rate rising",
+     "High rework drag",
+     "Quality risk overlay"
+    ],
+    "utilization": 35,
+    "slaNow": 76.0,
+    "backlog": 216,
+    "backlogPressure": 2.9,
+    "inflow": 72,
+    "throughput": 75,
+    "contributors": 93
    },
    {
     "work_type": "code_review",
@@ -6810,7 +8461,22 @@
     "complexity": 27,
     "action": "Run quality and workflow review before adding volume",
     "headGap": 0,
-    "decision": "Approve load rebalance / intake throttle for Code review?"
+    "decision": "Approve load rebalance / intake throttle for Code review?",
+    "riskScore": 43.8,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "SLA miss rate rising",
+     "High rework drag",
+     "Quality risk overlay"
+    ],
+    "utilization": 56,
+    "slaNow": 91.9,
+    "backlog": 211,
+    "backlogPressure": 1.7,
+    "inflow": 119,
+    "throughput": 124,
+    "contributors": 81
    },
    {
     "work_type": "image_annotation",
@@ -6819,7 +8485,20 @@
     "complexity": 26,
     "action": "Run a backlog burn-down sprint with daily SLA recovery check",
     "headGap": 0,
-    "decision": "Approve load rebalance / intake throttle for Image annotation?"
+    "decision": "Approve load rebalance / intake throttle for Image annotation?",
+    "riskScore": 42.5,
+    "drivers": [
+     "Backlog pressure",
+     "Aged backlog over 72h",
+     "Backlog growing faster than throughput"
+    ],
+    "utilization": 62,
+    "slaNow": 96.7,
+    "backlog": 451,
+    "backlogPressure": 2.5,
+    "inflow": 204,
+    "throughput": 181,
+    "contributors": 121
    }
   ],
   "teams": [
@@ -6829,7 +8508,17 @@
     "work_type": "rlhf_evaluation",
     "utilization": 120,
     "load": 100,
-    "action": "Run quality and workflow review before adding volume"
+    "action": "Run quality and workflow review before adding volume",
+    "riskScore": 61.7,
+    "riskLevel": "High",
+    "sla": 87.0,
+    "backlog": 100,
+    "throughput": 46,
+    "contributors": 16,
+    "city": "Bangalore",
+    "shift": "day",
+    "openEsc": 14,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_RLHF_01",
@@ -6837,7 +8526,17 @@
     "work_type": "rlhf_evaluation",
     "utilization": 94,
     "load": 97,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 57.9,
+    "riskLevel": "High",
+    "sla": 80.0,
+    "backlog": 97,
+    "throughput": 45,
+    "contributors": 18,
+    "city": "Mumbai",
+    "shift": "weekend",
+    "openEsc": 9,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_EXPERT_02",
@@ -6845,7 +8544,17 @@
     "work_type": "expert_review",
     "utilization": 72,
     "load": 53,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 56.2,
+    "riskLevel": "High",
+    "sla": 85.2,
+    "backlog": 53,
+    "throughput": 27,
+    "contributors": 16,
+    "city": "Bangalore",
+    "shift": "follow_the_sun",
+    "openEsc": 11,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_EXPERT_01",
@@ -6853,7 +8562,17 @@
     "work_type": "expert_review",
     "utilization": 56,
     "load": 48,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 50.1,
+    "riskLevel": "Medium",
+    "sla": 86.2,
+    "backlog": 48,
+    "throughput": 29,
+    "contributors": 19,
+    "city": "Pune",
+    "shift": "day",
+    "openEsc": 12,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_AUDIO_01",
@@ -6861,7 +8580,17 @@
     "work_type": "audio_evaluation",
     "utilization": 49,
     "load": 91,
-    "action": "Run quality and workflow review before adding volume"
+    "action": "Run quality and workflow review before adding volume",
+    "riskScore": 47.3,
+    "riskLevel": "Medium",
+    "sla": 85.7,
+    "backlog": 91,
+    "throughput": 28,
+    "contributors": 31,
+    "city": "Pune",
+    "shift": "day",
+    "openEsc": 3,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_AUDIO_02",
@@ -6869,7 +8598,17 @@
     "work_type": "audio_evaluation",
     "utilization": 21,
     "load": 63,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 46.9,
+    "riskLevel": "Medium",
+    "sla": 65.0,
+    "backlog": 63,
+    "throughput": 20,
+    "contributors": 39,
+    "city": "Hyderabad",
+    "shift": "weekend",
+    "openEsc": 7,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_CODE_01",
@@ -6877,7 +8616,17 @@
     "work_type": "code_review",
     "utilization": 47,
     "load": 74,
-    "action": "Run quality and workflow review before adding volume"
+    "action": "Run quality and workflow review before adding volume",
+    "riskScore": 46.5,
+    "riskLevel": "Medium",
+    "sla": 85.4,
+    "backlog": 74,
+    "throughput": 41,
+    "contributors": 31,
+    "city": "Bangalore",
+    "shift": "hybrid",
+    "openEsc": 7,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_RLHF_03",
@@ -6885,7 +8634,17 @@
     "work_type": "rlhf_evaluation",
     "utilization": 78,
     "load": 96,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 43.7,
+    "riskLevel": "Medium",
+    "sla": 72.5,
+    "backlog": 96,
+    "throughput": 51,
+    "contributors": 21,
+    "city": "Hyderabad",
+    "shift": "hybrid",
+    "openEsc": 13,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_AUDIO_03",
@@ -6893,7 +8652,17 @@
     "work_type": "audio_evaluation",
     "utilization": 42,
     "load": 62,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 42.4,
+    "riskLevel": "Medium",
+    "sla": 74.1,
+    "backlog": 62,
+    "throughput": 27,
+    "contributors": 23,
+    "city": "Pune",
+    "shift": "night",
+    "openEsc": 5,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_CODE_03",
@@ -6901,7 +8670,17 @@
     "work_type": "code_review",
     "utilization": 51,
     "load": 63,
-    "action": "Run quality and workflow review before adding volume"
+    "action": "Run quality and workflow review before adding volume",
+    "riskScore": 37.7,
+    "riskLevel": "Medium",
+    "sla": 97.6,
+    "backlog": 63,
+    "throughput": 41,
+    "contributors": 29,
+    "city": "Hyderabad",
+    "shift": "weekend",
+    "openEsc": 6,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_CODE_02",
@@ -6909,7 +8688,17 @@
     "work_type": "code_review",
     "utilization": 77,
     "load": 74,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 35.4,
+    "riskLevel": "Medium",
+    "sla": 92.9,
+    "backlog": 74,
+    "throughput": 42,
+    "contributors": 21,
+    "city": "Chennai",
+    "shift": "hybrid",
+    "openEsc": 1,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_IMAGE_04",
@@ -6917,7 +8706,17 @@
     "work_type": "image_annotation",
     "utilization": 61,
     "load": 129,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 33.4,
+    "riskLevel": "Medium",
+    "sla": 97.7,
+    "backlog": 129,
+    "throughput": 43,
+    "contributors": 34,
+    "city": "Chennai",
+    "shift": "hybrid",
+    "openEsc": 2,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_IMAGE_01",
@@ -6925,7 +8724,17 @@
     "work_type": "image_annotation",
     "utilization": 64,
     "load": 111,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 31.1,
+    "riskLevel": "Medium",
+    "sla": 94.2,
+    "backlog": 111,
+    "throughput": 52,
+    "contributors": 31,
+    "city": "Bangalore",
+    "shift": "day",
+    "openEsc": 0,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_IMAGE_03",
@@ -6933,7 +8742,17 @@
     "work_type": "image_annotation",
     "utilization": 73,
     "load": 103,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 29.5,
+    "riskLevel": "Low",
+    "sla": 100.0,
+    "backlog": 103,
+    "throughput": 39,
+    "contributors": 23,
+    "city": "Hyderabad",
+    "shift": "day",
+    "openEsc": 0,
+    "lowTenureHighComplex": false
    },
    {
     "team_id": "TEAM_APAC_IMAGE_02",
@@ -6941,7 +8760,17 @@
     "work_type": "image_annotation",
     "utilization": 55,
     "load": 108,
-    "action": "Run a backlog burn-down sprint with daily SLA recovery check"
+    "action": "Run a backlog burn-down sprint with daily SLA recovery check",
+    "riskScore": 28.4,
+    "riskLevel": "Low",
+    "sla": 95.7,
+    "backlog": 108,
+    "throughput": 47,
+    "contributors": 33,
+    "city": "Pune",
+    "shift": "night",
+    "openEsc": 2,
+    "lowTenureHighComplex": false
    }
   ]
  },

@@ -332,6 +332,15 @@ def build_workforce(teams, contributors, work_items, quality_events, escalation_
                 "drivers": _driver_list(t["risk_drivers"]),
                 "action": str(t["recommended_manager_action"]),
                 "quality_gap": _round(max(0.0, QUALITY_TARGET - _numf(t["avg_quality_score"]))),
+                # real per-team metrics (surfaced for the workforce route)
+                "quality": _round(t["avg_quality_score"]),
+                "drift": _round(t["quality_delta"]),
+                "goldFail": _round(_numf(t["gold_task_fail_rate"]) * 100),
+                "override": _round(_numf(t["reviewer_override_rate"]) * 100),
+                "peerAgree": _round(_numf(t["avg_peer_agreement_score"]) * 100),
+                "rework": _round(_numf(t["rework_rate"]) * 100),
+                "lowTenure": _round(_numf(t["low_tenure_share"]) * 100),
+                "contributors": int(_numf(t["active_contributors"])),
             }
         )
     teams_out.sort(key=lambda r: r["risk_score"], reverse=True)
@@ -349,6 +358,14 @@ def build_workforce(teams, contributors, work_items, quality_events, escalation_
             "riskLevel": _agg_band(w["work_type"]),
             "avgQuality": _round(w["avg_quality_score"]),
             "teamsAtRisk": int(w["high_risk_teams"]),
+            "avgScore": _round(w["work_type_risk_score"]),
+            "flagged": int(
+                sum(
+                    1
+                    for _, c in contrib.iterrows()
+                    if c["work_type"] == w["work_type"] and _short_band(c["risk_level"]) in ("High", "Medium")
+                )
+            ),
         }
         for _, w in wt_feat.iterrows()
     ]
@@ -364,6 +381,16 @@ def build_workforce(teams, contributors, work_items, quality_events, escalation_
             "risk_band": _short_band(c["risk_level"]),
             "drivers": _driver_list(c["risk_drivers"]),
             "coaching": str(c["recommended_action"]),
+            # real per-contributor metrics (surfaced for coaching cards)
+            "skill": str(c["skill_level"]),
+            "tenure": int(_numf(c["tenure_days"])),
+            "lowTenure": bool(_numf(c["tenure_days"]) < 120),
+            "quality": _round(c["avg_quality_score"]),
+            "goldPass": _round(max(0.0, 100.0 - _numf(c["gold_task_fail_rate"]) * 100)),
+            "override": _round(_numf(c["reviewer_override_rate"]) * 100),
+            "rework": _round(_numf(c["rework_rate"]) * 100),
+            "peer": _round(_numf(c["avg_peer_agreement_score"]) * 100),
+            "status": str(c["risk_status"]),
         }
         for c in flagged
     ]
@@ -372,6 +399,10 @@ def build_workforce(teams, contributors, work_items, quality_events, escalation_
         "region": {
             "highRiskTeams": sum(1 for t in teams_out if t["risk_band"] == "High"),
             "avgQuality": kpis["avg_quality"],
+            "teamCount": len(teams_out),
+            "reworkRate": kpis["rework_rate"],
+            "flaggedContributors": len(contributors_out),
+            "highRiskContributors": sum(1 for c in contributors_out if c["risk_band"] == "High"),
         },
         "byWorkType": by_work_type,
         "teams": teams_out,
@@ -393,6 +424,10 @@ def build_capacity(contributors, work_items, teams, sla_events, quality_events, 
         quality_events=quality_events, escalation_events=escalation_events,
     )
 
+    # team context the capacity engine doesn't carry: city/shift + open escalations
+    team_meta = {r["team_id"]: {"city": r.get("city", ""), "shift": r.get("shift_type", "")} for _, r in teams.iterrows()}
+    open_esc = escalation_events[escalation_events["status"].isin(OPEN_STATUSES)].groupby("team_id").size().to_dict()
+
     by_work_type = []
     at_risk = 0
     for _, w in wt_feat.iterrows():
@@ -409,6 +444,16 @@ def build_capacity(contributors, work_items, teams, sla_events, quality_events, 
                 "action": str(w["recommended_capacity_action"]),
                 "headGap": head_gap,
                 "decision": _capacity_decision(w, head_gap),
+                # real per-work-type capacity metrics (surfaced for the capacity route)
+                "riskScore": _round(w["capacity_risk_score"]),
+                "drivers": _driver_list(w["risk_drivers"]),
+                "utilization": int(round(_numf(w["utilization_rate"]) * 100)),
+                "slaNow": _round(_numf(w["sla_adherence_7d"]) * 100),
+                "backlog": int(_numf(w["open_backlog"])),
+                "backlogPressure": _round(_numf(w["estimated_days_to_clear_backlog"]) / 7.0),
+                "inflow": int(round(_numf(w["avg_daily_inflow_7d"]) * 7)),
+                "throughput": int(round(_numf(w["avg_daily_throughput_7d"]) * 7)),
+                "contributors": int(_numf(w["active_contributors"])),
             }
         )
 
@@ -420,6 +465,16 @@ def build_capacity(contributors, work_items, teams, sla_events, quality_events, 
             "utilization": int(round(_numf(t["utilization_rate"]) * 100)),
             "load": int(_numf(t["open_backlog"])),
             "action": str(t["recommended_manager_action"]),
+            "riskScore": _round(t["capacity_risk_score"]),
+            "riskLevel": _short_band(t["capacity_risk_level"]),
+            "sla": _round(_numf(t["sla_adherence_7d"]) * 100),
+            "backlog": int(_numf(t["open_backlog"])),
+            "throughput": int(round(_numf(t["avg_daily_throughput_7d"]) * 7)),
+            "contributors": int(_numf(t["active_contributors"])),
+            "city": team_meta.get(t["team_id"], {}).get("city", ""),
+            "shift": team_meta.get(t["team_id"], {}).get("shift", ""),
+            "openEsc": int(open_esc.get(t["team_id"], 0)),
+            "lowTenureHighComplex": bool(_numf(t["low_tenure_share"]) > 0.2 and _numf(t["high_complexity_share"]) > 0.25),
         }
         for _, t in team_feat.iterrows()
     ]
@@ -443,6 +498,9 @@ def build_capacity(contributors, work_items, teams, sla_events, quality_events, 
             "atRisk": at_risk,
             "agedShare": int(round(kpis["aged_backlog_72h"] / max(1, kpis["backlog"]) * 100)),
             "forecast": region_forecast,
+            "backlog": kpis["backlog"],
+            "totalHeadGap": sum(w["headGap"] for w in by_work_type),
+            "avgSla": kpis["sla_adherence"],
         },
         "byWorkType": by_work_type,
         "teams": teams_out,
