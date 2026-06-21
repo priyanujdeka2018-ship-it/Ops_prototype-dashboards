@@ -1,5 +1,5 @@
 """
-Pipeline orchestrator: generate CSVs and build the Aurora JSON for one or
+Pipeline orchestrator: generate CSVs and build the frontend JSON for one or
 all scenarios, then print a manifest and validate every emitted file.
 
 Usage:
@@ -20,7 +20,7 @@ import numpy as np
 from src import build_frontend_data, generate_data
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-OUTPUT_DIR = REPO_ROOT / "frontend" / "data"
+OUTPUT_DIR = REPO_ROOT / "web" / "public" / "data"
 
 SCENARIOS = ("healthy", "current", "crisis")
 

@@ -1,12 +1,32 @@
 services:
-  # Primary URL serves the Aurora React front-end (static, no build step).
-  # frontend/data/data.json is pre-computed from the CSVs by
-  # `python -m src.build_frontend_data` and committed.
-  # The Streamlit app (Modules A-D drilldowns) remains runnable locally:
-  #   streamlit run app.py
+  # Primary URL serves the TanStack/React command center as a static SPA.
+  # The app is built from web/ (Vite, TanStack Start SPA mode) and fetches its
+  # data client-side from /data/*.json — there is no server-side data load, so a
+  # static site (Render free tier, no running server) is sufficient.
+  #
+  # Data artifacts (web/public/data/*.json) are pre-computed from the CSVs by
+  #   python -m src.pipeline --all-scenarios   # writes web/public/data/
+  # and committed, so the static build just bundles them.
+  #
+  # The Streamlit analyst workbench (Modules A-D drilldowns) is not deployed here;
+  # it remains runnable locally:  streamlit run app.py  (revisit in Phase 6).
   - type: web
     name: scale-regional-ops-command-center
-    env: python
-    plan: free
-    buildCommand: ""
-    startCommand: python -m http.server $PORT -d frontend
+    runtime: static
+    # bun respects web/bun.lock (regenerated against public npm so it resolves
+    # without Lovable's private registry). SPA mode emits the shell as
+    # _shell.html; copy it to index.html so "/" resolves and the SPA fallback
+    # below covers deep links.
+    buildCommand: cd web && bun install && bun run build && cp dist/client/_shell.html dist/client/index.html
+    staticPublishPath: web/dist/client
+    routes:
+      # SPA fallback: real files (/assets/*, /data/*) are served first; every
+      # other path returns index.html and the client router takes over.
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      # Vite emits content-hashed asset filenames — safe to cache immutably.
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

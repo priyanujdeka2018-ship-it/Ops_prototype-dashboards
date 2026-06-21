@@ -1,5 +1,5 @@
 """
-Build frontend/data/data.json for the Aurora React front-end from the real
+Build web/public/data/data.json for the TanStack front-end from the real
 CSVs in data/, reusing the same metric and pattern-scoring logic that powers
 the Streamlit pages so both front-ends show identical numbers.
 
@@ -32,7 +32,7 @@ from src.metrics import (
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
-OUTPUT_DIR = REPO_ROOT / "frontend" / "data"
+OUTPUT_DIR = REPO_ROOT / "web" / "public" / "data"
 OUTPUT_PATH = OUTPUT_DIR / "data.json"
 
 PIPELINE_VERSION = "1.0.0"
