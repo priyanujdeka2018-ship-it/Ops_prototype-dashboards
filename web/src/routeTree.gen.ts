@@ -14,7 +14,6 @@ import { Route as DashIndexRouteImport } from './routes/_dash.index'
 import { Route as DashWorkforceRouteImport } from './routes/_dash.workforce'
 import { Route as DashPatternsRouteImport } from './routes/_dash.patterns'
 import { Route as DashHealthRouteImport } from './routes/_dash.health'
-import { Route as DashDrilldownRouteImport } from './routes/_dash.drilldown'
 import { Route as DashClustersRouteImport } from './routes/_dash.clusters'
 import { Route as DashCapacityRouteImport } from './routes/_dash.capacity'
 import { Route as DashAboutRouteImport } from './routes/_dash.about'
@@ -43,11 +42,6 @@ const DashHealthRoute = DashHealthRouteImport.update({
   path: '/health',
   getParentRoute: () => DashRoute,
 } as any)
-const DashDrilldownRoute = DashDrilldownRouteImport.update({
-  id: '/drilldown',
-  path: '/drilldown',
-  getParentRoute: () => DashRoute,
-} as any)
 const DashClustersRoute = DashClustersRouteImport.update({
   id: '/clusters',
   path: '/clusters',
@@ -69,7 +63,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof DashAboutRoute
   '/capacity': typeof DashCapacityRoute
   '/clusters': typeof DashClustersRoute
-  '/drilldown': typeof DashDrilldownRoute
   '/health': typeof DashHealthRoute
   '/patterns': typeof DashPatternsRoute
   '/workforce': typeof DashWorkforceRoute
@@ -78,7 +71,6 @@ export interface FileRoutesByTo {
   '/about': typeof DashAboutRoute
   '/capacity': typeof DashCapacityRoute
   '/clusters': typeof DashClustersRoute
-  '/drilldown': typeof DashDrilldownRoute
   '/health': typeof DashHealthRoute
   '/patterns': typeof DashPatternsRoute
   '/workforce': typeof DashWorkforceRoute
@@ -90,7 +82,6 @@ export interface FileRoutesById {
   '/_dash/about': typeof DashAboutRoute
   '/_dash/capacity': typeof DashCapacityRoute
   '/_dash/clusters': typeof DashClustersRoute
-  '/_dash/drilldown': typeof DashDrilldownRoute
   '/_dash/health': typeof DashHealthRoute
   '/_dash/patterns': typeof DashPatternsRoute
   '/_dash/workforce': typeof DashWorkforceRoute
@@ -103,7 +94,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/capacity'
     | '/clusters'
-    | '/drilldown'
     | '/health'
     | '/patterns'
     | '/workforce'
@@ -112,7 +102,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/capacity'
     | '/clusters'
-    | '/drilldown'
     | '/health'
     | '/patterns'
     | '/workforce'
@@ -123,7 +112,6 @@ export interface FileRouteTypes {
     | '/_dash/about'
     | '/_dash/capacity'
     | '/_dash/clusters'
-    | '/_dash/drilldown'
     | '/_dash/health'
     | '/_dash/patterns'
     | '/_dash/workforce'
@@ -171,13 +159,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashHealthRouteImport
       parentRoute: typeof DashRoute
     }
-    '/_dash/drilldown': {
-      id: '/_dash/drilldown'
-      path: '/drilldown'
-      fullPath: '/drilldown'
-      preLoaderRoute: typeof DashDrilldownRouteImport
-      parentRoute: typeof DashRoute
-    }
     '/_dash/clusters': {
       id: '/_dash/clusters'
       path: '/clusters'
@@ -206,7 +187,6 @@ interface DashRouteChildren {
   DashAboutRoute: typeof DashAboutRoute
   DashCapacityRoute: typeof DashCapacityRoute
   DashClustersRoute: typeof DashClustersRoute
-  DashDrilldownRoute: typeof DashDrilldownRoute
   DashHealthRoute: typeof DashHealthRoute
   DashPatternsRoute: typeof DashPatternsRoute
   DashWorkforceRoute: typeof DashWorkforceRoute
@@ -217,7 +197,6 @@ const DashRouteChildren: DashRouteChildren = {
   DashAboutRoute: DashAboutRoute,
   DashCapacityRoute: DashCapacityRoute,
   DashClustersRoute: DashClustersRoute,
-  DashDrilldownRoute: DashDrilldownRoute,
   DashHealthRoute: DashHealthRoute,
   DashPatternsRoute: DashPatternsRoute,
   DashWorkforceRoute: DashWorkforceRoute,

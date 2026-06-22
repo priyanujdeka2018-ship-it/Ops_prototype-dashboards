@@ -19,7 +19,6 @@ const NAV = [
   { to: "/clusters",  badge: "B2", label: "Clusters",   desc: "Semantic" },
   { to: "/workforce", badge: "C",  label: "Workforce",  desc: "Quality risk" },
   { to: "/capacity",  badge: "D",  label: "Capacity",   desc: "SLA forecast" },
-  { to: "/drilldown", badge: "A·d",label: "Drilldown",  desc: "Work-type detail" },
   { to: "/about",     badge: "··", label: "About",      desc: "Audience + production" },
 ] as const;
 
