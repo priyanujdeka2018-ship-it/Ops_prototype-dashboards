@@ -14,7 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+/lib/
 lib64/
 parts/
 sdist/
@@ -249,7 +249,8 @@ backups/
 __pycache__/
 *.pyc
 
-# Node (frontend render-test tooling)
+# Node (frontend render-test tooling). Anchored to repo root so they don't match
+# the ported web/ frontend (web/ has its own .gitignore for node_modules/ + dist/).
 node_modules/
-package.json
-package-lock.json
+/package.json
+/package-lock.json
