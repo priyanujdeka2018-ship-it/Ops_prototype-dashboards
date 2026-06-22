@@ -17,10 +17,6 @@ const searchSchema = z.object({
   contributorId: fallback(z.string().optional(), undefined as any).default(undefined as any),
   patternId:     fallback(z.string().optional(), undefined as any).default(undefined as any),
   clusterId:     fallback(z.string().optional(), undefined as any).default(undefined as any),
-  // legacy focus keys — removed as each section route migrates to the Focus shape
-  wt:  fallback(z.string().optional(), undefined as any).default(undefined as any),
-  tm:  fallback(z.string().optional(), undefined as any).default(undefined as any),
-  pid: fallback(z.string().optional(), undefined as any).default(undefined as any),
   // patterns filters
   status: fallback(z.string().optional(), undefined as any).default(undefined as any),
   risk:   fallback(z.string().optional(), undefined as any).default(undefined as any),

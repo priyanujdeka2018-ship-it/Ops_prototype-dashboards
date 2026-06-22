@@ -19,7 +19,7 @@ export const Route = createFileRoute("/_dash/health")({
 
 function Health() {
   const { data, AUR } = useDash();
-  const { wt, tm } = Route.useSearch() as any;
+  const { workType: wt, teamId: tm } = Route.useSearch() as any;
   if (!data) return <Loading AUR={AUR} />;
   if (tm && wt) return <TeamLevel data={data} wt={wt} tm={tm} AUR={AUR} />;
   if (wt) return <WorkTypeLevel data={data} wt={wt} AUR={AUR} />;
@@ -63,7 +63,7 @@ function Board({ data, AUR }: any) {
           const status = worst ? "bad" : watch ? "warn" : "good";
           const dotColor = status === "bad" ? AUR.bad : status === "warn" ? AUR.warn : AUR.good;
           return (
-            <NavCard key={w.work_type} to="/health" search={{ wt: w.work_type, tm: undefined }} AUR={AUR}>
+            <NavCard key={w.work_type} to="/health" search={{ workType: w.work_type, teamId: undefined }} AUR={AUR}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
                 <div>
                   <div style={{ fontFamily: aurSerif, fontSize: 23, color: AUR.text, letterSpacing: -0.4 }}>{WORK_TYPE_LABELS[w.work_type]}</div>
@@ -118,7 +118,7 @@ function WorkTypeLevel({ data, wt, AUR }: any) {
   return (
     <>
       <Breadcrumb AUR={AUR} items={[
-        { label: "Module A · Health", to: "/health", search: ((prev: any) => ({ ...prev, wt: undefined, tm: undefined })) },
+        { label: "Module A · Health", to: "/health", search: ((prev: any) => ({ ...prev, workType: undefined, teamId: undefined })) },
         { label: WORK_TYPE_LABELS[wt] },
       ]} />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 24, flexWrap: "wrap", marginBottom: 24 }}>
@@ -143,7 +143,7 @@ function WorkTypeLevel({ data, wt, AUR }: any) {
           ))}
         </div>
         {teams.map((t: any, i: number) => (
-          <NavRow key={t.team_id} to="/health" search={{ wt, tm: t.team_id }} AUR={AUR} cols="1.7fr 0.8fr 0.5fr 0.7fr 0.7fr 0.7fr 0.6fr 0.6fr 28px" last={i === teams.length - 1}>
+          <NavRow key={t.team_id} to="/health" search={{ workType: wt, teamId: t.team_id }} AUR={AUR} cols="1.7fr 0.8fr 0.5fr 0.7fr 0.7fr 0.7fr 0.6fr 0.6fr 28px" last={i === teams.length - 1}>
             <div>
               <span style={{ fontFamily: aurMono, fontSize: 12, color: AUR.text }}>{t.team_id.replace("TEAM_APAC_", "")}</span>
               <div style={{ color: AUR.textFaint, fontSize: 11.5, marginTop: 2 }}>{t.manager} · {t.shift}</div>
@@ -176,9 +176,9 @@ function WorkTypeLevel({ data, wt, AUR }: any) {
       </Panel>
 
       <ThreadNav AUR={AUR} density={densityPreset} items={[
-        { kicker: "Module B", title: "What keeps coming back here", hint: `Open the pattern detector filtered to ${WORK_TYPE_LABELS[wt]}.`, to: "/patterns", search: ((prev: any) => ({ ...prev, wt, tm: undefined, pid: undefined })) },
-        { kicker: "Module C", title: "Who's driving quality risk", hint: "Team-level quality drift and coaching signals.", to: "/workforce", search: ((prev: any) => ({ ...prev, wt, tm: undefined })) },
-        { kicker: "Module D", title: "Can capacity hold next week", hint: "SLA forecast and staffing gap.", to: "/capacity", search: ((prev: any) => ({ ...prev, wt, tm: undefined })) },
+        { kicker: "Module B", title: "What keeps coming back here", hint: `Open the pattern detector filtered to ${WORK_TYPE_LABELS[wt]}.`, to: "/patterns", search: ((prev: any) => ({ ...prev, workType: wt, teamId: undefined, patternId: undefined })) },
+        { kicker: "Module C", title: "Who's driving quality risk", hint: "Team-level quality drift and coaching signals.", to: "/workforce", search: ((prev: any) => ({ ...prev, workType: wt, teamId: undefined })) },
+        { kicker: "Module D", title: "Can capacity hold next week", hint: "SLA forecast and staffing gap.", to: "/capacity", search: ((prev: any) => ({ ...prev, workType: wt, teamId: undefined })) },
       ]} />
     </>
   );
@@ -207,8 +207,8 @@ function TeamLevel({ data, wt, tm, AUR }: any) {
   return (
     <>
       <Breadcrumb AUR={AUR} items={[
-        { label: "Module A · Health", to: "/health", search: ((prev: any) => ({ ...prev, wt: undefined, tm: undefined })) },
-        { label: WORK_TYPE_LABELS[t.work_type], to: "/health", search: ((prev: any) => ({ ...prev, wt: t.work_type, tm: undefined })) },
+        { label: "Module A · Health", to: "/health", search: ((prev: any) => ({ ...prev, workType: undefined, teamId: undefined })) },
+        { label: WORK_TYPE_LABELS[t.work_type], to: "/health", search: ((prev: any) => ({ ...prev, workType: t.work_type, teamId: undefined })) },
         { label: t.team_id.replace("TEAM_APAC_", "") },
       ]} />
       <div>
@@ -260,9 +260,9 @@ function TeamLevel({ data, wt, tm, AUR }: any) {
       </div>
 
       <ThreadNav AUR={AUR} density={densityPreset} items={[
-        { kicker: "Module C", title: "This team's quality detail", hint: "Drift, gold-task fails, override rate and coaching cards.", to: "/workforce", search: ((prev: any) => ({ ...prev, wt: t.work_type, tm: t.team_id })) },
-        { kicker: "Module D", title: "This team's capacity load", hint: "Utilization, backlog share and staffing risk.", to: "/capacity", search: ((prev: any) => ({ ...prev, wt: t.work_type, tm: t.team_id })) },
-        { kicker: "Module A", title: `Back to ${WORK_TYPE_LABELS[t.work_type]}`, hint: "Return to the full team comparison.", to: "/health", search: ((prev: any) => ({ ...prev, wt: t.work_type, tm: undefined })) },
+        { kicker: "Module C", title: "This team's quality detail", hint: "Drift, gold-task fails, override rate and coaching cards.", to: "/workforce", search: ((prev: any) => ({ ...prev, workType: t.work_type, teamId: t.team_id })) },
+        { kicker: "Module D", title: "This team's capacity load", hint: "Utilization, backlog share and staffing risk.", to: "/capacity", search: ((prev: any) => ({ ...prev, workType: t.work_type, teamId: t.team_id })) },
+        { kicker: "Module A", title: `Back to ${WORK_TYPE_LABELS[t.work_type]}`, hint: "Return to the full team comparison.", to: "/health", search: ((prev: any) => ({ ...prev, workType: t.work_type, teamId: undefined })) },
       ]} />
     </>
   );
@@ -289,7 +289,7 @@ function WorkTypeSwitcher({ data, wt, AUR }: any) {
   return (
     <div style={{ maxWidth: 540 }}>
       <PillRow AUR={AUR} options={opts} value={wt} onChange={(v: string) =>
-        navigate({ to: "/health", search: ((prev: any) => ({ ...prev, wt: v, tm: undefined })) as any })
+        navigate({ to: "/health", search: ((prev: any) => ({ ...prev, workType: v, teamId: undefined })) as any })
       } getLabel={(o: string) => WORK_TYPE_LABELS[o]} />
     </div>
   );

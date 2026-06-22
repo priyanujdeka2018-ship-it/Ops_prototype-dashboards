@@ -18,9 +18,9 @@ export const Route = createFileRoute("/_dash/patterns")({
 
 function Patterns() {
   const { data, AUR } = useDash();
-  const { pid } = Route.useSearch() as any;
+  const { patternId } = Route.useSearch() as any;
   if (!data) return <Loading AUR={AUR} />;
-  if (pid) return <Detail data={data} pid={pid} AUR={AUR} />;
+  if (patternId) return <Detail data={data} patternId={patternId} AUR={AUR} />;
   return <List data={data} AUR={AUR} />;
 }
 
@@ -31,7 +31,7 @@ function List({ data, AUR }: any) {
   const setQ = (patch: any) => navigate({ to: "/patterns", search: ((prev: any) => ({ ...prev, ...patch })) as any });
   const risk = search.risk || "all";
   const status = search.status || "all";
-  const wt = search.wt || "all";
+  const wt = search.workType || "all";
 
   const filtered = data.patterns.filter((p: any) => {
     if (risk !== "all" && p.risk_level !== risk) return false;
@@ -66,7 +66,7 @@ function List({ data, AUR }: any) {
           getLabel={(o: string) => o === "all" ? "All status" : o}
           getCount={(o: string) => o === "all" ? data.patterns.length : data.patterns.filter((p: any) => p.recurrence_status === o).length} />
         <div style={{ width: 1, height: 22, background: AUR.border }} />
-        <PillRow AUR={AUR} options={["all", ...data.workTypeRollup.map((w: any) => w.work_type)]} value={wt} onChange={(v: string) => setQ({ wt: v === "all" ? undefined : v })} getLabel={(o: string) => o === "all" ? "All work types" : WORK_TYPE_LABELS[o]} />
+        <PillRow AUR={AUR} options={["all", ...data.workTypeRollup.map((w: any) => w.work_type)]} value={wt} onChange={(v: string) => setQ({ workType: v === "all" ? undefined : v })} getLabel={(o: string) => o === "all" ? "All work types" : WORK_TYPE_LABELS[o]} />
       </div>
 
       <Panel AUR={AUR} pad={0} style={{ overflow: "hidden", marginTop: 20 }}>
@@ -77,7 +77,7 @@ function List({ data, AUR }: any) {
         </div>
         {filtered.length === 0 && <div style={{ padding: 36, textAlign: "center", color: AUR.textFaint, fontStyle: "italic" }}>No patterns match these filters.</div>}
         {filtered.map((p: any, i: number) => (
-          <Link key={p.pattern_id} to="/patterns" search={((prev: any) => ({ ...prev, pid: p.pattern_id })) as any}
+          <Link key={p.pattern_id} to="/patterns" search={((prev: any) => ({ ...prev, patternId: p.pattern_id })) as any}
             style={{
               display: "grid", gridTemplateColumns: "2.4fr 0.5fr 0.5fr 0.5fr 1fr 0.8fr 0.7fr 28px",
               padding: "18px 22px", borderBottom: i === filtered.length - 1 ? "none" : `1px solid ${AUR.border}`,
@@ -108,9 +108,9 @@ function List({ data, AUR }: any) {
   );
 }
 
-function Detail({ data, pid, AUR }: any) {
+function Detail({ data, patternId, AUR }: any) {
   const { densityPreset } = useDash();
-  const p = data.patterns.find((x: any) => x.pattern_id === pid);
+  const p = data.patterns.find((x: any) => x.pattern_id === patternId);
   if (!p) return <div style={{ padding: 40, color: AUR.textFaint, textAlign: "center", fontStyle: "italic" }}>Pattern not found.</div>;
   const fix = ROOT_CAUSE_FIX[p.root_cause] || { fix: "Manager review", owner: "Regional ops", metric: "Escalation count" };
   const decision = ROOT_CAUSE_DECISION[p.root_cause] || "Assign owner + prevention plan";
@@ -126,7 +126,7 @@ function Detail({ data, pid, AUR }: any) {
   return (
     <>
       <Breadcrumb AUR={AUR} items={[
-        { label: "Module B · Patterns", to: "/patterns", search: ((prev: any) => ({ ...prev, pid: undefined })) },
+        { label: "Module B · Patterns", to: "/patterns", search: ((prev: any) => ({ ...prev, patternId: undefined })) },
         { label: `${ROOT_CAUSE_LABELS[p.root_cause]} · ${WORK_TYPE_LABELS[p.work_type]}` },
       ]} />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 24, flexWrap: "wrap" }}>
@@ -166,7 +166,7 @@ function Detail({ data, pid, AUR }: any) {
             <div style={{ fontFamily: aurMono, fontSize: 10.5, color: AUR.textFaint, letterSpacing: 0.6, textTransform: "uppercase", marginBottom: 12 }}>Affected teams · click to open</div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {p.teams.map((tid: string) => (
-                <Link key={tid} to="/health" search={((prev: any) => ({ ...prev, wt: p.work_type, tm: tid })) as any}
+                <Link key={tid} to="/health" search={((prev: any) => ({ ...prev, workType: p.work_type, teamId: tid })) as any}
                   style={{ background: AUR.surfaceHi, border: `1px solid ${AUR.border}`, borderRadius: 999, padding: "7px 14px", fontFamily: aurMono, fontSize: 11.5, color: AUR.text, textDecoration: "none" }}>
                   {tid.replace("TEAM_APAC_", "")} →
                 </Link>
@@ -191,8 +191,8 @@ function Detail({ data, pid, AUR }: any) {
 
       <ThreadNav AUR={AUR} density={densityPreset} items={[
         { kicker: "Module B v2", title: "See this as a semantic cluster", hint: "How the fix card reads when grouped by meaning.", to: "/clusters" },
-        { kicker: "Module C", title: "Is quality drift feeding this", hint: `Quality risk across ${WORK_TYPE_LABELS[p.work_type]} teams.`, to: "/workforce", search: ((prev: any) => ({ ...prev, wt: p.work_type, tm: undefined })) },
-        { kicker: "Module D", title: "Is capacity feeding this", hint: `Backlog and SLA pressure on ${WORK_TYPE_LABELS[p.work_type]}.`, to: "/capacity", search: ((prev: any) => ({ ...prev, wt: p.work_type, tm: undefined })) },
+        { kicker: "Module C", title: "Is quality drift feeding this", hint: `Quality risk across ${WORK_TYPE_LABELS[p.work_type]} teams.`, to: "/workforce", search: ((prev: any) => ({ ...prev, workType: p.work_type, teamId: undefined })) },
+        { kicker: "Module D", title: "Is capacity feeding this", hint: `Backlog and SLA pressure on ${WORK_TYPE_LABELS[p.work_type]}.`, to: "/capacity", search: ((prev: any) => ({ ...prev, workType: p.work_type, teamId: undefined })) },
       ]} />
     </>
   );
