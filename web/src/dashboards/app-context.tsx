@@ -14,26 +14,29 @@ type DashCtx = {
   scenario: ScenarioId;
   theme: ThemeId;
   density: DensityId;
+  vintage?: string;
   themePreset: typeof THEME_PRESETS[keyof typeof THEME_PRESETS];
   densityPreset: typeof DENSITY_PRESETS[keyof typeof DENSITY_PRESETS];
   AUR: ReturnType<typeof buildAurTheme>;
   data: any;
   loading: boolean;
   err: string | null;
+  meta: any;
+  refresh: () => void;
 };
 
 const Ctx = createContext<DashCtx | null>(null);
 
 export function DashProvider({
-  scenario, theme, density, children,
+  scenario, theme, density, vintage, children,
 }: {
-  scenario: ScenarioId; theme: ThemeId; density: DensityId; children: React.ReactNode;
+  scenario: ScenarioId; theme: ThemeId; density: DensityId; vintage?: string; children: React.ReactNode;
 }) {
-  const { data, err, loading } = useScaleData(scenario);
+  const { data, err, loading, meta, refresh } = useScaleData(scenario, vintage);
   const themePreset = THEME_PRESETS[theme] || THEME_PRESETS.teal;
   const densityPreset = DENSITY_PRESETS[density] || DENSITY_PRESETS.cozy;
   const AUR = useMemo(() => buildAurTheme(themePreset), [themePreset]);
-  const value: DashCtx = { scenario, theme, density, themePreset, densityPreset, AUR, data, loading, err };
+  const value: DashCtx = { scenario, theme, density, vintage, themePreset, densityPreset, AUR, data, loading, err, meta, refresh };
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 

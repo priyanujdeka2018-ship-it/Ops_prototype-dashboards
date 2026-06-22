@@ -75,11 +75,13 @@ export function AurRiskBadge({ level, AUR }) {
 }
 
 export function ForecastPill({ forecast, AUR }) {
-  const c = forecast === "Recovery needed" ? AUR.bad
-    : forecast === "At risk" ? AUR.bad
-    : forecast === "Watchlist" ? AUR.warn
-    : forecast === "Likely stable" ? AUR.good
+  // Accepts the engine's "SLA at risk" / "SLA likely stable" strings (or bare labels).
+  const f = String(forecast).toLowerCase();
+  const c = f.includes("recovery") || f.includes("risk") ? AUR.bad
+    : f.includes("watch") ? AUR.warn
+    : f.includes("stable") ? AUR.good
     : AUR.textFaint;
+  const label = String(forecast).replace(/^SLA\s+/i, "").toLowerCase();
   return (
     <span style={{
       display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 11px",
@@ -87,7 +89,7 @@ export function ForecastPill({ forecast, AUR }) {
       fontSize: 10.5, letterSpacing: 0.3, border: `1px solid ${c}40`, whiteSpace: "nowrap",
     }}>
       <span style={{ width: 6, height: 6, borderRadius: "50%", background: c, boxShadow: `0 0 8px ${c}88` }} />
-      SLA {forecast.toLowerCase()}
+      SLA {label}
     </span>
   );
 }
@@ -144,6 +146,31 @@ export function AurButton({ children, variant = "ghost", onClick, active = false
       ...styles, borderRadius: 999, padding: "8px 16px", fontFamily: aurSans,
       fontSize: 12.5, fontWeight: 500, cursor: "pointer", transition: "all 180ms ease",
     }}>{children}</button>
+  );
+}
+
+// ─── FreshnessStamp + RefreshButton (Phase 5 · live data-refresh) ───────────
+export function FreshnessStamp({ meta, AUR }) {
+  if (!meta) return null;
+  const rows = meta.row_counts ? Object.values(meta.row_counts).reduce((a, b) => a + Number(b || 0), 0) : 0;
+  const when = meta.generated_at ? String(meta.generated_at).replace("T", " ").replace("Z", " UTC") : "—";
+  return (
+    <span style={{ fontFamily: aurMono, fontSize: 10, color: AUR.textFaint, letterSpacing: 0.3, whiteSpace: "nowrap" }}>
+      data as of {when} · {rows.toLocaleString("en-US")} rows · pipeline {meta.pipeline_version}
+    </span>
+  );
+}
+
+export function RefreshButton({ onClick, AUR, loading }) {
+  return (
+    <button onClick={onClick} disabled={loading} title="Re-pull the JSON (after a rebuild) without a page reload" style={{
+      display: "inline-flex", alignItems: "center", gap: 7, background: "transparent",
+      border: `1px solid ${AUR.border}`, color: AUR.textDim, borderRadius: 999,
+      padding: "6px 13px", fontFamily: aurSans, fontSize: 12, cursor: loading ? "default" : "pointer",
+      opacity: loading ? 0.6 : 1, whiteSpace: "nowrap",
+    }}>
+      <span style={{ fontSize: 13, display: "inline-block" }}>↻</span> {loading ? "Refreshing…" : "Refresh data"}
+    </button>
   );
 }
 
@@ -299,15 +326,16 @@ export function PillRow({ options, value, onChange, getLabel, getCount, AUR }) {
 
 // ─── CoachingCard ───────────────────────────────────────────────────────────
 export function CoachingCard({ c, AUR }) {
-  const accent = c.riskLevel === "High" ? AUR.bad : AUR.warn;
+  const accent = c.risk_band === "High" ? AUR.bad : AUR.warn;
+  const topDriver = (c.drivers && c.drivers[0]) || "rubric application";
   return (
     <div style={{ background: AUR.surface, border: `1px solid ${AUR.border}`, borderRadius: 14, padding: 18 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10, gap: 12 }}>
         <div>
-          <div style={{ fontFamily: aurSans, fontSize: 14.5, color: AUR.text, fontWeight: 600 }}>{c.name}</div>
-          <div style={{ fontFamily: aurMono, fontSize: 10.5, color: AUR.textFaint, marginTop: 2 }}>{c.id} · {c.skill} · {c.tenure}d tenure{c.lowTenure ? " · ramping" : ""}</div>
+          <div style={{ fontFamily: aurMono, fontSize: 13.5, color: AUR.text, fontWeight: 600 }}>{c.contributor_id}</div>
+          <div style={{ fontFamily: aurMono, fontSize: 10.5, color: AUR.textFaint, marginTop: 2 }}>{c.skill} · {c.tenure}d tenure{c.lowTenure ? " · ramping" : ""}{c.status ? ` · ${String(c.status).toLowerCase()}` : ""}</div>
         </div>
-        <AurRiskBadge level={c.riskLevel} AUR={AUR} />
+        <AurRiskBadge level={c.risk_band} AUR={AUR} />
       </div>
       <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 12 }}>
         {[["Quality", c.quality], ["Gold", `${c.goldPass}%`], ["Override", `${c.override}%`], ["Rework", `${c.rework}%`], ["Peer", `${c.peer}%`]].map(([l, v], i) => (
@@ -318,9 +346,25 @@ export function CoachingCard({ c, AUR }) {
         ))}
       </div>
       <div style={{ padding: "10px 13px", background: accent + "12", borderRadius: 10, borderLeft: `2px solid ${accent}` }}>
-        <div style={{ fontFamily: aurMono, fontSize: 9.5, color: accent, letterSpacing: 0.6, textTransform: "uppercase" }}>Suggested support · driver: {c.topDriver.toLowerCase()}</div>
-        <div style={{ fontSize: 13, color: AUR.text, marginTop: 4, lineHeight: 1.4 }}>{c.support}</div>
+        <div style={{ fontFamily: aurMono, fontSize: 9.5, color: accent, letterSpacing: 0.6, textTransform: "uppercase" }}>Coaching · driver: {String(topDriver).toLowerCase()}</div>
+        <div style={{ fontSize: 13, color: AUR.text, marginTop: 4, lineHeight: 1.4 }}>{c.coaching}</div>
       </div>
+    </div>
+  );
+}
+
+// ─── DriverList — labelled risk drivers (engine emits labels, not weights) ───
+export function DriverList({ drivers, AUR, max = 6 }) {
+  const items = (drivers || []).slice(0, max);
+  if (!items.length) return <div style={{ color: AUR.textFaint, fontStyle: "italic", fontSize: 13 }}>Within expected range.</div>;
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
+      {items.map((d, i) => (
+        <div key={i} style={{ display: "flex", alignItems: "center", gap: 11 }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", flexShrink: 0, background: i === 0 ? AUR.bad : i < 3 ? AUR.warn : AUR.textFaint }} />
+          <span style={{ fontSize: 13, color: AUR.textDim, lineHeight: 1.4 }}>{d}</span>
+        </div>
+      ))}
     </div>
   );
 }

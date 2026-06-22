@@ -63,7 +63,7 @@ function Clusters() {
                   <div style={{ fontFamily: aurMono, fontSize: 10, color: AUR.accent, letterSpacing: 0.6, textTransform: "uppercase", marginBottom: 5 }}>Decision needed this week</div>
                   <div style={{ fontSize: 13, color: AUR.text, lineHeight: 1.45 }}>{decision}</div>
                 </div>
-                <Link to="/patterns" search={((prev: any) => ({ ...prev, pid: p.pattern_id })) as any} style={{ color: AUR.accent, fontFamily: aurMono, fontSize: 12, letterSpacing: 0.5, textTransform: "uppercase", textDecoration: "none" }}>Open full pattern drilldown →</Link>
+                <Link to="/patterns" search={((prev: any) => ({ ...prev, patternId: p.pattern_id })) as any} style={{ color: AUR.accent, fontFamily: aurMono, fontSize: 12, letterSpacing: 0.5, textTransform: "uppercase", textDecoration: "none" }}>Open full pattern drilldown →</Link>
               </div>
             </Panel>
           );
