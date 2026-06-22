@@ -639,18 +639,31 @@ def _parse_scenario(argv: list[str]) -> str:
     return "current"
 
 
-def main(scenario: str = "current") -> dict:
+def _parse_label(argv: list[str]) -> str | None:
+    """Read --label VALUE (or --label=VALUE); emits data-<label>.json as a vintage snapshot."""
+    for i, arg in enumerate(argv):
+        if arg == "--label" and i + 1 < len(argv):
+            return argv[i + 1]
+        if arg.startswith("--label="):
+            return arg.split("=", 1)[1]
+    return None
+
+
+def main(scenario: str = "current", label: str | None = None) -> dict:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     payload = build_payload(scenario=scenario)
 
-    scenario_path = OUTPUT_DIR / f"data-{scenario}.json"
-    scenario_path.write_text(json.dumps(payload, indent=1))
-    # Keep data.json as a copy of the most recently built scenario so the
-    # default fetch("data/data.json") keeps working for single-scenario deploys.
-    shutil.copyfile(scenario_path, OUTPUT_PATH)
+    out_name = label or scenario
+    out_path = OUTPUT_DIR / f"data-{out_name}.json"
+    out_path.write_text(json.dumps(payload, indent=1))
+    # A --label build is a pre-baked vintage snapshot; only a plain scenario build
+    # refreshes the default data.json that fetch("data/data.json") falls back to.
+    if label is None:
+        shutil.copyfile(out_path, OUTPUT_PATH)
 
     print(
-        f"Wrote {scenario_path.relative_to(REPO_ROOT)} (+ data.json): "
+        f"Wrote {out_path.relative_to(REPO_ROOT)}"
+        f"{' (+ data.json)' if label is None else ' (vintage)'}: "
         f"scenario={scenario}, {payload['totals']['escalations']} escalations, "
         f"{len(payload['patterns'])} patterns, {len(payload['teams'])} teams"
     )
@@ -660,4 +673,4 @@ def main(scenario: str = "current") -> dict:
 if __name__ == "__main__":
     import sys
 
-    main(scenario=_parse_scenario(sys.argv))
+    main(scenario=_parse_scenario(sys.argv), label=_parse_label(sys.argv))

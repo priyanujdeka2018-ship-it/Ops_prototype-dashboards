@@ -149,6 +149,31 @@ export function AurButton({ children, variant = "ghost", onClick, active = false
   );
 }
 
+// ─── FreshnessStamp + RefreshButton (Phase 5 · live data-refresh) ───────────
+export function FreshnessStamp({ meta, AUR }) {
+  if (!meta) return null;
+  const rows = meta.row_counts ? Object.values(meta.row_counts).reduce((a, b) => a + Number(b || 0), 0) : 0;
+  const when = meta.generated_at ? String(meta.generated_at).replace("T", " ").replace("Z", " UTC") : "—";
+  return (
+    <span style={{ fontFamily: aurMono, fontSize: 10, color: AUR.textFaint, letterSpacing: 0.3, whiteSpace: "nowrap" }}>
+      data as of {when} · {rows.toLocaleString("en-US")} rows · pipeline {meta.pipeline_version}
+    </span>
+  );
+}
+
+export function RefreshButton({ onClick, AUR, loading }) {
+  return (
+    <button onClick={onClick} disabled={loading} title="Re-pull the JSON (after a rebuild) without a page reload" style={{
+      display: "inline-flex", alignItems: "center", gap: 7, background: "transparent",
+      border: `1px solid ${AUR.border}`, color: AUR.textDim, borderRadius: 999,
+      padding: "6px 13px", fontFamily: aurSans, fontSize: 12, cursor: loading ? "default" : "pointer",
+      opacity: loading ? 0.6 : 1, whiteSpace: "nowrap",
+    }}>
+      <span style={{ fontSize: 13, display: "inline-block" }}>↻</span> {loading ? "Refreshing…" : "Refresh data"}
+    </button>
+  );
+}
+
 export function MetricCell({ value, status, sub, AUR }) {
   const color = statusColor(status, AUR);
   return (

@@ -94,21 +94,28 @@ export const fmt = {
   rel:  (days) => (days === 0 ? "today" : days === 1 ? "1d ago" : days < 30 ? `${days}d ago` : `${Math.floor(days / 7)}w ago`),
 };
 
-export function useScaleData(scenario = "current") {
+export function useScaleData(scenario = "current", vintage) {
   const [data, setData] = React.useState(null);
   const [err, setErr] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
+  const [reloadKey, setReloadKey] = React.useState(0);
   React.useEffect(() => {
     let cancelled = false;
     setLoading(true); setErr(null);
-    const primary = `/data/data-${scenario}.json`;
-    fetch(primary)
-      .then((r) => (r.ok ? r.json() : fetch("/data/data.json").then((f) => f.json())))
+    // A vintage (pre-baked snapshot) overrides the scenario fetch target.
+    const label = vintage || scenario;
+    const bust = reloadKey ? `?r=${reloadKey}` : "";  // bypass cache after a rebuild
+    fetch(`/data/data-${label}.json${bust}`)
+      .then((r) => (r.ok ? r.json() : fetch(`/data/data.json${bust}`).then((f) => f.json())))
       .then((d) => { if (!cancelled) { setData(d); setLoading(false); } })
       .catch((e) => { if (!cancelled) { setErr(String(e)); setLoading(false); } });
     return () => { cancelled = true; };
-  }, [scenario]);
-  return { data, err, loading, scenario };
+  }, [scenario, vintage, reloadKey]);
+  const meta = data
+    ? { generated_at: data.generated_at, row_counts: data.row_counts, pipeline_version: data.pipeline_version }
+    : null;
+  const refresh = React.useCallback(() => setReloadKey((k) => k + 1), []);
+  return { data, err, loading, scenario, vintage, meta, refresh };
 }
 
 export function Sparkline({ values, color = "currentColor", width = 80, height = 24, fill = false, strokeWidth = 1.5 }) {
