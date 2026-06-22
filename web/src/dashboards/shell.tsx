@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useDash, type ScenarioId, type ThemeId, type DensityId } from "./app-context";
 // @ts-expect-error jsx module
-import { aurMono, aurSans, aurSerif, AurChip, AurButton } from "./atoms.jsx";
+import { aurMono, aurSans, aurSerif, AurChip, AurButton, FreshnessStamp, RefreshButton } from "./atoms.jsx";
 // @ts-expect-error jsx module
 import { THEME_PRESETS, DENSITY_PRESETS } from "./data-utils.jsx";
 // @ts-expect-error jsx module
@@ -19,18 +19,17 @@ const NAV = [
   { to: "/clusters",  badge: "B2", label: "Clusters",   desc: "Semantic" },
   { to: "/workforce", badge: "C",  label: "Workforce",  desc: "Quality risk" },
   { to: "/capacity",  badge: "D",  label: "Capacity",   desc: "SLA forecast" },
-  { to: "/drilldown", badge: "A·d",label: "Drilldown",  desc: "Work-type detail" },
   { to: "/about",     badge: "··", label: "About",      desc: "Audience + production" },
 ] as const;
 
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { AUR, densityPreset, density, theme, scenario, data, loading } = useDash();
+  const { AUR, densityPreset, density, theme, scenario, vintage, data, loading, meta, refresh } = useDash();
   const [showBriefing, setShowBriefing] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
-  const updateSearch = (patch: Partial<{ s: ScenarioId; t: ThemeId; d: DensityId }>) => {
+  const updateSearch = (patch: Partial<{ s: ScenarioId; t: ThemeId; d: DensityId; v: string }>) => {
     navigate({ to: pathname as any, search: ((prev: any) => ({ ...prev, ...patch })) as any });
   };
 
@@ -130,6 +129,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               ))}
             </SegRow>
           </SideControl>
+
+          <SideControl label="Data vintage" AUR={AUR}>
+            <SegRow AUR={AUR}>
+              {([["live", "Live"], ["pre-fix", "Pre-fix"], ["post-fix", "Post-fix"]] as const).map(([val, lbl]) => (
+                <SegBtn key={val} active={(vintage || "live") === val} AUR={AUR} onClick={() => updateSearch({ v: val })}>{lbl}</SegBtn>
+              ))}
+            </SegRow>
+          </SideControl>
         </div>
 
         <div style={{ marginTop: "auto", padding: "14px 4px 0", borderTop: `1px solid ${AUR.border}`, display: "flex", flexDirection: "column", gap: 8 }}>
@@ -153,6 +160,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             {data && <AurChip AUR={AUR}>{data.region}</AurChip>}
             {data && <AurChip AUR={AUR}>Week of {data.weekStart} → {data.refDate}</AurChip>}
             {loading && <span style={{ fontFamily: aurMono, fontSize: 10, color: AUR.textFaint }}>loading scenario…</span>}
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+            <FreshnessStamp meta={meta} AUR={AUR} />
+            <RefreshButton onClick={refresh} loading={loading} AUR={AUR} />
           </div>
         </header>
 

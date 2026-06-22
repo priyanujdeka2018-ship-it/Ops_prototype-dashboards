@@ -11,10 +11,14 @@ const searchSchema = z.object({
   s: fallback(z.enum(["healthy", "current", "crisis"]), "current").default("current"),
   t: fallback(z.enum(["teal", "violet", "rose", "sky", "amber"]), "teal").default("teal"),
   d: fallback(z.enum(["compact", "cozy", "spacious"]), "cozy").default("cozy"),
-  // focus params — optional, used by progressive-disclosure modules
-  wt:  fallback(z.string().optional(), undefined as any).default(undefined as any),
-  tm:  fallback(z.string().optional(), undefined as any).default(undefined as any),
-  pid: fallback(z.string().optional(), undefined as any).default(undefined as any),
+  // vintage — pre-baked snapshot selector (parallel to scenario); "live" uses the scenario
+  v: fallback(z.enum(["live", "pre-fix", "post-fix"]), "live").default("live"),
+  // focus params (Focus shape, brief §5) — optional, persist across sections
+  workType:      fallback(z.string().optional(), undefined as any).default(undefined as any),
+  teamId:        fallback(z.string().optional(), undefined as any).default(undefined as any),
+  contributorId: fallback(z.string().optional(), undefined as any).default(undefined as any),
+  patternId:     fallback(z.string().optional(), undefined as any).default(undefined as any),
+  clusterId:     fallback(z.string().optional(), undefined as any).default(undefined as any),
   // patterns filters
   status: fallback(z.string().optional(), undefined as any).default(undefined as any),
   risk:   fallback(z.string().optional(), undefined as any).default(undefined as any),
@@ -27,9 +31,9 @@ export const Route = createFileRoute("/_dash")({
 });
 
 function DashLayout() {
-  const { s, t, d } = Route.useSearch();
+  const { s, t, d, v } = Route.useSearch();
   return (
-    <DashProvider scenario={s} theme={t} density={d}>
+    <DashProvider scenario={s} theme={t} density={d} vintage={v === "live" ? undefined : v}>
       <AppShell>
         <Outlet />
       </AppShell>
