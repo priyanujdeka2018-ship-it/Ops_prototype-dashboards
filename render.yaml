@@ -8,8 +8,8 @@ services:
   #   python -m src.pipeline --all-scenarios   # writes web/public/data/
   # and committed, so the static build just bundles them.
   #
-  # The Streamlit analyst workbench (Modules A-D drilldowns) is not deployed here;
-  # it remains runnable locally:  streamlit run app.py  (revisit in Phase 6).
+  # The analyst workbench (raw audit tables + CSV/JSON export) is part of the
+  # SPA itself at /workbench — no separate service needed.
   - type: web
     name: scale-regional-ops-command-center
     runtime: static
