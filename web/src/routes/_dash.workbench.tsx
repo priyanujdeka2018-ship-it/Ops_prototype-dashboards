@@ -51,7 +51,7 @@ const COLLECTIONS: CollectionDef[] = [
   { id: "patterns", label: "Patterns", desc: "Recurrence patterns", rows: (d) => d.patterns ?? [],
     filterCols: { work_type: "work_type", status: "recurrence_status" } },
   { id: "clusters", label: "Clusters", desc: "Semantic clusters", rows: (d) => d.clusters ?? [],
-    filterCols: {} },
+    filterCols: { work_type: "work_type", status: "recurrence_status" } },
   { id: "contributors", label: "Contributors", desc: "Workforce quality", rows: (d) => d.workforce?.contributors ?? [],
     filterCols: { work_type: "work_type", team: "team_id", status: "status" } },
   { id: "workTypeRollup", label: "Work types", desc: "Per-work-type rollup", rows: (d) => d.workTypeRollup ?? [],
