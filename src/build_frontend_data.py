@@ -1,7 +1,7 @@
 """
 Build web/public/data/data.json for the TanStack front-end from the real
-CSVs in data/, reusing the same metric and pattern-scoring logic that powers
-the Streamlit pages so both front-ends show identical numbers.
+CSVs in data/, reusing the same metric and pattern-scoring logic in src/ so
+the UI shows exactly the numbers the pipeline computes.
 
 Usage:
     python -m src.build_frontend_data [--scenario healthy|current|crisis]

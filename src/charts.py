@@ -1,5 +1,5 @@
 """
-Chart builders for the Streamlit dashboard.
+Plotly chart builders (legacy dashboard helpers; not used by the pipeline).
 """
 
 from __future__ import annotations
