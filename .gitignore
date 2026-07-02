@@ -214,9 +214,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Streamlit
-.streamlit/secrets.toml
-
 # Project data outputs
 data/*.csv
 data/*.parquet
@@ -236,7 +233,6 @@ backups/
 *.zip
 __pycache__/
 *.pyc
-.streamlit/
 
 # Local backup/debug artifacts
 backups/

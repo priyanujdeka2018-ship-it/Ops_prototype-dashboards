@@ -116,3 +116,49 @@ def test_leadership_alerts_deep_link_to_real_entities(payload):
             assert focus["workType"] in work_types
         else:
             assert focus["teamId"] in team_ids
+
+
+# ─── Semantic clusters emission (Module B v2 payload contract) ───────────────
+
+_CLUSTER_KEYS = {
+    "cluster_id", "cluster_name", "cluster_kind", "work_type", "root_cause",
+    "incident_count", "sev1_count", "sev2_count", "open_count", "resolved_count",
+    "team_count", "segment_count", "teams", "segments", "work_types",
+    "severity_mix", "avg_days_to_resolve", "first_seen", "latest_seen",
+    "last_14d", "prior_14d", "last_30d", "last_60d", "days_since_latest",
+    "recurrence_status", "risk_score", "risk_level", "sample_summaries",
+}
+
+
+def test_clusters_shape_and_order(payload):
+    clusters = payload["clusters"]
+    assert clusters, "no semantic clusters emitted for the fixed-seed data"
+    for c in clusters:
+        assert _CLUSTER_KEYS <= set(c), f"cluster missing keys: {_CLUSTER_KEYS - set(c)}"
+        assert c["cluster_kind"] in {"semantic_cluster", "watchlist_pair"}
+        assert c["risk_level"] in {"High", "Medium", "Low"}
+        assert isinstance(c["sample_summaries"], list) and c["sample_summaries"]
+        assert c["incident_count"] >= 2, "isolated escalations must not be emitted"
+    scores = [c["risk_score"] for c in clusters]
+    assert scores == sorted(scores, reverse=True), "clusters must be ranked by risk_score desc"
+
+
+def test_clusters_match_engine(payload, tables):
+    """Emitted cluster scores equal summarize_semantic_clusters output."""
+    from src.escalation_semantic_clusters import cluster_escalations, summarize_semantic_clusters
+
+    summary = summarize_semantic_clusters(cluster_escalations(tables["escalation_events"]))
+    engine = {
+        str(row["semantic_cluster_id"]): float(row["risk_score"]) for _, row in summary.iterrows()
+    }
+    emitted = {c["cluster_id"]: c["risk_score"] for c in payload["clusters"]}
+    assert emitted == engine
+
+
+def test_clusters_empty_input_is_graceful():
+    empty = pd.DataFrame(columns=[
+        "escalation_id", "date", "work_type", "team_id", "severity",
+        "customer_segment", "escalation_summary", "root_cause_category",
+        "status", "days_to_resolve",
+    ])
+    assert bfd.build_clusters(empty) == []

@@ -37,6 +37,7 @@ REQUIRED_KEYS = (
     "totals",
     "weeklyTrend",
     "patterns",
+    "clusters",
     "teams",
     "workTypeRollup",
     "escalations",

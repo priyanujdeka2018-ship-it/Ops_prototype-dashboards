@@ -91,7 +91,7 @@ function About() {
       <AurSection AUR={AUR} density={densityPreset} eyebrow="Production notes" title="What changes between this prototype and a live deploy.">
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: densityPreset.gap }}>
           {[
-            { t: "Data pipeline", b: "Streamlit/Python pipeline in the repo generates the JSON snapshots. In production: nightly Airflow DAG → object storage → cached read at the edge. Forecast jobs run with confidence bands and quality gates." },
+            { t: "Data pipeline", b: "Python pipeline in the repo generates the JSON snapshots. In production: nightly Airflow DAG → object storage → cached read at the edge. Forecast jobs run with confidence bands and quality gates." },
             { t: "Auth & permissions", b: "Single-tenant prototype. Production: SSO + role-based scopes so a quality lead sees only their region's teams, a workforce planner sees only their work types." },
             { t: "AI scope", b: "Embedding-based clustering on escalation summaries (Module B v2) and LLM-drafted weekly briefing. Everything else — risk scores, thresholds, recommendations — stays deterministic. Audit trail on every AI-generated artifact." },
             { t: "Performance", b: "Static JSON keeps this prototype instant. In production: server functions per module, query cache, intentful preloading on hover so navigating between modules feels free." },

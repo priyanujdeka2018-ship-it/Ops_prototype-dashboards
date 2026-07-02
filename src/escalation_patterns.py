@@ -247,7 +247,7 @@ def summarize_patterns(
     Summarize escalation recurrence patterns for a chosen pattern grain.
 
     Returns a DataFrame with one row per pattern and the fields needed by the
-    Streamlit UI, briefing generator, and optional CSV export.
+    dashboard payload, briefing generator, and optional CSV export.
     """
     if pattern_grain not in PATTERN_GRAINS:
         valid = ", ".join(PATTERN_GRAINS)

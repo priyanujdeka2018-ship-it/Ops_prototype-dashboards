@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashRouteImport } from './routes/_dash'
 import { Route as DashIndexRouteImport } from './routes/_dash.index'
 import { Route as DashWorkforceRouteImport } from './routes/_dash.workforce'
+import { Route as DashWorkbenchRouteImport } from './routes/_dash.workbench'
 import { Route as DashPatternsRouteImport } from './routes/_dash.patterns'
 import { Route as DashHealthRouteImport } from './routes/_dash.health'
 import { Route as DashClustersRouteImport } from './routes/_dash.clusters'
@@ -30,6 +31,11 @@ const DashIndexRoute = DashIndexRouteImport.update({
 const DashWorkforceRoute = DashWorkforceRouteImport.update({
   id: '/workforce',
   path: '/workforce',
+  getParentRoute: () => DashRoute,
+} as any)
+const DashWorkbenchRoute = DashWorkbenchRouteImport.update({
+  id: '/workbench',
+  path: '/workbench',
   getParentRoute: () => DashRoute,
 } as any)
 const DashPatternsRoute = DashPatternsRouteImport.update({
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/clusters': typeof DashClustersRoute
   '/health': typeof DashHealthRoute
   '/patterns': typeof DashPatternsRoute
+  '/workbench': typeof DashWorkbenchRoute
   '/workforce': typeof DashWorkforceRoute
 }
 export interface FileRoutesByTo {
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/clusters': typeof DashClustersRoute
   '/health': typeof DashHealthRoute
   '/patterns': typeof DashPatternsRoute
+  '/workbench': typeof DashWorkbenchRoute
   '/workforce': typeof DashWorkforceRoute
   '/': typeof DashIndexRoute
 }
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/_dash/clusters': typeof DashClustersRoute
   '/_dash/health': typeof DashHealthRoute
   '/_dash/patterns': typeof DashPatternsRoute
+  '/_dash/workbench': typeof DashWorkbenchRoute
   '/_dash/workforce': typeof DashWorkforceRoute
   '/_dash/': typeof DashIndexRoute
 }
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/clusters'
     | '/health'
     | '/patterns'
+    | '/workbench'
     | '/workforce'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -104,6 +114,7 @@ export interface FileRouteTypes {
     | '/clusters'
     | '/health'
     | '/patterns'
+    | '/workbench'
     | '/workforce'
     | '/'
   id:
@@ -114,6 +125,7 @@ export interface FileRouteTypes {
     | '/_dash/clusters'
     | '/_dash/health'
     | '/_dash/patterns'
+    | '/_dash/workbench'
     | '/_dash/workforce'
     | '/_dash/'
   fileRoutesById: FileRoutesById
@@ -143,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/workforce'
       fullPath: '/workforce'
       preLoaderRoute: typeof DashWorkforceRouteImport
+      parentRoute: typeof DashRoute
+    }
+    '/_dash/workbench': {
+      id: '/_dash/workbench'
+      path: '/workbench'
+      fullPath: '/workbench'
+      preLoaderRoute: typeof DashWorkbenchRouteImport
       parentRoute: typeof DashRoute
     }
     '/_dash/patterns': {
@@ -189,6 +208,7 @@ interface DashRouteChildren {
   DashClustersRoute: typeof DashClustersRoute
   DashHealthRoute: typeof DashHealthRoute
   DashPatternsRoute: typeof DashPatternsRoute
+  DashWorkbenchRoute: typeof DashWorkbenchRoute
   DashWorkforceRoute: typeof DashWorkforceRoute
   DashIndexRoute: typeof DashIndexRoute
 }
@@ -199,6 +219,7 @@ const DashRouteChildren: DashRouteChildren = {
   DashClustersRoute: DashClustersRoute,
   DashHealthRoute: DashHealthRoute,
   DashPatternsRoute: DashPatternsRoute,
+  DashWorkbenchRoute: DashWorkbenchRoute,
   DashWorkforceRoute: DashWorkforceRoute,
   DashIndexRoute: DashIndexRoute,
 }

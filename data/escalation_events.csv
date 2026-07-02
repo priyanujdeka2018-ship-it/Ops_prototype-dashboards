@@ -1,251 +1,551 @@
 escalation_id,date,work_type,team_id,severity,customer_segment,escalation_summary,root_cause_category,status,days_to_resolve
-ESC_000001,2026-03-17,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,mid_market,Audio Evaluation escalation linked to quality defect.,quality_defect,resolved,9.0
-ESC_000002,2026-03-18,expert_review,TEAM_APAC_EXPERT_02,sev3,startup,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,7.0
-ESC_000003,2026-03-18,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
-ESC_000004,2026-03-19,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
-ESC_000005,2026-03-19,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
-ESC_000006,2026-03-20,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,mid_market,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
-ESC_000007,2026-03-20,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,3.0
-ESC_000008,2026-03-20,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,startup,Audio Evaluation escalation linked to quality defect.,quality_defect,resolved,4.0
-ESC_000009,2026-03-20,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
-ESC_000010,2026-03-21,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,enterprise,Audio Evaluation escalation linked to tooling issue.,tooling_issue,resolved,2.0
-ESC_000011,2026-03-22,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
-ESC_000012,2026-03-23,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
-ESC_000013,2026-03-24,code_review,TEAM_APAC_CODE_01,sev3,startup,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
-ESC_000014,2026-03-24,expert_review,TEAM_APAC_EXPERT_02,sev2,mid_market,Expert Review escalation linked to sla miss.,sla_miss,resolved,3.0
-ESC_000015,2026-03-25,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,mid_market,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
-ESC_000016,2026-03-27,image_annotation,TEAM_APAC_IMAGE_04,sev2,strategic,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,resolved,2.0
-ESC_000017,2026-03-27,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,9.0
-ESC_000018,2026-03-29,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
-ESC_000019,2026-03-29,expert_review,TEAM_APAC_EXPERT_02,sev1,mid_market,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
-ESC_000020,2026-03-30,expert_review,TEAM_APAC_EXPERT_01,sev4,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
-ESC_000021,2026-04-03,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,4.0
-ESC_000022,2026-04-03,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
-ESC_000023,2026-04-03,image_annotation,TEAM_APAC_IMAGE_03,sev4,strategic,Image Annotation escalation linked to quality defect.,quality_defect,resolved,4.0
-ESC_000024,2026-04-03,expert_review,TEAM_APAC_EXPERT_02,sev1,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,open,
-ESC_000025,2026-04-06,image_annotation,TEAM_APAC_IMAGE_03,sev4,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
-ESC_000026,2026-04-06,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
-ESC_000027,2026-04-06,code_review,TEAM_APAC_CODE_03,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,6.0
-ESC_000028,2026-04-07,code_review,TEAM_APAC_CODE_02,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,11.0
-ESC_000029,2026-04-07,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,startup,Audio Evaluation escalation linked to quality defect.,quality_defect,resolved,5.0
-ESC_000030,2026-04-07,expert_review,TEAM_APAC_EXPERT_02,sev2,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
-ESC_000031,2026-04-10,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
-ESC_000032,2026-04-10,code_review,TEAM_APAC_CODE_03,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
-ESC_000033,2026-04-10,image_annotation,TEAM_APAC_IMAGE_04,sev2,startup,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
-ESC_000034,2026-04-11,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
-ESC_000035,2026-04-11,image_annotation,TEAM_APAC_IMAGE_04,sev3,strategic,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
-ESC_000036,2026-04-13,code_review,TEAM_APAC_CODE_03,sev2,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,5.0
-ESC_000037,2026-04-13,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
-ESC_000038,2026-04-14,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,enterprise,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
-ESC_000039,2026-04-14,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,enterprise,Audio Evaluation escalation linked to sla miss.,sla_miss,resolved,2.0
-ESC_000040,2026-04-20,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code review quality defect cluster: reviewers missing security-sensitive bugs.,quality_defect,resolved,10.0
-ESC_000041,2026-04-20,code_review,TEAM_APAC_CODE_01,sev4,startup,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,in_progress,
-ESC_000042,2026-04-20,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,9.0
-ESC_000043,2026-04-21,expert_review,TEAM_APAC_EXPERT_01,sev4,enterprise,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,resolved,7.0
-ESC_000044,2026-04-21,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
-ESC_000045,2026-04-21,image_annotation,TEAM_APAC_IMAGE_01,sev3,mid_market,Image Annotation escalation linked to quality defect.,quality_defect,resolved,6.0
-ESC_000046,2026-04-22,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,startup,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
-ESC_000047,2026-04-22,code_review,TEAM_APAC_CODE_03,sev4,mid_market,Repeated quality defects found post-delivery in code review samples.,quality_defect,in_progress,
-ESC_000048,2026-04-22,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,open,
-ESC_000049,2026-04-22,code_review,TEAM_APAC_CODE_03,sev2,mid_market,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,5.0
-ESC_000050,2026-04-24,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,enterprise,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,in_progress,
-ESC_000051,2026-04-24,image_annotation,TEAM_APAC_IMAGE_02,sev3,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
-ESC_000052,2026-04-24,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
-ESC_000053,2026-04-24,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,in_progress,
-ESC_000054,2026-04-24,code_review,TEAM_APAC_CODE_03,sev3,startup,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
-ESC_000055,2026-04-25,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,strategic,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,resolved,5.0
-ESC_000056,2026-04-25,image_annotation,TEAM_APAC_IMAGE_02,sev4,enterprise,Image Annotation escalation linked to tooling issue.,tooling_issue,resolved,2.0
-ESC_000057,2026-04-26,code_review,TEAM_APAC_CODE_02,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
-ESC_000058,2026-04-26,code_review,TEAM_APAC_CODE_03,sev3,strategic,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
-ESC_000059,2026-04-26,code_review,TEAM_APAC_CODE_02,sev1,startup,Code Review escalation linked to quality defect.,quality_defect,resolved,10.0
-ESC_000060,2026-04-26,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,mid_market,Audio Evaluation escalation linked to quality defect.,quality_defect,resolved,3.0
-ESC_000061,2026-04-26,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,7.0
-ESC_000062,2026-04-26,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,5.0
-ESC_000063,2026-04-27,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,open,
-ESC_000064,2026-04-27,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,mid_market,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,resolved,3.0
-ESC_000065,2026-04-28,expert_review,TEAM_APAC_EXPERT_01,sev3,startup,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,in_progress,
-ESC_000066,2026-04-28,code_review,TEAM_APAC_CODE_02,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,3.0
-ESC_000067,2026-04-28,expert_review,TEAM_APAC_EXPERT_01,sev1,enterprise,Expert Review escalation linked to sla miss.,sla_miss,in_progress,
-ESC_000068,2026-04-28,image_annotation,TEAM_APAC_IMAGE_02,sev4,enterprise,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,open,
-ESC_000069,2026-04-29,code_review,TEAM_APAC_CODE_02,sev2,strategic,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,9.0
-ESC_000070,2026-04-29,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,8.0
-ESC_000071,2026-04-29,expert_review,TEAM_APAC_EXPERT_02,sev2,enterprise,Expert Review escalation linked to sla miss.,sla_miss,in_progress,
-ESC_000072,2026-04-30,code_review,TEAM_APAC_CODE_01,sev4,strategic,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,in_progress,
-ESC_000073,2026-04-30,code_review,TEAM_APAC_CODE_02,sev4,enterprise,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,1.0
-ESC_000074,2026-05-01,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,mid_market,Audio evaluation throughput below inflow again due to capacity shortfall.,capacity_shortfall,resolved,5.0
-ESC_000075,2026-05-01,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,mid_market,Audio Evaluation escalation linked to sla miss.,sla_miss,in_progress,
-ESC_000076,2026-05-02,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
-ESC_000077,2026-05-03,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,open,
-ESC_000078,2026-05-03,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,resolved,7.0
-ESC_000079,2026-05-03,code_review,TEAM_APAC_CODE_01,sev2,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,3.0
-ESC_000080,2026-05-03,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,strategic,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,resolved,5.0
-ESC_000081,2026-05-04,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,mid_market,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
-ESC_000082,2026-05-04,expert_review,TEAM_APAC_EXPERT_02,sev4,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
-ESC_000083,2026-05-04,code_review,TEAM_APAC_CODE_01,sev3,strategic,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,in_progress,
-ESC_000084,2026-05-04,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,mid_market,Audio Evaluation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,6.0
-ESC_000085,2026-05-04,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,1.0
-ESC_000086,2026-05-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,open,
-ESC_000087,2026-05-05,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
-ESC_000088,2026-05-06,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,enterprise,Audio evaluation throughput below inflow again due to capacity shortfall.,capacity_shortfall,resolved,5.0
-ESC_000089,2026-05-06,image_annotation,TEAM_APAC_IMAGE_02,sev4,strategic,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,resolved,3.0
-ESC_000090,2026-05-07,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,enterprise,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,resolved,6.0
-ESC_000091,2026-05-07,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
-ESC_000092,2026-05-08,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,mid_market,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,in_progress,
-ESC_000093,2026-05-08,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
-ESC_000094,2026-05-08,expert_review,TEAM_APAC_EXPERT_01,sev4,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,7.0
-ESC_000095,2026-05-09,audio_evaluation,TEAM_APAC_AUDIO_01,sev3,enterprise,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,6.0
-ESC_000096,2026-05-09,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,5.0
-ESC_000097,2026-05-09,image_annotation,TEAM_APAC_IMAGE_03,sev3,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,2.0
-ESC_000098,2026-05-09,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,enterprise,Specialist shortage for audio evaluation; aged backlog climbing week over week.,capacity_shortfall,resolved,3.0
-ESC_000099,2026-05-09,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,in_progress,
-ESC_000100,2026-05-09,code_review,TEAM_APAC_CODE_01,sev4,startup,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,3.0
-ESC_000101,2026-05-09,expert_review,TEAM_APAC_EXPERT_02,sev4,startup,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,resolved,4.0
-ESC_000102,2026-05-09,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,13.0
-ESC_000103,2026-05-11,image_annotation,TEAM_APAC_IMAGE_02,sev4,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,in_progress,
-ESC_000104,2026-05-11,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,in_progress,
-ESC_000105,2026-05-11,audio_evaluation,TEAM_APAC_AUDIO_01,sev3,mid_market,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,resolved,1.0
-ESC_000106,2026-05-11,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,startup,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,resolved,2.0
-ESC_000107,2026-05-12,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,7.0
-ESC_000108,2026-05-12,code_review,TEAM_APAC_CODE_03,sev3,startup,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,resolved,3.0
-ESC_000109,2026-05-12,code_review,TEAM_APAC_CODE_01,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,3.0
-ESC_000110,2026-05-12,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,resolved,2.0
-ESC_000111,2026-05-13,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,strategic,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,in_progress,
-ESC_000112,2026-05-13,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
-ESC_000113,2026-05-14,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,12.0
-ESC_000114,2026-05-15,code_review,TEAM_APAC_CODE_02,sev4,strategic,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
-ESC_000115,2026-05-15,expert_review,TEAM_APAC_EXPERT_02,sev1,mid_market,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
-ESC_000116,2026-05-15,expert_review,TEAM_APAC_EXPERT_02,sev3,startup,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,in_progress,
-ESC_000117,2026-05-15,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
-ESC_000118,2026-05-16,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,resolved,1.0
-ESC_000119,2026-05-16,code_review,TEAM_APAC_CODE_02,sev2,enterprise,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,4.0
-ESC_000120,2026-05-16,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,7.0
-ESC_000121,2026-05-17,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,8.0
-ESC_000122,2026-05-17,code_review,TEAM_APAC_CODE_01,sev4,strategic,Code Review escalation linked to quality defect.,quality_defect,open,
-ESC_000123,2026-05-17,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,resolved,4.0
-ESC_000124,2026-05-17,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,resolved,4.0
-ESC_000125,2026-05-17,code_review,TEAM_APAC_CODE_01,sev2,mid_market,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,1.0
-ESC_000126,2026-05-18,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,startup,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,1.0
-ESC_000127,2026-05-18,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
-ESC_000128,2026-05-18,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,mid_market,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,resolved,3.0
-ESC_000129,2026-05-18,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,open,
-ESC_000130,2026-05-18,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,resolved,9.0
-ESC_000131,2026-05-19,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,mid_market,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,resolved,9.0
-ESC_000132,2026-05-20,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,6.0
-ESC_000133,2026-05-20,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,strategic,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,resolved,5.0
-ESC_000134,2026-05-20,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,resolved,2.0
-ESC_000135,2026-05-20,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,mid_market,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,resolved,4.0
-ESC_000136,2026-05-20,code_review,TEAM_APAC_CODE_02,sev3,enterprise,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,2.0
-ESC_000137,2026-05-20,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,resolved,1.0
-ESC_000138,2026-05-20,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,enterprise,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,in_progress,
-ESC_000139,2026-05-21,code_review,TEAM_APAC_CODE_02,sev3,mid_market,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,7.0
-ESC_000140,2026-05-21,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,resolved,3.0
-ESC_000141,2026-05-21,code_review,TEAM_APAC_CODE_01,sev3,enterprise,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,4.0
-ESC_000142,2026-05-22,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,resolved,8.0
-ESC_000143,2026-05-23,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,resolved,4.0
-ESC_000144,2026-05-23,code_review,TEAM_APAC_CODE_01,sev3,strategic,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,5.0
-ESC_000145,2026-05-24,audio_evaluation,TEAM_APAC_AUDIO_01,sev3,strategic,Audio Evaluation escalation linked to sla miss.,sla_miss,resolved,2.0
-ESC_000146,2026-05-24,code_review,TEAM_APAC_CODE_02,sev3,strategic,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,11.0
-ESC_000147,2026-05-24,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,resolved,6.0
-ESC_000148,2026-05-24,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,startup,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,4.0
-ESC_000149,2026-05-25,code_review,TEAM_APAC_CODE_03,sev2,enterprise,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,resolved,5.0
-ESC_000150,2026-05-25,expert_review,TEAM_APAC_EXPERT_02,sev2,enterprise,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,8.0
-ESC_000151,2026-05-25,code_review,TEAM_APAC_CODE_01,sev4,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,1.0
-ESC_000152,2026-05-25,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,8.0
-ESC_000153,2026-05-26,expert_review,TEAM_APAC_EXPERT_01,sev1,enterprise,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,resolved,7.0
-ESC_000154,2026-05-27,image_annotation,TEAM_APAC_IMAGE_02,sev4,enterprise,Image Annotation escalation linked to tooling issue.,tooling_issue,resolved,9.0
-ESC_000155,2026-05-27,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,enterprise,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
-ESC_000156,2026-05-27,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,strategic,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,resolved,4.0
-ESC_000157,2026-05-27,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,resolved,6.0
-ESC_000158,2026-05-27,rlhf_evaluation,TEAM_APAC_RLHF_01,sev1,mid_market,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,resolved,6.0
-ESC_000159,2026-05-27,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,enterprise,Specialist shortage for audio evaluation; aged backlog climbing week over week.,capacity_shortfall,resolved,4.0
-ESC_000160,2026-05-27,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
-ESC_000161,2026-05-27,code_review,TEAM_APAC_CODE_02,sev2,strategic,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,7.0
-ESC_000162,2026-05-28,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,resolved,7.0
-ESC_000163,2026-05-28,image_annotation,TEAM_APAC_IMAGE_04,sev4,strategic,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,10.0
-ESC_000164,2026-05-28,code_review,TEAM_APAC_CODE_01,sev1,mid_market,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,3.0
-ESC_000165,2026-05-28,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,resolved,5.0
-ESC_000166,2026-05-29,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,mid_market,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,resolved,5.0
-ESC_000167,2026-05-29,audio_evaluation,TEAM_APAC_AUDIO_01,sev1,mid_market,Audio evaluation throughput below inflow again due to capacity shortfall.,capacity_shortfall,resolved,9.0
-ESC_000168,2026-05-29,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,resolved,4.0
-ESC_000169,2026-05-29,audio_evaluation,TEAM_APAC_AUDIO_01,sev1,enterprise,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,open,
-ESC_000170,2026-05-29,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
-ESC_000171,2026-05-30,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,strategic,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,9.0
-ESC_000172,2026-05-30,rlhf_evaluation,TEAM_APAC_RLHF_02,sev1,mid_market,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,open,
-ESC_000173,2026-05-30,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,enterprise,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,resolved,5.0
-ESC_000174,2026-05-31,expert_review,TEAM_APAC_EXPERT_01,sev1,startup,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,open,
-ESC_000175,2026-05-31,code_review,TEAM_APAC_CODE_02,sev2,mid_market,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,8.0
-ESC_000176,2026-05-31,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,14.0
-ESC_000177,2026-05-31,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert Review escalation linked to sla miss.,sla_miss,resolved,1.0
-ESC_000178,2026-06-01,code_review,TEAM_APAC_CODE_03,sev4,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,open,
-ESC_000179,2026-06-01,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
-ESC_000180,2026-06-01,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,mid_market,Audio Evaluation escalation linked to sla miss.,sla_miss,resolved,7.0
-ESC_000181,2026-06-01,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,startup,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,open,
-ESC_000182,2026-06-01,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,startup,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,open,
-ESC_000183,2026-06-01,code_review,TEAM_APAC_CODE_03,sev2,enterprise,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,resolved,3.0
-ESC_000184,2026-06-01,image_annotation,TEAM_APAC_IMAGE_03,sev3,strategic,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
-ESC_000185,2026-06-02,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
-ESC_000186,2026-06-02,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,enterprise,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,in_progress,
-ESC_000187,2026-06-02,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,in_progress,
-ESC_000188,2026-06-02,audio_evaluation,TEAM_APAC_AUDIO_02,sev1,mid_market,Audio evaluation throughput below inflow again due to capacity shortfall.,capacity_shortfall,open,
-ESC_000189,2026-06-02,image_annotation,TEAM_APAC_IMAGE_01,sev2,strategic,Image Annotation escalation linked to tooling issue.,tooling_issue,resolved,8.0
-ESC_000190,2026-06-02,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,open,
-ESC_000191,2026-06-03,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,enterprise,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,open,
-ESC_000192,2026-06-03,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,strategic,Audio Evaluation escalation linked to tooling issue.,tooling_issue,in_progress,
-ESC_000193,2026-06-03,expert_review,TEAM_APAC_EXPERT_01,sev1,enterprise,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,2.0
-ESC_000194,2026-06-04,expert_review,TEAM_APAC_EXPERT_01,sev2,strategic,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,open,
-ESC_000195,2026-06-04,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,enterprise,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,in_progress,
-ESC_000196,2026-06-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,startup,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,open,
-ESC_000197,2026-06-04,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,enterprise,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,in_progress,
-ESC_000198,2026-06-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
-ESC_000199,2026-06-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,3.0
-ESC_000200,2026-06-05,rlhf_evaluation,TEAM_APAC_RLHF_02,sev1,strategic,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,in_progress,
-ESC_000201,2026-06-05,audio_evaluation,TEAM_APAC_AUDIO_01,sev3,strategic,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
-ESC_000202,2026-06-05,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,in_progress,
-ESC_000203,2026-06-06,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,mid_market,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,5.0
-ESC_000204,2026-06-06,code_review,TEAM_APAC_CODE_02,sev2,enterprise,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,6.0
-ESC_000205,2026-06-06,code_review,TEAM_APAC_CODE_02,sev1,strategic,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,2.0
-ESC_000206,2026-06-06,rlhf_evaluation,TEAM_APAC_RLHF_01,sev1,enterprise,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,open,
-ESC_000207,2026-06-06,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,open,
-ESC_000208,2026-06-06,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,in_progress,
-ESC_000209,2026-06-07,expert_review,TEAM_APAC_EXPERT_02,sev2,startup,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,in_progress,
-ESC_000210,2026-06-07,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,mid_market,Audio Evaluation escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
-ESC_000211,2026-06-07,expert_review,TEAM_APAC_EXPERT_01,sev1,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
-ESC_000212,2026-06-07,code_review,TEAM_APAC_CODE_01,sev2,strategic,Code review quality defect cluster: reviewers missing security-sensitive bugs.,quality_defect,resolved,5.0
-ESC_000213,2026-06-07,rlhf_evaluation,TEAM_APAC_RLHF_02,sev1,enterprise,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,10.0
-ESC_000214,2026-06-08,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,mid_market,Audio evaluation throughput below inflow again due to capacity shortfall.,capacity_shortfall,resolved,13.0
-ESC_000215,2026-06-08,expert_review,TEAM_APAC_EXPERT_01,sev1,mid_market,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,open,
-ESC_000216,2026-06-08,code_review,TEAM_APAC_CODE_02,sev1,strategic,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,3.0
-ESC_000217,2026-06-08,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,RLHF reviewer agreement dropping; calibration drift between rater cohorts.,reviewer_misalignment,open,
-ESC_000218,2026-06-08,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,6.0
-ESC_000219,2026-06-08,rlhf_evaluation,TEAM_APAC_RLHF_02,sev1,startup,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,in_progress,
-ESC_000220,2026-06-08,code_review,TEAM_APAC_CODE_03,sev1,mid_market,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,in_progress,
-ESC_000221,2026-06-08,expert_review,TEAM_APAC_EXPERT_01,sev1,mid_market,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,in_progress,
-ESC_000222,2026-06-09,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,open,
-ESC_000223,2026-06-09,image_annotation,TEAM_APAC_IMAGE_03,sev3,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,resolved,3.0
-ESC_000224,2026-06-09,rlhf_evaluation,TEAM_APAC_RLHF_02,sev1,strategic,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,open,
-ESC_000225,2026-06-09,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,mid_market,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,resolved,1.0
-ESC_000226,2026-06-10,expert_review,TEAM_APAC_EXPERT_02,sev1,enterprise,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,open,
-ESC_000227,2026-06-10,code_review,TEAM_APAC_CODE_03,sev2,mid_market,Repeated quality defects found post-delivery in code review samples.,quality_defect,in_progress,
-ESC_000228,2026-06-10,code_review,TEAM_APAC_CODE_01,sev1,startup,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,resolved,1.0
-ESC_000229,2026-06-10,audio_evaluation,TEAM_APAC_AUDIO_02,sev1,mid_market,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,in_progress,
-ESC_000230,2026-06-10,audio_evaluation,TEAM_APAC_AUDIO_01,sev1,startup,Audio evaluation throughput below inflow again due to capacity shortfall.,capacity_shortfall,resolved,6.0
-ESC_000231,2026-06-10,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,startup,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,resolved,3.0
-ESC_000232,2026-06-10,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,in_progress,
-ESC_000233,2026-06-11,audio_evaluation,TEAM_APAC_AUDIO_01,sev1,strategic,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,resolved,1.0
-ESC_000234,2026-06-11,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert reviewers working from stale requirements after a customer spec update.,customer_requirement_change,in_progress,
-ESC_000235,2026-06-11,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
-ESC_000236,2026-06-11,expert_review,TEAM_APAC_EXPERT_02,sev4,mid_market,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
-ESC_000237,2026-06-12,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,strategic,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,in_progress,
-ESC_000238,2026-06-12,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,in_progress,
-ESC_000239,2026-06-12,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,open,
-ESC_000240,2026-06-12,code_review,TEAM_APAC_CODE_01,sev2,strategic,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,in_progress,
-ESC_000241,2026-06-12,image_annotation,TEAM_APAC_IMAGE_04,sev2,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,open,
-ESC_000242,2026-06-13,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,strategic,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,open,
-ESC_000243,2026-06-13,code_review,TEAM_APAC_CODE_03,sev2,startup,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,resolved,2.0
-ESC_000244,2026-06-13,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,strategic,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,open,
-ESC_000245,2026-06-13,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,startup,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
-ESC_000246,2026-06-13,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,startup,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
-ESC_000247,2026-06-13,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,resolved,5.0
-ESC_000248,2026-06-13,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,mid_market,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,open,
-ESC_000249,2026-06-14,expert_review,TEAM_APAC_EXPERT_01,sev2,mid_market,Expert Review escalation linked to sla miss.,sla_miss,resolved,6.0
-ESC_000250,2026-06-14,expert_review,TEAM_APAC_EXPERT_02,sev2,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,8.0
+ESC_000001,2026-04-03,image_annotation,TEAM_APAC_IMAGE_04,sev4,enterprise,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,6.0
+ESC_000002,2026-04-03,image_annotation,TEAM_APAC_IMAGE_01,sev4,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000003,2026-04-03,code_review,TEAM_APAC_CODE_02,sev3,enterprise,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,4.0
+ESC_000004,2026-04-03,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000005,2026-04-04,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000006,2026-04-04,code_review,TEAM_APAC_CODE_03,sev2,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000007,2026-04-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,3.0
+ESC_000008,2026-04-04,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000009,2026-04-04,expert_review,TEAM_APAC_EXPERT_02,sev3,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,2.0
+ESC_000010,2026-04-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
+ESC_000011,2026-04-04,image_annotation,TEAM_APAC_IMAGE_01,sev2,enterprise,Image Annotation escalation linked to tooling issue.,tooling_issue,resolved,4.0
+ESC_000012,2026-04-05,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000013,2026-04-05,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,enterprise,Audio Evaluation escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
+ESC_000014,2026-04-05,image_annotation,TEAM_APAC_IMAGE_03,sev4,startup,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
+ESC_000015,2026-04-05,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000016,2026-04-06,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,8.0
+ESC_000017,2026-04-06,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,7.0
+ESC_000018,2026-04-06,code_review,TEAM_APAC_CODE_02,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,4.0
+ESC_000019,2026-04-06,image_annotation,TEAM_APAC_IMAGE_02,sev3,strategic,Image Annotation escalation linked to sla miss.,sla_miss,resolved,6.0
+ESC_000020,2026-04-06,expert_review,TEAM_APAC_EXPERT_01,sev3,startup,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000021,2026-04-06,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,resolved,4.0
+ESC_000022,2026-04-07,code_review,TEAM_APAC_CODE_01,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000023,2026-04-07,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,startup,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000024,2026-04-07,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
+ESC_000025,2026-04-07,image_annotation,TEAM_APAC_IMAGE_03,sev4,mid_market,Image Annotation escalation linked to quality defect.,quality_defect,open,
+ESC_000026,2026-04-07,code_review,TEAM_APAC_CODE_03,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,3.0
+ESC_000027,2026-04-07,image_annotation,TEAM_APAC_IMAGE_03,sev3,enterprise,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,1.0
+ESC_000028,2026-04-08,code_review,TEAM_APAC_CODE_02,sev3,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,3.0
+ESC_000029,2026-04-08,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000030,2026-04-09,image_annotation,TEAM_APAC_IMAGE_04,sev3,strategic,Image Annotation escalation linked to quality defect.,quality_defect,open,
+ESC_000031,2026-04-09,image_annotation,TEAM_APAC_IMAGE_03,sev4,mid_market,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
+ESC_000032,2026-04-09,image_annotation,TEAM_APAC_IMAGE_01,sev3,startup,Image Annotation escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000033,2026-04-09,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,enterprise,Audio Evaluation escalation linked to tooling issue.,tooling_issue,resolved,8.0
+ESC_000034,2026-04-09,rlhf_evaluation,TEAM_APAC_RLHF_02,sev1,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000035,2026-04-10,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,strategic,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000036,2026-04-10,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,startup,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
+ESC_000037,2026-04-10,expert_review,TEAM_APAC_EXPERT_02,sev3,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
+ESC_000038,2026-04-10,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,startup,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,9.0
+ESC_000039,2026-04-10,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,7.0
+ESC_000040,2026-04-11,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,mid_market,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000041,2026-04-11,image_annotation,TEAM_APAC_IMAGE_02,sev3,strategic,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000042,2026-04-11,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000043,2026-04-11,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,10.0
+ESC_000044,2026-04-11,code_review,TEAM_APAC_CODE_02,sev4,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000045,2026-04-11,image_annotation,TEAM_APAC_IMAGE_01,sev4,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000046,2026-04-11,code_review,TEAM_APAC_CODE_02,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,16.0
+ESC_000047,2026-04-11,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,mid_market,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,2.0
+ESC_000048,2026-04-12,expert_review,TEAM_APAC_EXPERT_02,sev2,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000049,2026-04-12,image_annotation,TEAM_APAC_IMAGE_04,sev3,mid_market,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
+ESC_000050,2026-04-12,expert_review,TEAM_APAC_EXPERT_01,sev1,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
+ESC_000051,2026-04-12,code_review,TEAM_APAC_CODE_01,sev2,strategic,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,8.0
+ESC_000052,2026-04-12,code_review,TEAM_APAC_CODE_03,sev4,strategic,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000053,2026-04-12,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,enterprise,Audio Evaluation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,18.0
+ESC_000054,2026-04-13,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000055,2026-04-13,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000056,2026-04-13,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000057,2026-04-13,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,mid_market,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,8.0
+ESC_000058,2026-04-13,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
+ESC_000059,2026-04-14,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,6.0
+ESC_000060,2026-04-14,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,7.0
+ESC_000061,2026-04-14,image_annotation,TEAM_APAC_IMAGE_03,sev4,strategic,Image Annotation escalation linked to quality defect.,quality_defect,resolved,8.0
+ESC_000062,2026-04-14,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
+ESC_000063,2026-04-15,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000064,2026-04-15,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,startup,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,10.0
+ESC_000065,2026-04-15,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000066,2026-04-15,code_review,TEAM_APAC_CODE_02,sev4,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,10.0
+ESC_000067,2026-04-15,expert_review,TEAM_APAC_EXPERT_01,sev4,strategic,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000068,2026-04-16,expert_review,TEAM_APAC_EXPERT_02,sev2,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
+ESC_000069,2026-04-16,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
+ESC_000070,2026-04-16,expert_review,TEAM_APAC_EXPERT_02,sev4,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000071,2026-04-16,image_annotation,TEAM_APAC_IMAGE_04,sev4,mid_market,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,7.0
+ESC_000072,2026-04-16,code_review,TEAM_APAC_CODE_02,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,open,
+ESC_000073,2026-04-17,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,8.0
+ESC_000074,2026-04-17,image_annotation,TEAM_APAC_IMAGE_04,sev4,strategic,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,resolved,1.0
+ESC_000075,2026-04-17,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000076,2026-04-17,code_review,TEAM_APAC_CODE_03,sev2,strategic,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
+ESC_000077,2026-04-17,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000078,2026-04-17,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,8.0
+ESC_000079,2026-04-17,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
+ESC_000080,2026-04-18,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000081,2026-04-18,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000082,2026-04-18,image_annotation,TEAM_APAC_IMAGE_02,sev2,mid_market,Image Annotation escalation linked to tooling issue.,tooling_issue,resolved,6.0
+ESC_000083,2026-04-18,image_annotation,TEAM_APAC_IMAGE_03,sev4,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000084,2026-04-18,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000085,2026-04-18,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000086,2026-04-19,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000087,2026-04-19,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,enterprise,Audio Evaluation escalation linked to sla miss.,sla_miss,open,
+ESC_000088,2026-04-19,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000089,2026-04-19,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000090,2026-04-20,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000091,2026-04-20,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000092,2026-04-20,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,startup,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000093,2026-04-20,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,startup,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000094,2026-04-20,code_review,TEAM_APAC_CODE_02,sev3,enterprise,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,10.0
+ESC_000095,2026-04-20,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000096,2026-04-20,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,enterprise,Audio Evaluation escalation linked to workflow handoff gap.,workflow_handoff_gap,in_progress,
+ESC_000097,2026-04-21,code_review,TEAM_APAC_CODE_02,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,6.0
+ESC_000098,2026-04-21,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000099,2026-04-21,expert_review,TEAM_APAC_EXPERT_02,sev2,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,8.0
+ESC_000100,2026-04-21,code_review,TEAM_APAC_CODE_02,sev4,startup,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,7.0
+ESC_000101,2026-04-21,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000102,2026-04-21,image_annotation,TEAM_APAC_IMAGE_04,sev3,strategic,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,4.0
+ESC_000103,2026-04-22,expert_review,TEAM_APAC_EXPERT_02,sev2,startup,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
+ESC_000104,2026-04-22,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,6.0
+ESC_000105,2026-04-22,code_review,TEAM_APAC_CODE_03,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000106,2026-04-22,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,3.0
+ESC_000107,2026-04-22,image_annotation,TEAM_APAC_IMAGE_02,sev2,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,resolved,9.0
+ESC_000108,2026-04-22,expert_review,TEAM_APAC_EXPERT_02,sev2,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
+ESC_000109,2026-04-22,expert_review,TEAM_APAC_EXPERT_01,sev4,strategic,Expert Review escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000110,2026-04-23,code_review,TEAM_APAC_CODE_01,sev2,startup,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000111,2026-04-23,image_annotation,TEAM_APAC_IMAGE_04,sev3,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,7.0
+ESC_000112,2026-04-23,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,3.0
+ESC_000113,2026-04-23,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
+ESC_000114,2026-04-23,image_annotation,TEAM_APAC_IMAGE_04,sev3,enterprise,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
+ESC_000115,2026-04-23,image_annotation,TEAM_APAC_IMAGE_02,sev3,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,8.0
+ESC_000116,2026-04-23,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
+ESC_000117,2026-04-23,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,9.0
+ESC_000118,2026-04-24,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
+ESC_000119,2026-04-24,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,6.0
+ESC_000120,2026-04-24,image_annotation,TEAM_APAC_IMAGE_03,sev4,mid_market,Image Annotation escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000121,2026-04-24,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,2.0
+ESC_000122,2026-04-25,image_annotation,TEAM_APAC_IMAGE_04,sev4,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,5.0
+ESC_000123,2026-04-25,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000124,2026-04-25,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000125,2026-04-25,expert_review,TEAM_APAC_EXPERT_01,sev2,strategic,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000126,2026-04-25,image_annotation,TEAM_APAC_IMAGE_02,sev4,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,resolved,8.0
+ESC_000127,2026-04-25,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,enterprise,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,resolved,6.0
+ESC_000128,2026-04-26,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,enterprise,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000129,2026-04-26,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,8.0
+ESC_000130,2026-04-26,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000131,2026-04-26,expert_review,TEAM_APAC_EXPERT_02,sev4,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
+ESC_000132,2026-04-26,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,startup,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000133,2026-04-26,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000134,2026-04-27,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,startup,Audio Evaluation escalation linked to tooling issue.,tooling_issue,open,
+ESC_000135,2026-04-27,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to quality defect.,quality_defect,open,
+ESC_000136,2026-04-27,code_review,TEAM_APAC_CODE_02,sev3,strategic,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
+ESC_000137,2026-04-27,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,mid_market,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000138,2026-04-27,expert_review,TEAM_APAC_EXPERT_01,sev2,startup,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000139,2026-04-27,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,10.0
+ESC_000140,2026-04-27,code_review,TEAM_APAC_CODE_02,sev1,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,4.0
+ESC_000141,2026-04-27,expert_review,TEAM_APAC_EXPERT_02,sev1,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,open,
+ESC_000142,2026-04-28,image_annotation,TEAM_APAC_IMAGE_01,sev4,startup,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,1.0
+ESC_000143,2026-04-28,image_annotation,TEAM_APAC_IMAGE_04,sev4,mid_market,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,10.0
+ESC_000144,2026-04-28,expert_review,TEAM_APAC_EXPERT_02,sev4,strategic,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000145,2026-04-28,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,mid_market,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000146,2026-04-28,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000147,2026-04-28,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,startup,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,10.0
+ESC_000148,2026-04-28,image_annotation,TEAM_APAC_IMAGE_02,sev4,mid_market,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000149,2026-04-29,image_annotation,TEAM_APAC_IMAGE_01,sev3,enterprise,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000150,2026-04-29,image_annotation,TEAM_APAC_IMAGE_03,sev4,strategic,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
+ESC_000151,2026-04-30,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000152,2026-04-30,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000153,2026-04-30,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,6.0
+ESC_000154,2026-04-30,code_review,TEAM_APAC_CODE_02,sev3,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,8.0
+ESC_000155,2026-04-30,code_review,TEAM_APAC_CODE_01,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,open,
+ESC_000156,2026-04-30,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,strategic,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000157,2026-04-30,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000158,2026-04-30,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,8.0
+ESC_000159,2026-04-30,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,9.0
+ESC_000160,2026-05-01,code_review,TEAM_APAC_CODE_01,sev3,startup,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000161,2026-05-01,code_review,TEAM_APAC_CODE_02,sev2,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,1.0
+ESC_000162,2026-05-01,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000163,2026-05-01,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,startup,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000164,2026-05-01,expert_review,TEAM_APAC_EXPERT_01,sev4,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000165,2026-05-01,image_annotation,TEAM_APAC_IMAGE_03,sev3,strategic,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,resolved,2.0
+ESC_000166,2026-05-02,image_annotation,TEAM_APAC_IMAGE_04,sev3,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,resolved,3.0
+ESC_000167,2026-05-02,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000168,2026-05-02,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,5.0
+ESC_000169,2026-05-03,image_annotation,TEAM_APAC_IMAGE_03,sev3,enterprise,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
+ESC_000170,2026-05-03,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000171,2026-05-03,expert_review,TEAM_APAC_EXPERT_02,sev4,mid_market,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000172,2026-05-03,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000173,2026-05-04,expert_review,TEAM_APAC_EXPERT_02,sev1,startup,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,11.0
+ESC_000174,2026-05-04,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000175,2026-05-05,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,enterprise,Audio Evaluation escalation linked to sla miss.,sla_miss,resolved,1.0
+ESC_000176,2026-05-05,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,5.0
+ESC_000177,2026-05-05,image_annotation,TEAM_APAC_IMAGE_04,sev4,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,9.0
+ESC_000178,2026-05-05,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
+ESC_000179,2026-05-05,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000180,2026-05-05,code_review,TEAM_APAC_CODE_03,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000181,2026-05-05,image_annotation,TEAM_APAC_IMAGE_02,sev3,enterprise,Image Annotation escalation linked to tooling issue.,tooling_issue,resolved,1.0
+ESC_000182,2026-05-06,image_annotation,TEAM_APAC_IMAGE_03,sev4,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,6.0
+ESC_000183,2026-05-06,expert_review,TEAM_APAC_EXPERT_02,sev4,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,1.0
+ESC_000184,2026-05-06,code_review,TEAM_APAC_CODE_03,sev3,strategic,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
+ESC_000185,2026-05-07,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000186,2026-05-07,image_annotation,TEAM_APAC_IMAGE_01,sev3,startup,Image Annotation escalation linked to sla miss.,sla_miss,open,
+ESC_000187,2026-05-07,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,9.0
+ESC_000188,2026-05-07,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000189,2026-05-07,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000190,2026-05-07,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,mid_market,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000191,2026-05-08,code_review,TEAM_APAC_CODE_02,sev3,startup,Customer rejected code review deliverable after missed defects in error handling.,quality_defect,resolved,16.0
+ESC_000192,2026-05-08,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000193,2026-05-09,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000194,2026-05-09,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,14.0
+ESC_000195,2026-05-09,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,enterprise,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,9.0
+ESC_000196,2026-05-09,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000197,2026-05-09,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,startup,Audio Evaluation escalation linked to tooling issue.,tooling_issue,open,
+ESC_000198,2026-05-09,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,9.0
+ESC_000199,2026-05-10,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,9.0
+ESC_000200,2026-05-10,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
+ESC_000201,2026-05-10,expert_review,TEAM_APAC_EXPERT_01,sev3,startup,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,7.0
+ESC_000202,2026-05-10,expert_review,TEAM_APAC_EXPERT_02,sev4,mid_market,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,resolved,5.0
+ESC_000203,2026-05-10,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,11.0
+ESC_000204,2026-05-10,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,8.0
+ESC_000205,2026-05-10,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,strategic,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,open,
+ESC_000206,2026-05-10,code_review,TEAM_APAC_CODE_02,sev2,startup,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000207,2026-05-10,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert Review escalation linked to sla miss.,sla_miss,resolved,9.0
+ESC_000208,2026-05-10,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000209,2026-05-10,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000210,2026-05-11,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000211,2026-05-11,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000212,2026-05-11,code_review,TEAM_APAC_CODE_02,sev4,enterprise,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,4.0
+ESC_000213,2026-05-11,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,resolved,9.0
+ESC_000214,2026-05-11,code_review,TEAM_APAC_CODE_02,sev2,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,3.0
+ESC_000215,2026-05-11,code_review,TEAM_APAC_CODE_03,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000216,2026-05-11,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,8.0
+ESC_000217,2026-05-11,expert_review,TEAM_APAC_EXPERT_01,sev2,strategic,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000218,2026-05-12,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,startup,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000219,2026-05-12,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,mid_market,Audio Evaluation escalation linked to quality defect.,quality_defect,open,
+ESC_000220,2026-05-12,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,7.0
+ESC_000221,2026-05-12,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to sla miss.,sla_miss,open,
+ESC_000222,2026-05-12,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
+ESC_000223,2026-05-12,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000224,2026-05-13,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,enterprise,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000225,2026-05-13,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,enterprise,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,in_progress,
+ESC_000226,2026-05-13,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000227,2026-05-13,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,5.0
+ESC_000228,2026-05-13,image_annotation,TEAM_APAC_IMAGE_02,sev3,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,open,
+ESC_000229,2026-05-13,image_annotation,TEAM_APAC_IMAGE_02,sev2,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,resolved,5.0
+ESC_000230,2026-05-13,code_review,TEAM_APAC_CODE_01,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000231,2026-05-14,code_review,TEAM_APAC_CODE_01,sev4,startup,Code review quality defect cluster: reviewers missing security-sensitive bugs.,quality_defect,resolved,2.0
+ESC_000232,2026-05-14,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,mid_market,Audio Evaluation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,2.0
+ESC_000233,2026-05-14,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,open,
+ESC_000234,2026-05-14,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,enterprise,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
+ESC_000235,2026-05-15,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to sla miss.,sla_miss,resolved,6.0
+ESC_000236,2026-05-15,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
+ESC_000237,2026-05-16,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000238,2026-05-16,code_review,TEAM_APAC_CODE_02,sev2,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,8.0
+ESC_000239,2026-05-16,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,startup,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,10.0
+ESC_000240,2026-05-16,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000241,2026-05-16,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000242,2026-05-16,image_annotation,TEAM_APAC_IMAGE_02,sev3,strategic,Image Annotation escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000243,2026-05-16,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000244,2026-05-16,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,resolved,11.0
+ESC_000245,2026-05-16,expert_review,TEAM_APAC_EXPERT_02,sev4,strategic,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,resolved,8.0
+ESC_000246,2026-05-17,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,3.0
+ESC_000247,2026-05-17,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
+ESC_000248,2026-05-17,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000249,2026-05-17,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,7.0
+ESC_000250,2026-05-17,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
+ESC_000251,2026-05-17,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to sla miss.,sla_miss,resolved,3.0
+ESC_000252,2026-05-17,image_annotation,TEAM_APAC_IMAGE_03,sev4,mid_market,Image Annotation escalation linked to tooling issue.,tooling_issue,in_progress,
+ESC_000253,2026-05-17,image_annotation,TEAM_APAC_IMAGE_03,sev4,mid_market,Image Annotation escalation linked to quality defect.,quality_defect,resolved,7.0
+ESC_000254,2026-05-18,code_review,TEAM_APAC_CODE_01,sev4,startup,Code Review escalation linked to quality defect.,quality_defect,resolved,10.0
+ESC_000255,2026-05-18,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000256,2026-05-19,expert_review,TEAM_APAC_EXPERT_02,sev4,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,5.0
+ESC_000257,2026-05-19,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,strategic,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,in_progress,
+ESC_000258,2026-05-20,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,1.0
+ESC_000259,2026-05-20,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,mid_market,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,4.0
+ESC_000260,2026-05-20,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,enterprise,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,resolved,3.0
+ESC_000261,2026-05-20,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000262,2026-05-20,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,2.0
+ESC_000263,2026-05-20,expert_review,TEAM_APAC_EXPERT_02,sev4,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000264,2026-05-20,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000265,2026-05-21,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000266,2026-05-21,image_annotation,TEAM_APAC_IMAGE_01,sev3,enterprise,Image Annotation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000267,2026-05-21,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,open,
+ESC_000268,2026-05-22,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,enterprise,Audio Evaluation escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000269,2026-05-22,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,strategic,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,resolved,6.0
+ESC_000270,2026-05-22,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,7.0
+ESC_000271,2026-05-22,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,5.0
+ESC_000272,2026-05-22,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,strategic,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000273,2026-05-22,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,mid_market,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,7.0
+ESC_000274,2026-05-22,audio_evaluation,TEAM_APAC_AUDIO_02,sev1,strategic,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,5.0
+ESC_000275,2026-05-22,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,8.0
+ESC_000276,2026-05-22,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,startup,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000277,2026-05-23,expert_review,TEAM_APAC_EXPERT_01,sev4,enterprise,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,resolved,3.0
+ESC_000278,2026-05-23,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,enterprise,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,resolved,4.0
+ESC_000279,2026-05-24,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
+ESC_000280,2026-05-24,image_annotation,TEAM_APAC_IMAGE_01,sev4,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,5.0
+ESC_000281,2026-05-24,expert_review,TEAM_APAC_EXPERT_02,sev1,startup,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000282,2026-05-24,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,1.0
+ESC_000283,2026-05-24,image_annotation,TEAM_APAC_IMAGE_03,sev4,mid_market,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
+ESC_000284,2026-05-24,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to sla miss.,sla_miss,resolved,2.0
+ESC_000285,2026-05-25,code_review,TEAM_APAC_CODE_02,sev3,strategic,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,5.0
+ESC_000286,2026-05-25,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000287,2026-05-25,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000288,2026-05-25,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000289,2026-05-25,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,7.0
+ESC_000290,2026-05-25,image_annotation,TEAM_APAC_IMAGE_02,sev3,mid_market,Image Annotation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000291,2026-05-25,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
+ESC_000292,2026-05-26,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,enterprise,RLHF reviewer agreement dropping; calibration drift between rater cohorts.,reviewer_misalignment,resolved,7.0
+ESC_000293,2026-05-26,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,2.0
+ESC_000294,2026-05-26,audio_evaluation,TEAM_APAC_AUDIO_01,sev3,enterprise,Specialist shortage for audio evaluation; aged backlog climbing week over week.,capacity_shortfall,in_progress,
+ESC_000295,2026-05-26,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,mid_market,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,in_progress,
+ESC_000296,2026-05-26,image_annotation,TEAM_APAC_IMAGE_03,sev4,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,9.0
+ESC_000297,2026-05-26,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Specialist shortage for audio evaluation; aged backlog climbing week over week.,capacity_shortfall,resolved,8.0
+ESC_000298,2026-05-26,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000299,2026-05-26,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,resolved,2.0
+ESC_000300,2026-05-26,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000301,2026-05-26,code_review,TEAM_APAC_CODE_02,sev4,enterprise,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,7.0
+ESC_000302,2026-05-27,code_review,TEAM_APAC_CODE_03,sev3,mid_market,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,8.0
+ESC_000303,2026-05-27,image_annotation,TEAM_APAC_IMAGE_01,sev2,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,resolved,9.0
+ESC_000304,2026-05-27,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000305,2026-05-27,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
+ESC_000306,2026-05-27,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,12.0
+ESC_000307,2026-05-27,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,startup,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,resolved,10.0
+ESC_000308,2026-05-28,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,strategic,Audio Evaluation escalation linked to tooling issue.,tooling_issue,resolved,3.0
+ESC_000309,2026-05-28,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,startup,Audio Evaluation escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000310,2026-05-28,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,in_progress,
+ESC_000311,2026-05-28,code_review,TEAM_APAC_CODE_03,sev3,startup,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000312,2026-05-28,code_review,TEAM_APAC_CODE_03,sev3,startup,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,resolved,3.0
+ESC_000313,2026-05-29,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000314,2026-05-29,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,enterprise,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,resolved,2.0
+ESC_000315,2026-05-29,code_review,TEAM_APAC_CODE_01,sev3,strategic,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000316,2026-05-29,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,startup,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,open,
+ESC_000317,2026-05-29,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,2.0
+ESC_000318,2026-05-29,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,strategic,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000319,2026-05-29,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
+ESC_000320,2026-05-30,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
+ESC_000321,2026-05-30,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,startup,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
+ESC_000322,2026-05-30,image_annotation,TEAM_APAC_IMAGE_01,sev3,enterprise,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000323,2026-05-30,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,resolved,5.0
+ESC_000324,2026-05-30,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,14.0
+ESC_000325,2026-05-31,code_review,TEAM_APAC_CODE_02,sev2,mid_market,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,open,
+ESC_000326,2026-05-31,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,6.0
+ESC_000327,2026-05-31,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000328,2026-05-31,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,resolved,5.0
+ESC_000329,2026-05-31,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,strategic,Audio Evaluation escalation linked to quality defect.,quality_defect,open,
+ESC_000330,2026-05-31,expert_review,TEAM_APAC_EXPERT_01,sev2,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000331,2026-05-31,code_review,TEAM_APAC_CODE_03,sev3,mid_market,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,1.0
+ESC_000332,2026-05-31,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000333,2026-06-01,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,enterprise,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,5.0
+ESC_000334,2026-06-01,image_annotation,TEAM_APAC_IMAGE_04,sev1,enterprise,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,open,
+ESC_000335,2026-06-01,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000336,2026-06-01,image_annotation,TEAM_APAC_IMAGE_01,sev3,strategic,Image Annotation escalation linked to tooling issue.,tooling_issue,resolved,3.0
+ESC_000337,2026-06-02,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,enterprise,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,resolved,3.0
+ESC_000338,2026-06-02,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
+ESC_000339,2026-06-02,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,in_progress,
+ESC_000340,2026-06-02,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,7.0
+ESC_000341,2026-06-02,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,mid_market,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,in_progress,
+ESC_000342,2026-06-03,image_annotation,TEAM_APAC_IMAGE_02,sev1,startup,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,6.0
+ESC_000343,2026-06-03,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000344,2026-06-03,code_review,TEAM_APAC_CODE_02,sev3,startup,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
+ESC_000345,2026-06-03,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,resolved,3.0
+ESC_000346,2026-06-03,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to sla miss.,sla_miss,resolved,2.0
+ESC_000347,2026-06-03,expert_review,TEAM_APAC_EXPERT_02,sev2,enterprise,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,2.0
+ESC_000348,2026-06-04,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000349,2026-06-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,startup,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000350,2026-06-04,expert_review,TEAM_APAC_EXPERT_02,sev2,mid_market,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,resolved,1.0
+ESC_000351,2026-06-04,expert_review,TEAM_APAC_EXPERT_02,sev2,mid_market,Expert Review escalation linked to sla miss.,sla_miss,resolved,12.0
+ESC_000352,2026-06-04,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,3.0
+ESC_000353,2026-06-04,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,resolved,4.0
+ESC_000354,2026-06-04,audio_evaluation,TEAM_APAC_AUDIO_01,sev3,enterprise,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,resolved,8.0
+ESC_000355,2026-06-05,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,8.0
+ESC_000356,2026-06-05,image_annotation,TEAM_APAC_IMAGE_03,sev2,enterprise,Image Annotation escalation linked to workflow handoff gap.,workflow_handoff_gap,open,
+ESC_000357,2026-06-05,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000358,2026-06-05,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000359,2026-06-05,expert_review,TEAM_APAC_EXPERT_01,sev3,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,2.0
+ESC_000360,2026-06-05,image_annotation,TEAM_APAC_IMAGE_02,sev4,strategic,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,1.0
+ESC_000361,2026-06-05,code_review,TEAM_APAC_CODE_02,sev2,enterprise,Code review quality defect cluster: reviewers missing security-sensitive bugs.,quality_defect,open,
+ESC_000362,2026-06-05,expert_review,TEAM_APAC_EXPERT_01,sev2,startup,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,resolved,2.0
+ESC_000363,2026-06-06,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,9.0
+ESC_000364,2026-06-06,expert_review,TEAM_APAC_EXPERT_02,sev3,strategic,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,4.0
+ESC_000365,2026-06-06,image_annotation,TEAM_APAC_IMAGE_04,sev2,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,4.0
+ESC_000366,2026-06-06,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,resolved,7.0
+ESC_000367,2026-06-06,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,enterprise,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,resolved,3.0
+ESC_000368,2026-06-07,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,2.0
+ESC_000369,2026-06-07,expert_review,TEAM_APAC_EXPERT_01,sev4,enterprise,Expert Review escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000370,2026-06-08,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,resolved,5.0
+ESC_000371,2026-06-08,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,3.0
+ESC_000372,2026-06-08,code_review,TEAM_APAC_CODE_03,sev4,strategic,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,4.0
+ESC_000373,2026-06-08,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,resolved,5.0
+ESC_000374,2026-06-08,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,enterprise,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0
+ESC_000375,2026-06-08,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,13.0
+ESC_000376,2026-06-08,image_annotation,TEAM_APAC_IMAGE_01,sev4,startup,Image Annotation escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000377,2026-06-09,expert_review,TEAM_APAC_EXPERT_01,sev4,mid_market,Expert Review escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000378,2026-06-09,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,RLHF reviewer agreement dropping; calibration drift between rater cohorts.,reviewer_misalignment,open,
+ESC_000379,2026-06-09,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000380,2026-06-10,image_annotation,TEAM_APAC_IMAGE_01,sev4,strategic,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,8.0
+ESC_000381,2026-06-10,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,enterprise,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,resolved,5.0
+ESC_000382,2026-06-10,code_review,TEAM_APAC_CODE_01,sev3,enterprise,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,resolved,9.0
+ESC_000383,2026-06-10,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000384,2026-06-10,code_review,TEAM_APAC_CODE_02,sev3,enterprise,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,3.0
+ESC_000385,2026-06-10,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,7.0
+ESC_000386,2026-06-11,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,open,
+ESC_000387,2026-06-11,expert_review,TEAM_APAC_EXPERT_01,sev1,strategic,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,resolved,2.0
+ESC_000388,2026-06-11,code_review,TEAM_APAC_CODE_01,sev3,strategic,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,in_progress,
+ESC_000389,2026-06-11,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000390,2026-06-11,rlhf_evaluation,TEAM_APAC_RLHF_01,sev4,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000391,2026-06-11,code_review,TEAM_APAC_CODE_02,sev2,strategic,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,5.0
+ESC_000392,2026-06-11,code_review,TEAM_APAC_CODE_03,sev4,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000393,2026-06-11,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,resolved,10.0
+ESC_000394,2026-06-12,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,strategic,Audio Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,2.0
+ESC_000395,2026-06-12,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,in_progress,
+ESC_000396,2026-06-12,audio_evaluation,TEAM_APAC_AUDIO_01,sev3,strategic,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,18.0
+ESC_000397,2026-06-12,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,5.0
+ESC_000398,2026-06-12,image_annotation,TEAM_APAC_IMAGE_04,sev4,enterprise,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000399,2026-06-12,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,resolved,1.0
+ESC_000400,2026-06-12,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Code review quality defect cluster: reviewers missing security-sensitive bugs.,quality_defect,resolved,8.0
+ESC_000401,2026-06-12,code_review,TEAM_APAC_CODE_03,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000402,2026-06-12,code_review,TEAM_APAC_CODE_03,sev2,startup,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,6.0
+ESC_000403,2026-06-12,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000404,2026-06-12,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,8.0
+ESC_000405,2026-06-13,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,enterprise,Audio Evaluation escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000406,2026-06-13,image_annotation,TEAM_APAC_IMAGE_01,sev4,strategic,Image Annotation escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000407,2026-06-13,audio_evaluation,TEAM_APAC_AUDIO_02,sev1,enterprise,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,resolved,4.0
+ESC_000408,2026-06-13,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,strategic,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,resolved,7.0
+ESC_000409,2026-06-13,code_review,TEAM_APAC_CODE_03,sev1,startup,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,in_progress,
+ESC_000410,2026-06-13,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,resolved,8.0
+ESC_000411,2026-06-13,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,strategic,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,resolved,4.0
+ESC_000412,2026-06-14,image_annotation,TEAM_APAC_IMAGE_03,sev2,strategic,Image Annotation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000413,2026-06-14,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,mid_market,Audio Evaluation escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000414,2026-06-14,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,resolved,9.0
+ESC_000415,2026-06-14,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,2.0
+ESC_000416,2026-06-14,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
+ESC_000417,2026-06-14,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,enterprise,Audio Evaluation escalation linked to sla miss.,sla_miss,resolved,9.0
+ESC_000418,2026-06-15,code_review,TEAM_APAC_CODE_02,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000419,2026-06-15,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000420,2026-06-15,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,mid_market,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000421,2026-06-15,audio_evaluation,TEAM_APAC_AUDIO_02,sev1,enterprise,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,open,
+ESC_000422,2026-06-15,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,strategic,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,resolved,2.0
+ESC_000423,2026-06-15,expert_review,TEAM_APAC_EXPERT_01,sev2,strategic,Expert Review escalation linked to sla miss.,sla_miss,resolved,8.0
+ESC_000424,2026-06-15,image_annotation,TEAM_APAC_IMAGE_01,sev2,mid_market,Image Annotation escalation linked to quality defect.,quality_defect,resolved,4.0
+ESC_000425,2026-06-16,image_annotation,TEAM_APAC_IMAGE_02,sev3,strategic,Image Annotation escalation linked to quality defect.,quality_defect,resolved,5.0
+ESC_000426,2026-06-16,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000427,2026-06-16,expert_review,TEAM_APAC_EXPERT_01,sev1,enterprise,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,3.0
+ESC_000428,2026-06-16,expert_review,TEAM_APAC_EXPERT_01,sev1,mid_market,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,resolved,10.0
+ESC_000429,2026-06-16,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000430,2026-06-16,code_review,TEAM_APAC_CODE_01,sev1,enterprise,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,5.0
+ESC_000431,2026-06-16,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000432,2026-06-16,image_annotation,TEAM_APAC_IMAGE_02,sev3,enterprise,Image Annotation escalation linked to tooling issue.,tooling_issue,open,
+ESC_000433,2026-06-16,code_review,TEAM_APAC_CODE_01,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000434,2026-06-17,code_review,TEAM_APAC_CODE_02,sev2,strategic,Code Review escalation linked to quality defect.,quality_defect,in_progress,
+ESC_000435,2026-06-17,expert_review,TEAM_APAC_EXPERT_02,sev3,startup,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,2.0
+ESC_000436,2026-06-17,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,strategic,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,resolved,8.0
+ESC_000437,2026-06-17,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000438,2026-06-17,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,in_progress,
+ESC_000439,2026-06-17,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,enterprise,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,resolved,4.0
+ESC_000440,2026-06-18,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000441,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000442,2026-06-18,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,strategic,Audio Evaluation escalation linked to sla miss.,sla_miss,resolved,6.0
+ESC_000443,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,enterprise,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,resolved,10.0
+ESC_000444,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,5.0
+ESC_000445,2026-06-18,code_review,TEAM_APAC_CODE_02,sev3,mid_market,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,in_progress,
+ESC_000446,2026-06-18,audio_evaluation,TEAM_APAC_AUDIO_02,sev1,enterprise,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,resolved,7.0
+ESC_000447,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,open,
+ESC_000448,2026-06-18,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,5.0
+ESC_000449,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,mid_market,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000450,2026-06-18,code_review,TEAM_APAC_CODE_01,sev1,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,7.0
+ESC_000451,2026-06-18,code_review,TEAM_APAC_CODE_03,sev3,mid_market,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,open,
+ESC_000452,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,resolved,3.0
+ESC_000453,2026-06-18,expert_review,TEAM_APAC_EXPERT_01,sev2,strategic,Requirement churn from the customer forcing repeated expert review rework.,customer_requirement_change,resolved,6.0
+ESC_000454,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_01,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,9.0
+ESC_000455,2026-06-18,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,strategic,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,in_progress,
+ESC_000456,2026-06-18,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,mid_market,Capacity shortfall in the audio evaluation queue; SLA buffer exhausted.,capacity_shortfall,resolved,7.0
+ESC_000457,2026-06-19,image_annotation,TEAM_APAC_IMAGE_03,sev4,enterprise,Image Annotation escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000458,2026-06-19,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to sla miss.,sla_miss,resolved,4.0
+ESC_000459,2026-06-19,expert_review,TEAM_APAC_EXPERT_01,sev1,enterprise,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,in_progress,
+ESC_000460,2026-06-19,code_review,TEAM_APAC_CODE_03,sev1,enterprise,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,open,
+ESC_000461,2026-06-19,expert_review,TEAM_APAC_EXPERT_01,sev2,mid_market,Expert Review escalation linked to sla miss.,sla_miss,resolved,2.0
+ESC_000462,2026-06-19,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,enterprise,Specialist shortage for audio evaluation; aged backlog climbing week over week.,capacity_shortfall,open,
+ESC_000463,2026-06-19,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000464,2026-06-19,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,7.0
+ESC_000465,2026-06-20,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,strategic,Audio Evaluation escalation linked to sla miss.,sla_miss,resolved,5.0
+ESC_000466,2026-06-20,audio_evaluation,TEAM_APAC_AUDIO_03,sev2,strategic,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,open,
+ESC_000467,2026-06-20,code_review,TEAM_APAC_CODE_01,sev4,startup,Code Review escalation linked to workflow handoff gap.,workflow_handoff_gap,in_progress,
+ESC_000468,2026-06-20,expert_review,TEAM_APAC_EXPERT_01,sev2,mid_market,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,resolved,5.0
+ESC_000469,2026-06-20,code_review,TEAM_APAC_CODE_02,sev2,startup,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,open,
+ESC_000470,2026-06-20,audio_evaluation,TEAM_APAC_AUDIO_02,sev4,enterprise,Audio Evaluation escalation linked to tooling issue.,tooling_issue,resolved,6.0
+ESC_000471,2026-06-20,code_review,TEAM_APAC_CODE_01,sev4,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000472,2026-06-21,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,startup,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,open,
+ESC_000473,2026-06-21,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to customer requirement change.,customer_requirement_change,in_progress,
+ESC_000474,2026-06-21,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,enterprise,Two RLHF reviewer pods scoring the same prompts differently; calibration overdue.,reviewer_misalignment,resolved,1.0
+ESC_000475,2026-06-21,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,open,
+ESC_000476,2026-06-21,image_annotation,TEAM_APAC_IMAGE_03,sev4,startup,Image Annotation escalation linked to customer requirement change.,customer_requirement_change,resolved,10.0
+ESC_000477,2026-06-22,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,resolved,3.0
+ESC_000478,2026-06-22,code_review,TEAM_APAC_CODE_01,sev2,mid_market,Code Review escalation linked to quality defect.,quality_defect,resolved,9.0
+ESC_000479,2026-06-22,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,strategic,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000480,2026-06-22,rlhf_evaluation,TEAM_APAC_RLHF_01,sev1,startup,Reviewer misalignment in RLHF evaluations; overrides spiking on the same task family.,reviewer_misalignment,resolved,3.0
+ESC_000481,2026-06-23,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,mid_market,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,in_progress,
+ESC_000482,2026-06-23,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,mid_market,Rlhf Evaluation escalation linked to capacity shortfall.,capacity_shortfall,resolved,2.0
+ESC_000483,2026-06-23,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,6.0
+ESC_000484,2026-06-23,audio_evaluation,TEAM_APAC_AUDIO_03,sev4,mid_market,Audio Evaluation escalation linked to workflow handoff gap.,workflow_handoff_gap,in_progress,
+ESC_000485,2026-06-23,expert_review,TEAM_APAC_EXPERT_02,sev1,strategic,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,7.0
+ESC_000486,2026-06-23,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Repeated quality defects found post-delivery in code review samples.,quality_defect,in_progress,
+ESC_000487,2026-06-24,code_review,TEAM_APAC_CODE_03,sev2,strategic,Recurring quality defects in code review batch; gold tasks failing on edge cases.,quality_defect,open,
+ESC_000488,2026-06-24,code_review,TEAM_APAC_CODE_02,sev1,mid_market,Repeated quality defects found post-delivery in code review samples.,quality_defect,resolved,2.0
+ESC_000489,2026-06-24,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,open,
+ESC_000490,2026-06-24,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,enterprise,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,in_progress,
+ESC_000491,2026-06-24,code_review,TEAM_APAC_CODE_01,sev4,strategic,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,2.0
+ESC_000492,2026-06-24,expert_review,TEAM_APAC_EXPERT_01,sev2,startup,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,resolved,3.0
+ESC_000493,2026-06-24,expert_review,TEAM_APAC_EXPERT_02,sev3,enterprise,Expert Review escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000494,2026-06-25,image_annotation,TEAM_APAC_IMAGE_01,sev3,enterprise,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,resolved,3.0
+ESC_000495,2026-06-25,expert_review,TEAM_APAC_EXPERT_02,sev1,mid_market,Expert Review escalation linked to sla miss.,sla_miss,open,
+ESC_000496,2026-06-25,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Defect leakage in the code review queue rising; rework loops repeating weekly.,quality_defect,resolved,4.0
+ESC_000497,2026-06-25,code_review,TEAM_APAC_CODE_02,sev2,enterprise,Repeated quality defects found post-delivery in code review samples.,quality_defect,open,
+ESC_000498,2026-06-25,audio_evaluation,TEAM_APAC_AUDIO_03,sev1,enterprise,Specialist shortage for audio evaluation; aged backlog climbing week over week.,capacity_shortfall,resolved,5.0
+ESC_000499,2026-06-25,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,startup,Specialist shortage for audio evaluation; aged backlog climbing week over week.,capacity_shortfall,in_progress,
+ESC_000500,2026-06-25,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,in_progress,
+ESC_000501,2026-06-25,code_review,TEAM_APAC_CODE_03,sev2,startup,Code Review escalation linked to quality defect.,quality_defect,resolved,3.0
+ESC_000502,2026-06-25,expert_review,TEAM_APAC_EXPERT_01,sev2,mid_market,Customer requirement change invalidated expert review guidance for the active queue.,customer_requirement_change,open,
+ESC_000503,2026-06-25,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,strategic,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,1.0
+ESC_000504,2026-06-25,rlhf_evaluation,TEAM_APAC_RLHF_01,sev2,enterprise,RLHF reviewer agreement dropping; calibration drift between rater cohorts.,reviewer_misalignment,in_progress,
+ESC_000505,2026-06-25,rlhf_evaluation,TEAM_APAC_RLHF_02,sev3,enterprise,Rlhf Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,4.0
+ESC_000506,2026-06-25,rlhf_evaluation,TEAM_APAC_RLHF_02,sev1,strategic,Misaligned RLHF reviewers producing conflicting labels for identical prompt types.,reviewer_misalignment,open,
+ESC_000507,2026-06-26,code_review,TEAM_APAC_CODE_02,sev2,enterprise,Repeated quality defects found post-delivery in code review samples.,quality_defect,open,
+ESC_000508,2026-06-26,code_review,TEAM_APAC_CODE_01,sev4,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,7.0
+ESC_000509,2026-06-26,code_review,TEAM_APAC_CODE_03,sev2,startup,Code review quality defect cluster: reviewers missing security-sensitive bugs.,quality_defect,open,
+ESC_000510,2026-06-26,code_review,TEAM_APAC_CODE_01,sev1,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,2.0
+ESC_000511,2026-06-26,code_review,TEAM_APAC_CODE_03,sev2,strategic,Code review quality defect cluster: reviewers missing security-sensitive bugs.,quality_defect,in_progress,
+ESC_000512,2026-06-27,expert_review,TEAM_APAC_EXPERT_01,sev2,mid_market,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,resolved,5.0
+ESC_000513,2026-06-27,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Repeated quality defects found post-delivery in code review samples.,quality_defect,open,
+ESC_000514,2026-06-27,rlhf_evaluation,TEAM_APAC_RLHF_03,sev3,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,5.0
+ESC_000515,2026-06-27,code_review,TEAM_APAC_CODE_01,sev3,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,5.0
+ESC_000516,2026-06-27,audio_evaluation,TEAM_APAC_AUDIO_01,sev2,startup,Audio Evaluation escalation linked to reviewer misalignment.,reviewer_misalignment,in_progress,
+ESC_000517,2026-06-27,audio_evaluation,TEAM_APAC_AUDIO_03,sev1,strategic,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,open,
+ESC_000518,2026-06-28,audio_evaluation,TEAM_APAC_AUDIO_03,sev1,mid_market,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,open,
+ESC_000519,2026-06-28,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,startup,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,open,
+ESC_000520,2026-06-28,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,enterprise,RLHF reviewer disagreement recurring on preference ranking; alignment huddle needed.,reviewer_misalignment,open,
+ESC_000521,2026-06-28,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
+ESC_000522,2026-06-28,rlhf_evaluation,TEAM_APAC_RLHF_03,sev2,startup,RLHF reviewer agreement dropping; calibration drift between rater cohorts.,reviewer_misalignment,in_progress,
+ESC_000523,2026-06-28,audio_evaluation,TEAM_APAC_AUDIO_03,sev3,strategic,Audio Evaluation escalation linked to sla miss.,sla_miss,in_progress,
+ESC_000524,2026-06-28,audio_evaluation,TEAM_APAC_AUDIO_02,sev3,strategic,Audio Evaluation escalation linked to policy ambiguity.,policy_ambiguity,open,
+ESC_000525,2026-06-29,rlhf_evaluation,TEAM_APAC_RLHF_03,sev4,enterprise,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,3.0
+ESC_000526,2026-06-29,expert_review,TEAM_APAC_EXPERT_01,sev4,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,4.0
+ESC_000527,2026-06-29,expert_review,TEAM_APAC_EXPERT_01,sev2,enterprise,Expert review specs changed by customer mid-batch; rubric now out of date.,customer_requirement_change,resolved,8.0
+ESC_000528,2026-06-29,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,strategic,Raters keep escalating borderline prompt policy questions; no canonical examples published.,policy_ambiguity,open,
+ESC_000529,2026-06-29,image_annotation,TEAM_APAC_IMAGE_01,sev3,mid_market,Image Annotation escalation linked to capacity shortfall.,capacity_shortfall,open,
+ESC_000530,2026-06-29,rlhf_evaluation,TEAM_APAC_RLHF_03,sev1,strategic,Policy ambiguity in the RLHF evaluation rubric causing repeated rating disputes.,policy_ambiguity,in_progress,
+ESC_000531,2026-06-29,rlhf_evaluation,TEAM_APAC_RLHF_01,sev1,enterprise,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,resolved,5.0
+ESC_000532,2026-06-29,image_annotation,TEAM_APAC_IMAGE_04,sev4,strategic,Image Annotation escalation linked to policy ambiguity.,policy_ambiguity,resolved,8.0
+ESC_000533,2026-06-30,expert_review,TEAM_APAC_EXPERT_01,sev1,enterprise,Another customer requirement change hit expert review; instructions not propagated.,customer_requirement_change,open,
+ESC_000534,2026-06-30,rlhf_evaluation,TEAM_APAC_RLHF_02,sev4,strategic,Rlhf Evaluation escalation linked to policy ambiguity.,policy_ambiguity,resolved,4.0
+ESC_000535,2026-06-30,expert_review,TEAM_APAC_EXPERT_01,sev3,enterprise,Expert Review escalation linked to sla miss.,sla_miss,resolved,7.0
+ESC_000536,2026-06-30,audio_evaluation,TEAM_APAC_AUDIO_01,sev4,enterprise,Audio Evaluation escalation linked to customer requirement change.,customer_requirement_change,resolved,12.0
+ESC_000537,2026-06-30,expert_review,TEAM_APAC_EXPERT_01,sev3,mid_market,Expert Review escalation linked to sla miss.,sla_miss,resolved,8.0
+ESC_000538,2026-06-30,code_review,TEAM_APAC_CODE_01,sev3,enterprise,Code Review escalation linked to reviewer misalignment.,reviewer_misalignment,resolved,5.0
+ESC_000539,2026-06-30,rlhf_evaluation,TEAM_APAC_RLHF_02,sev2,enterprise,Preference ranking blocked because policy guidance for sensitive prompts is ambiguous.,policy_ambiguity,in_progress,
+ESC_000540,2026-06-30,expert_review,TEAM_APAC_EXPERT_02,sev2,strategic,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,12.0
+ESC_000541,2026-06-30,audio_evaluation,TEAM_APAC_AUDIO_02,sev2,strategic,Audio eval staffing gap repeating during weekend coverage; queue aging past 72 hours.,capacity_shortfall,open,
+ESC_000542,2026-07-01,rlhf_evaluation,TEAM_APAC_RLHF_01,sev1,mid_market,Customer flagged inconsistent RLHF ratings traced to ambiguous policy wording.,policy_ambiguity,in_progress,
+ESC_000543,2026-07-01,code_review,TEAM_APAC_CODE_03,sev3,enterprise,Code Review escalation linked to quality defect.,quality_defect,open,
+ESC_000544,2026-07-01,code_review,TEAM_APAC_CODE_03,sev1,enterprise,Code Review escalation linked to quality defect.,quality_defect,open,
+ESC_000545,2026-07-01,image_annotation,TEAM_APAC_IMAGE_02,sev2,enterprise,Image Annotation escalation linked to sla miss.,sla_miss,resolved,2.0
+ESC_000546,2026-07-01,audio_evaluation,TEAM_APAC_AUDIO_01,sev1,mid_market,Audio evaluation backlog growing; not enough specialist reviewers on shift.,capacity_shortfall,open,
+ESC_000547,2026-07-01,rlhf_evaluation,TEAM_APAC_RLHF_01,sev1,enterprise,RLHF raters disagree on refusal policy for borderline prompts; guidance unclear.,policy_ambiguity,open,
+ESC_000548,2026-07-01,code_review,TEAM_APAC_CODE_01,sev2,enterprise,Code Review escalation linked to quality defect.,quality_defect,resolved,8.0
+ESC_000549,2026-07-01,code_review,TEAM_APAC_CODE_03,sev4,strategic,Code Review escalation linked to quality defect.,quality_defect,resolved,4.0
+ESC_000550,2026-07-02,expert_review,TEAM_APAC_EXPERT_02,sev3,mid_market,Expert Review escalation linked to customer requirement change.,customer_requirement_change,resolved,3.0

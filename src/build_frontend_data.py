@@ -1,7 +1,7 @@
 """
 Build web/public/data/data.json for the TanStack front-end from the real
-CSVs in data/, reusing the same metric and pattern-scoring logic that powers
-the Streamlit pages so both front-ends show identical numbers.
+CSVs in data/, reusing the same metric and pattern-scoring logic in src/ so
+the UI shows exactly the numbers the pipeline computes.
 
 Usage:
     python -m src.build_frontend_data [--scenario healthy|current|crisis]
@@ -17,6 +17,10 @@ from pathlib import Path
 import pandas as pd
 
 from src.escalation_patterns import summarize_patterns
+from src.escalation_semantic_clusters import (
+    cluster_escalations,
+    summarize_semantic_clusters,
+)
 from src.metrics import (
     aged_backlog_count,
     average_quality_score,
@@ -182,6 +186,56 @@ def build_patterns(escalation_events: pd.DataFrame) -> list[dict]:
             }
         )
     return patterns
+
+
+def build_clusters(escalation_events: pd.DataFrame) -> list[dict]:
+    """Module B v2 semantic clusters, straight from escalation_semantic_clusters.py.
+
+    TF-IDF + cosine components over escalation summaries; isolated escalations
+    are excluded by the summarizer, so only real clusters and watchlist pairs
+    are emitted.
+    """
+    if escalation_events.empty:
+        return []
+    clustered = cluster_escalations(escalation_events)
+    summary = summarize_semantic_clusters(clustered)
+    rows = []
+    for _, c in summary.iterrows():
+        rows.append(
+            {
+                "cluster_id": str(c["semantic_cluster_id"]),
+                "cluster_name": str(c["cluster_name"]),
+                "cluster_kind": str(c["semantic_cluster_status"]),
+                "work_type": str(c["dominant_work_type"]),
+                "root_cause": str(c["dominant_root_cause"]),
+                "incident_count": int(c["incident_count"]),
+                "sev1_count": int(c["sev1_count"]),
+                "sev2_count": int(c["sev2_count"]),
+                "open_count": int(c["open_count"]),
+                "resolved_count": int(c["resolved_count"]),
+                "team_count": int(c["affected_team_count"]),
+                "segment_count": int(c["affected_customer_segment_count"]),
+                "teams": str(c["affected_teams"]),
+                "segments": str(c["affected_customer_segments"]),
+                "work_types": str(c["affected_work_types"]),
+                "severity_mix": str(c["severity_mix"]),
+                "avg_days_to_resolve": _numf(c["avg_days_to_resolve"]),
+                "first_seen": str(c["first_seen_date"]),
+                "latest_seen": str(c["latest_escalation_date"]),
+                "last_14d": int(c["last_14d_count"]),
+                "prior_14d": int(c["prior_14d_count"]),
+                "last_30d": int(c["last_30d_count"]),
+                "last_60d": int(c["last_60d_count"]),
+                "days_since_latest": int(c["days_since_latest_escalation"]),
+                "recurrence_status": str(c["recurrence_status"]),
+                "risk_score": float(c["risk_score"]),
+                "risk_level": _risk_level_short(c["risk_level"]),
+                "sample_summaries": [
+                    s.strip() for s in str(c["sample_summaries"]).split(" | ") if s.strip()
+                ],
+            }
+        )
+    return rows
 
 
 def build_teams(teams, contributors, work_items, quality_events, escalation_events, csat_events) -> list[dict]:
@@ -615,6 +669,7 @@ def build_payload(scenario: str = "current") -> dict:
         "segmentCounts": {k: int(v) for k, v in escalation_events["customer_segment"].value_counts().items()},
         "weeklyTrend": weekly_trend,
         "patterns": build_patterns(escalation_events),
+        "clusters": build_clusters(escalation_events),
         "teams": build_teams(teams, contributors, work_items, quality_events, escalation_events, csat_events),
         "workTypeRollup": build_work_type_rollup(teams, work_items, quality_events, escalation_events, csat_events),
         "escalations": json.loads(escalation_events.to_json(orient="records")),
